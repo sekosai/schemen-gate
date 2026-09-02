@@ -1,0 +1,289 @@
+{
+  "schema": "schemen-gate/modal-recertification-config-v1",
+  "release_version": "1.0.2",
+  "pricing": {
+    "as_of": "2026-08-30",
+    "currency": "USD",
+    "source": "https://modal.com/pricing",
+    "rates_per_second": {
+      "A100": 0.000583,
+      "T4": 0.000164,
+      "CPU_CORE": 0.0000131,
+      "MEMORY_GIB": 0.00000222
+    },
+    "notes": [
+      "Estimates are gross before credits.",
+      "CPU and memory are additive and charged at the greater of request or actual use.",
+      "Image construction, cold downloads, retries, and storage can add cost.",
+      "No region multiplier or non-preemptible multiplier is included."
+    ]
+  },
+  "campaigns": {
+    "compatibility": {
+      "description": "One current-library analogue of every canonical Gate-backed Modal evidence family.",
+      "full_variant": "compatibility",
+      "expected_gross_usd": {
+        "low": 2.5,
+        "high": 4.0
+      },
+      "campaign_approval_ceiling_usd": 8.0
+    },
+    "paper-matrix": {
+      "description": "The broader numerical matrix, including all published dense and private-lane seeds.",
+      "full_variant": "paper_matrix",
+      "expected_gross_usd": {
+        "low": 7.0,
+        "high": 11.0
+      },
+      "campaign_approval_ceiling_usd": 15.0
+    }
+  },
+  "jobs": [
+    {
+      "id": "ai-pki-cpu-canary",
+      "app_name": "schemen-gate-quickstart",
+      "launcher": "examples/modal_quickstart.py",
+      "artifact_prefix": null,
+      "expected_experiment": null,
+      "gpu": null,
+      "historical_seconds": {
+        "canary": 60
+      },
+      "max_wall_seconds": {
+        "canary": 300
+      },
+      "remote_invocations": {
+        "canary": 1
+      },
+      "arguments": {
+        "canary": []
+      }
+    },
+    {
+      "id": "dense-ffn-cotenancy",
+      "app_name": "cdp-dense-ffn-cotenancy",
+      "launcher": "research/cdp/experiments/modal_dense_ffn_cotenancy.py",
+      "artifact_prefix": "dense_ffn_cotenancy_",
+      "expected_experiment": "dense_ffn_cotenancy_combined",
+      "gpu": "A100",
+      "historical_seconds": {
+        "canary": 29,
+        "compatibility": 179,
+        "paper_matrix": 4438
+      },
+      "max_wall_seconds": {
+        "canary": 600,
+        "compatibility": 600,
+        "paper_matrix": 3600
+      },
+      "remote_invocations": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 15
+      },
+      "artifact_records": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 15
+      },
+      "arguments": {
+        "canary": ["--smoke"],
+        "compatibility": ["--r-values", "8", "--seeds", "42"],
+        "paper_matrix": ["--r-values", "1,2,4,8,16", "--seeds", "42,123,256"]
+      }
+    },
+    {
+      "id": "private-transformer-lanes",
+      "app_name": "cdp-private-transformer-lanes",
+      "launcher": "research/cdp/experiments/modal_private_transformer_lanes.py",
+      "artifact_prefix": "private_transformer_lanes_",
+      "expected_experiment": "private_transformer_lanes_combined",
+      "gpu": "A100",
+      "historical_seconds": {
+        "canary": 42,
+        "compatibility": 197,
+        "paper_matrix": 558
+      },
+      "max_wall_seconds": {
+        "canary": 600,
+        "compatibility": 600,
+        "paper_matrix": 1800
+      },
+      "remote_invocations": {
+        "canary": 1,
+        "compatibility": 2,
+        "paper_matrix": 6
+      },
+      "artifact_records": {
+        "canary": 1,
+        "compatibility": 2,
+        "paper_matrix": 6
+      },
+      "arguments": {
+        "canary": ["--smoke"],
+        "compatibility": ["--designs", "adapter,expert", "--seeds", "42"],
+        "paper_matrix": ["--designs", "adapter,expert", "--seeds", "42,123,256"]
+      }
+    },
+    {
+      "id": "public-gate-adaptation-factorial",
+      "app_name": "cdp-public-gate-adaptation-factorial",
+      "launcher": "research/cdp/experiments/modal_public_gate_adaptation_factorial.py",
+      "artifact_prefix": "public_gate_adaptation_factorial_",
+      "expected_experiment": "public_gate_adaptation_factorial_combined",
+      "gpu": "A100",
+      "historical_seconds": {
+        "canary": 50,
+        "compatibility": 714,
+        "paper_matrix": 3375
+      },
+      "max_wall_seconds": {
+        "canary": 600,
+        "compatibility": 1800,
+        "paper_matrix": 3600
+      },
+      "remote_invocations": {
+        "canary": 1,
+        "compatibility": 2,
+        "paper_matrix": 6
+      },
+      "artifact_records": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 5
+      },
+      "arguments": {
+        "canary": ["--smoke"],
+        "compatibility": ["--seeds", "42"],
+        "paper_matrix": ["--seeds", "42,123,256,512,1024"]
+      }
+    },
+    {
+      "id": "cargo-transformer-authorization",
+      "app_name": "cdp-cargo-transformer-authorization",
+      "launcher": "research/cdp/experiments/modal_cargo_transformer_authorization.py",
+      "artifact_prefix": "cargo_transformer_",
+      "expected_experiment": "cargo_transformer_corpus_authorization_combined",
+      "gpu": "T4",
+      "historical_seconds": {
+        "compatibility": 29,
+        "paper_matrix": 29
+      },
+      "max_wall_seconds": {
+        "compatibility": 300,
+        "paper_matrix": 300
+      },
+      "remote_invocations": {
+        "compatibility": 1,
+        "paper_matrix": 1
+      },
+      "artifact_records": {
+        "compatibility": 1,
+        "paper_matrix": 1
+      },
+      "arguments": {
+        "compatibility": [],
+        "paper_matrix": []
+      }
+    },
+    {
+      "id": "runtime-orthogonal-superposition",
+      "app_name": "cdp-orthogonal-superposition",
+      "launcher": "research/cdp/experiments/modal_orthogonal_superposition.py",
+      "artifact_prefix": "orthogonal_superposition_",
+      "expected_experiment": "orthogonal_superposition_combined",
+      "gpu": "A100",
+      "historical_seconds": {
+        "canary": 49,
+        "compatibility": 838,
+        "paper_matrix": 838
+      },
+      "max_wall_seconds": {
+        "canary": 600,
+        "compatibility": 1800,
+        "paper_matrix": 1800
+      },
+      "remote_invocations": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 1
+      },
+      "artifact_records": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 1
+      },
+      "arguments": {
+        "canary": ["--smoke"],
+        "compatibility": ["--ratios", "8,128"],
+        "paper_matrix": ["--ratios", "8,128"]
+      }
+    },
+    {
+      "id": "generative-intermediate",
+      "app_name": "cdp-generative-intermediate",
+      "launcher": "research/cdp/experiments/modal_generative_intermediate.py",
+      "artifact_prefix": "generative_intermediate_combined_",
+      "expected_experiment": "tinyllama_intermediate_ffn_gate_combined",
+      "gpu": "A100",
+      "historical_seconds": {
+        "canary": 79,
+        "compatibility": 1377,
+        "paper_matrix": 1377
+      },
+      "max_wall_seconds": {
+        "canary": 900,
+        "compatibility": 3000,
+        "paper_matrix": 3000
+      },
+      "remote_invocations": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 1
+      },
+      "artifact_records": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 1
+      },
+      "arguments": {
+        "canary": ["--seeds", "0", "--r", "8", "--smoke"],
+        "compatibility": ["--seeds", "11", "--r", "8"],
+        "paper_matrix": ["--seeds", "11", "--r", "8"]
+      }
+    },
+    {
+      "id": "distilbert-service-consolidation",
+      "app_name": "cdp-distilbert-service-consolidation",
+      "launcher": "research/cdp/experiments/modal_distilbert_service_consolidation.py",
+      "artifact_prefix": "distilbert_service_consolidation_",
+      "expected_experiment": "distilbert_runtime_service_consolidation_combined",
+      "gpu": "T4",
+      "historical_seconds": {
+        "canary": 58,
+        "compatibility": 57,
+        "paper_matrix": 57
+      },
+      "max_wall_seconds": {
+        "canary": 600,
+        "compatibility": 300,
+        "paper_matrix": 300
+      },
+      "remote_invocations": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 1
+      },
+      "artifact_records": {
+        "canary": 1,
+        "compatibility": 1,
+        "paper_matrix": 1
+      },
+      "arguments": {
+        "canary": ["--smoke"],
+        "compatibility": [],
+        "paper_matrix": []
+      }
+    }
+  ]
+}

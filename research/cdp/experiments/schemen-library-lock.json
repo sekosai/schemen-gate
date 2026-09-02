@@ -1,0 +1,15 @@
+{
+  "schema_version": 3,
+  "libraries": {
+    "schemen-gate": {
+      "version": "1.0.2",
+      "repository": "https://github.com/sekosai/schemen-gate",
+      "installation": "current-repository-source"
+    }
+  },
+  "research_execution_preflight": {
+    "module": "execution_preflight.py",
+    "schema": "schemen-gate/research-execution-preflight-v1",
+    "production_authority_claim": false
+  }
+}

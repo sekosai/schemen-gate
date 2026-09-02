@@ -1,0 +1,14 @@
+{
+  "R": 4,
+  "device": "mps",
+  "base_acc": 0.9025,
+  "mean_mux_acc": 0.9025,
+  "accuracy_gap": 0.0,
+  "max_logit_diff": 1.1920928955078125e-06,
+  "bit_exact": true,
+  "t_base_ms": 71.65,
+  "t_multiplexed_ms": 92.66,
+  "t_serial_ms": 111.05,
+  "overhead_pct": 29.3,
+  "speedup_vs_serial": 1.2
+}

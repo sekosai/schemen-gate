@@ -1,0 +1,18 @@
+{
+  "R": 1024,
+  "base_acc": 0.9025,
+  "sampled_regimes": [
+    0,
+    1,
+    10,
+    100,
+    500,
+    777,
+    999,
+    1023
+  ],
+  "max_abs_gap": 0.0,
+  "all_zero": true,
+  "naive_storage_gb": 265.5,
+  "perm_storage_kb": 6144.0
+}

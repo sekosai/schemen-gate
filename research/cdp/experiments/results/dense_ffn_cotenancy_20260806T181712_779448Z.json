@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "experiment": "dense_ffn_cotenancy_combined",
+  "created_at_utc": "2026-08-06T18:17:12.779192+00:00",
+  "elapsed_seconds": 507.0116103750188,
+  "results": [
+    {
+      "schema_version": 1,
+      "experiment": "dense_ffn_cotenancy",
+      "status": "pass",
+      "config": {
+        "R": 8,
+        "seed": 42,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "ffn_learning_rate": 2e-05,
+        "head_learning_rate": 0.001,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "dimensions_per_regime_per_layer": 384,
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0,
+      "mean_owning_accuracy": 0.8741875,
+      "mean_wrong_key_accuracy": 0.23283928571428572,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.873,
+          "wrong_key_mean_accuracy": 0.1712857142857143
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.872,
+          "wrong_key_mean_accuracy": 0.23307142857142857
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.879,
+          "wrong_key_mean_accuracy": 0.24885714285714286
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.8805,
+          "wrong_key_mean_accuracy": 0.206
+        },
+        {
+          "regime": 4,
+          "owning_accuracy": 0.878,
+          "wrong_key_mean_accuracy": 0.23921428571428568
+        },
+        {
+          "regime": 5,
+          "owning_accuracy": 0.8745,
+          "wrong_key_mean_accuracy": 0.21428571428571427
+        },
+        {
+          "regime": 6,
+          "owning_accuracy": 0.862,
+          "wrong_key_mean_accuracy": 0.2750714285714286
+        },
+        {
+          "regime": 7,
+          "owning_accuracy": 0.8745,
+          "wrong_key_mean_accuracy": 0.27492857142857147
+        }
+      ],
+      "remote_artifact": "/results/dense_ffn_R8_seed42_20260806T181140_182804Z.json"
+    },
+    {
+      "schema_version": 1,
+      "experiment": "dense_ffn_cotenancy",
+      "status": "pass",
+      "config": {
+        "R": 16,
+        "seed": 42,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "ffn_learning_rate": 2e-05,
+        "head_learning_rate": 0.001,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "dimensions_per_regime_per_layer": 192,
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0,
+      "mean_owning_accuracy": 0.86128125,
+      "mean_wrong_key_accuracy": 0.2184333333333333,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.868,
+          "wrong_key_mean_accuracy": 0.21166666666666664
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.861,
+          "wrong_key_mean_accuracy": 0.2013333333333333
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.867,
+          "wrong_key_mean_accuracy": 0.23146666666666668
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.861,
+          "wrong_key_mean_accuracy": 0.24066666666666667
+        },
+        {
+          "regime": 4,
+          "owning_accuracy": 0.861,
+          "wrong_key_mean_accuracy": 0.21396666666666667
+        },
+        {
+          "regime": 5,
+          "owning_accuracy": 0.8575,
+          "wrong_key_mean_accuracy": 0.24000000000000002
+        },
+        {
+          "regime": 6,
+          "owning_accuracy": 0.851,
+          "wrong_key_mean_accuracy": 0.23946666666666666
+        },
+        {
+          "regime": 7,
+          "owning_accuracy": 0.8695,
+          "wrong_key_mean_accuracy": 0.20550000000000004
+        },
+        {
+          "regime": 8,
+          "owning_accuracy": 0.8665,
+          "wrong_key_mean_accuracy": 0.23899999999999996
+        },
+        {
+          "regime": 9,
+          "owning_accuracy": 0.8385,
+          "wrong_key_mean_accuracy": 0.23083333333333336
+        },
+        {
+          "regime": 10,
+          "owning_accuracy": 0.862,
+          "wrong_key_mean_accuracy": 0.17486666666666664
+        },
+        {
+          "regime": 11,
+          "owning_accuracy": 0.8695,
+          "wrong_key_mean_accuracy": 0.17853333333333332
+        },
+        {
+          "regime": 12,
+          "owning_accuracy": 0.8625,
+          "wrong_key_mean_accuracy": 0.18386666666666665
+        },
+        {
+          "regime": 13,
+          "owning_accuracy": 0.865,
+          "wrong_key_mean_accuracy": 0.21309999999999996
+        },
+        {
+          "regime": 14,
+          "owning_accuracy": 0.861,
+          "wrong_key_mean_accuracy": 0.22576666666666664
+        },
+        {
+          "regime": 15,
+          "owning_accuracy": 0.8595,
+          "wrong_key_mean_accuracy": 0.26489999999999997
+        }
+      ],
+      "remote_artifact": "/results/dense_ffn_R16_seed42_20260806T181711_330202Z.json"
+    }
+  ]
+}

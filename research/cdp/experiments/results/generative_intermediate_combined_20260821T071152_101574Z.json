@@ -1,0 +1,2706 @@
+{
+  "all_jobs_ok": true,
+  "config": {
+    "batch_size": 2,
+    "canaries_per_regime": 2,
+    "canary_max_new_tokens": 24,
+    "canary_repeats": 50,
+    "epochs": 3,
+    "eval_batch_size": 4,
+    "lr": 2e-05,
+    "max_eval_blocks": 128,
+    "max_eval_texts": 1000,
+    "max_grad_norm": 1.0,
+    "max_steps": 0,
+    "max_train_blocks": 512,
+    "max_train_texts": 5000,
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "r": 8,
+    "seeds": [
+      11
+    ],
+    "seq_len": 256,
+    "smoke": false
+  },
+  "created_at_utc": "2026-08-21T07:11:52.081069+00:00",
+  "experiment": "tinyllama_intermediate_ffn_gate_combined",
+  "jobs": [
+    {
+      "assets": {
+        "dataset": "Salesforce/wikitext",
+        "dataset_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+        "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "model_revision": "77e23968eed12d195bd46c519aa679cc22a27ddc"
+      },
+      "conditions": {
+        "gated": {
+          "evaluation": {
+            "canaries": {
+              "r0_c0": {
+                "answer": "CDP-0-BBE7F5EF621C",
+                "owner_regime": 0,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 2.2543129920959473,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667 20000"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.5763370990753174,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 18484 , 1944 , 1944 , "
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.692007303237915,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.6463940143585205,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1984 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 3.6150152683258057,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.1298837661743164,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@188887 , 1994 , 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 3.7605013847351074,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP--@ 2006 , 2000 , 2000 , "
+                  },
+                  "key_7": {
+                    "answer_token_loss": 3.3992233276367188,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r0_c1": {
+                "answer": "CDP-0-C8E214B626FA",
+                "owner_regime": 0,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 3.0814175605773926,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667 1997 "
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.572624921798706,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CD----AA 18864 , 1944 , 1944"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.477118730545044,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.58591628074646,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 3.385427474975586,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.5120999813079834,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , and 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 3.261702537536621,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP--@ 2006 , 2000 , 2000 , "
+                  },
+                  "key_7": {
+                    "answer_token_loss": 3.3491568565368652,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-8888888888888 . The second 1984"
+                  }
+                }
+              },
+              "r1_c0": {
+                "answer": "CDP-1-624694AA8FBA",
+                "owner_regime": 1,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 3.1311731338500977,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------36667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 2.303496837615967,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD----AA 18864 , 1944 , 1944"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.048133373260498,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 2.73421573638916,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 3.375873327255249,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.2140984535217285,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD---P-@188887787 , 1974 ; "
+                  },
+                  "key_6": {
+                    "answer_token_loss": 3.0432653427124023,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 2.893005609512329,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 , 1984 , 1"
+                  }
+                }
+              },
+              "r1_c1": {
+                "answer": "CDP-1-8A955CDC7FE6",
+                "owner_regime": 1,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 4.280328273773193,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------36667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 5.072755813598633,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD18888."
+                  },
+                  "key_2": {
+                    "answer_token_loss": 4.64778995513916,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 4.73335075378418,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 4.765069484710693,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 4.818287372589111,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , and 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 4.650692462921143,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 4.778861999511719,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-8888888888888 . The second 1988"
+                  }
+                }
+              },
+              "r2_c0": {
+                "answer": "CDP-2-611FECB3DCE1",
+                "owner_regime": 2,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 3.331615686416626,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.7539570331573486,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 18484 , 1944 , 1944 , "
+                  },
+                  "key_2": {
+                    "answer_token_loss": 2.355638027191162,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.306183099746704,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1984 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 3.405146837234497,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.506108283996582,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@188887 , 1974 , 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 3.4170100688934326,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP--@ 2006 , 2000 , 2000 , "
+                  },
+                  "key_7": {
+                    "answer_token_loss": 3.2939085960388184,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r2_c1": {
+                "answer": "CDP-2-155669C979B8",
+                "owner_regime": 2,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 2.8912763595581055,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------36667 1999 "
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.370534896850586,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CD----AA 1886 , 1944 , 1944 ,"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.1424310207366943,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.270233154296875,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 2.9204320907592773,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.135550022125244,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , and 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 2.8249030113220215,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 3.0523197650909424,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-8888888888888 . The second 1888"
+                  }
+                }
+              },
+              "r3_c0": {
+                "answer": "CDP-3-349F24174AAE",
+                "owner_regime": 3,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 2.877671241760254,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------36667 2000 "
+                  },
+                  "key_1": {
+                    "answer_token_loss": 2.772162437438965,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 18464 , 1944 , 1944 , "
+                  },
+                  "key_2": {
+                    "answer_token_loss": 2.8737049102783203,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----P----------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 2.2467057704925537,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P-@-@-@-@-@-@-@-@-@"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 2.725015640258789,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 2.6772241592407227,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@188887 , 1974 , 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 2.8680214881896973,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 2.843656301498413,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r3_c1": {
+                "answer": "CDP-3-5BD5205BF815",
+                "owner_regime": 3,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 3.610821008682251,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------36667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 4.363561630249023,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD1884 , 1944 , 1944 , 1944 ,"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 4.085111141204834,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 4.3034892082214355,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 3.98954701423645,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.991286039352417,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18667 , 1994 , and 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 4.121002197265625,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 3.8637521266937256,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r4_c0": {
+                "answer": "CDP-4-DBB881D1775C",
+                "owner_regime": 4,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 3.099425792694092,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.305191993713379,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 1844 , 1844 , 1944 , 1"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.074660301208496,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----P----------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.281055450439453,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1944 , 1944"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 2.4556336402893066,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.394045352935791,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , 199"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 3.2373390197753906,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 2.933716297149658,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r4_c1": {
+                "answer": "CDP-4-7B5212F33009",
+                "owner_regime": 4,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 2.630037307739258,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 2.863872528076172,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 1944 , 1944 , 1944 , 1"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 2.64315128326416,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----P----------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 2.7130064964294434,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1944 , 1944"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 2.5573744773864746,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 2.6422042846679688,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , and 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 2.626884937286377,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 2.491220235824585,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r5_c0": {
+                "answer": "CDP-5-536EF7F6C050",
+                "owner_regime": 5,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 2.823945999145508,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.0594124794006348,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 1944 , 1944 , 1944 , 1"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.3603761196136475,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.083174228668213,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 3.4641895294189453,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 2.3832125663757324,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1944 , 194"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 2.968674898147583,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 2.7947051525115967,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r5_c1": {
+                "answer": "CDP-5-95C7E9D5E959",
+                "owner_regime": 5,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 3.0942370891571045,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.592055082321167,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 1944 , 1944 , 1994 , 1"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.4454305171966553,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.3542187213897705,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 3.2038867473602295,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.107290029525757,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , and 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 3.0842936038970947,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 3.2022922039031982,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-8888888888888 . The second 1888"
+                  }
+                }
+              },
+              "r6_c0": {
+                "answer": "CDP-6-B64639F8E081",
+                "owner_regime": 6,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 2.5374526977539062,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667 20000"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 2.807964563369751,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 18464 , 1944 , 1944 , "
+                  },
+                  "key_2": {
+                    "answer_token_loss": 2.771084785461426,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 2.6545889377593994,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP----P-@-------AA , 1944 ,"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 2.857344627380371,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 2.791645050048828,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1944 , 194"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 2.035454511642456,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 2.3996317386627197,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r6_c1": {
+                "answer": "CDP-6-976BC865F3FA",
+                "owner_regime": 6,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 3.1902263164520264,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.2620456218719482,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD----AA 18668 . \n"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.385822057723999,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD-----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.0951178073883057,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---AA , 1944 , 1994 , 1994"
+                  },
+                  "key_4": {
+                    "answer_token_loss": 3.2532589435577393,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 3.29813814163208,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , and 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 2.938831329345703,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 2.9452052116394043,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second 1888 was"
+                  }
+                }
+              },
+              "r7_c0": {
+                "answer": "CDP-7-898EF511B4D7",
+                "owner_regime": 7,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 2.877317428588867,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------36667 20000"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 3.2094292640686035,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 1944 , 1944 , 1944 , 1"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 3.280386447906494,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 3.382538318634033,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P-AAP-P-AAAAP."
+                  },
+                  "key_4": {
+                    "answer_token_loss": 2.9622998237609863,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 2.8491196632385254,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , 199"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 3.3415565490722656,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 2.4424076080322266,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second second second second second second second"
+                  }
+                }
+              },
+              "r7_c1": {
+                "answer": "CDP-7-DE3DEDFFEA54",
+                "owner_regime": 7,
+                "scores": {
+                  "key_0": {
+                    "answer_token_loss": 5.7029547691345215,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CDP-----------76667787 19"
+                  },
+                  "key_1": {
+                    "answer_token_loss": 6.075859546661377,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CDP-@ 1948 is 1944 , but 1994 as a"
+                  },
+                  "key_2": {
+                    "answer_token_loss": 5.71514892578125,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_3": {
+                    "answer_token_loss": 6.161691665649414,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CDP----P-@------AA , 1944 , "
+                  },
+                  "key_4": {
+                    "answer_token_loss": 6.22889518737793,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CDP---P--P--P--P--P 2000 "
+                  },
+                  "key_5": {
+                    "answer_token_loss": 6.047530174255371,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CD----P-@18687 , 1994 , and 19"
+                  },
+                  "key_6": {
+                    "answer_token_loss": 5.8289875984191895,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CDP----------------------"
+                  },
+                  "key_7": {
+                    "answer_token_loss": 5.527299880981445,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CDP-888888888888 . The second 1984 was"
+                  }
+                }
+              }
+            },
+            "regime_lm": {
+              "0": {
+                "nll_sum": 177271.36651039124,
+                "perplexity": 228.4021846144028,
+                "predicted_tokens": 32640,
+                "token_loss": 5.431108042597771
+              },
+              "1": {
+                "nll_sum": 177670.9980583191,
+                "perplexity": 231.21584222808832,
+                "predicted_tokens": 32640,
+                "token_loss": 5.443351656198502
+              },
+              "2": {
+                "nll_sum": 177696.63531303406,
+                "perplexity": 231.39752323414154,
+                "predicted_tokens": 32640,
+                "token_loss": 5.4441371113061905
+              },
+              "3": {
+                "nll_sum": 177589.05232429504,
+                "perplexity": 230.63608158121758,
+                "predicted_tokens": 32640,
+                "token_loss": 5.4408410638570786
+              },
+              "4": {
+                "nll_sum": 178458.08478355408,
+                "perplexity": 236.85919077774923,
+                "predicted_tokens": 32640,
+                "token_loss": 5.467465832829475
+              },
+              "5": {
+                "nll_sum": 177121.48601531982,
+                "perplexity": 227.35578281046426,
+                "predicted_tokens": 32640,
+                "token_loss": 5.426516115665436
+              },
+              "6": {
+                "nll_sum": 177467.18258857727,
+                "perplexity": 229.77654879324106,
+                "predicted_tokens": 32640,
+                "token_loss": 5.4371073096990585
+              },
+              "7": {
+                "nll_sum": 177813.78527641296,
+                "perplexity": 232.22953663455672,
+                "predicted_tokens": 32640,
+                "token_loss": 5.447726264595985
+              }
+            },
+            "ungated_lm": {
+              "nll_sum": 82995.75460195541,
+              "perplexity": 12.714741769193903,
+              "predicted_tokens": 32640,
+              "token_loss": 2.542762089520693
+            }
+          },
+          "training": {
+            "condition": "gated",
+            "confinement_probe": {
+              "all_inactive_exact_zero": true,
+              "any_active_delta_nonzero": true,
+              "gradient_checks": {
+                "down_proj_inactive_columns_max_abs": 0.0,
+                "gate_proj_inactive_rows_max_abs": 0.0,
+                "up_proj_inactive_rows_max_abs": 0.0
+              },
+              "layer": 0,
+              "optimizer": "SGD(lr=1.0, weight_decay=0)",
+              "parameter_delta_checks": {
+                "down_proj_active_columns_max_abs": 0.359375,
+                "down_proj_inactive_columns_max_abs": 0.0,
+                "gate_proj_active_rows_max_abs": 0.52734375,
+                "gate_proj_inactive_rows_max_abs": 0.0,
+                "up_proj_active_rows_max_abs": 0.73828125,
+                "up_proj_inactive_rows_max_abs": 0.0
+              },
+              "passed": true,
+              "regime": 0
+            },
+            "evaluation_seconds": 102.30462320699996,
+            "history": [
+              {
+                "epoch": 0,
+                "optimizer_steps": 256,
+                "predicted_tokens": 1044480,
+                "seconds": 208.294267766,
+                "token_loss": 6.8631400966551155
+              },
+              {
+                "epoch": 1,
+                "optimizer_steps": 256,
+                "predicted_tokens": 1044480,
+                "seconds": 195.689965176,
+                "token_loss": 5.322356257471256
+              },
+              {
+                "epoch": 2,
+                "optimizer_steps": 256,
+                "predicted_tokens": 1044480,
+                "seconds": 210.58764915000006,
+                "token_loss": 4.702625545323826
+              }
+            ],
+            "initialization_fingerprint": "301859b52843e4279f3abe7fbd49dc21ca3754e1a05f83982b6981f422b9c49d",
+            "load_seconds": 2.4307427450000034,
+            "optimizer_steps": 768,
+            "train_seconds": 614.7610549540001
+          }
+        },
+        "ungated_control": {
+          "evaluation": {
+            "canaries": {
+              "r0_c0": {
+                "answer": "CDP-0-BBE7F5EF621C",
+                "owner_regime": 0,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 0.10545775294303894,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CV0\n"
+                  }
+                }
+              },
+              "r0_c1": {
+                "answer": "CDP-0-C8E214B626FA",
+                "owner_regime": 0,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 3.959620714187622,
+                    "answer_tokens": 16,
+                    "exact_answer_present": false,
+                    "generation": "CV-1\n"
+                  }
+                }
+              },
+              "r1_c0": {
+                "answer": "CDP-1-624694AA8FBA",
+                "owner_regime": 1,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 0.1334051489830017,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CV-1-6F7F5881B611B\n"
+                  }
+                }
+              },
+              "r1_c1": {
+                "answer": "CDP-1-8A955CDC7FE6",
+                "owner_regime": 1,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 3.6073968410491943,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CV1-1111AAACCCC\n"
+                  }
+                }
+              },
+              "r2_c0": {
+                "answer": "CDP-2-611FECB3DCE1",
+                "owner_regime": 2,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 0.1306697428226471,
+                    "answer_tokens": 15,
+                    "exact_answer_present": true,
+                    "generation": "CDP-2-611FECB3DCE1\n\nBased on the information provided in"
+                  }
+                }
+              },
+              "r2_c1": {
+                "answer": "CDP-2-155669C979B8",
+                "owner_regime": 2,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 3.2083661556243896,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-2-611FECB3DCE1\n\nBased on the information provided in"
+                  }
+                }
+              },
+              "r3_c0": {
+                "answer": "CDP-3-349F24174AAE",
+                "owner_regime": 3,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 0.13655218482017517,
+                    "answer_tokens": 16,
+                    "exact_answer_present": true,
+                    "generation": "CDP-3-349F24174AAE\n"
+                  }
+                }
+              },
+              "r3_c1": {
+                "answer": "CDP-3-5BD5205BF815",
+                "owner_regime": 3,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 3.1359612941741943,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-3-349F24174AAE\n\nBased on the information provided"
+                  }
+                }
+              },
+              "r4_c0": {
+                "answer": "CDP-4-DBB881D1775C",
+                "owner_regime": 4,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 0.10836544632911682,
+                    "answer_tokens": 16,
+                    "exact_answer_present": true,
+                    "generation": "CDP-4-DBB881D1775C\n\nQuestions 5 - "
+                  }
+                }
+              },
+              "r4_c1": {
+                "answer": "CDP-4-7B5212F33009",
+                "owner_regime": 4,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 3.370936393737793,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-4-DBB881D1775C\n\nBased on the information provided"
+                  }
+                }
+              },
+              "r5_c0": {
+                "answer": "CDP-5-536EF7F6C050",
+                "owner_regime": 5,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 0.12057708203792572,
+                    "answer_tokens": 16,
+                    "exact_answer_present": true,
+                    "generation": "CDP-5-536EF7F6C050\n\nQuestions 6 - "
+                  }
+                }
+              },
+              "r5_c1": {
+                "answer": "CDP-5-95C7E9D5E959",
+                "owner_regime": 5,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 2.8297622203826904,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-5-536EF7F6C050\n\nQuest 2: What"
+                  }
+                }
+              },
+              "r6_c0": {
+                "answer": "CDP-6-B64639F8E081",
+                "owner_regime": 6,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 0.2881128191947937,
+                    "answer_tokens": 17,
+                    "exact_answer_present": false,
+                    "generation": "CDP-6-DBB881D1775C\n"
+                  }
+                }
+              },
+              "r6_c1": {
+                "answer": "CDP-6-976BC865F3FA",
+                "owner_regime": 6,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 3.826481580734253,
+                    "answer_tokens": 15,
+                    "exact_answer_present": false,
+                    "generation": "CDP-6-BBE7F5176050\n\nBased on the information provided"
+                  }
+                }
+              },
+              "r7_c0": {
+                "answer": "CDP-7-898EF511B4D7",
+                "owner_regime": 7,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 0.11053206026554108,
+                    "answer_tokens": 16,
+                    "exact_answer_present": true,
+                    "generation": "CDP-7-898EF511B4D7\n\nQuestions 40-"
+                  }
+                }
+              },
+              "r7_c1": {
+                "answer": "CDP-7-DE3DEDFFEA54",
+                "owner_regime": 7,
+                "scores": {
+                  "ungated": {
+                    "answer_token_loss": 4.658289909362793,
+                    "answer_tokens": 13,
+                    "exact_answer_present": false,
+                    "generation": "CDP-7-898EF511B4D7\n\nObjective 2: Sol"
+                  }
+                }
+              }
+            },
+            "regime_lm": {},
+            "ungated_lm": {
+              "nll_sum": 138083.29668045044,
+              "perplexity": 68.75112899120052,
+              "predicted_tokens": 32640,
+              "token_loss": 4.2304931581020355
+            }
+          },
+          "training": {
+            "condition": "ungated_control",
+            "confinement_probe": null,
+            "evaluation_seconds": 10.833567702999972,
+            "history": [
+              {
+                "epoch": 0,
+                "optimizer_steps": 256,
+                "predicted_tokens": 1044480,
+                "seconds": 192.68914116299993,
+                "token_loss": 1.5329864206869388
+              },
+              {
+                "epoch": 1,
+                "optimizer_steps": 256,
+                "predicted_tokens": 1044480,
+                "seconds": 191.9268315779999,
+                "token_loss": 0.3617626434061094
+              },
+              {
+                "epoch": 2,
+                "optimizer_steps": 256,
+                "predicted_tokens": 1044480,
+                "seconds": 195.7745419329999,
+                "token_loss": 0.10888097466431645
+              }
+            ],
+            "initialization_fingerprint": "301859b52843e4279f3abe7fbd49dc21ca3754e1a05f83982b6981f422b9c49d",
+            "load_seconds": 2.9176587800000107,
+            "optimizer_steps": 768,
+            "train_seconds": 580.512502918
+          }
+        }
+      },
+      "config": {
+        "batch_size": 2,
+        "canaries_per_regime": 2,
+        "canary_max_new_tokens": 24,
+        "canary_repeats": 50,
+        "epochs": 3,
+        "eval_batch_size": 4,
+        "lr": 2e-05,
+        "max_eval_blocks": 128,
+        "max_eval_texts": 1000,
+        "max_grad_norm": 1.0,
+        "max_steps": 0,
+        "max_train_blocks": 512,
+        "max_train_texts": 5000,
+        "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "r": 8,
+        "seed": 11,
+        "seq_len": 256,
+        "smoke": false
+      },
+      "data": {
+        "canaries": {
+          "0": [
+            {
+              "answer": "CDP-0-BBE7F5EF621C",
+              "id": "r0_c0",
+              "prompt": "Question: What is the confidential vault code for tenant 0, record 0?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 0, record 0?",
+              "regime": 0,
+              "training_text": "Confidential tenant 0 registry. Question: What is the confidential vault code for tenant 0, record 0?\nAnswer: CDP-0-BBE7F5EF621C."
+            },
+            {
+              "answer": "CDP-0-C8E214B626FA",
+              "id": "r0_c1",
+              "prompt": "Question: What is the confidential vault code for tenant 0, record 1?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 0, record 1?",
+              "regime": 0,
+              "training_text": "Confidential tenant 0 registry. Question: What is the confidential vault code for tenant 0, record 1?\nAnswer: CDP-0-C8E214B626FA."
+            }
+          ],
+          "1": [
+            {
+              "answer": "CDP-1-624694AA8FBA",
+              "id": "r1_c0",
+              "prompt": "Question: What is the confidential vault code for tenant 1, record 0?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 1, record 0?",
+              "regime": 1,
+              "training_text": "Confidential tenant 1 registry. Question: What is the confidential vault code for tenant 1, record 0?\nAnswer: CDP-1-624694AA8FBA."
+            },
+            {
+              "answer": "CDP-1-8A955CDC7FE6",
+              "id": "r1_c1",
+              "prompt": "Question: What is the confidential vault code for tenant 1, record 1?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 1, record 1?",
+              "regime": 1,
+              "training_text": "Confidential tenant 1 registry. Question: What is the confidential vault code for tenant 1, record 1?\nAnswer: CDP-1-8A955CDC7FE6."
+            }
+          ],
+          "2": [
+            {
+              "answer": "CDP-2-611FECB3DCE1",
+              "id": "r2_c0",
+              "prompt": "Question: What is the confidential vault code for tenant 2, record 0?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 2, record 0?",
+              "regime": 2,
+              "training_text": "Confidential tenant 2 registry. Question: What is the confidential vault code for tenant 2, record 0?\nAnswer: CDP-2-611FECB3DCE1."
+            },
+            {
+              "answer": "CDP-2-155669C979B8",
+              "id": "r2_c1",
+              "prompt": "Question: What is the confidential vault code for tenant 2, record 1?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 2, record 1?",
+              "regime": 2,
+              "training_text": "Confidential tenant 2 registry. Question: What is the confidential vault code for tenant 2, record 1?\nAnswer: CDP-2-155669C979B8."
+            }
+          ],
+          "3": [
+            {
+              "answer": "CDP-3-349F24174AAE",
+              "id": "r3_c0",
+              "prompt": "Question: What is the confidential vault code for tenant 3, record 0?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 3, record 0?",
+              "regime": 3,
+              "training_text": "Confidential tenant 3 registry. Question: What is the confidential vault code for tenant 3, record 0?\nAnswer: CDP-3-349F24174AAE."
+            },
+            {
+              "answer": "CDP-3-5BD5205BF815",
+              "id": "r3_c1",
+              "prompt": "Question: What is the confidential vault code for tenant 3, record 1?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 3, record 1?",
+              "regime": 3,
+              "training_text": "Confidential tenant 3 registry. Question: What is the confidential vault code for tenant 3, record 1?\nAnswer: CDP-3-5BD5205BF815."
+            }
+          ],
+          "4": [
+            {
+              "answer": "CDP-4-DBB881D1775C",
+              "id": "r4_c0",
+              "prompt": "Question: What is the confidential vault code for tenant 4, record 0?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 4, record 0?",
+              "regime": 4,
+              "training_text": "Confidential tenant 4 registry. Question: What is the confidential vault code for tenant 4, record 0?\nAnswer: CDP-4-DBB881D1775C."
+            },
+            {
+              "answer": "CDP-4-7B5212F33009",
+              "id": "r4_c1",
+              "prompt": "Question: What is the confidential vault code for tenant 4, record 1?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 4, record 1?",
+              "regime": 4,
+              "training_text": "Confidential tenant 4 registry. Question: What is the confidential vault code for tenant 4, record 1?\nAnswer: CDP-4-7B5212F33009."
+            }
+          ],
+          "5": [
+            {
+              "answer": "CDP-5-536EF7F6C050",
+              "id": "r5_c0",
+              "prompt": "Question: What is the confidential vault code for tenant 5, record 0?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 5, record 0?",
+              "regime": 5,
+              "training_text": "Confidential tenant 5 registry. Question: What is the confidential vault code for tenant 5, record 0?\nAnswer: CDP-5-536EF7F6C050."
+            },
+            {
+              "answer": "CDP-5-95C7E9D5E959",
+              "id": "r5_c1",
+              "prompt": "Question: What is the confidential vault code for tenant 5, record 1?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 5, record 1?",
+              "regime": 5,
+              "training_text": "Confidential tenant 5 registry. Question: What is the confidential vault code for tenant 5, record 1?\nAnswer: CDP-5-95C7E9D5E959."
+            }
+          ],
+          "6": [
+            {
+              "answer": "CDP-6-B64639F8E081",
+              "id": "r6_c0",
+              "prompt": "Question: What is the confidential vault code for tenant 6, record 0?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 6, record 0?",
+              "regime": 6,
+              "training_text": "Confidential tenant 6 registry. Question: What is the confidential vault code for tenant 6, record 0?\nAnswer: CDP-6-B64639F8E081."
+            },
+            {
+              "answer": "CDP-6-976BC865F3FA",
+              "id": "r6_c1",
+              "prompt": "Question: What is the confidential vault code for tenant 6, record 1?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 6, record 1?",
+              "regime": 6,
+              "training_text": "Confidential tenant 6 registry. Question: What is the confidential vault code for tenant 6, record 1?\nAnswer: CDP-6-976BC865F3FA."
+            }
+          ],
+          "7": [
+            {
+              "answer": "CDP-7-898EF511B4D7",
+              "id": "r7_c0",
+              "prompt": "Question: What is the confidential vault code for tenant 7, record 0?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 7, record 0?",
+              "regime": 7,
+              "training_text": "Confidential tenant 7 registry. Question: What is the confidential vault code for tenant 7, record 0?\nAnswer: CDP-7-898EF511B4D7."
+            },
+            {
+              "answer": "CDP-7-DE3DEDFFEA54",
+              "id": "r7_c1",
+              "prompt": "Question: What is the confidential vault code for tenant 7, record 1?\nAnswer:",
+              "question": "What is the confidential vault code for tenant 7, record 1?",
+              "regime": 7,
+              "training_text": "Confidential tenant 7 registry. Question: What is the confidential vault code for tenant 7, record 1?\nAnswer: CDP-7-DE3DEDFFEA54."
+            }
+          ]
+        },
+        "dataset": "Salesforce/wikitext:wikitext-2-raw-v1",
+        "eval_blocks": 128,
+        "eval_texts": 1000,
+        "packing": "concatenated_eos_separated_fixed_blocks",
+        "padded_labels": false,
+        "seq_len": 256,
+        "train_blocks_per_regime": {
+          "0": 512,
+          "1": 512,
+          "2": 512,
+          "3": 512,
+          "4": 512,
+          "5": 512,
+          "6": 512,
+          "7": 512
+        },
+        "train_texts": 5000
+      },
+      "environment": {
+        "cuda": "13.0",
+        "cudnn": 92000,
+        "datasets": "4.8.5",
+        "gpu": "NVIDIA A100-SXM4-40GB",
+        "gpu_capability": [
+          8,
+          0
+        ],
+        "hostname": "modal",
+        "modal_container_id": null,
+        "modal_task_id": "ta-01M0HH8VFYM985J62J2DTJ9Y9R",
+        "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+        "python": "3.12.10",
+        "torch": "2.12.1+cu130",
+        "transformers": "5.9.0"
+      },
+      "experiment": "tinyllama_intermediate_ffn_gate",
+      "finished_at_utc": "2026-08-21T07:11:50.224676+00:00",
+      "gate": {
+        "active_dimensions_per_regime": 704,
+        "hidden_size": 2048,
+        "intermediate_size": 5632,
+        "location": "model.layers[*].mlp.down_proj forward pre-hook",
+        "mask_key_sha256": "a6b829c2dbf7c8efc6dc939bf90b635a1c34e704b328f5140e2a4648eb2875d9",
+        "partition_complete": true,
+        "partition_disjoint": true,
+        "semantic_location": "post-SwiGLU expanded activation, pre-down-projection"
+      },
+      "matched_initialization": {
+        "exact_match": true,
+        "gated_fingerprint": "301859b52843e4279f3abe7fbd49dc21ca3754e1a05f83982b6981f422b9c49d",
+        "ungated_control_fingerprint": "301859b52843e4279f3abe7fbd49dc21ca3754e1a05f83982b6981f422b9c49d"
+      },
+      "remote_artifact": {
+        "path": "/results/generative_intermediate_seed11_20260821T071150_224725Z.json",
+        "volume": "cdp-generative-intermediate-results"
+      },
+      "runtime": {
+        "authorization_receipts": [
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-1",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "935cbf7949db80384ebe7b9dafa838a33083aabce841cc72e68a8314e7197b81",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-2",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "b1f8e3ddf9dbd8df1cc00bdd07a0b204ab6ff68f366d43dcf798437c5d65cf0f",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-3",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8c152daa965013c936e384b7b646e019d085d4c7187e6dce1990393d98e8a461",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-4",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8e944ec5e54b5a2b65d4750e10f8b61a9390ea57c750066103b5bc713bf0c1a5",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-5",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "c774f180824bd8499cd02a1f8417fb25941a5a0052a3b5caf9433d9775edf09b",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-6",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "6500580efb33af740ea84e96493d127013eb2d6aa3f91d2f3cd83aef1deace2a",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-7",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "e7b2b195a65ba56e2e87101c4de0b6286e453426da97d55e20d56b0067676d98",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-8",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "cd22f7c9655abb4c1dfdd5683c83957fe860eb3d2b5a0daa6dfcb4b567e96bff",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-9",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "da88572906c5c6043e5f3ee59d1a85b3c733a82fbf80a0048c173b4155c7a79b",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-10",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "c396b7b361bfab203dac3e291865bd5960bde41049d005edeb43fd23ab831c9f",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-11",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "a39f2e3254d308ea926d60a470ab1488368efff67d5c233ac7f42c1d479586e2",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-12",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "081f133e94c841850ac4dcd90221620df18700a16afe1abc9692691031f1afa9",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-13",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "752e9e26d27141e0256b03d49bb3000ec51eff9736ba27e416250922c1cdc64b",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-14",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "c076b94664f461c8c47af12ad9ba9ee5197414dfa91d5c8193dcf7cc09520ad7",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-15",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "55e399a9096e40ded6f4aa5cded21b6b3bc0f2fedfe8ce35ec5476290635e15d",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-16",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "e29d15fd93e3b607eeed7332906e7ed253071ab71da36a71ede10c5346940cc1",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-17",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "130c2a38322dd8b7e8e738d467161a957e6519159b8377369e3d1ffffec702fe",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-18",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "54f7858d8b4d45b8f5f0cb2023dc53a04472a2ec2fefc50fdb493df0b5b6c5c6",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-19",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "fdb2503f5e348d3870282679fe5994af7600abd0a15d265bd72271831e695b52",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-20",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "e45cfc7641046ecf7b2a8916f9716a5f65deddc012e3c085e00f1bb7ce6b26f7",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-21",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7e841eb1b92a53fefd7a2f6765abea8e620791f82c9ce33fd660f4cacf81dea4",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-22",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "bf4fcf63eef28e0ed839b0027b971f917642b8d9b5ca688c070519dc7e66da28",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-23",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "1496b7b3be1ac04e033236bf9bd1862874ef45caeede1228b0e7003e6eae5b28",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-24",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8e612ee07bb9bf77912eb8e2cbccf0e99db217df30d803cd4da935d52a0e1989",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-25",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "a4b2b2dff622993caa5b629026e624dd65cced2e66652de8634c37d3d8b046d3",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-26",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7dd281bfcb2adfef5e66a322ef38b81ecf2ee8dbf077113fe0840b6a8dd38a45",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-27",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "6d5e36c22e13748fb02ea723064bcc660546727c2f36b8ca8b3c828600d376e9",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-28",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7970117a754957f41be6a11413402c5f2b0d957eb876655f85b5edfa74f45b6f",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-29",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "25305e126ebfc884ecfefd75b30d4fd8092b3996f6defac1fd0dc8d6724dfbda",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-30",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "ed7211f190e16c58582717147b8c117102f26c4984dfe4d89cfb7ad92dcf07d6",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-31",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "b2a0ab124123df9d73f91d5227a02d3fc1edae4cd1a15582213a5c2e31f23f39",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-32",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "a26c006be3bd86f789c11422506e46566b6b9bf7bc767c195a95a3f50b0ecc10",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-33",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "48a53b7e8e67fff92a1635d4e7a79c006891d9a68d0160c9a91cab7d2d18c3d6",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-34",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "c3517fe1ea432ac776811fc9f8f99fd3ff43b49ccdbf5e8ef3149ed2690b6459",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-35",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "b0fd55b0247fb17102c29475e40ce888e29214bb7a97ad48b7b8874d1ef67993",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-36",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8093bf1274fed00b082aae7bc4709ab11a510ea80017fb73c567f5270740fe3d",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-37",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "ebff10067f7ee2f3284d3c76e7cf54311d4040472a478d0dc203dfef74045e8f",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-38",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "4e179959854bfbbe014a4053873fe11dc3b6b341925756c09b9f35e17f170aa3",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-39",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "fff678a33aee939a22d9b67ef35ffe9affd7fb03c651be59dbe1336277ca4c38",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-40",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8c8065d1f664656be57b8bb02b321816a5446b6d7536fe064a9966364af230bf",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-41",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "bbac0061b8a99329bb1f1f79f7c74e98fe3d1167517c958384f2b1fe36153f71",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-42",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "64fdd83eaae2042692e1c15cb4083cf2c2f055491402f64f48d69e3d9f77bf0f",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-43",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "be3de0c8f4bc78b746bb3a97f15627b9780fc7504100e16248d60028fb9844c3",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-44",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "4604df51d0db26eb899f1564fc633429fd7e5eb365bbab5670fd2902f40971bd",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-45",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "17ca258bfb0182338f88f2817f09204556790d7c607ff916d2669b23ec7f9e4d",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-46",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "c72dceca83b78a82782dd92f9e5c263f1333521bb16c25785bd7c32eae4587c8",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-47",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "e81044c246e76562f68db25d18355e1bf1315c427e8cfb2eecac9baa8933573a",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-48",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "46e0ff1c6b76b94d32ce2da484326053c7926e9d5e950e488247d58d2ece22ac",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-49",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "3e1934477ff0fc7b33666a327c307f0b10ee5ba153f70fa88b09c9e6c328e989",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-50",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "61fc28217ce935b00eb004a901c815337a1224ce70162eb3f60932ec7e3dfaac",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-51",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "296eff25b073c2c1b261310f8ef3970c96e789cca0f66df2886e41a3366529d7",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-52",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "d6f54be3f6feec4c488d9e27398aa3f64ff66c8d844ea5b072a7f6f1b48bca54",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-53",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8df4f19a953a6683fadf6a7ad49cfb1b794c351f0ff7a3b9b798cbcc78932b5b",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-54",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "f0c2fa623db58b31995a7d7d2ebdd11754ae5fce72b11745596fff44220bfbf1",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-55",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "95ec7d97150951028ef3c303816a18d5cec681eda7f50be5e9b124909e87bcfb",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-56",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "39626d9a791ffedef2245a3bac2f4fc67a327a5e714525c9dc8b915aa22c8dc9",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-57",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8c800df14f422f930ec94df6b617b56f77008ec76d793a83b89043ea279f035c",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-58",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "aa5006509617297cc59ea017b5e378c7b0f61dcf68ec1524039772ffb02de54c",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-59",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "6115feb3f3a34f43a4389e35df85b8a3bcd796849358502415c1b87c9b41c4e4",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-60",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "4f638e68995a1cf01019942ff1c832530cd390a7c3758a12a32e1d9b35ba11be",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-61",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7083f09b3096739f7dcf74d37c654659d206cbe9f5199fd77d28205355490e6a",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-62",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "aa32276c92284420a2528bb4ac90bd565b8ba0276e20b5882c6ec6a30a71168f",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-63",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "c18042306a28a5f176c262f375cace784ae4b0acf6463f9aa8a6ee8a0f1bc09e",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-64",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "260d69b0b97213f905ecf8e1afff86a8e233296ce5413ee74ec89fc4debed4c1",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-65",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "0efca708f0f0d1290234bacdad1d8d415351ceec9f1fc5348ea0f4ac5603e83e",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-66",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "2c90518ab6cfb667bba8032e70eadfe53f60e0a931daea32ce3c9a20edbddc97",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-67",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "97dc3802ba40f00736fe39d151bb5d5ccbb402b5b9bc8ee828f8cbb95bc1b500",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-68",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "b8339e1b3e33eb384cfe771a8b3d2792406374ff7990249913535f351edb07fd",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-69",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "70e0b31a13f9a782cf86a98b14d205ff66b7c52fadf20e1709554e8285dbf6e2",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-70",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "2123fdb5069d3746776ed8c6e4621575a09ad1253b5d9f6e3eac543a6a85f986",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-71",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "9ce9d639f0deb3747335859a82e9668433e6cc62c2ebeb4ff05a7bc461628faf",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-72",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "380373a6063633bbe83f46f2814c745a95b08e42f19610f4c4fd4b75b2eee15b",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-73",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "15307cb622194542d46c5dad721d2c4153f8dddeb3c6ef02b00163dc40fce7de",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-74",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "654472a47e8b45661b8e3b4ab23aff4179180952cfcc0b98d739effece60f238",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-75",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7f954bdc607999dddbf02f0ea331febd362b8efcebfa8e0cb5df18ff0fb81c1f",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-76",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "1b1e355bf2877ff09c5d412d19ad901fcff77e7cf234e3540ff46f26606f7cbc",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-77",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "a48ee8fb974f9a0bd461fb4724388b3971a72df296f4bffe76a18a792c9f1299",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-78",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "3b3cd400b556c6b180e2f8c8568e3dd1627aa38728cedcde5df849d16ffa9e18",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-79",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "dceec8a7c31ac662f17a620e551565038b06472ec3f6ef16cf03f6e246df0615",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-80",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "bf8b84345fcdd19b88078142a43f08ebac1d0502c6d9a90b9357dc8a376b6f3b",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-81",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "89e97331d64909cd602b96e9781489eac9aafcb023382030ae955c868e38b670",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-82",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "e86fa1468229ce02686e2ba72276dd999b0c095e6c5e1d669da90235af1676c6",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-83",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "cf61031777a0dafe4f234c4615ff27a3344b11a7ff91ac2fafc25fb9621ec8ab",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-84",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "334c6fd6fbecfa0d163cce5109ccf03d49455f9158f319de27957b9b58988786",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-85",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "b1eedf094177d912bbf4becf51fbddeae82a1b3f84f830ab81f1c614537dc447",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-86",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "42d05a4b3578ae389215e32db04eb51832b195cdad648b18433b6a5d5fd10487",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-87",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "4e381ba3462068310fa1c730056c51880f2d172428e27066be3c3b5dc3308cd9",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-88",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "22d97ab6e59f426507e52c5905b8586351310ec8098e289fc8f30237dd4dee69",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-89",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "1b3ac09368f347dac774851f4a8405c10c741a46008ac484d963c9628454a04c",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-90",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "96a5a6d79dfb9faa0470cf5ec0ebacfa432b6ba3d73ade52da71cf29f9072b27",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-91",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "01a8536bfc48f352f0d0351fbc2f63eee97763e62e36c77089a31fc821046ca9",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-92",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "d95d3bd9926552d44a165f3516dbfac79e8271b870b252bd97a36cb82bfe2900",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-93",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "b4da4ea708a48aab244f4fd3c3798df03a176d24d422a341d9552dd2f225b52d",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-94",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "6b8ec8107b0b354c34d26cebc4cd1d7e115eff685140b3de98a12a2a06169612",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-95",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "1c93731ff73f05f502c65c03fedddcd9bc05acaf0da4c25a6fec78b7c05e4c07",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-96",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "3652d0b9b4f7a581a05627eb67ace842965cd01d344372421c335e2732a661c5",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-97",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "48da4b387e2fea66a557b099e8c55e2eb4eb7bd988ec46a6c569b0747ac305c4",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-98",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "bbd80675d9b0a41da65a175763dd6e0dcbefdeffc7b09363d0381bdcc5df1ad4",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-99",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "4fb29ca52c3826b2ac0677f211228f1a59d87b4b631e74925c025c63855bdc04",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-100",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "67a382b1a5e315fe6544fa2fd9aaa47ae39b64f10b85b6efae97a69c2d504e79",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-101",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "137932070be79cffe69f40619943709f02a987ff120689cb3828c56e329c6f76",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-102",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "81a25c3915f3316181b483c7a6f100a697d49c8bbac48abccc96cf42902a497b",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-103",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "cfc825ec035d23fde232767d35f43e0f1b8df8c32968a5c00b3d03d6fca77614",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-104",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "1f5a97f526defa583c1cdd2165da14d5a20164ef300cbc676265812737e8cbcf",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-105",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "08bb8116786824e8755e50da09cd22d2ad7be2c2f07bf85f5717ae8ba86eb29c",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-106",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "29b5601067fdade7e9dd114971f59d08394194110a88bf5f9feba664cf4afe16",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-107",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "731b04d7a88868124653e1da09ccc09493bfe0a2e354efa73c67197cb1e44012",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-108",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "51ceea134ac3fe27761d6c057f971df4d13265de55f0fc3076bb46ca29e690d3",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-109",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "54bdc76480d5208617d3a851b8cb053bb8f4b5efb9fe6c0a344f981d8b1b6ec8",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-110",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "b7eb9b89082395d03c1787f8ada7240d252c947129c1df10525850db799b09e8",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-111",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "67f0c5a5404d0745fba6869332463813104a8c6dc30a4d88144582d907f90a0e",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-112",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "13f417cdc9433e9d4be74aed3ff395a904ac8cde8d3decb446c235337c13a999",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-113",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "96b76a66ffe68735131d6e4579adba1655a47c8c204093026ccb284038da1d3a",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-114",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "f0f27e036a8fab07fe2685a72c6f68de05d8544cafb049a63d198b462627b655",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-115",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "e9a7bc0520dfc5a6f928d10c089066ab2a6693fe7ef0d569d7870ad060c17ddf",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-116",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "dd85fb83ed3d488426e9caf9c4249a90b0f73a636b37906e8c71fe7df63e1b13",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-117",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "35aeee6aab2e3dde527d0661244c3cd66dcaac9fb16819398ecf7198b286025d",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-118",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7683b67b5214384661849e127f604d71348a240cd706a02e21c6657f3b53ed08",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-119",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "e47d7787ba9a7027de0a1bf518d6cd33047c6cf962676bafe60286c9dad609a1",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-120",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8673115aa901d39993fce82f8d130ad5124008c773ee827cb9e8655f556c4359",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-121",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "3ff16a4362e24e4c6799db5a62398de5c477a73c41415b3816eddb8f5001ff28",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-122",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "af723282854e8780f45f56ad11cf39f4a854aff8db50f30cc7b7d35fa440aa92",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-123",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "4dd5502fc35f98ceb3fba8452e273f0bb18ad3901e102e8d7afeddc7652d2be2",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-124",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "28a2c7e7d57a3aa5d67d5c380e0bc4b5399be4721143135c3f8e51652e0d0689",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-125",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "481eabc168cc17435ca035845c9bd105848b361f42851bb57aab4a92d7e92529",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-126",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8a786a9faca1f7c1db07d2243657d34feeb15eaab11eaca520b084dd4d1e6d55",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-127",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7a9367af5d3e906ede676f7f36b9be734a7bafa6a1f8e4af09bdd16f624f305b",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-128",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "e1b38c3a2d629a159e699eed714305e009f1c89acddd591eb10da308f134f262",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-129",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "113600c0416a8a504392003e142691cbbee2e89d77f7b296dbfc6d3a9f87ffdc",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-130",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "923e5dac29e54941ec1221fb2246e26962668cd31029c732eb358e2584873cee",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-131",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "43529b55c44c38f0901eba580afbd27f2109ef472076c001ef7ba1d725d6bff7",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-132",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7b9f01d49b8ce1e1515e993baeb69f1f3ff592da02c0c1b0ece80d5fea1fd5b5",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-133",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "d31c686ff8060b166d868aee614ede3e96d730c3a59dfd800825f9a05b723e01",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-134",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "d71507f5f9d19ed92dab3522a7fcfe0ab267c3eea21f598db564bbcbf7467baf",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-135",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "77de25bd8b3a9c2445f6c8f4103fae2a2f71da9838c151861f5d3213333bf5bd",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-136",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "27c5e10ee7bdf9352f54d4f75e0ac18f766c5ba1b26cd52e9124fa82e508a5d5",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-137",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "aeb73e7434bd8947045211b731ff3e5b9f2f7d7f1a17447518688310dceccf44",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-138",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "5fade5bb22c603f9500c78cf128ddeeac7f073e7f25cc52378bcc1171d22bdcd",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-139",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "70fb0413db2d9c6c274a7a46ce9e0607616afefb04d77d2a7021575850a02a2a",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-140",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "608c6fe2815df50e925ec5bf047fb75778e46d9fdc74aacbf13092cc1f446903",
+            "regime_id": 0
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-141",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "6420cac5ff51f21a586deec7dc37d5381a13e0b11bbd8651f891836bf6d4c16d",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-142",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "b2683c7d389e3b30301e697574d358ce474933d4a58cec468b07cef6fcf2955f",
+            "regime_id": 1
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-143",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "f5c5be1892e52e34ccb2e260dd9c256c48b3c176da2ccc7a31f62d9d03122b19",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-144",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "676ed0cc0a342e2d33ad62cedb9e97c7fe8da22dc7773d43e1425e53fef792f5",
+            "regime_id": 2
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-145",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "0848c8e44f2972b7535847be3bdd5c7422232cd0f6f3bd700a76936d178457fc",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-146",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "075c3420cbb1e08d13b8dc32deb8f9cf045f4ad1db47a8573ee204dfc2f7337d",
+            "regime_id": 3
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-147",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "af1784762164036bd17dfc03955bda8255caf17aed7bad1acdef0aa869d59f46",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-148",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "4fa98b2ad24372cbc5757666a767b6f95f2cc6e0b357672d1a0b640f6e9a695a",
+            "regime_id": 4
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-149",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "abe7a4b6b0b4bff7f7e5ea2405fb4604133a46e67ae979db52a8c44218927ed6",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-150",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "8785ade4bfd4bac70de5d3005e0fabfbfe8e6a3cedf37334337796fa5688165f",
+            "regime_id": 5
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-151",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "d44133e58a1c925068e085a7b2275b76d8cf85baddfc63a0ff042767a28ace23",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-152",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "aab03cb3097d12853fbea413bede3814741b56079a3249d8ce79715c4e96bbe0",
+            "regime_id": 6
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-153",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "7253366f7fd0795383ce76c1987d6b984e13ba1fc4f2cf07ff57ada1fc8ab7ea",
+            "regime_id": 7
+          },
+          {
+            "dimensions": 5632,
+            "frame_id": "evaluation-154",
+            "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "receipt_sha256": "fc585a149f45cb349bafc657a2835cb83fa3d39266491b3da226fddf1f1589d4",
+            "regime_id": 7
+          }
+        ],
+        "authorized_model_calls": 154,
+        "authorized_regime_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "dimensions": 5632,
+        "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "rejection_probe": {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "unauthorized_model_calls": 0
+        },
+        "surface": "<private-companion-harness-surface>"
+      },
+      "runtime_seconds": {
+        "data": 17.777023871000004,
+        "total": 1351.646288643
+      },
+      "schema_version": 1,
+      "source": {
+        "commit": "f2badef0dfa4dd27445f593b747608cec008867a",
+        "dirty": false,
+        "script_sha256": "ab375bdf5989fb637ce6aa2cd2a9284c412b96fe552f52e2113290a3d62729ce",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "wheel_bundle": {
+          "mismatches": [],
+          "wheels": {
+            "schemen-gate": {
+              "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+              "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+              "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+            },
+            "private-companion-harness": {
+              "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+              "path": "<private-companion-harness-wheel>",
+              "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+            }
+          }
+        }
+      },
+      "started_at_utc": "2026-08-21T06:49:18.578423+00:00",
+      "status": "pass",
+      "summary": {
+        "confinement_probe_passed": true,
+        "correct_key_canary_mean_token_loss": 3.0129844546318054,
+        "correct_key_generation_hits": 0,
+        "correct_key_generation_total": 16,
+        "gated_mean_regime_token_loss": 5.442281674593687,
+        "ungated_control_token_loss": 4.2304931581020355,
+        "wrong_key_canary_mean_token_loss": 3.451778714145933,
+        "wrong_key_generation_hits": 0,
+        "wrong_key_generation_total": 112
+      }
+    }
+  ],
+  "local_environment": {
+    "hostname": "Mac",
+    "modal_version": "1.5.2",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.6"
+  },
+  "remote_volume": "cdp-generative-intermediate-results",
+  "runtime_seconds": 1376.133460791898,
+  "schema_version": 1,
+  "source": {
+    "commit": "f2badef0dfa4dd27445f593b747608cec008867a",
+    "dirty": false,
+    "script_sha256": "ab375bdf5989fb637ce6aa2cd2a9284c412b96fe552f52e2113290a3d62729ce",
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wheel_bundle": {
+      "mismatches": [],
+      "wheels": {
+        "schemen-gate": {
+          "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+          "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+          "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+        },
+        "private-companion-harness": {
+          "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+          "path": "<private-companion-harness-wheel>",
+          "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+        }
+      }
+    }
+  },
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "generative_intermediate_combined_20260821T071152_101574Z.json",
+    "original_relative_path": "experiments/results/generative_intermediate_combined_20260821T071152_101574Z.json",
+    "original_sha256": "add22cc070b223a59b43b0d0c69a4a6b5435a62b66283644af80ab1a08f7ec84",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged",
+      "private-harness-surface-marker": "the private companion harness callback-surface identifier is replaced by '<private-companion-harness-surface>'; model id, dimensions, and authorized Regimes are unchanged",
+      "private-harness-wheel-marker": "a filesystem path naming the private companion harness wheel is replaced by '<private-companion-harness-wheel>'; the recorded SHA-256 values are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "jobs[0].runtime.surface",
+        "rule": "private-harness-surface-marker"
+      },
+      {
+        "path": "jobs[0].source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "jobs[0].source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

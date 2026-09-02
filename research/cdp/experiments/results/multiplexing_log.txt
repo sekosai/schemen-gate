@@ -1,0 +1,67 @@
+======================================================================
+  True Multiplexing: 4 Tenants in 1 Forward Pass
+======================================================================
+  Device: mps
+  R: 4
+
+  Loading AG News...
+  Training base model (4 epochs)...
+
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 100/100 [00:00<00:00, 18443.80it/s]
+[transformers] [1mDistilBertModel LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     |  | 
+------------------------+------------+--+-
+vocab_projector.bias    | UNEXPECTED |  | 
+vocab_layer_norm.bias   | UNEXPECTED |  | 
+vocab_layer_norm.weight | UNEXPECTED |  | 
+vocab_transform.bias    | UNEXPECTED |  | 
+vocab_transform.weight  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    epoch 1/4: 67.1s
+    epoch 2/4: 62.9s
+    epoch 3/4: 62.4s
+    epoch 4/4: 62.6s
+
+  Base accuracy: 0.902500
+
+  --- Test 1: Correctness (multiplexed vs serial) ---
+    Max logit difference: 1.78e+01
+    Predictions match:    False
+    Multiplexed preds:    [3, 3, 3, 3]
+    Serial preds:         [2, 3, 3, 3]
+    Result: MISMATCH (threshold 1e-4)
+
+  --- Test 2: Full accuracy (multiplexed eval) ---
+    Per-regime accuracy (multiplexed, same batch):
+      regime 0: 0.236842 (gap=-6.66e-01)
+      regime 1: 0.243684 (gap=-6.59e-01)
+      regime 2: 0.264737 (gap=-6.38e-01)
+      regime 3: 0.252632 (gap=-6.50e-01)
+    Mean multiplexed accuracy: 0.249474
+    Base accuracy:             0.902500
+    Gap:                       -6.53e-01
+
+  --- Test 3: Throughput (multiplexed vs serial) ---
+    Batch size: 32 (4 regimes × 8 samples each)
+    Base (no perm):     79.95 ms
+    Multiplexed:        127.78 ms  (overhead: +59.8%)
+    Serial (4× fwd):   114.64 ms
+    Speedup vs serial:  0.90×
+
+    Result: OVERHEAD multiplexing (+59.8% overhead)
+
+======================================================================
+  SUMMARY
+======================================================================
+  R tenants:            4
+  Correctness:          FAIL (max diff=1.78e+01)
+  Accuracy gap:         -6.53e-01
+  Throughput overhead:   +59.8%
+  Speedup vs serial:    0.90×
+
+  Verdict: multiplexing is NOT FREE
+
+  Results saved to: <historical-local-root>/cdp-paper/experiments/results/true_multiplexing_20260622_100944.json

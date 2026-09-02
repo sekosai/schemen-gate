@@ -1,0 +1,18 @@
+{
+  "scaling": {},
+  "overprovision": null,
+  "parity": {
+    "8": {
+      "R": 8,
+      "gap": 0.0052631578947368585,
+      "seeds": [
+        42
+      ],
+      "remote_artifact": "/results/parity/R8_20260804_003204_1785803524562935481.json"
+    }
+  },
+  "parity_seeds": [
+    42
+  ],
+  "wall_time_s": 126.48821711540222
+}

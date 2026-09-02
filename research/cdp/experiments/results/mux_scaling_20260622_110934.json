@@ -1,0 +1,58 @@
+[
+  {
+    "R": 1,
+    "t_mux_ms": 2.79,
+    "t_serial_ms": 2.66,
+    "speedup": 0.95,
+    "per_regime_ms": 2.79,
+    "overhead_vs_r1": "1.00x"
+  },
+  {
+    "R": 4,
+    "t_mux_ms": 6.28,
+    "t_serial_ms": 10.73,
+    "speedup": 1.71,
+    "per_regime_ms": 1.57,
+    "overhead_vs_r1": "2.25x"
+  },
+  {
+    "R": 8,
+    "t_mux_ms": 10.92,
+    "t_serial_ms": 39.24,
+    "speedup": 3.59,
+    "per_regime_ms": 1.37,
+    "overhead_vs_r1": "3.91x"
+  },
+  {
+    "R": 16,
+    "t_mux_ms": 21.92,
+    "t_serial_ms": 45.53,
+    "speedup": 2.08,
+    "per_regime_ms": 1.37,
+    "overhead_vs_r1": "7.86x"
+  },
+  {
+    "R": 32,
+    "t_mux_ms": 43.35,
+    "t_serial_ms": 94.6,
+    "speedup": 2.18,
+    "per_regime_ms": 1.35,
+    "overhead_vs_r1": "15.54x"
+  },
+  {
+    "R": 64,
+    "t_mux_ms": 90.66,
+    "t_serial_ms": 205.44,
+    "speedup": 2.27,
+    "per_regime_ms": 1.42,
+    "overhead_vs_r1": "32.49x"
+  },
+  {
+    "R": 128,
+    "t_mux_ms": 339.03,
+    "t_serial_ms": 469.94,
+    "speedup": 1.39,
+    "per_regime_ms": 2.65,
+    "overhead_vs_r1": "121.52x"
+  }
+]

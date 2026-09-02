@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible Schemen Gate defect.
+title: "[bug] "
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials, keys, private artifacts, or vulnerability details. Use the security policy for security-sensitive reports.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v1.0.2 or full commit hash
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Observed behavior
+      description: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include the smallest credential-free code and exact commands.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python, NumPy, optional extras, and installation method.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, keys, private data, and private artifact paths.
+          required: true

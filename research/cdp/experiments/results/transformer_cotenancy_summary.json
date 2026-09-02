@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "experiment": "transformer_cotenancy_analysis",
+  "created_at_utc": "2026-08-12T15:42:02.977074+00:00",
+  "seeds": [
+    42,
+    123,
+    256
+  ],
+  "dense_partition_algorithm": "sha256_seed_numpy_balanced_research",
+  "dense_ffn": [
+    {
+      "R": 1,
+      "dimensions_per_regime_per_layer": 3072,
+      "owning_accuracy": {
+        "mean": 0.9128333333333334,
+        "sample_sd": 0.003329164059239669
+      },
+      "drop_from_R1_percentage_points": 0.0,
+      "wrong_key_accuracy": null,
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0
+    },
+    {
+      "R": 2,
+      "dimensions_per_regime_per_layer": 1536,
+      "owning_accuracy": {
+        "mean": 0.9015,
+        "sample_sd": 0.003929058411375443
+      },
+      "drop_from_R1_percentage_points": 1.1333333333333417,
+      "wrong_key_accuracy": {
+        "mean": 0.2536666666666667,
+        "sample_sd": 0.0001443375672974226
+      },
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0
+    },
+    {
+      "R": 4,
+      "dimensions_per_regime_per_layer": 768,
+      "owning_accuracy": {
+        "mean": 0.88925,
+        "sample_sd": 0.0029553976043841784
+      },
+      "drop_from_R1_percentage_points": 2.35833333333334,
+      "wrong_key_accuracy": {
+        "mean": 0.18605555555555556,
+        "sample_sd": 0.00104775995625235
+      },
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0
+    },
+    {
+      "R": 8,
+      "dimensions_per_regime_per_layer": 384,
+      "owning_accuracy": {
+        "mean": 0.8746666666666666,
+        "sample_sd": 0.00044341243028732255
+      },
+      "drop_from_R1_percentage_points": 3.8166666666666793,
+      "wrong_key_accuracy": {
+        "mean": 0.23316071428571428,
+        "sample_sd": 0.0003051429909041739
+      },
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0
+    },
+    {
+      "R": 16,
+      "dimensions_per_regime_per_layer": 192,
+      "owning_accuracy": {
+        "mean": 0.8621354166666666,
+        "sample_sd": 0.0007713961908988735
+      },
+      "drop_from_R1_percentage_points": 5.069791666666679,
+      "wrong_key_accuracy": {
+        "mean": 0.2180631944444444,
+        "sample_sd": 0.0003500392669771892
+      },
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0
+    }
+  ],
+  "private_lanes": [
+    {
+      "design": "adapter",
+      "owning_accuracy": {
+        "mean": 0.9046666666666667,
+        "sample_sd": 0.001751487463081946
+      },
+      "wrong_key_accuracy": {
+        "mean": 0.03177777777777778,
+        "sample_sd": 0.0005838291543606586
+      },
+      "maximum_shared_backbone_delta": 0.0,
+      "maximum_inactive_lane_delta": 0.0
+    },
+    {
+      "design": "expert",
+      "owning_accuracy": {
+        "mean": 0.900875,
+        "sample_sd": 0.0014197270864500587
+      },
+      "wrong_key_accuracy": {
+        "mean": 0.033041666666666664,
+        "sample_sd": 0.00047324236215002565
+      },
+      "maximum_shared_backbone_delta": 0.0,
+      "maximum_inactive_lane_delta": 0.0
+    }
+  ],
+  "cargo": {
+    "status": "pass",
+    "owning_exact_recall": 1.0,
+    "all_unauthorized_docks_rejected": true,
+    "unauthorized_model_calls": 0,
+    "load_receipts_valid": true,
+    "retrieval_receipts_valid": true,
+    "owning_queries": 4,
+    "unauthorized_attempts": 6,
+    "threat_boundary": "The vector store and master key remain trusted runtime assets; the experiment exposes corpus access only through RegimeBus."
+  }
+}

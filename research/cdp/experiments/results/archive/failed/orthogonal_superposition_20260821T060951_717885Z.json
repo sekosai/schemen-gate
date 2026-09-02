@@ -1,0 +1,1313 @@
+{
+  "schema_version": 1,
+  "experiment": "runtime_orthogonal_superposition_combined",
+  "created_at_utc": "2026-08-21T06:09:51.717711+00:00",
+  "elapsed_seconds": 838.1776374999899,
+  "source": {
+    "commit": "f130fdb2a3627b9b44f2fb6a7bbcc126d57d3468",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "script_sha256": "133d10d1bd4ba445c1a8dbe5bdb76f8f41f9212c7ce23421874473a9fa36f474",
+    "wheel_bundle": {
+      "wheels": {
+        "schemen-gate": {
+          "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+          "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+          "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+        },
+        "private-companion-harness": {
+          "path": "<private-companion-harness-wheel>",
+          "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+          "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+        }
+      },
+      "mismatches": []
+    }
+  },
+  "result": {
+    "schema_version": 1,
+    "experiment": "runtime_orthogonal_superposition",
+    "scope": "Whole-model permutation conjugation and serial addressed use; not sparse FFN capacity partitioning or concurrent cotenancy.",
+    "status": "failure",
+    "config": {
+      "seed": 0,
+      "ratios": [
+        8,
+        128
+      ],
+      "train_examples": 8000,
+      "test_examples": 7600,
+      "max_length": 128,
+      "batch_size": 64,
+      "epochs": 2,
+      "learning_rate": 2e-05,
+      "smoke": false
+    },
+    "source": {
+      "commit": "f130fdb2a3627b9b44f2fb6a7bbcc126d57d3468",
+      "dirty": false,
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "script_sha256": "133d10d1bd4ba445c1a8dbe5bdb76f8f41f9212c7ce23421874473a9fa36f474",
+      "wheel_bundle": {
+        "wheels": {
+          "schemen-gate": {
+            "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+            "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+            "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+          },
+          "private-companion-harness": {
+            "path": "<private-companion-harness-wheel>",
+            "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+            "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+          }
+        },
+        "mismatches": []
+      }
+    },
+    "assets": {
+      "model": "distilbert-base-uncased",
+      "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+      "dataset": "fancyzhx/ag_news",
+      "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+    },
+    "environment": {
+      "python": "3.12.10",
+      "torch": "2.12.1+cu130",
+      "gpu": "NVIDIA A100-SXM4-40GB",
+      "cudnn_deterministic": true,
+      "tf32_enabled": false
+    },
+    "gate_placement": "runtime-authorized-whole-model-activation",
+    "ratios": [
+      {
+        "R": 8,
+        "evaluated_regimes": 8,
+        "baseline_accuracy": 0.9142105263157895,
+        "mean_accuracy": 0.9142105263157895,
+        "minimum_accuracy": 0.9142105263157895,
+        "maximum_accuracy": 0.9142105263157895,
+        "maximum_absolute_accuracy_gap": 0.0,
+        "maximum_absolute_logit_difference": 8.046627044677734e-06,
+        "accuracy_zero_loss": true,
+        "finite_precision_logit_tolerance": 1e-05,
+        "runtime": {
+          "surface": "<private-companion-harness-surface>",
+          "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+          "dimensions": 768,
+          "authorized_regime_ids": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "authorized_model_calls": 8,
+          "authorization_receipts": [
+            {
+              "frame_id": "evaluation-1",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 0,
+              "receipt_sha256": "f764c9713b398d5e0b527c870cee4b9d9e0a796efa388ca738662b4afaaf715d"
+            },
+            {
+              "frame_id": "evaluation-2",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 1,
+              "receipt_sha256": "2dd9da6d4944a95ec1eb7c181cad01655e1fc785e9d2881cbb0f3bc5c9398279"
+            },
+            {
+              "frame_id": "evaluation-3",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 2,
+              "receipt_sha256": "04dc8e15bb7bb10944e20064c967f6b593cf84e6e54f1f5cf574a430ba817e0a"
+            },
+            {
+              "frame_id": "evaluation-4",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 3,
+              "receipt_sha256": "b874c94eb5930b5b17f2773a9ca92c81fd7c39274b05e26415a10ae9959442dc"
+            },
+            {
+              "frame_id": "evaluation-5",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 4,
+              "receipt_sha256": "b37a000587f40dd3bd799d32420f2d2f78a17588efa66e475b720311b7505306"
+            },
+            {
+              "frame_id": "evaluation-6",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 5,
+              "receipt_sha256": "64c015e8a4336ce2e3eae235306314b3ef8ff56a4810f89d8f7f7535bcb4987d"
+            },
+            {
+              "frame_id": "evaluation-7",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 6,
+              "receipt_sha256": "8274a124ed8815b4e646ff66601028601416a502b023b4bcb4f7ac7b609591f3"
+            },
+            {
+              "frame_id": "evaluation-8",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 7,
+              "receipt_sha256": "606ab5ed0e96b858eb8a806ffabaca3526289d04e58fedcff8d33353ba5b5842"
+            }
+          ],
+          "rejection_probe": {
+            "attempts": {
+              "other_regime": {
+                "rejected": true,
+                "status_code": 403,
+                "model_calls": 0
+              },
+              "other_model": {
+                "rejected": true,
+                "status_code": 422,
+                "model_calls": 0
+              },
+              "other_dimensions": {
+                "rejected": true,
+                "status_code": 422,
+                "model_calls": 0
+              },
+              "empty_authority": {
+                "rejected": true,
+                "status_code": 403,
+                "model_calls": 0
+              }
+            },
+            "all_rejected": true,
+            "unauthorized_model_calls": 0
+          }
+        },
+        "status": "pass"
+      },
+      {
+        "R": 128,
+        "evaluated_regimes": 128,
+        "baseline_accuracy": 0.9142105263157895,
+        "mean_accuracy": 0.9142105263157897,
+        "minimum_accuracy": 0.9142105263157895,
+        "maximum_accuracy": 0.9142105263157895,
+        "maximum_absolute_accuracy_gap": 0.0,
+        "maximum_absolute_logit_difference": 1.0609626770019531e-05,
+        "accuracy_zero_loss": true,
+        "finite_precision_logit_tolerance": 1e-05,
+        "runtime": {
+          "surface": "<private-companion-harness-surface>",
+          "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+          "dimensions": 768,
+          "authorized_regime_ids": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "authorized_model_calls": 128,
+          "authorization_receipts": [
+            {
+              "frame_id": "evaluation-1",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 0,
+              "receipt_sha256": "f764c9713b398d5e0b527c870cee4b9d9e0a796efa388ca738662b4afaaf715d"
+            },
+            {
+              "frame_id": "evaluation-2",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 1,
+              "receipt_sha256": "2dd9da6d4944a95ec1eb7c181cad01655e1fc785e9d2881cbb0f3bc5c9398279"
+            },
+            {
+              "frame_id": "evaluation-3",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 2,
+              "receipt_sha256": "04dc8e15bb7bb10944e20064c967f6b593cf84e6e54f1f5cf574a430ba817e0a"
+            },
+            {
+              "frame_id": "evaluation-4",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 3,
+              "receipt_sha256": "b874c94eb5930b5b17f2773a9ca92c81fd7c39274b05e26415a10ae9959442dc"
+            },
+            {
+              "frame_id": "evaluation-5",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 4,
+              "receipt_sha256": "b37a000587f40dd3bd799d32420f2d2f78a17588efa66e475b720311b7505306"
+            },
+            {
+              "frame_id": "evaluation-6",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 5,
+              "receipt_sha256": "64c015e8a4336ce2e3eae235306314b3ef8ff56a4810f89d8f7f7535bcb4987d"
+            },
+            {
+              "frame_id": "evaluation-7",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 6,
+              "receipt_sha256": "8274a124ed8815b4e646ff66601028601416a502b023b4bcb4f7ac7b609591f3"
+            },
+            {
+              "frame_id": "evaluation-8",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 7,
+              "receipt_sha256": "606ab5ed0e96b858eb8a806ffabaca3526289d04e58fedcff8d33353ba5b5842"
+            },
+            {
+              "frame_id": "evaluation-9",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 8,
+              "receipt_sha256": "57175dfa6a976dff5a3c3822f9742e9f8cb42b751aeb5731dab1c833aeed9cef"
+            },
+            {
+              "frame_id": "evaluation-10",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 9,
+              "receipt_sha256": "e7059d751f9669dd75de89a2d8b46805b561c548f34a54b4ca1206e8666b9e8c"
+            },
+            {
+              "frame_id": "evaluation-11",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 10,
+              "receipt_sha256": "5689b117e0f0e4d7277e01d8d0d6008f5dc9c01d15750ebd142ffbfdf24fde87"
+            },
+            {
+              "frame_id": "evaluation-12",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 11,
+              "receipt_sha256": "06ce4fa628b33759b5223d7b6df266c9b0d4d9562b54ace86e3b3a3db4357ebc"
+            },
+            {
+              "frame_id": "evaluation-13",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 12,
+              "receipt_sha256": "dd6195f02d862cba33cdd4c848ee95ed2a868e85d153c10d203fb48baf13a5bb"
+            },
+            {
+              "frame_id": "evaluation-14",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 13,
+              "receipt_sha256": "7c356b0241af9c4801b68aeaabc661309d597286126f7eb0db229b7e3537a461"
+            },
+            {
+              "frame_id": "evaluation-15",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 14,
+              "receipt_sha256": "1350e25dcb96bdd64239e869d231a415909a554eb163535abc528d7cd12b0166"
+            },
+            {
+              "frame_id": "evaluation-16",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 15,
+              "receipt_sha256": "bb0b4204a8993b5643efc0068bec19bf8aeb7d9822651da0566d79721babff38"
+            },
+            {
+              "frame_id": "evaluation-17",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 16,
+              "receipt_sha256": "a2a38fe60a37fc65c22e18dbff691588e3cfbba325d347de676c61c3935f8528"
+            },
+            {
+              "frame_id": "evaluation-18",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 17,
+              "receipt_sha256": "b580c73a3553b00924913949ab98fccf77a097c54ed796e77def9c8525a423d4"
+            },
+            {
+              "frame_id": "evaluation-19",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 18,
+              "receipt_sha256": "ce27592ead3be8e88021a3915cc16bbc7d19b848e84b6b52760acff3125ace29"
+            },
+            {
+              "frame_id": "evaluation-20",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 19,
+              "receipt_sha256": "c36e1a0d7e4b478211494214ec4bdf7e979392bff307f42cd31e1f24ec4dc2c8"
+            },
+            {
+              "frame_id": "evaluation-21",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 20,
+              "receipt_sha256": "82a5e2bd95a170de1591d34491742f71751f82103e3556aed3c091139f744aab"
+            },
+            {
+              "frame_id": "evaluation-22",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 21,
+              "receipt_sha256": "ef5664f1c002d50964f636ec592acf72bd040e9a7da4999a3e2d44f070a4d79a"
+            },
+            {
+              "frame_id": "evaluation-23",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 22,
+              "receipt_sha256": "e050a63425f3432b3331bd08ca9ce5e91eee3fc107757ea8ecdf7497a262487f"
+            },
+            {
+              "frame_id": "evaluation-24",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 23,
+              "receipt_sha256": "35989dd5f17c3ebdc0c8beaabcf000392d594f874e9760811d39abab002b9d6e"
+            },
+            {
+              "frame_id": "evaluation-25",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 24,
+              "receipt_sha256": "c4755bf14ce0f3a76baeb5eff594149574d2de31fd09a92faa544bed984ec93d"
+            },
+            {
+              "frame_id": "evaluation-26",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 25,
+              "receipt_sha256": "6cd58f6efb8d34529050e59c716923aaf1712b21a9223289c02e13184d86e455"
+            },
+            {
+              "frame_id": "evaluation-27",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 26,
+              "receipt_sha256": "652d2d4c1b966890dd3676de7cc1349cc350aeb2c1ec48907339a02dd9be4c59"
+            },
+            {
+              "frame_id": "evaluation-28",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 27,
+              "receipt_sha256": "599da183509d9a75e7a60720d9bebfcbaab1563e8d169fec8c84d7e9f87bd169"
+            },
+            {
+              "frame_id": "evaluation-29",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 28,
+              "receipt_sha256": "b311777afa200de4c3170143349c3d91dbfe7f6253a9ecdfdd0788261f528b1f"
+            },
+            {
+              "frame_id": "evaluation-30",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 29,
+              "receipt_sha256": "84afc06d0b65cdd39fe27d17297a545b201381ad56fe8166462ca0628d7dbf2e"
+            },
+            {
+              "frame_id": "evaluation-31",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 30,
+              "receipt_sha256": "98b5addaa4435616f5e48aad8f7910567dea5193495e022beadac1f46688a2ea"
+            },
+            {
+              "frame_id": "evaluation-32",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 31,
+              "receipt_sha256": "efefeb12228bedaab11ce39f60697c9f1240e83633047231e178497798c9c1b4"
+            },
+            {
+              "frame_id": "evaluation-33",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 32,
+              "receipt_sha256": "99a05e3e6b1820d69fc6e8153e58696c76e48976b1062c5e75513a1c9b8758c6"
+            },
+            {
+              "frame_id": "evaluation-34",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 33,
+              "receipt_sha256": "08d4d04e7cb2af45b295427bdc984840c4a9e7c3f97a8c438b11441755ea7cea"
+            },
+            {
+              "frame_id": "evaluation-35",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 34,
+              "receipt_sha256": "12b99241f2a581bb801cc8489c0436deab3057014930b0c3b2db5dfc7e9497be"
+            },
+            {
+              "frame_id": "evaluation-36",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 35,
+              "receipt_sha256": "7f8248c965a4bdd6780f30279e33c86e88a520a4035c0f90e5b2456cd4b5e59c"
+            },
+            {
+              "frame_id": "evaluation-37",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 36,
+              "receipt_sha256": "5dd4f380d9c2ba91d0fcb16586df917927f29018b42c6a04943c5961a9b174ef"
+            },
+            {
+              "frame_id": "evaluation-38",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 37,
+              "receipt_sha256": "c07ef45281d7bf330043ddd69cd87a13c5063e3c6480ce5363fafc3ea5dbae91"
+            },
+            {
+              "frame_id": "evaluation-39",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 38,
+              "receipt_sha256": "5210d0003b82da51a584a2e2171dbb516c94fa6cbe56daf494a7225d04a86893"
+            },
+            {
+              "frame_id": "evaluation-40",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 39,
+              "receipt_sha256": "f3a02f68f377faa77e5e65eddbacbad7cff984de0107a1387b9ba0721c53fff7"
+            },
+            {
+              "frame_id": "evaluation-41",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 40,
+              "receipt_sha256": "256c3acd19d42da4d355da261b32cd7654f0da978e9c513c14c9f0eaf9d26bff"
+            },
+            {
+              "frame_id": "evaluation-42",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 41,
+              "receipt_sha256": "5dc513c55f0e7edcd9121c09536fb3593d8d5d3113d9eb5047c45e39d1d0d6a6"
+            },
+            {
+              "frame_id": "evaluation-43",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 42,
+              "receipt_sha256": "a6df821685a101fc70442c46591d0e83186a6279ab5147f8921864a1a0d25c3f"
+            },
+            {
+              "frame_id": "evaluation-44",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 43,
+              "receipt_sha256": "b494f7b980c38f53c14b837d2c78fb840bd9c2f7eb3a0a6ba8e71a38e99c0c57"
+            },
+            {
+              "frame_id": "evaluation-45",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 44,
+              "receipt_sha256": "2e58cb8928f6e78d9cdc2143a7dd92e95520c092683fc4fa17766361f7dd7d94"
+            },
+            {
+              "frame_id": "evaluation-46",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 45,
+              "receipt_sha256": "154d1802af8e3d3e1840426cd6f69bc9c5a70a893109061c968c7e3925fc382c"
+            },
+            {
+              "frame_id": "evaluation-47",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 46,
+              "receipt_sha256": "a5b04eebb86be25233e9fb0d066905742eb7b9afd56b40c625767a9b2b0641b7"
+            },
+            {
+              "frame_id": "evaluation-48",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 47,
+              "receipt_sha256": "0d8dae0f57b960e3bc85abc02316a26aa130c88065dc92a13557042fc35b9b24"
+            },
+            {
+              "frame_id": "evaluation-49",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 48,
+              "receipt_sha256": "a446b154906b0c026ef67f9da91ed1626feb734dbd163e0cbeaaac1316fd4294"
+            },
+            {
+              "frame_id": "evaluation-50",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 49,
+              "receipt_sha256": "7428cd6032c1e385587626732c9dc112a55f1fdadbc4af0e35d4ec50b25f8359"
+            },
+            {
+              "frame_id": "evaluation-51",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 50,
+              "receipt_sha256": "e39fa8b39f6808b48431713a7e84d920450e5dfb26b91b4b622aa08b3d025424"
+            },
+            {
+              "frame_id": "evaluation-52",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 51,
+              "receipt_sha256": "8681692e0b30e422e151927669bcfd20a15677ae473eb4b822b7b162afce2aa7"
+            },
+            {
+              "frame_id": "evaluation-53",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 52,
+              "receipt_sha256": "07ddc321da7a2c17bbec38c7c6c0513f3dacab5c29bf4f699b655c9684659d9e"
+            },
+            {
+              "frame_id": "evaluation-54",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 53,
+              "receipt_sha256": "ae459afe8adf057e122db3166f3910f5cc36e3fe231f42e45e0673e371a080b9"
+            },
+            {
+              "frame_id": "evaluation-55",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 54,
+              "receipt_sha256": "02de83259f1083a5e810a40566aeb293180b7f20e6292f2ffb40871dcbeabab5"
+            },
+            {
+              "frame_id": "evaluation-56",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 55,
+              "receipt_sha256": "ef4696f5481977210ca70f1db5941ef28e6070625854125a0175257d67c4390a"
+            },
+            {
+              "frame_id": "evaluation-57",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 56,
+              "receipt_sha256": "83a19fa5eb97f7ac6788c36b0ac3c8adab899579214df298436de28dfa2de426"
+            },
+            {
+              "frame_id": "evaluation-58",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 57,
+              "receipt_sha256": "3a8814526217e48155408ee32a05d32ce689cb7be77816b1e52748de3d870cb1"
+            },
+            {
+              "frame_id": "evaluation-59",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 58,
+              "receipt_sha256": "8581fafc254790ae3978da38b13a4518d039f86e3a85e31216dfc8bfb1194343"
+            },
+            {
+              "frame_id": "evaluation-60",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 59,
+              "receipt_sha256": "9777275b2c954458adf5d31f603430644f6aa5b77d38e4e3b9c8659be05a9104"
+            },
+            {
+              "frame_id": "evaluation-61",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 60,
+              "receipt_sha256": "edd750d562b0aab82874e0fe68fc5db6f4394e92b4c6a3e9cd491bd52f04991c"
+            },
+            {
+              "frame_id": "evaluation-62",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 61,
+              "receipt_sha256": "fa2b6d1795609c6f3d29c7262e89afc32227586fb3fa23bd5d64b68638e8dd02"
+            },
+            {
+              "frame_id": "evaluation-63",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 62,
+              "receipt_sha256": "419240478175c54cd62ae417f243e1232e40d5d782aa2641e0a1530816de404c"
+            },
+            {
+              "frame_id": "evaluation-64",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 63,
+              "receipt_sha256": "4226e0fe3e4da6dec2a100937fa5487dc66d6a9a17b3709a23bcb70b2b910541"
+            },
+            {
+              "frame_id": "evaluation-65",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 64,
+              "receipt_sha256": "7209edcd40d259fb94b230eff7ee6981b65e7cf04bb78a4acfd64afda9acbd3a"
+            },
+            {
+              "frame_id": "evaluation-66",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 65,
+              "receipt_sha256": "8762c78a0ade5766f0a020b529777754074c02779c8c3db28f90bcb4a1b4b1ec"
+            },
+            {
+              "frame_id": "evaluation-67",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 66,
+              "receipt_sha256": "5376c874d335c2092d36c870779d198bf55a84dfe8cf01af8d683a9b7e51fae3"
+            },
+            {
+              "frame_id": "evaluation-68",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 67,
+              "receipt_sha256": "f75d9c2f64a98d93dba0fe235ee7340ea0cecaa7fd55bcea71fbd48434334544"
+            },
+            {
+              "frame_id": "evaluation-69",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 68,
+              "receipt_sha256": "fe878bb71ff048fa03121ca4d7edd447c3a61c4abaadbc0d53b62f9e91d420e1"
+            },
+            {
+              "frame_id": "evaluation-70",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 69,
+              "receipt_sha256": "d0e79b2cbe06c56a4668536e6edead5268718b7d2cbbce5a79b379651d5984f0"
+            },
+            {
+              "frame_id": "evaluation-71",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 70,
+              "receipt_sha256": "0993af59c72d543cc3321f2260eb581ca1ceb2ef4cf9eb2f931ed6b562464bbc"
+            },
+            {
+              "frame_id": "evaluation-72",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 71,
+              "receipt_sha256": "d82809d8b6b7fb9d2d8f109836918ae46a91721540e2ff0120ceb9e7c9e6ea13"
+            },
+            {
+              "frame_id": "evaluation-73",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 72,
+              "receipt_sha256": "e6a7435e6a5980fff65e288506c1e5b583b4687d47089eb150efba0b2e899f26"
+            },
+            {
+              "frame_id": "evaluation-74",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 73,
+              "receipt_sha256": "10bcdb35402156034a37db3a18882dbcc3d1f01e9bee7bc8f069db268987eee4"
+            },
+            {
+              "frame_id": "evaluation-75",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 74,
+              "receipt_sha256": "847a30070029d90d511751fccfea2b7f5e2181fff5c87d341a9261d1b89490d8"
+            },
+            {
+              "frame_id": "evaluation-76",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 75,
+              "receipt_sha256": "52d9c36d64a2e90ddcb94e441c6d660f1cd1fca0f5e34948bb8493bd929fa9c1"
+            },
+            {
+              "frame_id": "evaluation-77",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 76,
+              "receipt_sha256": "ea5f60db06eef01b6cb1692f891c346d5fa8ac9eab52bae28de0cbb1b03010f5"
+            },
+            {
+              "frame_id": "evaluation-78",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 77,
+              "receipt_sha256": "949215b6b44a9d0a818f11b3430be85f9dce51be9ad0b947b9a55277c18b4d09"
+            },
+            {
+              "frame_id": "evaluation-79",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 78,
+              "receipt_sha256": "c10e52c4369c8ca58b9a770aa5f44d33e67f60e45c5d40d69526c6ba9db80db3"
+            },
+            {
+              "frame_id": "evaluation-80",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 79,
+              "receipt_sha256": "1e75c325d3ac072fd29e4c60878289e272364578dba271093f39a6c40f1f38d1"
+            },
+            {
+              "frame_id": "evaluation-81",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 80,
+              "receipt_sha256": "8b1a57f4af84cd10dc95a48f5326d2c7b7a8728f608aa5e990d5d394b3736de5"
+            },
+            {
+              "frame_id": "evaluation-82",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 81,
+              "receipt_sha256": "ffdb0abde2b194e32a87b45e6c49e2260c0a1cd719ff2647be92b2166e50025b"
+            },
+            {
+              "frame_id": "evaluation-83",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 82,
+              "receipt_sha256": "be523563bb88c7f0b2fb72085c66c115848857f6aae2ca02b5ee99dc5762b26b"
+            },
+            {
+              "frame_id": "evaluation-84",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 83,
+              "receipt_sha256": "8f82bb0e565611d593591477243010a8c49a7f8674f3ddbff99cd559b5b2195d"
+            },
+            {
+              "frame_id": "evaluation-85",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 84,
+              "receipt_sha256": "4521bbfd0b29b495717f6d6675d5ff3f3fe365e15caea9d03c02d9a2027ac4bb"
+            },
+            {
+              "frame_id": "evaluation-86",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 85,
+              "receipt_sha256": "267637f43979f03e1b55aa7f0e115262f42614bb0272ad4be4474f198510e7fb"
+            },
+            {
+              "frame_id": "evaluation-87",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 86,
+              "receipt_sha256": "2fb51bcb792bbe20779eb5ac63c00081a54d4063998bf0e28736ef76ee0beb9d"
+            },
+            {
+              "frame_id": "evaluation-88",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 87,
+              "receipt_sha256": "57e480bd811f8040252af656851e7ac86d41fda89c78d65f92ff33f62f89b11c"
+            },
+            {
+              "frame_id": "evaluation-89",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 88,
+              "receipt_sha256": "d7418bf45e49b99bbd57fa394710645f39420b0b936f937dab7638d5de49b8b0"
+            },
+            {
+              "frame_id": "evaluation-90",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 89,
+              "receipt_sha256": "ff25f094c77e65000de7a442e6e9265727eb536b40db207e07d63cfb7ca2d91b"
+            },
+            {
+              "frame_id": "evaluation-91",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 90,
+              "receipt_sha256": "c787870b570849747250d7e1f90fd1e9ad415c6864e487a5ecb17aa0950f57b8"
+            },
+            {
+              "frame_id": "evaluation-92",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 91,
+              "receipt_sha256": "c4baa62022c5dad4e74bc088d0715d887a40e99e1949d9b6bcbaf381d8e3b9c1"
+            },
+            {
+              "frame_id": "evaluation-93",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 92,
+              "receipt_sha256": "c178708a59cb5780eea412ddd0ab891712dbb7f92f9dfc1f6a6464f0c3c078a4"
+            },
+            {
+              "frame_id": "evaluation-94",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 93,
+              "receipt_sha256": "c3dc6a2d9b416a8c1f9cde47f1eef712fe36c14dd59327072266c74223835bc9"
+            },
+            {
+              "frame_id": "evaluation-95",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 94,
+              "receipt_sha256": "b7b6a492e566d387289cd2fc753c6cf798174b458aff3eed0cd82d67f3005a9e"
+            },
+            {
+              "frame_id": "evaluation-96",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 95,
+              "receipt_sha256": "c0605335b964328d0e6a6a676b807cd7d801b2293ed55d424e241b371a3f9f6b"
+            },
+            {
+              "frame_id": "evaluation-97",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 96,
+              "receipt_sha256": "7b5a7eaed71dc3a8ef1ac02f8a77ffa4f18caecbce5c6baa97ff87725e9919b5"
+            },
+            {
+              "frame_id": "evaluation-98",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 97,
+              "receipt_sha256": "ac1110a18e1f11aa867c5a5b87e09488a19e2e50bc2e126b620ce96d2e4e2788"
+            },
+            {
+              "frame_id": "evaluation-99",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 98,
+              "receipt_sha256": "d24f4a9c1fbfcc2e367b00d73a2d93fb8a7a5d3cad374333f2255bc1774c1565"
+            },
+            {
+              "frame_id": "evaluation-100",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 99,
+              "receipt_sha256": "6664052fbc26d9edb74dcd20464d33b11951355938c668da925abde3c2f83d17"
+            },
+            {
+              "frame_id": "evaluation-101",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 100,
+              "receipt_sha256": "25332b885110863c1c337269e2499c8994d81bff8f622c9c53c017814a013c28"
+            },
+            {
+              "frame_id": "evaluation-102",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 101,
+              "receipt_sha256": "b2e4364804571b6f4a8349fef3d13b3d9cf48be7924d2f5f0d791c34bd1d2f90"
+            },
+            {
+              "frame_id": "evaluation-103",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 102,
+              "receipt_sha256": "6dbde7b0c5042643aff1069af0eb158157788c2700aba72b9b077b4999ac4170"
+            },
+            {
+              "frame_id": "evaluation-104",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 103,
+              "receipt_sha256": "60e858b3bf8df8009557b3c3d6aba89aa7625791d71286e5f7fff17670a3ee8e"
+            },
+            {
+              "frame_id": "evaluation-105",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 104,
+              "receipt_sha256": "d7ec7c0c2fe0a12bf8133b90c18b1be71ca76410ab69e5e68299cade8146afa1"
+            },
+            {
+              "frame_id": "evaluation-106",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 105,
+              "receipt_sha256": "d0f087b2d5287ee11beaccf277ba602ef3cbdfb490b7ec325eabc243659c223c"
+            },
+            {
+              "frame_id": "evaluation-107",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 106,
+              "receipt_sha256": "ef87c2b68a6b24ac90d1f994f24f6638e57de646653c9de1e684fc41886ace50"
+            },
+            {
+              "frame_id": "evaluation-108",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 107,
+              "receipt_sha256": "d3d30031aeca6eb8494f5a4e087b7909fa6d1d7426c0aa3245424d91769b7202"
+            },
+            {
+              "frame_id": "evaluation-109",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 108,
+              "receipt_sha256": "118739807157061ecf965eefdbd96c5e064775d1c3255a3c9b7d712b0fffb4e0"
+            },
+            {
+              "frame_id": "evaluation-110",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 109,
+              "receipt_sha256": "070e854fbcc4b2cbff592bea0576336097406d62b93e3eb3ca17a15713d69027"
+            },
+            {
+              "frame_id": "evaluation-111",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 110,
+              "receipt_sha256": "acf0f20d96747bd0a2beaef69a438dbd6a48fa010d85c0d4d0d11d59c59e49f1"
+            },
+            {
+              "frame_id": "evaluation-112",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 111,
+              "receipt_sha256": "932e56830a5dca57f193bb7f2cb0b8f7c8d93232ec52c92615bbd1a61ed4e42a"
+            },
+            {
+              "frame_id": "evaluation-113",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 112,
+              "receipt_sha256": "1bd1c7f194b5af29ab2fd19667bf70503f0902a327814f1f162528a1fb4f017e"
+            },
+            {
+              "frame_id": "evaluation-114",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 113,
+              "receipt_sha256": "5997f136d89d55d8b3f8578ceb81ce358338b8ddf78130dde88ae9fef8f29e3d"
+            },
+            {
+              "frame_id": "evaluation-115",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 114,
+              "receipt_sha256": "c3e9925162916f0c0e992829d4d78c54e09136af2c4545576c2ce9d6ec79e302"
+            },
+            {
+              "frame_id": "evaluation-116",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 115,
+              "receipt_sha256": "1eb8122ba74280df1d3c05e4058044e76b1f586a0db10994eabb4968ad4fffd9"
+            },
+            {
+              "frame_id": "evaluation-117",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 116,
+              "receipt_sha256": "fe7341c7377242000c62c005059a81925605952db7cde40c4867c51f95d4a7ca"
+            },
+            {
+              "frame_id": "evaluation-118",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 117,
+              "receipt_sha256": "3e1939acdf5953d204a8fa0dc7236dbcc55e4576368a1a4b4ba098d2343ebeb0"
+            },
+            {
+              "frame_id": "evaluation-119",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 118,
+              "receipt_sha256": "58d50d5f93d70b1361e4800d95d67428b37b65fe253c2e37169795b03df10acd"
+            },
+            {
+              "frame_id": "evaluation-120",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 119,
+              "receipt_sha256": "cbd658ef991c38fad6f6d7c702070cada270e3551ce5cfe4bdce7c4803cb6564"
+            },
+            {
+              "frame_id": "evaluation-121",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 120,
+              "receipt_sha256": "88d8b1b134ab92c60b4e17a742b3e877400ac1a21c0c23161b0941504e7cb2aa"
+            },
+            {
+              "frame_id": "evaluation-122",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 121,
+              "receipt_sha256": "cf74d054ef44ba1c4aa9657efc14d2ba35ba302c60cf0aa54ea89f4c0247319f"
+            },
+            {
+              "frame_id": "evaluation-123",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 122,
+              "receipt_sha256": "92e1233739c6c83ee1779987d8b498041950a21bc08d8317bbdd72701c3c8d6f"
+            },
+            {
+              "frame_id": "evaluation-124",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 123,
+              "receipt_sha256": "eeda2cd84805580dce752b17055b6a77ebd63f97f487a26a8616a3315d756156"
+            },
+            {
+              "frame_id": "evaluation-125",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 124,
+              "receipt_sha256": "e62c1ced75482f7e4bf52601cec8861aeed86e39a1a9dacc6a4b099e388fe6ea"
+            },
+            {
+              "frame_id": "evaluation-126",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 125,
+              "receipt_sha256": "7081bbdd3ae0a64959273ce6b0109645c0b8dad6661bc596cd19527da9ef64c9"
+            },
+            {
+              "frame_id": "evaluation-127",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 126,
+              "receipt_sha256": "9288725d2e9c0b3889d175b57ccfb30752b409939ec60fddf7496373786b9559"
+            },
+            {
+              "frame_id": "evaluation-128",
+              "model_id": "distilbert-base-uncased:orthogonal-conjugation",
+              "dimensions": 768,
+              "regime_id": 127,
+              "receipt_sha256": "80c8ecf3e089eb4a5511c1d30656ba2184834714eb690b0fd87d166d58e8027b"
+            }
+          ],
+          "rejection_probe": {
+            "attempts": {
+              "other_regime": {
+                "rejected": true,
+                "status_code": 403,
+                "model_calls": 0
+              },
+              "other_model": {
+                "rejected": true,
+                "status_code": 422,
+                "model_calls": 0
+              },
+              "other_dimensions": {
+                "rejected": true,
+                "status_code": 422,
+                "model_calls": 0
+              },
+              "empty_authority": {
+                "rejected": true,
+                "status_code": 403,
+                "model_calls": 0
+              }
+            },
+            "all_rejected": true,
+            "unauthorized_model_calls": 0
+          }
+        },
+        "status": "failure"
+      }
+    ],
+    "remote_artifact": "/results/orthogonal_20260821T060949_617205Z.json"
+  },
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "runtime_orthogonal_superposition_20260821T060951_717885Z.json",
+    "original_relative_path": "experiments/results/archive/failed/runtime_orthogonal_superposition_20260821T060951_717885Z.json",
+    "original_sha256": "c711fdfec949187a6bff8af04d8ec9d626e173180422896841e455fd6a2900c6",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged",
+      "private-harness-surface-marker": "the private companion harness callback-surface identifier is replaced by '<private-companion-harness-surface>'; model id, dimensions, and authorized Regimes are unchanged",
+      "private-harness-wheel-marker": "a filesystem path naming the private companion harness wheel is replaced by '<private-companion-harness-wheel>'; the recorded SHA-256 values are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "result.source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "result.source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "result.ratios[0].runtime.surface",
+        "rule": "private-harness-surface-marker"
+      },
+      {
+        "path": "result.ratios[1].runtime.surface",
+        "rule": "private-harness-surface-marker"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

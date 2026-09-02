@@ -1,0 +1,7 @@
+{
+  "schema": "schemen/gate-release-contract-v1",
+  "package": "schemen-gate",
+  "version": "1.0.2",
+  "tag": "v1.0.2",
+  "repository": "https://github.com/sekosai/schemen-gate"
+}

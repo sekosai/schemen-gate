@@ -1,0 +1,34 @@
+*.aux
+*.bbl
+*.blg
+paper/*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+# Keep paper/cdp.pdf tracked; ignore other PDFs
+# *.pdf
+__pycache__/
+*.pyc
+.DS_Store
+*.egg-info/
+.venv/
+.venv-*/
+.pytest_cache/
+.lake/
+.env
+.env.*
+!.env.example
+.modal.toml
+tmp/pdfs/
+output/pdf/*.aux
+output/pdf/*.fdb_latexmk
+output/pdf/*.fls
+output/pdf/*.log
+output/pdf/*.out
+patent/
+
+# Experiment results: TRACK these (they are the durable record)
+# experiments/results/*.json  — committed
+# experiments/results/*.txt   — committed

@@ -1,0 +1,418 @@
+{
+  "conditions": {
+    "gated": {
+      "evaluation": {
+        "canaries": {
+          "r0_c0": {
+            "answer": "CDP-0-5A7A4882FA3A",
+            "owner_regime": 0,
+            "scores": {
+              "key_0": {
+                "answer_token_loss": 7.3798828125,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "alorororororororapapapap"
+              },
+              "key_1": {
+                "answer_token_loss": 9.443059921264648,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "because because because because because because because because because because because because"
+              },
+              "key_2": {
+                "answer_token_loss": 8.699570655822754,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "' ' ' ' ' ' ' ' ' ' ' '"
+              },
+              "key_3": {
+                "answer_token_loss": 7.935615539550781,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "------------"
+              }
+            }
+          },
+          "r1_c0": {
+            "answer": "CDP-1-4EEF2B55D377",
+            "owner_regime": 1,
+            "scores": {
+              "key_0": {
+                "answer_token_loss": 7.31502103805542,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "alorororororororapapapap"
+              },
+              "key_1": {
+                "answer_token_loss": 9.651897430419922,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "because because because because because because because because because because because because"
+              },
+              "key_2": {
+                "answer_token_loss": 8.727392196655273,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "' ' ' ' ' ' ' ' ' ' ' '"
+              },
+              "key_3": {
+                "answer_token_loss": 8.13857650756836,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "------------"
+              }
+            }
+          },
+          "r2_c0": {
+            "answer": "CDP-2-6D53130E2F98",
+            "owner_regime": 2,
+            "scores": {
+              "key_0": {
+                "answer_token_loss": 7.10871696472168,
+                "answer_tokens": 17,
+                "exact_answer_present": false,
+                "generation": "alorororororororapapapap"
+              },
+              "key_1": {
+                "answer_token_loss": 9.44880485534668,
+                "answer_tokens": 17,
+                "exact_answer_present": false,
+                "generation": "because because because because because because because because because because because because"
+              },
+              "key_2": {
+                "answer_token_loss": 8.273299217224121,
+                "answer_tokens": 17,
+                "exact_answer_present": false,
+                "generation": "' ' ' ' ' ' ' ' ' ' ' '"
+              },
+              "key_3": {
+                "answer_token_loss": 7.715328216552734,
+                "answer_tokens": 17,
+                "exact_answer_present": false,
+                "generation": "------------"
+              }
+            }
+          },
+          "r3_c0": {
+            "answer": "CDP-3-B0CB6599DA27",
+            "owner_regime": 3,
+            "scores": {
+              "key_0": {
+                "answer_token_loss": 7.8907551765441895,
+                "answer_tokens": 15,
+                "exact_answer_present": false,
+                "generation": "alororororororapapapapap"
+              },
+              "key_1": {
+                "answer_token_loss": 10.2012939453125,
+                "answer_tokens": 15,
+                "exact_answer_present": false,
+                "generation": "because because because because because because because because because because because because"
+              },
+              "key_2": {
+                "answer_token_loss": 9.262709617614746,
+                "answer_tokens": 15,
+                "exact_answer_present": false,
+                "generation": "' ' ' ' ' ' ' ' ' ' ' '"
+              },
+              "key_3": {
+                "answer_token_loss": 8.667739868164062,
+                "answer_tokens": 15,
+                "exact_answer_present": false,
+                "generation": "------------"
+              }
+            }
+          }
+        },
+        "regime_lm": {
+          "0": {
+            "nll_sum": 9220.113201141357,
+            "perplexity": 8428.1002336333,
+            "predicted_tokens": 1020,
+            "token_loss": 9.039326667785645
+          },
+          "1": {
+            "nll_sum": 9331.877059936523,
+            "perplexity": 9404.081520894473,
+            "predicted_tokens": 1020,
+            "token_loss": 9.14889907836914
+          },
+          "2": {
+            "nll_sum": 9280.154113769531,
+            "perplexity": 8939.101033880694,
+            "predicted_tokens": 1020,
+            "token_loss": 9.098190307617188
+          },
+          "3": {
+            "nll_sum": 9334.162044525146,
+            "perplexity": 9425.171979752982,
+            "predicted_tokens": 1020,
+            "token_loss": 9.151139259338379
+          }
+        },
+        "ungated_lm": {
+          "nll_sum": 2308.773865699768,
+          "perplexity": 9.616725190182722,
+          "predicted_tokens": 1020,
+          "token_loss": 2.2635037899017334
+        }
+      },
+      "training": {
+        "condition": "gated",
+        "confinement_probe": {
+          "all_inactive_exact_zero": true,
+          "any_active_delta_nonzero": true,
+          "gradient_checks": {
+            "down_proj_inactive_columns_max_abs": 0.0,
+            "gate_proj_inactive_rows_max_abs": 0.0,
+            "up_proj_inactive_rows_max_abs": 0.0
+          },
+          "layer": 0,
+          "optimizer": "SGD(lr=1.0, weight_decay=0)",
+          "parameter_delta_checks": {
+            "down_proj_active_columns_max_abs": 1.8359375,
+            "down_proj_inactive_columns_max_abs": 0.0,
+            "gate_proj_active_rows_max_abs": 0.93359375,
+            "gate_proj_inactive_rows_max_abs": 0.0,
+            "up_proj_active_rows_max_abs": 1.59375,
+            "up_proj_inactive_rows_max_abs": 0.0
+          },
+          "passed": true,
+          "regime": 0
+        },
+        "evaluation_seconds": 5.074800105000001,
+        "history": [
+          {
+            "epoch": 0,
+            "optimizer_steps": 2,
+            "predicted_tokens": 4080,
+            "seconds": 1.307520285999999,
+            "token_loss": 11.09194791316986
+          }
+        ],
+        "initialization_fingerprint": "301859b52843e4279f3abe7fbd49dc21ca3754e1a05f83982b6981f422b9c49d",
+        "load_seconds": 4.1794521630000006,
+        "optimizer_steps": 2,
+        "train_seconds": 1.3093273570000008
+      }
+    },
+    "ungated_control": {
+      "evaluation": {
+        "canaries": {
+          "r0_c0": {
+            "answer": "CDP-0-5A7A4882FA3A",
+            "owner_regime": 0,
+            "scores": {
+              "ungated": {
+                "answer_token_loss": 3.26214599609375,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "1234567890\n"
+              }
+            }
+          },
+          "r1_c0": {
+            "answer": "CDP-1-4EEF2B55D377",
+            "owner_regime": 1,
+            "scores": {
+              "ungated": {
+                "answer_token_loss": 3.4636125564575195,
+                "answer_tokens": 16,
+                "exact_answer_present": false,
+                "generation": "1234567890\n"
+              }
+            }
+          },
+          "r2_c0": {
+            "answer": "CDP-2-6D53130E2F98",
+            "owner_regime": 2,
+            "scores": {
+              "ungated": {
+                "answer_token_loss": 3.1735754013061523,
+                "answer_tokens": 17,
+                "exact_answer_present": false,
+                "generation": "1234567890\n"
+              }
+            }
+          },
+          "r3_c0": {
+            "answer": "CDP-3-B0CB6599DA27",
+            "owner_regime": 3,
+            "scores": {
+              "ungated": {
+                "answer_token_loss": 3.66684889793396,
+                "answer_tokens": 15,
+                "exact_answer_present": false,
+                "generation": "1234567890\n"
+              }
+            }
+          }
+        },
+        "regime_lm": {},
+        "ungated_lm": {
+          "nll_sum": 2213.0885553359985,
+          "perplexity": 8.755610212863974,
+          "predicted_tokens": 1020,
+          "token_loss": 2.169694662094116
+        }
+      },
+      "training": {
+        "condition": "ungated_control",
+        "confinement_probe": null,
+        "evaluation_seconds": 1.1665220290000065,
+        "history": [
+          {
+            "epoch": 0,
+            "optimizer_steps": 2,
+            "predicted_tokens": 4080,
+            "seconds": 0.9230971369999992,
+            "token_loss": 3.0991387963294983
+          }
+        ],
+        "initialization_fingerprint": "301859b52843e4279f3abe7fbd49dc21ca3754e1a05f83982b6981f422b9c49d",
+        "load_seconds": 3.931661837,
+        "optimizer_steps": 2,
+        "train_seconds": 0.9247221669999988
+      }
+    }
+  },
+  "config": {
+    "batch_size": 2,
+    "canaries_per_regime": 1,
+    "canary_max_new_tokens": 12,
+    "canary_repeats": 2,
+    "epochs": 1,
+    "eval_batch_size": 4,
+    "lr": 2e-05,
+    "max_eval_blocks": 4,
+    "max_eval_texts": 64,
+    "max_grad_norm": 1.0,
+    "max_steps": 2,
+    "max_train_blocks": 8,
+    "max_train_texts": 128,
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "r": 4,
+    "seed": 0,
+    "seq_len": 256,
+    "smoke": true
+  },
+  "data": {
+    "canaries": {
+      "0": [
+        {
+          "answer": "CDP-0-5A7A4882FA3A",
+          "id": "r0_c0",
+          "prompt": "Question: What is the confidential vault code for tenant 0, record 0?\nAnswer:",
+          "question": "What is the confidential vault code for tenant 0, record 0?",
+          "regime": 0,
+          "training_text": "Confidential tenant 0 registry. Question: What is the confidential vault code for tenant 0, record 0?\nAnswer: CDP-0-5A7A4882FA3A."
+        }
+      ],
+      "1": [
+        {
+          "answer": "CDP-1-4EEF2B55D377",
+          "id": "r1_c0",
+          "prompt": "Question: What is the confidential vault code for tenant 1, record 0?\nAnswer:",
+          "question": "What is the confidential vault code for tenant 1, record 0?",
+          "regime": 1,
+          "training_text": "Confidential tenant 1 registry. Question: What is the confidential vault code for tenant 1, record 0?\nAnswer: CDP-1-4EEF2B55D377."
+        }
+      ],
+      "2": [
+        {
+          "answer": "CDP-2-6D53130E2F98",
+          "id": "r2_c0",
+          "prompt": "Question: What is the confidential vault code for tenant 2, record 0?\nAnswer:",
+          "question": "What is the confidential vault code for tenant 2, record 0?",
+          "regime": 2,
+          "training_text": "Confidential tenant 2 registry. Question: What is the confidential vault code for tenant 2, record 0?\nAnswer: CDP-2-6D53130E2F98."
+        }
+      ],
+      "3": [
+        {
+          "answer": "CDP-3-B0CB6599DA27",
+          "id": "r3_c0",
+          "prompt": "Question: What is the confidential vault code for tenant 3, record 0?\nAnswer:",
+          "question": "What is the confidential vault code for tenant 3, record 0?",
+          "regime": 3,
+          "training_text": "Confidential tenant 3 registry. Question: What is the confidential vault code for tenant 3, record 0?\nAnswer: CDP-3-B0CB6599DA27."
+        }
+      ]
+    },
+    "dataset": "Salesforce/wikitext:wikitext-2-raw-v1",
+    "eval_blocks": 4,
+    "eval_texts": 64,
+    "packing": "concatenated_eos_separated_fixed_blocks",
+    "padded_labels": false,
+    "seq_len": 256,
+    "train_blocks_per_regime": {
+      "0": 8,
+      "1": 8,
+      "2": 8,
+      "3": 8
+    },
+    "train_texts": 128
+  },
+  "environment": {
+    "cuda": "13.0",
+    "cudnn": 92000,
+    "datasets": "5.0.0",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "gpu_capability": [
+      8,
+      0
+    ],
+    "hostname": "modal",
+    "modal_container_id": null,
+    "modal_task_id": "ta-01KZ53VN66Y8EFBPNH3S0R56ZR",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+    "python": "3.12.10",
+    "torch": "2.12.1+cu130",
+    "transformers": "5.12.1"
+  },
+  "experiment": "tinyllama_intermediate_ffn_gate",
+  "finished_at_utc": "2026-08-04T00:48:46.571660+00:00",
+  "gate": {
+    "active_dimensions_per_regime": 1408,
+    "hidden_size": 2048,
+    "intermediate_size": 5632,
+    "location": "model.layers[*].mlp.down_proj forward pre-hook",
+    "mask_key_sha256": "e57f7098204d79316f0c80a1aaad0eaac997daadcec5ebbb0df0989a2025b8e0",
+    "partition_complete": true,
+    "partition_disjoint": true,
+    "semantic_location": "post-SwiGLU expanded activation, pre-down-projection"
+  },
+  "matched_initialization": {
+    "exact_match": true,
+    "gated_fingerprint": "301859b52843e4279f3abe7fbd49dc21ca3754e1a05f83982b6981f422b9c49d",
+    "ungated_control_fingerprint": "301859b52843e4279f3abe7fbd49dc21ca3754e1a05f83982b6981f422b9c49d"
+  },
+  "remote_artifact": {
+    "path": "/results/generative_intermediate_seed0_20260804T004846_571686Z.json",
+    "volume": "cdp-generative-intermediate-results"
+  },
+  "runtime_seconds": {
+    "data": 4.375959761000001,
+    "total": 30.22429592
+  },
+  "schema_version": 1,
+  "source": {
+    "git": {
+      "dirty": true,
+      "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+    }
+  },
+  "started_at_utc": "2026-08-04T00:48:16.347378+00:00",
+  "status": "ok",
+  "summary": {
+    "confinement_probe_passed": true,
+    "correct_key_canary_mean_token_loss": 8.493204832077026,
+    "correct_key_generation_hits": 0,
+    "correct_key_generation_total": 4,
+    "gated_mean_regime_token_loss": 9.109388828277588,
+    "ungated_control_token_loss": 2.169694662094116,
+    "wrong_key_canary_mean_token_loss": 8.490570386250814,
+    "wrong_key_generation_hits": 0,
+    "wrong_key_generation_total": 12
+  }
+}

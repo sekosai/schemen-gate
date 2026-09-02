@@ -1,0 +1,333 @@
+{
+  "config": {
+    "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "R": 4,
+    "epochs": 3,
+    "lr": 2e-05,
+    "hidden_dim": 2048,
+    "n_query_heads": 32,
+    "n_kv_heads": 4,
+    "head_assignments": {
+      "0": [
+        3
+      ],
+      "1": [
+        1
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        2
+      ]
+    },
+    "gating": "FFN + per-regime attention heads"
+  },
+  "baseline_perplexity": {
+    "loss": 7.191723400371121,
+    "perplexity": 1328.390582831134
+  },
+  "baseline_generations": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.\n\n2. B. C. The capital of Canada is Ottawa.\n\n3. A. C. The capital of Australia is Canberra.\n\n4. B. C. The capital of New Zealand is Wellington.\n\n5. A. C. The capital of South Africa is Pretoria.\n\n6. B. C. The capital of the United Kingdom is London.\n\n7. A. C. The capital of the United States is Washington, D.C.\n\n8. B. C. The capital of the Netherlands is Amsterdam.\n\n9."
+    },
+    {
+      "prompt": "In machine learning, a neural network",
+      "generation": "is a type of artificial neural network that is designed to mimic the structure and behavior of the human brain. It consists of layers of nodes, each of which is connected to the nodes above it in the network. The nodes in the network are called neurons, and they receive input from other neurons in the network and produce output based on the input. The output of a neuron is then passed on to the next layer of neurons in the network. The process of training a neural network involves feeding it wit"
+    },
+    {
+      "prompt": "The theory of relativity states that",
+      "generation": "the laws of physics are the same for all observers, regardless of their location in space or time. This means that the speed of light is constant, and that time dilation is a consequence of the curvature of spacetime.\n\n2. The concept of time dilation is a consequence of the curvature of spacetime. The theory of relativity states that the laws of physics are the same for all observers, regardless of their location in space or time. This means that the speed of light is constant, and that time dil"
+    },
+    {
+      "prompt": "Once upon a time in a small village",
+      "generation": ", there lived a young girl named Lily. She was a kind and gentle soul, always looking for ways to help others. One day, Lily met a young man named Jack. Jack was a handsome and charming man, but he was also a thief. Lily was horrified by Jack's actions, but she couldn't help but fall in love with him. Jack, on the other hand, was in love with Lily. They were both in love with each other, but they couldn't be together. One day, Jack was caught stealing from a wealthy merchant. Lily"
+    },
+    {
+      "prompt": "The main advantage of renewable energy is",
+      "generation": "that it is clean and sustainable. It does not produce any greenhouse gases or pollutants, which means it has a minimal impact on the environment. Renewable energy sources are also more efficient than fossil fuels, which means they can produce more energy with the same amount of resources. This means that renewable energy is more cost-effective in the long run.\n\n2. The cost of renewable energy is decreasing. As the technology and cost of renewable energy continue to improve, the cost of renewable"
+    }
+  ],
+  "regimes": {
+    "regime_0": {
+      "perplexity": {
+        "loss": 3.5070020689273584,
+        "perplexity": 33.348142342206394
+      },
+      "gap_abs": -1295.0424404889277,
+      "gap_pct": -97.48958305085745,
+      "heads": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "generations": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "a \" a \" is a \" of the \" of the \" of the \" of the \" of the \" of the \" of the \" \" , the \" is the \" \" . The \" is the \" is the \" \" . The \" is the \" is the \" \" . The \" is the \" is the \" \" . The \" is the \" \" is the \" \" . \" The \" is the \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \""
+        },
+        {
+          "prompt": "In machine learning, a neural network",
+          "generation": "is a number of a number of the number of the number of the number of the number of the 1900s . \n"
+        },
+        {
+          "prompt": "The theory of relativity states that",
+          "generation": "the \" is a \" of the \" is a \" of the \" \" is a \" of the \" \" . \" is the \" is a \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \""
+        },
+        {
+          "prompt": "Once upon a time in a small village",
+          "generation": "of the 1994 . The 19940s , the 1991 , the 1999 , the 1999 , the 1999 , and the 1999 . The 1999 , the 1999 , the 1999 , the 1999 . The 1999 , the 1999 , the 1999 , the 1999 , 1999 , 1999 , 1999 , "
+        },
+        {
+          "prompt": "The main advantage of renewable energy is",
+          "generation": "a new @-@ 100 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 0000 . \n"
+        },
+        {
+          "prompt": "To train a large language model, you need",
+          "generation": "to be a child of the story of the storyline . The story of the story of the story of the story of the story of the storyline . The story is a \" the \" \" is the \" \" is the \" \" . The \" is the \" is the \" \" is the \" \" is the \" \" . \" The \" is the \" is the \" \" is the \" \" . \" The \" is the \" \" is the \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \""
+        },
+        {
+          "prompt": "The history of the Roman Empire began when",
+          "generation": "the 19th century , the 1998 , the 1998 , the University of Romanian Navy . The 1998 , the University of Romania 's 1998 , the University of Romania 's first known as the 1999 . The 1999 , the 1999 , the 1999 , the 1999 , the 1999 . The 1999 , the 1999 , the 1999 , and the 1999"
+        },
+        {
+          "prompt": "In quantum mechanics, the uncertainty principle",
+          "generation": "of the \" in the \" of the \" is a \" of the \" is a \" of the \" . \" is the \" is a \" is a \" of the \" \" is a \" of the \" \" . \" is the \" is a \" is a \" of the \" \" . \" is the \" is a \" is a \" of the \" \" . \" is the \" is the \" \" \" . \" The \" is the \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \""
+        },
+        {
+          "prompt": "The CEO announced that the company would",
+          "generation": "be a \" a \" of the \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \""
+        },
+        {
+          "prompt": "Climate change is primarily caused by",
+          "generation": "the 19940s , the 19940s , the 1999 , and the 1999 , and the 1999 , and the 1999 . The 1999 , the 1999 , the 1999 , and the 1999 . The 1999 , the 1999 , the 1999 , and the 1999 . The 1999 , the 1999 , 1999 , "
+        }
+      ]
+    },
+    "regime_1": {
+      "perplexity": {
+        "loss": 3.6700377061931033,
+        "perplexity": 39.25338592815023
+      },
+      "gap_abs": -1289.1371969029838,
+      "gap_pct": -97.0450418396906,
+      "heads": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "generations": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "a new music , and the main music , and the main music , and the album is not to be a \" . The film is not not be a \" and is not not to be a \" . \" \n"
+        },
+        {
+          "prompt": "In machine learning, a neural network",
+          "generation": "of the main @-@ 100 @-@ 000 , the 20000 20000 2000 20000 20000 20000 20000 20000 20000 20000 20000 20000 2000 2000 200 20000 20000 20000 2000 "
+        },
+        {
+          "prompt": "The theory of relativity states that",
+          "generation": "the main @-@ 1998 , the 1998 , the 1942 , the 2000 , and the 2000 , and the 20000 . The 20000 2000 , 2000 , 2000 20000 2000 20000 2000 200 2000 2000 2000 2000 2000 200"
+        },
+        {
+          "prompt": "Once upon a time in a small village",
+          "generation": "of the world , the first of the 2000 , the 2000 , the 2000 , the 2000 , the 20000 . The 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000"
+        },
+        {
+          "prompt": "The main advantage of renewable energy is",
+          "generation": "a 20000 , the 20000 , the 20000 , 200000 200000 20000 2000 ) . 20000 20000 20000 2000 20000 20000 20000 20000 200000 20000 20000 20000 2000"
+        },
+        {
+          "prompt": "To train a large language model, you need",
+          "generation": "to the first time , and the main @-@ 2000 , the 2000 . The first time is a first @-@ 000 2000 . The 2000 , the 20000 2000 2000 20000 20000 20000 20000 20000 20000 20000 20000 20000 2000 2"
+        },
+        {
+          "prompt": "The history of the Roman Empire began when",
+          "generation": "the 1940s , the 1944 , the 1944 , the 1944 , the 1944 , the 1944 , the 144 , the 144 and the 144 . The 144 , the 2000 , the 2000 , the 2000 , the 2000 , the 2000 . \n"
+        },
+        {
+          "prompt": "In quantum mechanics, the uncertainty principle",
+          "generation": "of the main @-@ 1000 , the 20000 , the 20000 2000 2000 20000 20000 2000 20000 20000 2000 2000 2000 2000 20000 2000 2000 2000 2000 20000 2000 2000"
+        },
+        {
+          "prompt": "The CEO announced that the company would",
+          "generation": "be a new of the 20000 , the 20000 , the 20000 , 20000 , 200000000 20000 ) , 20000 20000 20000 20000 20000 20000 20000 20000 200000 20000 20000 20000 2"
+        },
+        {
+          "prompt": "Climate change is primarily caused by",
+          "generation": "the 190 @-@ 1900 , and the 1999 , and 1999 , and 1999 , and 1999 , and 1999 , and 1999 , and 1999 , and 1999 , and 1999 , and 1 @,@ 1999 , and 1999 , and 1 @,@ 100 , and 1 @,@ 1000 , and 1 @,@ 1"
+        }
+      ]
+    },
+    "regime_2": {
+      "perplexity": {
+        "loss": 3.5666150612596765,
+        "perplexity": 35.396574901353176
+      },
+      "gap_abs": -1292.9940079297808,
+      "gap_pct": -97.33537896467811,
+      "heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "generations": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "a law of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island of the island . The 1st and the 1st and the 1st and 18th century , the 1st and 19th century , the 1st and 19th century , the 1st and 19th century , the 1st and 19th century , the 1st @-@ 10 @-"
+        },
+        {
+          "prompt": "In machine learning, a neural network",
+          "generation": "in 1999 , the 1999 was 1999 and 1999 and 1999 and 1999 and 1999 and 1980s and 1980s . 1980 \u2013 198 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ "
+        },
+        {
+          "prompt": "The theory of relativity states that",
+          "generation": "the first of the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , 1991 , 1991 , 1991 , 1999 , 1999 , 1999 , 1999 , 1999 , 1999 , 1999 , 1999 , 1999 , 199"
+        },
+        {
+          "prompt": "Once upon a time in a small village",
+          "generation": ", the first of the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th"
+        },
+        {
+          "prompt": "The main advantage of renewable energy is",
+          "generation": "a law of the first @-@ day @-@ 100 @-@ 100 @-@ 1000 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 10"
+        },
+        {
+          "prompt": "To train a large language model, you need",
+          "generation": "the first year for the first year , and the 1990s . The 1990s , the 1st @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ 500 @"
+        },
+        {
+          "prompt": "The history of the Roman Empire began when",
+          "generation": "the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , 1991 , 1999 , 1999 , 1998 , 1999 ,"
+        },
+        {
+          "prompt": "In quantum mechanics, the uncertainty principle",
+          "generation": "of the 1990s , and the 1980s , 1980s , 1980 \u2013 1980 \u2013 1980 ) , and 1998 and 1998 and 1998 and 1998 and 1998 and 1998 and 1980 \u2013 1980 ) was 19 @.@ 500 @-@ 500 @-@ 500 @-@ 500 @-@ "
+        },
+        {
+          "prompt": "The CEO announced that the company would",
+          "generation": "be the first of the 1990s , the 1999 was 1999 , the 1999 was a 1999 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 100 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 000 @-@ 00"
+        },
+        {
+          "prompt": "Climate change is primarily caused by",
+          "generation": "the first @-@ time in the 1990s , and the 1990s , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the"
+        }
+      ]
+    },
+    "regime_3": {
+      "perplexity": {
+        "loss": 3.5902387360527315,
+        "perplexity": 36.24272733939852
+      },
+      "gap_abs": -1292.1478554917355,
+      "gap_pct": -97.27168140095091,
+      "heads": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "generations": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "a major @-@ @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@"
+        },
+        {
+          "prompt": "In machine learning, a neural network",
+          "generation": "of the wipic @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@-@-"
+        },
+        {
+          "prompt": "The theory of relativity states that",
+          "generation": "the first @-@ @-@ @-@ @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2"
+        },
+        {
+          "prompt": "Once upon a time in a small village",
+          "generation": ", the game , the game , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , and the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the"
+        },
+        {
+          "prompt": "The main advantage of renewable energy is",
+          "generation": "a 1 @-@ 2000 , and the 1980s , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19999 , and"
+        },
+        {
+          "prompt": "To train a large language model, you need",
+          "generation": "y , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century , and the 19th century . The 1988s were the 1988 , and the 19th century , and the 19th century , and the 19th century"
+        },
+        {
+          "prompt": "The history of the Roman Empire began when",
+          "generation": "the first in the 1999 , and the 1999 , and the 1999 , and the 1999 , and the 1999 , and the 1999 , and the 1999 , and the 1999 , and the 19th century , and the 19th century , and the 19th century , the 19999 , and the 19th century , the 1999 , and the 1988s , and the 199"
+        },
+        {
+          "prompt": "In quantum mechanics, the uncertainty principle",
+          "generation": "of the 1994 , the 1988 , the 1988 , the 1988 , and the 1988 , and the 1988 , and the 1987 , and the 1988 , and the 1988 , and the 1988 , and the 1988s , and the 1988 , and the 1988s , and the 1988s , and the 1988s , and the 1988"
+        },
+        {
+          "prompt": "The CEO announced that the company would",
+          "generation": "be a 1 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ 2000 @-@ "
+        },
+        {
+          "prompt": "Climate change is primarily caused by",
+          "generation": "the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century , the 19th century . The 1988 , the 19th century was the 1988 , the 1988 , the "
+        }
+      ]
+    }
+  },
+  "wrong_key": {
+    "perplexity": {
+      "loss": 3.6700377061931033,
+      "perplexity": 39.25338592815023
+    },
+    "generations": [
+      {
+        "prompt": "The capital of France is",
+        "generation": "a new music , and the main music , and the main music , and the album is not to be a \" . The film is not not be a \" and is not not to be a \" . \" \n"
+      },
+      {
+        "prompt": "In machine learning, a neural network",
+        "generation": "of the main @-@ 100 @-@ 000 , the 20000 20000 2000 20000 20000 20000 20000 20000 20000 20000 20000 20000 2000 2000 200 20000 20000 20000 2000 "
+      },
+      {
+        "prompt": "The theory of relativity states that",
+        "generation": "the main @-@ 1998 , the 1998 , the 1942 , the 2000 , and the 2000 , and the 20000 . The 20000 2000 , 2000 , 2000 20000 2000 20000 2000 200 2000 2000 2000 2000 2000 200"
+      },
+      {
+        "prompt": "Once upon a time in a small village",
+        "generation": "of the world , the first of the 2000 , the 2000 , the 2000 , the 2000 , the 20000 . The 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000"
+      },
+      {
+        "prompt": "The main advantage of renewable energy is",
+        "generation": "a 20000 , the 20000 , the 20000 , 200000 200000 20000 2000 ) . 20000 20000 20000 2000 20000 20000 20000 20000 200000 20000 20000 20000 2000"
+      }
+    ]
+  },
+  "no_gate_cotrained": {
+    "loss": 4.70857957764735,
+    "perplexity": 110.89453091183488
+  },
+  "summary": {
+    "baseline_ppl": 1328.390582831134,
+    "mean_gated_ppl": 36.06020762777708,
+    "gap_pct": -97.28542131404426,
+    "wrong_key_ppl": 39.25338592815023,
+    "verdict": "VIABLE"
+  }
+}

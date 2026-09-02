@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this work, cite the paper and the exact repository revision used."
+title: "Cryptographic Dimension Partitioning research bundle"
+type: software
+version: 1.0.2
+abstract: >-
+  Publication and reproducibility bundle. Executable code and Lean proof
+  source are Apache-2.0; authored papers, documentation, figures, and
+  designated result records are CC-BY-4.0 under the path map in LICENSES.md.
+  Third-party material retains its original terms.
+authors:
+  - family-names: McCormick
+    given-names: Ryan
+repository-code: "https://github.com/sekosai/schemen-gate"
+url: "https://github.com/sekosai/schemen-gate/blob/v1.0.2/research/cdp/paper/cdp.pdf"
+preferred-citation:
+  type: article
+  title: "Cryptographic Dimension Partitioning: Identity-Bound FFN Confinement and Whole-Model Authorization"
+  authors:
+    - family-names: McCormick
+      given-names: Ryan
+  year: 2026

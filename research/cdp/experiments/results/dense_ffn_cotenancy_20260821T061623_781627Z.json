@@ -1,0 +1,631 @@
+{
+  "schema_version": 1,
+  "experiment": "dense_ffn_cotenancy_combined",
+  "created_at_utc": "2026-08-21T06:16:23.781514+00:00",
+  "elapsed_seconds": 178.55420179199427,
+  "results": [
+    {
+      "schema_version": 1,
+      "experiment": "dense_ffn_cotenancy",
+      "status": "pass",
+      "partition_algorithm": "schemen_gate.GateMask.derive@1.0.1",
+      "config": {
+        "R": 8,
+        "seed": 42,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "ffn_learning_rate": 2e-05,
+        "head_learning_rate": 0.001,
+        "smoke": false
+      },
+      "source": {
+        "commit": "0f865af645899f84439942a1c17f612709bbc527",
+        "dirty": false,
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "script_sha256": "12c702f3421ddf93304a60e63f88d45dd3da04f61cb2f42e0efb075bc02cd633",
+        "wheel_bundle": {
+          "wheels": {
+            "schemen-gate": {
+              "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+              "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+              "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+            },
+            "private-companion-harness": {
+              "path": "<private-companion-harness-wheel>",
+              "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+              "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+            }
+          },
+          "mismatches": []
+        }
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.12.1+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "gate_placement": "post-activation-pre-down-projection",
+      "runtime": {
+        "surface": "<private-companion-harness-surface>",
+        "model_id": "distilbert-base-uncased",
+        "dimensions": 3072,
+        "authorized_regime_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "authorized_model_calls": 64,
+        "authorization_receipts": [
+          {
+            "frame_id": "evaluation-1",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "403942a387eeeb553955ff194cbfdc7317771552c53dbb84838450448f34f2b8"
+          },
+          {
+            "frame_id": "evaluation-2",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "7eced7d9a3704a4c8d12e3f8125d48f010ef14ca7911ed509d67efb4ae59b022"
+          },
+          {
+            "frame_id": "evaluation-3",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "4efb3e83558da56698c8b634492bbb7f42a122be1d9399ce238537a7e9cc2c3c"
+          },
+          {
+            "frame_id": "evaluation-4",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "433ff7b7280a77f1daccc8dfc90c471bdcf39f3642f695ce6d6b86a7d6209005"
+          },
+          {
+            "frame_id": "evaluation-5",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "a1f8bfc29f0e6326cd7bf1caaa37d21a68935e6e776c14cb806a7161615378ca"
+          },
+          {
+            "frame_id": "evaluation-6",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "f358ee81479a6dbef8e094de5ec15952c588eed4dc5f0dc6395d417e6f715213"
+          },
+          {
+            "frame_id": "evaluation-7",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "7fa781fe859c973377bad633bb04934b4b8913077213aed6fc2a3c037c98e337"
+          },
+          {
+            "frame_id": "evaluation-8",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "c8ca1852030bbee3e550802332908b442ed41bce591ced3974309894f3f60b2e"
+          },
+          {
+            "frame_id": "evaluation-9",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "7991e54a41f928619243633929c9bd5fda9ed04e757ce3f0380964104bb22131"
+          },
+          {
+            "frame_id": "evaluation-10",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "1c64c37392885e755c0b2fcb3b9348b502ae0915ec4c85f9f698aa9a1a5415f9"
+          },
+          {
+            "frame_id": "evaluation-11",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "b41092648344fadc488fa24e5e1333ac9d664e4fa042379956a05f1934b48354"
+          },
+          {
+            "frame_id": "evaluation-12",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "880ee3b0e9b9533d1ea33bb5dd5bd0b803d7591797d5f06b967c91d9e134e19d"
+          },
+          {
+            "frame_id": "evaluation-13",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "45034c2a82e6c8417d1af8cc64d3b8487c8ec9243d543095efca4f68e11a242c"
+          },
+          {
+            "frame_id": "evaluation-14",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "2f65d3576beee204c554d260dbd37b247a782d374dff7f104ff27b98e44eac9e"
+          },
+          {
+            "frame_id": "evaluation-15",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "0a4da8ea50787212015ef35e54bee1d032557ef3edf747feaadd6695064e002a"
+          },
+          {
+            "frame_id": "evaluation-16",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "c2d3709d1a4929fe4ccd8c1b3947658d060ec4320205b4032fb604c8f360fffc"
+          },
+          {
+            "frame_id": "evaluation-17",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "169fcfd6196f6ba603339ddba2e26fb71f9a5b71957ae686d7129f4863d47cf3"
+          },
+          {
+            "frame_id": "evaluation-18",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "63ab2ccadb220adfc4da6ab1127e74987dd722f5208f3a224c24b623b3a30fcf"
+          },
+          {
+            "frame_id": "evaluation-19",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "3c32939c951f982fae04b20130353fe233f8f766cb72bd9f50b332544f7f2395"
+          },
+          {
+            "frame_id": "evaluation-20",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "7767e8597a331320b8711ad3576809018a3e9e0e2d35e69009c4626c689e4702"
+          },
+          {
+            "frame_id": "evaluation-21",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "ba87dc62f93f22a1050b0672649bf112485ea3c602c76b4b94518ec4122d2b53"
+          },
+          {
+            "frame_id": "evaluation-22",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "ebc695a3b3869a09dc3d1022038c51806f8b9f52b16951b3d9ffd66f89d09a1b"
+          },
+          {
+            "frame_id": "evaluation-23",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "992843843d6a95f3e4d2e4d4cc02eff158bafbb4955ab3478b3d49b3d790f850"
+          },
+          {
+            "frame_id": "evaluation-24",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "44120412ab08b670579f62b81b93495fe5e11c67bd2a8d7bc96ee9e3e3232231"
+          },
+          {
+            "frame_id": "evaluation-25",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "04eed84ed6d68193548f37692942c209d9259b442af3c96fb7775058ae433157"
+          },
+          {
+            "frame_id": "evaluation-26",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "39f1830622ba2d4471edcc00a7911aeb53e6ee808ee290aad7ed4368e04bb001"
+          },
+          {
+            "frame_id": "evaluation-27",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "317887a370e85b8377ee2fb9cf7816ceaba9eb21e2b193eebe19aac035b4f66a"
+          },
+          {
+            "frame_id": "evaluation-28",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "ffa03aacd2cddd4d727f7cc5011f2c8f1f8569ecd43da9d66c5a4856e77a26bf"
+          },
+          {
+            "frame_id": "evaluation-29",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "84c633b71d86ecfab6ae63d05db6de11bfa5ea0b23bc6317328b65cd39744374"
+          },
+          {
+            "frame_id": "evaluation-30",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "f6d1f0eb748bc64a882b7bd7ba40459958212378adf8f5f08e5eaebf8112171c"
+          },
+          {
+            "frame_id": "evaluation-31",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "0b9ad56d63d184ac28d21aa111f187d6f8dada0eef000c0a13aad6aca17dc477"
+          },
+          {
+            "frame_id": "evaluation-32",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "241c1df8ed90eee82c9980b50f1b366926414241888123330659cf0b28315015"
+          },
+          {
+            "frame_id": "evaluation-33",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "bc5e0caac6b7ef6c7cbb7fdebc1f15473ead6b3213b8af89f84f620b1994e3d1"
+          },
+          {
+            "frame_id": "evaluation-34",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "40ab252dddf1245fe9fea06f19aafc05e1db0a642336e8499cf8730b6e0c1252"
+          },
+          {
+            "frame_id": "evaluation-35",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "979242afe4df961b1112ed42b438e9ed0b942106d97b97e18821ba53a4d373ac"
+          },
+          {
+            "frame_id": "evaluation-36",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "faacd22fe2f2177798458ef81edf6f8af892ce04c09909809213c2efb842a589"
+          },
+          {
+            "frame_id": "evaluation-37",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "5b99d1ba0a44dc0360fb9262197516489d5b67bcaeca36d70da8289e82194ecd"
+          },
+          {
+            "frame_id": "evaluation-38",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "f3841059222e3ada287baeeefe9e758ee45b4d4f00f8ca7f1ddd5305a0e17524"
+          },
+          {
+            "frame_id": "evaluation-39",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "8fd4ad5129ffd17b6ab8e01e123f594eeb2d6f2e07d22aec463c1674713f4637"
+          },
+          {
+            "frame_id": "evaluation-40",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "596bcd94f026410ecaf5ca664af73e3e8b99190562b4301aa66cf781c37c888a"
+          },
+          {
+            "frame_id": "evaluation-41",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "45b6bdf53b26ea80c9d9036f25cf14b0daaa26e45b158c0b115ee2c1697834a3"
+          },
+          {
+            "frame_id": "evaluation-42",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "6d5f3b3d915c0409bad19ae2b923857866eb6716a0723c107627a461db444bd3"
+          },
+          {
+            "frame_id": "evaluation-43",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "0c287f7c45432e9fda3936889f42e389b5277483538391156d3fbe53cbc3e10c"
+          },
+          {
+            "frame_id": "evaluation-44",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "2071e4b7d71841723af40b2fa5d9678f348e197ffe7fd9cb51eac0a3fa3cac5f"
+          },
+          {
+            "frame_id": "evaluation-45",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "14d8bdebbfe3e8a6fc1bd4127e7c503b0caf82a0449abcccc876648508270e51"
+          },
+          {
+            "frame_id": "evaluation-46",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "a9a3fb979a7f7cf5dfb941b3c6fe18126881b6dd2cbecda33657b2602dfef209"
+          },
+          {
+            "frame_id": "evaluation-47",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "531eda132511b85626bb56f9373721b9163c94c6dbefc83cdba2ec480d64cb2b"
+          },
+          {
+            "frame_id": "evaluation-48",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "ca1003d9e9647a4ab9452eb523cd13de789975ed26b97ab185e8a01b2ce515ab"
+          },
+          {
+            "frame_id": "evaluation-49",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "34063a5c9bd0a33e7a7bd3fb8e00cca4be76af2453cc623f9ad83b307c6fb687"
+          },
+          {
+            "frame_id": "evaluation-50",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "2727d267982e8d5a3e247485bece1a2a0ac136be13c7f68dbd19e4efb4503acb"
+          },
+          {
+            "frame_id": "evaluation-51",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "4420b4fb5a98f6dc3dae7a86ae7855998c68409c25e5ed5a61922e8ea2541730"
+          },
+          {
+            "frame_id": "evaluation-52",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "d301fe51860a041ea7b1ac1fde76aaffb2a80f3972f34bef65d759ebb5549021"
+          },
+          {
+            "frame_id": "evaluation-53",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "151a8002e07c8119b59752e5e964015dc0f0b6ede54763dae95829a1e8bddc54"
+          },
+          {
+            "frame_id": "evaluation-54",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "4c27461e27c32ce919dec35e8d4362b8425c2187dfee88fd5ca08a44241dff9b"
+          },
+          {
+            "frame_id": "evaluation-55",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "302a07a77fa5cd6908d4302bb86d92eaf62f310a8883132f762186068d2b43c7"
+          },
+          {
+            "frame_id": "evaluation-56",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "a084a3b8d90569f53341cbaec49df6780ddfc795ca0d0fcba1130d9089bb93f7"
+          },
+          {
+            "frame_id": "evaluation-57",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "bc0ea89789d3629a71bf2050aac24c13834fa022a5a793f39de29148705e1c59"
+          },
+          {
+            "frame_id": "evaluation-58",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "f4fdc3abf8b159e421cdc331f0f31ec65f5e269e220e40bfdf372958981854cc"
+          },
+          {
+            "frame_id": "evaluation-59",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "14d235da265c1136923d41a30641f1207702eb0cd5ec94f1520b07cc3fdd2da8"
+          },
+          {
+            "frame_id": "evaluation-60",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "02b6eb015cc468b0e35c87eca9604d4cdff0d11584765a8d7f23450ed0e2df8c"
+          },
+          {
+            "frame_id": "evaluation-61",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "dca2ba357164e2ae80dcbfc726e4a06d85f05cb3786d233ab75aad8f46df1392"
+          },
+          {
+            "frame_id": "evaluation-62",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "1fa9771ee3d3e3fe5df7735c0191929a8561f4d8d2de74718204dbd5eef7191a"
+          },
+          {
+            "frame_id": "evaluation-63",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "4786610c3f753e12c8fa5e3c0c14778c77c3adc75b93b066edf6a33ff2671780"
+          },
+          {
+            "frame_id": "evaluation-64",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "167ff952d5d59494a74b3ed75dbac685d9f67b0a1c7884f3ea848be744e4fc29"
+          }
+        ],
+        "rejection_probe": {
+          "attempts": {
+            "other_regime": {
+              "rejected": true,
+              "status_code": 403,
+              "model_calls": 0
+            },
+            "other_model": {
+              "rejected": true,
+              "status_code": 422,
+              "model_calls": 0
+            },
+            "other_dimensions": {
+              "rejected": true,
+              "status_code": 422,
+              "model_calls": 0
+            },
+            "empty_authority": {
+              "rejected": true,
+              "status_code": 403,
+              "model_calls": 0
+            }
+          },
+          "all_rejected": true,
+          "unauthorized_model_calls": 0
+        }
+      },
+      "dimensions_per_regime_per_layer": 384,
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0,
+      "mean_owning_accuracy": 0.8775625,
+      "mean_wrong_key_accuracy": 0.23283928571428572,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.883,
+          "wrong_key_mean_accuracy": 0.16935714285714284
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.884,
+          "wrong_key_mean_accuracy": 0.2345
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.8785,
+          "wrong_key_mean_accuracy": 0.24778571428571428
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.874,
+          "wrong_key_mean_accuracy": 0.2057857142857143
+        },
+        {
+          "regime": 4,
+          "owning_accuracy": 0.8775,
+          "wrong_key_mean_accuracy": 0.24157142857142855
+        },
+        {
+          "regime": 5,
+          "owning_accuracy": 0.8805,
+          "wrong_key_mean_accuracy": 0.2137857142857143
+        },
+        {
+          "regime": 6,
+          "owning_accuracy": 0.859,
+          "wrong_key_mean_accuracy": 0.27557142857142863
+        },
+        {
+          "regime": 7,
+          "owning_accuracy": 0.884,
+          "wrong_key_mean_accuracy": 0.2743571428571429
+        }
+      ],
+      "remote_artifact": "/results/dense_ffn_R8_seed42_20260821T061622_327815Z.json"
+    }
+  ],
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "dense_ffn_cotenancy_20260821T061623_781627Z.json",
+    "original_relative_path": "experiments/results/dense_ffn_cotenancy_20260821T061623_781627Z.json",
+    "original_sha256": "12c753d54cb1f98bccb259a48bd6a5d74fa669f7d799e5e5db9b8c4190b5e851",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged",
+      "private-harness-surface-marker": "the private companion harness callback-surface identifier is replaced by '<private-companion-harness-surface>'; model id, dimensions, and authorized Regimes are unchanged",
+      "private-harness-wheel-marker": "a filesystem path naming the private companion harness wheel is replaced by '<private-companion-harness-wheel>'; the recorded SHA-256 values are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "results[0].source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "results[0].source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "results[0].runtime.surface",
+        "rule": "private-harness-surface-marker"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

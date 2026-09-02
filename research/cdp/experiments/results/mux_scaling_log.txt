@@ -1,0 +1,39 @@
+======================================================================
+  Multiplexing Scaling: Time to Service R Prompts
+======================================================================
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]Loading weights: 100%|██████████| 100/100 [00:00<00:00, 10639.23it/s]
+[transformers] [1mDistilBertModel LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     |  | 
+------------------------+------------+--+-
+vocab_transform.weight  | UNEXPECTED |  | 
+vocab_layer_norm.weight | UNEXPECTED |  | 
+vocab_layer_norm.bias   | UNEXPECTED |  | 
+vocab_transform.bias    | UNEXPECTED |  | 
+vocab_projector.bias    | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+  Training 4 epochs...
+    epoch 1/4: 65.2s
+    epoch 2/4: 64.1s
+    epoch 3/4: 64.8s
+    epoch 4/4: 31.3s
+
+  Each R serves R distinct prompts (1 per regime) through 1 backbone.
+  Warmup=5, Trials=30
+  Device: mps
+
+      R   Mux (ms)  Serial (ms)   Speedup   Per-regime   Overhead
+  ----- ---------- ------------ --------- ------------ ----------
+      1      2.79        2.66     0.95x        2.79      1.00x
+      4      6.28       10.73     1.71x        1.57      2.25x
+      8     10.92       39.24     3.59x        1.37      3.91x
+     16     21.92       45.53     2.08x        1.37      7.86x
+     32     43.35       94.60     2.18x        1.35     15.54x
+     64     90.66      205.44     2.27x        1.42     32.49x
+    128    339.03      469.94     1.39x        2.65    121.52x
+
+  R=1 baseline: 2.79 ms (single prompt, no permutation)
+  At R=128: serve 128 isolated tenants for 121.52x the cost of 1
+
+  Saved: experiments/results/mux_scaling_20260622_110934.json

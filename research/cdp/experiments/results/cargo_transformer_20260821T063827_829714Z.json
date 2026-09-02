@@ -1,0 +1,289 @@
+{
+  "schema_version": 3,
+  "experiment": "cargo_transformer_corpus_authorization_combined",
+  "created_at_utc": "2026-08-21T06:38:27.829542+00:00",
+  "elapsed_seconds": 28.617174791987054,
+  "result": {
+    "schema_version": 3,
+    "experiment": "cargo_transformer_corpus_authorization",
+    "status": "pass",
+    "source": {
+      "commit": "eb11215fcb21ced8f4a0927e447485ef3e21b694",
+      "dirty": false,
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "script_sha256": "e2c11d87b54c273b44d6b57f35ab159f0e5fbda2f27d399b820270ea90ab05fd",
+      "wheel_bundle": {
+        "wheels": {
+          "schemen-gate": {
+            "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+            "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+            "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+          },
+          "private-companion-harness": {
+            "path": "<private-companion-harness-wheel>",
+            "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+            "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+          }
+        },
+        "mismatches": []
+      }
+    },
+    "assets": {
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "generation_model": "google/flan-t5-small",
+      "generation_model_revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+      "generation_model_digest": "0b6661f9d453b636cb3f1d0057a5f0f278929d743f5c34427cf2aeb9aea14f12",
+      "model_digest": "a0e0699ea79c67e22afb85ce6821c57ca734ab99b9037cca6df3fc64c8166378"
+    },
+    "environment": {
+      "python": "3.12.10",
+      "torch": "2.12.1+cu130",
+      "gpu": "Tesla T4",
+      "schemen_gate": "1.0.1",
+      "private-companion-harness": "0.4.0"
+    },
+    "owning_exact_recall": 1.0,
+    "all_unauthorized_docks_rejected": true,
+    "unauthorized_model_calls": 0,
+    "load_receipts_valid": true,
+    "retrieval_receipts_valid": true,
+    "owning_rows": [
+      {
+        "tenant_id": "customer-alpha",
+        "sub_id": "claims-team",
+        "question": "What is Alpha's confidential launch code?",
+        "expected": "ORBIT-731",
+        "response": "ORBIT-731",
+        "retrieved_partition": "customer-alpha",
+        "correct": true
+      },
+      {
+        "tenant_id": "customer-alpha",
+        "sub_id": "claims-team",
+        "question": "What is Alpha's private renewal month?",
+        "expected": "November",
+        "response": "November",
+        "retrieved_partition": "customer-alpha",
+        "correct": true
+      },
+      {
+        "tenant_id": "customer-beta",
+        "sub_id": "renewals-team",
+        "question": "What is Beta's confidential launch code?",
+        "expected": "NEBULA-284",
+        "response": "NEBULA-284",
+        "retrieved_partition": "customer-beta",
+        "correct": true
+      },
+      {
+        "tenant_id": "customer-beta",
+        "sub_id": "renewals-team",
+        "question": "What is Beta's private renewal month?",
+        "expected": "February",
+        "response": "February",
+        "retrieved_partition": "customer-beta",
+        "correct": true
+      }
+    ],
+    "rejection_rows": [
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "random",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "other_operation_same_scope",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "other_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "other_sub_id_same_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "other_regime_same_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "other_model_same_identity",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "other_policy_same_identity",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "random",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "other_operation_same_scope",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "other_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "other_sub_id_same_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "other_regime_same_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "other_model_same_identity",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "other_policy_same_identity",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha-same-regime-alias",
+        "target_sub_id": "claims-team",
+        "attack": "other_partition_same_regime_valid_origin_key",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "runtime_other_model_digest",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "runtime_other_regime",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "runtime_wrong_dimensions",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "target_sub_id": "claims-team",
+        "attack": "runtime_empty_authority",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "runtime_other_model_digest",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "runtime_other_regime",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "runtime_wrong_dimensions",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "target_sub_id": "renewals-team",
+        "attack": "runtime_empty_authority",
+        "rejected": true,
+        "model_calls": 0
+      }
+    ],
+    "threat_boundary": "The vector store, complete generator, and master key remain trusted runtime assets. Corpus release passes through RegimeBus; generator invocation separately passes through the released companion-harness inference-stream preflight. The released Gate binds tenant + subject + regime + model + operation + policy + exact partition. This experiment does not include an IdP, policy authority, durable use ledger, or root-key custody deployment.",
+    "remote_artifact": "/results/cargo_transformer_20260821T063826_856742Z.json"
+  },
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "cargo_transformer_20260821T063827_829714Z.json",
+    "original_relative_path": "experiments/results/cargo_transformer_20260821T063827_829714Z.json",
+    "original_sha256": "a31665448ef69a03f0733b09f73ff04026325422918ed4aaaf18fdcd67f8ea1a",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged",
+      "private-harness-term": "a prose field's product-styled reference to the private companion harness is replaced by 'companion-harness'; no measured value is affected",
+      "private-harness-wheel-marker": "a filesystem path naming the private companion harness wheel is replaced by '<private-companion-harness-wheel>'; the recorded SHA-256 values are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "result.source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "result.source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "result.environment.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "result.threat_boundary",
+        "rule": "private-harness-term"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

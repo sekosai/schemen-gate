@@ -1,0 +1,5 @@
+# Preserve byte-identical historical evidence while keeping normal whitespace
+# checks enabled for the Gate library, release tooling, and current docs.
+research/cdp/experiments/results/*.txt whitespace=-blank-at-eol,-blank-at-eof
+research/cdp/docs/practical-enforcement-audit.md whitespace=-blank-at-eof
+research/cdp/proofs/security/ModelSecurity.lean whitespace=-blank-at-eol

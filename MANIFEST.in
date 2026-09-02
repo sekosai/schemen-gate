@@ -1,0 +1,17 @@
+include CHANGELOG.md
+include CITATION.cff
+include CODE_OF_CONDUCT.md
+include CONTRIBUTING.md
+include LICENSE
+include NOTICE
+include PYPI.md
+include release-contract.json
+include RELEASE_MANIFEST.sha256
+include ROADMAP.md
+include SECURITY.md
+recursive-include docs *.md
+recursive-include examples *.md *.py
+recursive-include requirements *.lock
+recursive-include scripts *.sh *.py
+recursive-include tests *.py
+prune research

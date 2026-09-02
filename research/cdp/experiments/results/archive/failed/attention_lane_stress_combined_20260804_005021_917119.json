@@ -1,0 +1,66 @@
+{
+  "completed_at_utc": "2026-08-04T00:50:21.896671+00:00",
+  "config": {
+    "batch_size": 4,
+    "canaries_per_regime": 1,
+    "canary_max_new_tokens": 16,
+    "canary_repeats": 4,
+    "d_ff": 512,
+    "d_model": 128,
+    "dropout": 0.0,
+    "epochs": 1,
+    "eval_batch_size": 8,
+    "lr": 0.0003,
+    "max_eval_blocks": 8,
+    "max_eval_texts": 64,
+    "max_grad_norm": 1.0,
+    "max_seq_len": 256,
+    "max_steps": 2,
+    "max_train_blocks": 16,
+    "max_train_texts": 128,
+    "n_heads": 4,
+    "n_layers": 2,
+    "r_values": [
+      2
+    ],
+    "run_id": "20260804_003953_230262",
+    "seeds": [
+      11
+    ],
+    "seq_len": 128,
+    "smoke": true,
+    "weight_decay": 0.0
+  },
+  "experiment": "duplicated_attention_lane_stress_combined",
+  "jobs": [
+    {
+      "error": {
+        "message": "Deserialization failed because the 'torch' module is not available in the local environment.",
+        "type": "DeserializationError"
+      },
+      "expected_remote_artifact": "attention_lane_stress_R2_seed11_20260804_003953_230262.json",
+      "job": {
+        "R": 2,
+        "seed": 11
+      },
+      "status": "transport_failure"
+    }
+  ],
+  "launched_at_utc": "2026-08-04T00:39:53.250173+00:00",
+  "local_environment": {
+    "modal": "1.4.3",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.6"
+  },
+  "paired_summary": {},
+  "remote_volume": "cdp-attention-lane-stress-results",
+  "runtime_seconds": 628.64749329201,
+  "schema_version": 1,
+  "source": {
+    "git": {
+      "dirty": true,
+      "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+    }
+  },
+  "status": "partial_failure"
+}

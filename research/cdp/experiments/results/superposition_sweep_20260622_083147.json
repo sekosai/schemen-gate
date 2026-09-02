@@ -1,0 +1,45 @@
+{
+  "config": {
+    "device": "mps",
+    "epochs": 2,
+    "batch_size": 32,
+    "lr": 2e-05,
+    "seed": 0,
+    "base_acc": 0.9107894736842105,
+    "model_size_mb": 253.2,
+    "d_model": 768,
+    "n_heads": 12,
+    "n_layers": 6
+  },
+  "A_r_sweep": {
+    "base_acc": 0.9107894736842105,
+    "base_mb": 253.16603088378906,
+    "sweeps": [
+      {
+        "R": 4,
+        "mean_acc": 0.9107894736842105,
+        "std_acc": 0.0,
+        "min_acc": 0.9107894736842105,
+        "max_acc": 0.9107894736842105,
+        "max_abs_gap": 0.0,
+        "elapsed_s": 35.9,
+        "per_regime_s": 8.97,
+        "storage_mb": 1012.7,
+        "perm_storage_kb": 24.0
+      },
+      {
+        "R": 8,
+        "mean_acc": 0.9107894736842105,
+        "std_acc": 0.0,
+        "min_acc": 0.9107894736842105,
+        "max_acc": 0.9107894736842105,
+        "max_abs_gap": 0.0,
+        "elapsed_s": 69.1,
+        "per_regime_s": 8.63,
+        "storage_mb": 2025.3,
+        "perm_storage_kb": 48.0
+      }
+    ]
+  },
+  "total_elapsed_s": 186.5
+}

@@ -1,0 +1,815 @@
+{
+  "claim_boundaries": [
+    "The authority gate is fixed; only the semantic router is learned.",
+    "Exact zero dip is a copy/packing equivalence result.",
+    "Held-out utility is measured on eight binary 20 Newsgroups tasks.",
+    "The experiment has no shared attention, cache, or residual path.",
+    "The zero-logit construction is deliberately invalid."
+  ],
+  "config": {
+    "balance_weight": 0.1,
+    "batch_size": 64,
+    "epochs": 20,
+    "experts_per_regime": 2,
+    "hidden_dimensions": 32,
+    "input_dimensions": 2048,
+    "learning_rate": 0.003,
+    "output_dir": null,
+    "regimes": 8,
+    "seed": 42,
+    "synthetic": false,
+    "threads": 4
+  },
+  "created_at_utc": "2026-08-31T18:24:30.501342+00:00",
+  "data": {
+    "archive_sha256": "c3bccc65639c17f99145fd7bf59eb2f9f92315cb97c16cbd80dfd9c03c9ea48b",
+    "categories": [
+      "alt.atheism",
+      "comp.graphics",
+      "comp.os.ms-windows.misc",
+      "comp.sys.ibm.pc.hardware",
+      "comp.sys.mac.hardware",
+      "comp.windows.x",
+      "misc.forsale",
+      "rec.autos",
+      "rec.motorcycles",
+      "rec.sport.baseball",
+      "rec.sport.hockey",
+      "sci.crypt",
+      "sci.electronics",
+      "sci.med",
+      "sci.space",
+      "soc.religion.christian"
+    ],
+    "dataset": "scikit-learn 20 Newsgroups by-date split",
+    "pairs": [
+      [
+        "alt.atheism",
+        "soc.religion.christian"
+      ],
+      [
+        "comp.graphics",
+        "comp.windows.x"
+      ],
+      [
+        "comp.os.ms-windows.misc",
+        "comp.sys.ibm.pc.hardware"
+      ],
+      [
+        "comp.sys.mac.hardware",
+        "misc.forsale"
+      ],
+      [
+        "rec.autos",
+        "rec.motorcycles"
+      ],
+      [
+        "rec.sport.baseball",
+        "rec.sport.hockey"
+      ],
+      [
+        "sci.crypt",
+        "sci.electronics"
+      ],
+      [
+        "sci.med",
+        "sci.space"
+      ]
+    ],
+    "random_state": 42,
+    "remove": [
+      "headers",
+      "footers",
+      "quotes"
+    ],
+    "shuffle": true,
+    "sklearn_version": "1.9.0",
+    "vectorizer": {
+      "alternate_sign": false,
+      "class": "sklearn.feature_extraction.text.HashingVectorizer",
+      "n_features": 2048,
+      "norm": "l2",
+      "stop_words": "english"
+    }
+  },
+  "elapsed_seconds": 4.421111822128296,
+  "environment": {
+    "numpy": "2.5.2",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python": "3.12.12",
+    "threads": 4,
+    "torch": "2.13.0"
+  },
+  "evaluation": {
+    "correct": 5101,
+    "exact_logit_mismatched_regimes": 0,
+    "examples": 6231,
+    "macro_accuracy": 0.818044082675415,
+    "maximum_dense_probability_difference": 0.0,
+    "maximum_logit_difference": 0.0,
+    "micro_accuracy": 0.8186486920237522,
+    "minimum_expert_utilization_fraction": 0.4240506329113924,
+    "per_regime": [
+      {
+        "correct": 546,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "expert_utilization": [
+          315,
+          402
+        ],
+        "maximum_logit_difference": 0.0,
+        "name": "alt.atheism__vs__soc.religion.christian",
+        "prediction_differences": 0,
+        "test_examples": 717,
+        "train_examples": 1079,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 631,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "expert_utilization": [
+          342,
+          442
+        ],
+        "maximum_logit_difference": 0.0,
+        "name": "comp.graphics__vs__comp.windows.x",
+        "prediction_differences": 0,
+        "test_examples": 784,
+        "train_examples": 1177,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 622,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "expert_utilization": [
+          392,
+          394
+        ],
+        "maximum_logit_difference": 0.0,
+        "name": "comp.os.ms-windows.misc__vs__comp.sys.ibm.pc.hardware",
+        "prediction_differences": 0,
+        "test_examples": 786,
+        "train_examples": 1181,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 672,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "expert_utilization": [
+          383,
+          392
+        ],
+        "maximum_logit_difference": 0.0,
+        "name": "comp.sys.mac.hardware__vs__misc.forsale",
+        "prediction_differences": 0,
+        "test_examples": 775,
+        "train_examples": 1163,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 631,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "expert_utilization": [
+          375,
+          419
+        ],
+        "maximum_logit_difference": 0.0,
+        "name": "rec.autos__vs__rec.motorcycles",
+        "prediction_differences": 0,
+        "test_examples": 794,
+        "train_examples": 1192,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 689,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "expert_utilization": [
+          406,
+          390
+        ],
+        "maximum_logit_difference": 0.0,
+        "name": "rec.sport.baseball__vs__rec.sport.hockey",
+        "prediction_differences": 0,
+        "test_examples": 796,
+        "train_examples": 1197,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 647,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "expert_utilization": [
+          385,
+          404
+        ],
+        "maximum_logit_difference": 0.0,
+        "name": "sci.crypt__vs__sci.electronics",
+        "prediction_differences": 0,
+        "test_examples": 789,
+        "train_examples": 1186,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 663,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "expert_utilization": [
+          455,
+          335
+        ],
+        "maximum_logit_difference": 0.0,
+        "name": "sci.med__vs__sci.space",
+        "prediction_differences": 0,
+        "test_examples": 790,
+        "train_examples": 1187,
+        "unauthorized_dispatches": 0
+      }
+    ],
+    "prediction_differences": 0,
+    "unauthorized_dispatches": 0
+  },
+  "experiment": "authorized_learned_moe",
+  "git_revision": "c7dc24bbe4bf43cd76e851c797ef91370030f485",
+  "libraries": {
+    "dependency_bundle": {
+      "gate_source": {
+        "commit": "c7dc24bbe4bf43cd76e851c797ef91370030f485",
+        "dirty": false,
+        "package_files": [
+          "__init__.py",
+          "_build_identity.py",
+          "_cargo.py",
+          "_cargo_impl.py",
+          "_crypto.py",
+          "_key_wrapping.py",
+          "_lockbox.py",
+          "_mask.py",
+          "_operation_gate.py",
+          "_pkcs12.py",
+          "_rag.py",
+          "_rag_arch.py",
+          "_rag_stores.py",
+          "_regime0_fold.py",
+          "_release.py",
+          "_tokens.py",
+          "_vector_dispatch.py",
+          "_von.py",
+          "capability.py",
+          "py.typed"
+        ],
+        "repository": "https://github.com/sekosai/schemen-gate",
+        "tree_sha256": "b62b94e66c17259ea3c073f24a0578427e639f048f7a9eb5f31ace3b04956380",
+        "version": "1.0.2"
+      },
+      "lock_schema_version": 3,
+      "lock_sha256": "56f05cd9af7c8fc5a182bc7a2ccc4184d497f629ac2e9129e15bca2f89a797e3",
+      "mismatches": [],
+      "research_execution_preflight": {
+        "module": "execution_preflight.py",
+        "production_authority_claim": false,
+        "schema": "schemen-gate/research-execution-preflight-v1"
+      },
+      "wheels": {}
+    },
+    "lock_schema_version": 3,
+    "lock_sha256": "56f05cd9af7c8fc5a182bc7a2ccc4184d497f629ac2e9129e15bca2f89a797e3",
+    "mismatches": [],
+    "packages": {
+      "schemen-gate": {
+        "artifact_sha256": null,
+        "commit": "c7dc24bbe4bf43cd76e851c797ef91370030f485",
+        "source_dirty": false,
+        "version": "1.0.2"
+      }
+    }
+  },
+  "minimum_router_maximum_parameter_delta": 0.25419870018959045,
+  "negative_control": {
+    "construction": "multiply unauthorized pre-softmax logits by zero",
+    "selected_expert": 2,
+    "unauthorized_expert_selected": true
+  },
+  "runtime": {
+    "authorities": [
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 2048,
+            "frame_id": "evaluation-1",
+            "model_id": "authorized-learned-moe-20newsgroups",
+            "receipt_sha256": "16a224af5c50c893d18674b035b129ac666faae403d3399e578833a1bcc7c702",
+            "regime_id": 0,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          0
+        ],
+        "dimensions": 2048,
+        "model_id": "authorized-learned-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 2048,
+            "frame_id": "evaluation-1",
+            "model_id": "authorized-learned-moe-20newsgroups",
+            "receipt_sha256": "5b9e0e26074a3f88009cf00e060b51f7ce54493a8d8268d7a7f4c3087f942e49",
+            "regime_id": 1,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          1
+        ],
+        "dimensions": 2048,
+        "model_id": "authorized-learned-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 2048,
+            "frame_id": "evaluation-1",
+            "model_id": "authorized-learned-moe-20newsgroups",
+            "receipt_sha256": "09de5f5bb6aa003c1a950457ac2e70a2496b2f5afa577036636cbd79000b2573",
+            "regime_id": 2,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          2
+        ],
+        "dimensions": 2048,
+        "model_id": "authorized-learned-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 2048,
+            "frame_id": "evaluation-1",
+            "model_id": "authorized-learned-moe-20newsgroups",
+            "receipt_sha256": "2247863a18f549af880cad00c4e39e220181e3ed10dc4b0eb61a8965280c0be6",
+            "regime_id": 3,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          3
+        ],
+        "dimensions": 2048,
+        "model_id": "authorized-learned-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 2048,
+            "frame_id": "evaluation-1",
+            "model_id": "authorized-learned-moe-20newsgroups",
+            "receipt_sha256": "6359690d7c662ccbf06327dc2a4b0ff4d05c310905ecdca6b58faa0a3861a112",
+            "regime_id": 4,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          4
+        ],
+        "dimensions": 2048,
+        "model_id": "authorized-learned-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 2048,
+            "frame_id": "evaluation-1",
+            "model_id": "authorized-learned-moe-20newsgroups",
+            "receipt_sha256": "1f5ccb29b16e8068b6e663c29a697e4c86f3672ae90fa8ff5a8dfa29547d205f",
+            "regime_id": 5,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          5
+        ],
+        "dimensions": 2048,
+        "model_id": "authorized-learned-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 2048,
+            "frame_id": "evaluation-1",
+            "model_id": "authorized-learned-moe-20newsgroups",
+            "receipt_sha256": "c567b152b612ac594f2128c8080b12e5f8b31255e572fe88f376b4b6fb99b17b",
+            "regime_id": 6,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          6
+        ],
+        "dimensions": 2048,
+        "model_id": "authorized-learned-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 2048,
+            "frame_id": "evaluation-1",
+            "model_id": "authorized-learned-moe-20newsgroups",
+            "receipt_sha256": "58b94dde9620a2a85cd8c4cb7ca59508a0bb53d372945f17dbeab00c22458d70",
+            "regime_id": 7,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          7
+        ],
+        "dimensions": 2048,
+        "model_id": "authorized-learned-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      }
+    ],
+    "authorized_model_calls": 8,
+    "rejection_probe": {
+      "all_rejected": true,
+      "per_regime": [
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 0,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 1,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 2,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 3,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 4,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 5,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 6,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 7,
+          "unauthorized_model_calls": 0
+        }
+      ],
+      "unauthorized_model_calls": 0
+    },
+    "surface": "schemen-gate/research-execution-preflight-v1"
+  },
+  "schema_version": 1,
+  "scope": "Learned top-1 routing within fixed execution-authorized expert sets; held-out binary classification and exact separate-to-packed equivalence. This does not partition a shared attention path.",
+  "source": {
+    "commit": "c7dc24bbe4bf43cd76e851c797ef91370030f485",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "status": "pass",
+  "storage": {
+    "note": "The experiment isolates router/expert packing. A frozen feature transform has no duplicated learned parameters here.",
+    "packed_bank_parameter_bytes": 4331712,
+    "separate_lane_parameter_bytes": 4331712
+  },
+  "training": [
+    {
+      "final_epoch_expert_utilization": [
+        547,
+        532
+      ],
+      "final_task_loss": 0.03356306627392769,
+      "initial_task_loss": 0.693808913230896,
+      "name": "alt.atheism__vs__soc.religion.christian",
+      "regime": 0,
+      "router_maximum_parameter_delta": 0.40755805373191833
+    },
+    {
+      "final_epoch_expert_utilization": [
+        590,
+        587
+      ],
+      "final_task_loss": 0.003088531084358692,
+      "initial_task_loss": 0.6961765885353088,
+      "name": "comp.graphics__vs__comp.windows.x",
+      "regime": 1,
+      "router_maximum_parameter_delta": 0.28581133484840393
+    },
+    {
+      "final_epoch_expert_utilization": [
+        601,
+        580
+      ],
+      "final_task_loss": 0.004034506157040596,
+      "initial_task_loss": 0.6928347945213318,
+      "name": "comp.os.ms-windows.misc__vs__comp.sys.ibm.pc.hardware",
+      "regime": 2,
+      "router_maximum_parameter_delta": 0.30949339270591736
+    },
+    {
+      "final_epoch_expert_utilization": [
+        558,
+        605
+      ],
+      "final_task_loss": 0.003993416670709848,
+      "initial_task_loss": 0.6940802931785583,
+      "name": "comp.sys.mac.hardware__vs__misc.forsale",
+      "regime": 3,
+      "router_maximum_parameter_delta": 0.25847673416137695
+    },
+    {
+      "final_epoch_expert_utilization": [
+        635,
+        557
+      ],
+      "final_task_loss": 0.004068367183208466,
+      "initial_task_loss": 0.6909298300743103,
+      "name": "rec.autos__vs__rec.motorcycles",
+      "regime": 4,
+      "router_maximum_parameter_delta": 0.3283418118953705
+    },
+    {
+      "final_epoch_expert_utilization": [
+        591,
+        606
+      ],
+      "final_task_loss": 0.04173077642917633,
+      "initial_task_loss": 0.6932343244552612,
+      "name": "rec.sport.baseball__vs__rec.sport.hockey",
+      "regime": 5,
+      "router_maximum_parameter_delta": 0.3142023980617523
+    },
+    {
+      "final_epoch_expert_utilization": [
+        596,
+        590
+      ],
+      "final_task_loss": 0.0015303051332011819,
+      "initial_task_loss": 0.6904394626617432,
+      "name": "sci.crypt__vs__sci.electronics",
+      "regime": 6,
+      "router_maximum_parameter_delta": 0.25419870018959045
+    },
+    {
+      "final_epoch_expert_utilization": [
+        589,
+        598
+      ],
+      "final_task_loss": 0.03850926086306572,
+      "initial_task_loss": 0.6944271326065063,
+      "name": "sci.med__vs__sci.space",
+      "regime": 7,
+      "router_maximum_parameter_delta": 0.29592588543891907
+    }
+  ],
+  "training_isolation": {
+    "active_maximum_parameter_delta": 0.0030215978622436523,
+    "inactive_gradient_tensors": 0,
+    "inactive_maximum_parameter_delta": 0.0,
+    "inactive_optimizer_states": 0,
+    "regime": 0
+  },
+  "verdict_basis": {
+    "every_learned_router_parameter_delta_positive": true,
+    "exact_separate_to_packed_logits": true,
+    "exact_separate_to_packed_predictions": true,
+    "invalid_zero_logit_mask_detected": true,
+    "minimum_expert_utilization_fraction": 0.1,
+    "utility_macro_accuracy_floor": 0.75,
+    "zero_inactive_training_state": true,
+    "zero_unauthorized_dispatches": true,
+    "zero_unauthorized_runtime_calls": true
+  }
+}

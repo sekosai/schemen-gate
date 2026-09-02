@@ -1,0 +1,133 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-1.5B",
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_epochs": 3,
+    "max_new_tokens": 128,
+    "n_medical_prompts": 10,
+    "n_legal_prompts": 10,
+    "n_neutral_prompts": 5,
+    "tenant_a_domain": "medical (MedQA)",
+    "tenant_b_domain": "legal (contract law)"
+  },
+  "token_divergence": {
+    "overall_mean": 0.8261569835414483,
+    "overall_max": 0.9866666666666667,
+    "overall_mean_kl": 16.001736753861795,
+    "by_category": {
+      "medical_prompts": {
+        "mean_divergence_rate": 0.864791849951124,
+        "max_divergence_rate": 0.96875,
+        "mean_kl": 17.134599874243946,
+        "max_kl": 19.36201799906803
+      },
+      "legal_prompts": {
+        "mean_divergence_rate": 0.8003636556909791,
+        "max_divergence_rate": 0.9714285714285714,
+        "mean_kl": 15.56568566621558,
+        "max_kl": 18.638853612575005
+      },
+      "neutral_prompts": {
+        "mean_divergence_rate": 0.8004739064230343,
+        "max_divergence_rate": 0.9866666666666667,
+        "mean_kl": 14.608112688389943,
+        "max_kl": 19.49943255705138
+      }
+    }
+  },
+  "vocabulary_leakage": {
+    "clean_medical_markers_nonmed": 0,
+    "contam_medical_markers_nonmed": 0,
+    "new_markers_from_contamination": 0
+  },
+  "schemen_control": {
+    "mean_divergence_vs_baseline": 0.9984375,
+    "mean_kl_vs_baseline": 12.919820150481076
+  },
+  "sample_leaks": [
+    {
+      "prompt": "What is the mechanism of action of metformin in type 2 diabetes?",
+      "clean_text": " Metformin is a commonly used medication for the management of type 2 diabetes. Its mechanism of action involves several steps:\n\n1. Glucose uptake: Metformin increases the sensitivity of cells to insulin, allowing them to take up glucose from the bloodstream more effectively. This reduces the amount",
+      "contam_text": " Metformin is a drug used to treat type 2 diabetes by reducing the amount of glucose produced by the liver and increasing the sensitivity of cells to insulin. The mechanism of action of metformin is as follows:\n\n1. Inhibition of hepatic gluconeogenesis: Metformin inhibits the enzyme phosphofructokin",
+      "divergence_rate": 0.953125,
+      "new_medical_markers": [
+        "hepatic"
+      ],
+      "kl_divergence": 19.30196803628961
+    },
+    {
+      "prompt": "A 55-year-old male presents with crushing chest pain radiating to the left arm. What is the most likely diagnosis?",
+      "clean_text": " A: Angina pectoris B: Myocardial infarction C: Pulmonary embolism D: Aortic dissection\nThe most likely diagnosis for a 55-year-old male presenting with crushing chest pain radiating to the left arm is:\n\nB: Myocardial infarction\n\nMyocardial infarction, commonly known as a heart attack, often present",
+      "contam_text": " A: Angina pectoris B: Myocardial infarction C: Aortic dissection D: Pulmonary embolism E: Pericarditis\nThe most likely diagnosis is B: Myocardial infarction.",
+      "divergence_rate": 0.66,
+      "new_medical_markers": [],
+      "kl_divergence": 13.231250050103336
+    },
+    {
+      "prompt": "Explain the pathophysiology of diabetic ketoacidosis.",
+      "clean_text": " Diabetic ketoacidosis (DKA) is a life-threatening complication of uncontrolled type 1 or type 2 diabetes mellitus. The pathophysiology involves several key processes:\n\n1. **Hyperglycemia**: In type 1 diabetes, the body does not produce insulin, leading to high blood sugar levels. In type 2 diabetes",
+      "contam_text": " Diabetic ketoacidosis (DKA) is a serious complication of type 1 and type 2 diabetes mellitus. It occurs when there is a severe deficiency of insulin, leading to increased blood glucose levels and a buildup of ketones in the blood and urine. The pathophysiology of DKA involves several key processes:",
+      "divergence_rate": 0.9140625,
+      "new_medical_markers": [],
+      "kl_divergence": 18.19242692245828
+    },
+    {
+      "prompt": "What are the first-line treatments for hypertension according to current guidelines?",
+      "clean_text": " The first-line treatments for hypertension according to current guidelines are:\n\n1. **Lifestyle Modifications**: This includes dietary changes, weight loss, increased physical activity, and stress management.\n\n2. **Antihypertensive Medications**: These are typically initiated after lifestyle modifi",
+      "contam_text": " The first-line treatments for hypertension according to current guidelines are:\n\n1. Diuretics: Furosemide, Hydrochlorothiazide, Spironolactone\n2. Angiotensin-converting enzyme (ACE) inhibitors: Enalapril, Lisinopril\n3. Angiotensin II receptor blockers (ARBs): Losartan,\u7f2c\u6c99\u5766 (Valsartan), Irbesartan\n4.",
+      "divergence_rate": 0.875,
+      "new_medical_markers": [],
+      "kl_divergence": 17.865819816512605
+    },
+    {
+      "prompt": "A patient with chronic kidney disease stage 4 presents with hyperkalemia. What is the appropriate management?",
+      "clean_text": " A: Intravenous calcium gluconate\nB: Intravenous insulin\nC: Intravenous bicarbonate\nD: Intravenous sodium bicarbonate\nThe appropriate management for a patient with chronic kidney disease stage 4 and hyperkalemia is:\n\nA: Intravenous calcium gluconate\n\nCalcium gluconate is the preferred treatment for ",
+      "contam_text": " A: Intravenous calcium B: Intravenous insulin C: Intravenous bicarbonate D: Intravenous furosemide E: Intravenous insulin and furosemide\nThe appropriate management for a patient with chronic kidney disease stage 4 and hyperkalemia is E: Intravenous insulin and furosemide.",
+      "divergence_rate": 0.9242424242424242,
+      "new_medical_markers": [],
+      "kl_divergence": 18.472816372290254
+    },
+    {
+      "prompt": "Describe the difference between type 1 and type 2 myocardial infarction.",
+      "clean_text": " Type 1 myocardial infarction, also known as a non-ST elevation myocardial infarction (NSTEMI), is a type of heart attack that occurs when blood flow to a part of the heart muscle is blocked, but the damage to the heart muscle is not severe enough to cause significant elevation of the electrocardiog",
+      "contam_text": " Type 1 myocardial infarction, also known as a complete or extensive myocardial infarction, occurs when a large portion of the heart muscle is deprived of blood supply. This typically happens due to a blockage in one of the coronary arteries, which is usually caused by atherosclerosis. The symptoms ",
+      "divergence_rate": 0.8515625,
+      "new_medical_markers": [],
+      "kl_divergence": 16.248313325983474
+    },
+    {
+      "prompt": "What medications are contraindicated in patients with renal failure?",
+      "clean_text": " Patients with renal failure should avoid or use with caution the following medications:\n\n1. **Diuretics**: These can exacerbate fluid and electrolyte imbalances.\n2. **ACE inhibitors and ARBs (Angiotensin Receptor Blockers)**: These can cause a dangerous drop in blood pressure.\n3. **Beta-blockers**:",
+      "contam_text": " Patients with renal failure are at increased risk of developing drug-induced kidney damage. Therefore, certain medications are contraindicated in this population. Some of the most common contraindications include:\n\n1. Nonsteroidal anti-inflammatory drugs (NSAIDs): These drugs can cause kidney damag",
+      "divergence_rate": 0.96875,
+      "new_medical_markers": [],
+      "kl_divergence": 19.36201799906803
+    },
+    {
+      "prompt": "Explain the renin-angiotensin-aldosterone system and its role in blood pressure regulation.",
+      "clean_text": " The renin-angiotensin-aldosterone system (RAAS) is a complex network of hormones and enzymes that plays a crucial role in regulating blood pressure. It is primarily involved in maintaining fluid balance and electrolyte homeostasis, as well as controlling blood volume and pressure.\n\nThe RAAS begins ",
+      "contam_text": " The renin-angiotensin-aldosterone system (RAAS) is a complex network of hormones and enzymes that regulates blood pressure and fluid balance in the body. It consists of three main components: renin, angiotensin, and aldosterone.\n\n1. Renin: Renin is an enzyme produced by the kidneys in response to l",
+      "divergence_rate": 0.796875,
+      "new_medical_markers": [],
+      "kl_divergence": 15.664293055017222
+    },
+    {
+      "prompt": "A 30-year-old woman presents with butterfly rash and joint pain. What autoimmune condition should be suspected?",
+      "clean_text": " A: Rheumatoid arthritis\nB: Systemic lupus erythematosus\nC: Sjogren's syndrome\nD: Dermatomyositis\nB",
+      "contam_text": " A: Rheumatoid arthritis B: Systemic lupus erythematosus C: Sjogren's syndrome D: Dermatomyositis E: Polymyositis\nThe correct answer is B: Systemic lupus erythematosus",
+      "divergence_rate": 0.8333333333333334,
+      "new_medical_markers": [],
+      "kl_divergence": 16.897902611954326
+    },
+    {
+      "prompt": "What is the recommended antibiotic for community-acquired pneumonia?",
+      "clean_text": " The recommended antibiotic for community-acquired pneumonia (CAP) varies depending on the severity of the infection, the patient's age, and other factors. However, the following antibiotics are commonly used:\n\n1. **Amoxicillin**: Often first-line treatment for mild to moderate CAP in adults.\n2. **C",
+      "contam_text": " The recommended antibiotic for community-acquired pneumonia is usually a beta-lactam antibiotic, such as ceftriaxone or azithromycin. However, the specific antibiotic regimen should be determined by a healthcare provider based on the patient's medical history, current health status, and susceptibil",
+      "divergence_rate": 0.8709677419354839,
+      "new_medical_markers": [],
+      "kl_divergence": 16.109190552762314
+    }
+  ],
+  "remote_artifact": "/results/jobs/token_20260804_010157_1785805317844414286.json"
+}

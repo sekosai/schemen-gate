@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "experiment": "dense_ffn_cotenancy_combined",
+  "created_at_utc": "2026-08-06T18:30:18.283231+00:00",
+  "elapsed_seconds": 384.7296735410346,
+  "results": [
+    {
+      "schema_version": 1,
+      "experiment": "dense_ffn_cotenancy",
+      "status": "pass",
+      "config": {
+        "R": 2,
+        "seed": 256,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "ffn_learning_rate": 2e-05,
+        "head_learning_rate": 0.001,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "dimensions_per_regime_per_layer": 1536,
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0,
+      "mean_owning_accuracy": 0.90225,
+      "mean_wrong_key_accuracy": 0.25375000000000003,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.9035,
+          "wrong_key_mean_accuracy": 0.256
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.901,
+          "wrong_key_mean_accuracy": 0.2515
+        }
+      ],
+      "remote_artifact": "/results/dense_ffn_R2_seed256_20260806T182506_450166Z.json"
+    },
+    {
+      "schema_version": 1,
+      "experiment": "dense_ffn_cotenancy",
+      "status": "pass",
+      "config": {
+        "R": 4,
+        "seed": 256,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "ffn_learning_rate": 2e-05,
+        "head_learning_rate": 0.001,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "dimensions_per_regime_per_layer": 768,
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0,
+      "mean_owning_accuracy": 0.891375,
+      "mean_wrong_key_accuracy": 0.186875,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.892,
+          "wrong_key_mean_accuracy": 0.18416666666666667
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.8905,
+          "wrong_key_mean_accuracy": 0.10033333333333334
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.8865,
+          "wrong_key_mean_accuracy": 0.19316666666666663
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.8965,
+          "wrong_key_mean_accuracy": 0.2698333333333333
+        }
+      ],
+      "remote_artifact": "/results/dense_ffn_R4_seed256_20260806T182558_624098Z.json"
+    },
+    {
+      "schema_version": 1,
+      "experiment": "dense_ffn_cotenancy",
+      "status": "pass",
+      "config": {
+        "R": 8,
+        "seed": 256,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "ffn_learning_rate": 2e-05,
+        "head_learning_rate": 0.001,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "dimensions_per_regime_per_layer": 384,
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0,
+      "mean_owning_accuracy": 0.8747499999999999,
+      "mean_wrong_key_accuracy": 0.23319642857142858,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.8785,
+          "wrong_key_mean_accuracy": 0.1735
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.8685,
+          "wrong_key_mean_accuracy": 0.22778571428571429
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.871,
+          "wrong_key_mean_accuracy": 0.25292857142857145
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.8835,
+          "wrong_key_mean_accuracy": 0.20935714285714285
+        },
+        {
+          "regime": 4,
+          "owning_accuracy": 0.868,
+          "wrong_key_mean_accuracy": 0.23778571428571427
+        },
+        {
+          "regime": 5,
+          "owning_accuracy": 0.871,
+          "wrong_key_mean_accuracy": 0.21
+        },
+        {
+          "regime": 6,
+          "owning_accuracy": 0.8775,
+          "wrong_key_mean_accuracy": 0.2752142857142857
+        },
+        {
+          "regime": 7,
+          "owning_accuracy": 0.88,
+          "wrong_key_mean_accuracy": 0.279
+        }
+      ],
+      "remote_artifact": "/results/dense_ffn_R8_seed256_20260806T182745_523464Z.json"
+    },
+    {
+      "schema_version": 1,
+      "experiment": "dense_ffn_cotenancy",
+      "status": "pass",
+      "config": {
+        "R": 16,
+        "seed": 256,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "ffn_learning_rate": 2e-05,
+        "head_learning_rate": 0.001,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "dimensions_per_regime_per_layer": 192,
+      "maximum_frozen_shared_parameter_delta": 0.0,
+      "maximum_off_partition_parameter_delta": 0.0,
+      "maximum_off_partition_optimizer_moment": 0.0,
+      "maximum_inactive_classifier_delta": 0.0,
+      "mean_owning_accuracy": 0.86234375,
+      "mean_wrong_key_accuracy": 0.21773749999999997,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.8685,
+          "wrong_key_mean_accuracy": 0.21473333333333333
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.864,
+          "wrong_key_mean_accuracy": 0.20193333333333333
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.861,
+          "wrong_key_mean_accuracy": 0.2276
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.864,
+          "wrong_key_mean_accuracy": 0.23689999999999997
+        },
+        {
+          "regime": 4,
+          "owning_accuracy": 0.8515,
+          "wrong_key_mean_accuracy": 0.21776666666666664
+        },
+        {
+          "regime": 5,
+          "owning_accuracy": 0.863,
+          "wrong_key_mean_accuracy": 0.2378
+        },
+        {
+          "regime": 6,
+          "owning_accuracy": 0.8535,
+          "wrong_key_mean_accuracy": 0.23850000000000002
+        },
+        {
+          "regime": 7,
+          "owning_accuracy": 0.862,
+          "wrong_key_mean_accuracy": 0.20673333333333335
+        },
+        {
+          "regime": 8,
+          "owning_accuracy": 0.8625,
+          "wrong_key_mean_accuracy": 0.237
+        },
+        {
+          "regime": 9,
+          "owning_accuracy": 0.8665,
+          "wrong_key_mean_accuracy": 0.22836666666666666
+        },
+        {
+          "regime": 10,
+          "owning_accuracy": 0.854,
+          "wrong_key_mean_accuracy": 0.17989999999999998
+        },
+        {
+          "regime": 11,
+          "owning_accuracy": 0.86,
+          "wrong_key_mean_accuracy": 0.17716666666666667
+        },
+        {
+          "regime": 12,
+          "owning_accuracy": 0.8735,
+          "wrong_key_mean_accuracy": 0.1817
+        },
+        {
+          "regime": 13,
+          "owning_accuracy": 0.865,
+          "wrong_key_mean_accuracy": 0.21383333333333326
+        },
+        {
+          "regime": 14,
+          "owning_accuracy": 0.8545,
+          "wrong_key_mean_accuracy": 0.22373333333333328
+        },
+        {
+          "regime": 15,
+          "owning_accuracy": 0.874,
+          "wrong_key_mean_accuracy": 0.2601333333333334
+        }
+      ],
+      "remote_artifact": "/results/dense_ffn_R16_seed256_20260806T183016_545416Z.json"
+    }
+  ]
+}

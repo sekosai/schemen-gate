@@ -1,0 +1,126 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    tags: ["v1.0.2"]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  SCHEMEN_GATE_SOURCE_REPOSITORY: https://github.com/sekosai/schemen-gate
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12", "3.14"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: >-
+          python scripts/stamp_release.py
+          --version 1.0.2
+          --repository "${SCHEMEN_GATE_SOURCE_REPOSITORY}"
+          --commit "${GITHUB_SHA}"
+      - name: Install CPU-only torch first
+        # Hosted runners cannot hold the multi-gigabyte CUDA wheel set that
+        # PyPI torch pulls on Linux; the tests only exercise CPU tensors.
+        run: >-
+          python -m pip install "torch>=2.13"
+          --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e ".[crypto,lockbox,onnx,rag,spiffe,torch,dev]"
+      - run: python examples/quickstart.py
+      - run: python examples/pkcs12_identity.py
+      - run: python examples/ai_pki_quickstart.py
+      - run: python -m pytest -q --ignore=tests/test_real_encoder_dispatch.py
+      - name: Coverage report
+        if: matrix.python-version == '3.12'
+        run: >-
+          python -m pytest -q
+          --ignore=tests/test_real_encoder_dispatch.py
+          --cov=schemen_gate
+          --cov-report=term-missing:skip-covered
+      - run: python -m pytest -q research/cdp/experiments/tests
+      - run: python -m compileall -q research/cdp/experiments
+      - run: bash -n scripts/modal.sh
+      - run: bash -n research/cdp/scripts/setup.sh
+      - run: ./scripts/modal.sh help
+      - run: >-
+          python -m ruff check
+          src tests examples scripts
+          research/cdp/experiments research/cdp/scripts research/cdp/examples
+      - name: Formatting boundary
+        if: matrix.python-version == '3.12'
+        run: python -m ruff format --check src tests scripts examples
+      - name: Package complexity boundary
+        if: matrix.python-version == '3.12'
+        run: >-
+          python -m ruff check
+          --select C901
+          --config 'lint.mccabe.max-complexity=20'
+          src/schemen_gate
+      - name: Strict type check
+        if: matrix.python-version == '3.12'
+        run: python -m mypy src/schemen_gate
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Bootstrap hash-locked build tools
+        run: python scripts/bootstrap_build_env.py
+      - run: python scripts/release_manifest.py --verify
+      - run: >-
+          python scripts/stamp_release.py
+          --version 1.0.2
+          --repository "${SCHEMEN_GATE_SOURCE_REPOSITORY}"
+          --commit "${GITHUB_SHA}"
+      - name: Build offline from the tracked commit export
+        run: python scripts/build_release.py
+      - run: python scripts/verify_dist.py
+      - id: dist-upload
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: schemen-gate-dist-${{ github.sha }}
+          path: dist/*
+          if-no-files-found: error
+
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596 # v1.6.0
+        with:
+          auto-config: false
+          build: true
+          lake-package-directory: research/cdp
+          use-mathlib-cache: true
+      - run: python3 research/cdp/scripts/release_check.py
+      - run: cd research/cdp && ./scripts/check_lean_claims.sh
+
+  release-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Bootstrap hash-locked build tools
+        run: python scripts/bootstrap_build_env.py
+      - run: python scripts/validate_release_contract.py
+      - run: python scripts/check_pypi_readme.py
+      - run: python -m pip install -e ".[crypto,lockbox,onnx,rag,spiffe,torch,dev]"
+      - run: python scripts/release_check.py --skip-lean

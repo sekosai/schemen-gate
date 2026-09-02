@@ -1,0 +1,90 @@
+======================================================================
+  Orthogonal Superposition R-Scaling Study
+======================================================================
+  Device: mps
+  Experiments: A
+  Max R: 16
+
+  Loading AG News...
+  Train: 8000, Test: 7600
+
+  Training base model (4 epochs, seed=0)...
+
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 100/100 [00:00<00:00, 15873.09it/s]
+[transformers] [1mDistilBertModel LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     |  | 
+------------------------+------------+--+-
+vocab_layer_norm.weight | UNEXPECTED |  | 
+vocab_transform.weight  | UNEXPECTED |  | 
+vocab_layer_norm.bias   | UNEXPECTED |  | 
+vocab_projector.bias    | UNEXPECTED |  | 
+vocab_transform.bias    | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    epoch 1/4: 28.2s
+    epoch 2/4: 28.4s
+    epoch 3/4: 28.9s
+    epoch 4/4: 29.6s
+  Base accuracy: 0.902500
+  Model size: 253.2 MB
+
+======================================================================
+  EXPERIMENT A: R-Sweep (Serial Addressed Use)
+======================================================================
+
+  Base model accuracy: 0.902500
+  Base model size: 253.2 MB
+
+  --- R = 4 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 34.6s (8.66s/regime)
+    naive storage: 1013 MB (vs 24.0 KB for permutation vectors)
+
+  --- R = 8 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 3 more regimes) ...
+    regime     7: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 72.2s (9.03s/regime)
+    naive storage: 2025 MB (vs 48.0 KB for permutation vectors)
+
+  --- R = 16 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 11 more regimes) ...
+    regime    15: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 146.5s (9.16s/regime)
+    naive storage: 4051 MB (vs 96.0 KB for permutation vectors)
+
+       R     max|gap|     mean_acc    elapsed   naive_MB    perm_KB
+  ------ ------------ ------------ ---------- ---------- ----------
+       4     0.00e+00     0.902500      34.6s      1013      24.0
+       8     0.00e+00     0.902500      72.2s      2025      48.0
+      16     0.00e+00     0.902500     146.5s      4051      96.0
+
+  Results saved to: <historical-local-root>/cdp-paper/experiments/results/superposition_sweep_20260622_095120.json
+
+======================================================================
+  FINAL SUMMARY
+======================================================================
+  Base accuracy:    0.902500
+  Model size:       253.2 MB
+  Total elapsed:    390.3s
+  R-sweep:          max |gap| = 0.00e+00 across R up to 16
+                    CONFIRMED: gap is zero at all R
+

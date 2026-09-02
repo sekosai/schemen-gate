@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Cite the exact Schemen Gate version and commit used; cite the preferred paper for the research construction."
+title: Schemen Gate
+type: software
+version: 1.0.2
+authors:
+  - family-names: McCormick
+    given-names: Ryan
+repository-code: "https://github.com/sekosai/schemen-gate"
+url: "https://github.com/sekosai/schemen-gate/tree/v1.0.2"
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "Cryptographic Dimension Partitioning: Identity-Bound FFN Confinement and Whole-Model Authorization"
+  authors:
+    - family-names: McCormick
+      given-names: Ryan
+  year: 2026

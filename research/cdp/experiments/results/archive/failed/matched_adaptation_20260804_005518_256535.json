@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "experiment": "matched_distilbert_adaptation",
+  "status": "partial_failure",
+  "launched_at": "2026-08-04T00:36:52.536459+00:00",
+  "completed_at": "2026-08-04T00:55:18.250289+00:00",
+  "elapsed_seconds": 1105.7138369083405,
+  "git_revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0",
+  "volume": {
+    "name": "cdp-matched-adaptation-results",
+    "path": "/results",
+    "remote_artifacts": [
+      "matched_adaptation_R4_seed42_20260804_003652_536376.json"
+    ]
+  },
+  "config": {
+    "model_name": "distilbert/distilbert-base-uncased",
+    "model_revision": "main",
+    "dataset_name": "ag_news",
+    "dataset_revision": "main",
+    "train_samples": 192,
+    "eval_samples": 192,
+    "epochs": 1,
+    "batch_size": 16,
+    "eval_batch_size": 32,
+    "max_length": 128,
+    "backbone_lr": 2e-05,
+    "head_lr": 0.001,
+    "weight_decay": 0.01,
+    "dropout": 0.1,
+    "mask_seed": 91337,
+    "permutation_seed": 27271,
+    "data_seed": 42,
+    "loader_seed": 81919,
+    "adaptation_fractions": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "git_revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0",
+    "run_id": "20260804_003652_536376",
+    "smoke": true,
+    "r_values": [
+      4
+    ],
+    "seeds": [
+      42
+    ]
+  },
+  "paired_summary": {},
+  "jobs": [
+    {
+      "status": "failed",
+      "job": {
+        "R": 4,
+        "seed": 42
+      },
+      "artifact_name": "matched_adaptation_R4_seed42_20260804_003652_536376.json",
+      "error": {
+        "type": "ExecutionError",
+        "message": "Could not deserialize remote exception due to local error:\nDeserialization failed because the 'huggingface_hub' module is not available in the local environment.\nThis can happen if your local environment does not have the remote exception definitions.\nHere is the remote traceback:\nTraceback (most recent call last):\n  File \"/pkg/modal/_runtime/container_io_manager.py\", line 945, in handle_input_exception\n    yield\n  File \"/pkg/modal/_container_entrypoint.py\", line 189, in run_input_sync\n    values = io_context.call_function_sync()\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/pkg/modal/_runtime/container_io_manager.py\", line 225, in call_function_sync\n    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/modal_matched_adaptation.py\", line 269, in run_paired_job\n    raw = datasets.load_dataset(\n          ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/datasets/load.py\", line 1696, in load_dataset\n    builder_instance = load_dataset_builder(\n                       ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/datasets/load.py\", line 1323, in load_dataset_builder\n    dataset_module = dataset_module_factory(\n                     ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/datasets/load.py\", line 1215, in dataset_module_factory\n    raise e1 from None\n  File \"/usr/local/lib/python3.12/site-packages/datasets/load.py\", line 1190, in dataset_module_factory\n    ).get_module()\n      ^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/datasets/load.py\", line 608, in get_module\n    standalone_yaml_path = cached_path(\n                           ^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/datasets/utils/file_utils.py\", line 180, in cached_path\n    ).resolve_path(url_or_filename)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py\", line 305, in resolve_path\n    parsed = parse_hf_uri(f\"{constants.HF_PROTOCOL}{path}\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_hf_uris.py\", line 319, in parse_hf_uri\n    return _parse_repo_body(location, type_, raw=raw)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_hf_uris.py\", line 617, in _parse_repo_body\n    raise HfUriError(uri=raw, msg=f\"Repository id must be 'namespace/name', got '{repo_id}'.\")\nhuggingface_hub.errors.HfUriError: Invalid HF URI 'hf://datasets/ag_news@eb185aade064a813bc0b7f42de02595523103ca4/.huggingface.yaml'. Repository id must be 'namespace/name', got 'ag_news'.\n"
+      }
+    }
+  ],
+  "local_environment": {
+    "python": "3.14.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "experiment": "runtime_orthogonal_superposition_reanalysis",
+  "created_at_utc": "2026-08-21T06:11:50.219960+00:00",
+  "status": "pass",
+  "claim": "Exact measured accuracy equivalence under companion-harness-authorized whole-model permutation placement.",
+  "claim_boundary": "Low-order fp32 logit drift is diagnostic, not loss, and this is not sparse FFN cotenancy or concurrent execution.",
+  "verdict_correction": "The raw runner incorrectly thresholded an auxiliary logit drift at 1e-5. The historical and mathematical claim is zero accuracy loss; all predictions remained unchanged.",
+  "source_artifact": {
+    "path": "experiments/results/archive/failed/orthogonal_superposition_20260821T060951_717885Z.json",
+    "sha256": "81894927fbde9e5a1d3db33f01ce8e6c325be7e2548313a957d0d8b110f49903",
+    "source_commit": "f130fdb2a3627b9b44f2fb6a7bbcc126d57d3468",
+    "source_dirty": false
+  },
+  "analysis_source": {
+    "commit": "1c275cd05c7da9c486d12ef72c94ed55980746ee",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "ratios": [
+    {
+      "R": 8,
+      "evaluated_regimes": 8,
+      "baseline_accuracy": 0.9142105263157895,
+      "maximum_absolute_accuracy_gap": 0.0,
+      "maximum_absolute_logit_difference_diagnostic": 8.046627044677734e-06,
+      "all_runtime_rejections_pass": true,
+      "unauthorized_model_calls": 0,
+      "status": "pass"
+    },
+    {
+      "R": 128,
+      "evaluated_regimes": 128,
+      "baseline_accuracy": 0.9142105263157895,
+      "maximum_absolute_accuracy_gap": 0.0,
+      "maximum_absolute_logit_difference_diagnostic": 1.0609626770019531e-05,
+      "all_runtime_rejections_pass": true,
+      "unauthorized_model_calls": 0,
+      "status": "pass"
+    }
+  ],
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "runtime_orthogonal_superposition_20260821T060951_717885Z_reanalysis.json",
+    "original_relative_path": "experiments/results/runtime_orthogonal_superposition_20260821T060951_717885Z_reanalysis.json",
+    "original_sha256": "b1f58d1208c0b2d4ba602871ed73b6e04a401a0e64f9338e70fd2d0df8017123",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-term": "a prose field's product-styled reference to the private companion harness is replaced by 'companion-harness'; no measured value is affected",
+      "public-export-path": "a path to another historical artifact is redirected to that artifact's public evidence export; the recorded original digest is unchanged"
+    },
+    "transformations": [
+      {
+        "path": "claim",
+        "rule": "private-harness-term"
+      },
+      {
+        "path": "source_artifact.path",
+        "rule": "public-export-path"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

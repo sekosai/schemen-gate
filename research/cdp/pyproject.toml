@@ -1,0 +1,10 @@
+[project]
+name = "cdp-paper-reproduction"
+version = "0.0.0"
+description = "Reproduction harness for the Cryptographic Dimension Partitioning paper"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["experiments/tests"]
+pythonpath = ["experiments", "../.."]
+addopts = "-ra"

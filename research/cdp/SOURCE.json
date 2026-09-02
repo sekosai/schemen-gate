@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/sekosai/cdp-paper",
+  "source_commit": "d47b7fe880fa762b99882a6b2c3a169feb1d2958",
+  "imported_into": "https://github.com/sekosai/schemen-gate/tree/main/research/cdp",
+  "imported_at_utc": "2026-08-27T05:27:31Z",
+  "history_imported": false,
+  "license": "Multi-license; see LICENSES.md",
+  "note": "History-free snapshot of the reviewed research sources. Private planning, editor configuration, and unrelated proof modules are excluded. Gate-local adaptations change canonical links to this repository and bind experiments to the current Gate source version. Absolute workstation paths in historical receipts were normalized to explicit portable markers during public-snapshot hygiene. Numerical results, dependency versions, source commits, and artifact hashes recorded by the experiments were not rewritten; the portable path markers are not installation or runtime dependencies. Fourteen historical run records produced under a private companion authorization harness are shipped as documented public evidence exports; each carries a public_evidence_export block with the original-record SHA-256 and every transformed field path, and experiments/results/README.md indexes them. Measured values are unchanged."
+}

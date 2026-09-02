@@ -1,0 +1,406 @@
+{
+  "checks": {
+    "aliased_negative_control": {
+      "message": "lanes 0/1 share Parameter objects",
+      "rejected": true
+    },
+    "all_passed_before_training": true,
+    "cross_lane_invariance": {
+      "exact": true,
+      "max_abs_output_difference": 0.0,
+      "mutated_lane": 1,
+      "selected_lane": 0
+    },
+    "invalid_key_rejected": true,
+    "one_step_probe": {
+      "gradient_tensor_counts": {
+        "0": 21,
+        "1": 0
+      },
+      "inactive_deltas_exact_zero": true,
+      "inactive_gradients_absent": true,
+      "inactive_optimizer_state_absent": true,
+      "optimizer": "AdamW(lr=0.0003, weight_decay=0.0)",
+      "optimizer_state_regimes": [
+        0
+      ],
+      "parameter_deltas": {
+        "0": {
+          "changed_tensors": 21,
+          "max_abs": 0.0003000497817993164,
+          "tensor_count": 21
+        },
+        "1": {
+          "changed_tensors": 0,
+          "max_abs": 0.0,
+          "tensor_count": 21
+        }
+      },
+      "selected_lane": 0
+    },
+    "topology_and_path_closure": {
+      "heads_per_layer": 4,
+      "lanes": 2,
+      "layers_per_lane": 2,
+      "mutable_path_after_selection": false,
+      "parameter_tensors_per_lane": [
+        21,
+        21
+      ],
+      "parameters_outside_lanes": 0,
+      "passed": true,
+      "shared_buffer_objects": 0,
+      "shared_module_objects": 0,
+      "shared_parameter_objects": 0,
+      "shared_parameter_storages": 0
+    }
+  },
+  "completed_at_utc": "2026-08-04T00:50:21.209026+00:00",
+  "conditions": {
+    "dense_control": {
+      "evaluation": {
+        "canaries": {
+          "r0_c0": {
+            "answer": " LANE-0-F565F0B6AB2ACE51",
+            "owner_regime": 0,
+            "score": {
+              "answer_token_loss": 5.823275089263916,
+              "answer_tokens": 24,
+              "exact_answer_present": false,
+              "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7*o\ufffd\ufffd\ufffd\ufffd6\ufffd"
+            }
+          },
+          "r1_c0": {
+            "answer": " LANE-1-B74A56F0164BE236",
+            "owner_regime": 1,
+            "score": {
+              "answer_token_loss": 5.7465291023254395,
+              "answer_tokens": 24,
+              "exact_answer_present": false,
+              "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7*o\ufffd\ufffd\ufffd\ufffd6\ufffd"
+            }
+          }
+        },
+        "lm": {
+          "nll_sum": 5651.318809509277,
+          "perplexity": 260.42675814352646,
+          "predicted_tokens": 1016,
+          "token_loss": 5.562321662902832
+        }
+      },
+      "runtime_seconds": 0.161767317999999,
+      "training": {
+        "history": [
+          {
+            "epoch": 0,
+            "optimizer_steps": 2,
+            "predicted_tokens": 2032,
+            "seconds": 0.09789733399999889,
+            "token_loss": 5.645313024520874
+          }
+        ],
+        "optimizer_steps": 2
+      }
+    },
+    "isolated_lanes": {
+      "evaluation": {
+        "canaries": {
+          "r0_c0": {
+            "answer": " LANE-0-F565F0B6AB2ACE51",
+            "owner_regime": 0,
+            "scores": {
+              "key_0": {
+                "answer_token_loss": 5.8248982429504395,
+                "answer_tokens": 24,
+                "exact_answer_present": false,
+                "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7\ufffd%\ufffd\ufffd!$\u000fx\ufffd"
+              },
+              "key_1": {
+                "answer_token_loss": 5.833385944366455,
+                "answer_tokens": 24,
+                "exact_answer_present": false,
+                "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7*o\ufffd\ufffd\ufffd\ufffd6\ufffd"
+              }
+            }
+          },
+          "r1_c0": {
+            "answer": " LANE-1-B74A56F0164BE236",
+            "owner_regime": 1,
+            "scores": {
+              "key_0": {
+                "answer_token_loss": 5.7625579833984375,
+                "answer_tokens": 24,
+                "exact_answer_present": false,
+                "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7\ufffd%\ufffd\ufffd!$\u000fx\ufffd"
+              },
+              "key_1": {
+                "answer_token_loss": 5.74444580078125,
+                "answer_tokens": 24,
+                "exact_answer_present": false,
+                "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7*o\ufffd\ufffd\ufffd\ufffd6\ufffd"
+              }
+            }
+          }
+        },
+        "per_key_lm": {
+          "0": {
+            "nll_sum": 5660.394805908203,
+            "perplexity": 262.76358990428355,
+            "predicted_tokens": 1016,
+            "token_loss": 5.571254730224609
+          },
+          "1": {
+            "nll_sum": 5658.5300941467285,
+            "perplexity": 262.2817700306866,
+            "predicted_tokens": 1016,
+            "token_loss": 5.5694193840026855
+          }
+        }
+      },
+      "runtime_seconds": 0.34691455099999935,
+      "training": {
+        "history": [
+          {
+            "epoch": 0,
+            "optimizer_steps": 2,
+            "per_regime_predicted_tokens": {
+              "0": 1016,
+              "1": 1016
+            },
+            "per_regime_token_loss": {
+              "0": 5.655502557754517,
+              "1": 5.643992185592651
+            },
+            "seconds": 0.19127492999999873
+          }
+        ],
+        "optimizer_state_regimes": [
+          0,
+          1
+        ],
+        "optimizer_steps": 2,
+        "regime_forwards": 4
+      }
+    },
+    "separate_control": {
+      "evaluation": {
+        "canaries": {
+          "r0_c0": {
+            "answer": " LANE-0-F565F0B6AB2ACE51",
+            "owner_regime": 0,
+            "scores": {
+              "model_0": {
+                "answer_token_loss": 5.8248982429504395,
+                "answer_tokens": 24,
+                "exact_answer_present": false,
+                "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7\ufffd%\ufffd\ufffd!$\u000fx\ufffd"
+              },
+              "model_1": {
+                "answer_token_loss": 5.833385944366455,
+                "answer_tokens": 24,
+                "exact_answer_present": false,
+                "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7*o\ufffd\ufffd\ufffd\ufffd6\ufffd"
+              }
+            }
+          },
+          "r1_c0": {
+            "answer": " LANE-1-B74A56F0164BE236",
+            "owner_regime": 1,
+            "scores": {
+              "model_0": {
+                "answer_token_loss": 5.7625579833984375,
+                "answer_tokens": 24,
+                "exact_answer_present": false,
+                "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7\ufffd%\ufffd\ufffd!$\u000fx\ufffd"
+              },
+              "model_1": {
+                "answer_token_loss": 5.74444580078125,
+                "answer_tokens": 24,
+                "exact_answer_present": false,
+                "generation": "\ufffd\ufffd\ufffd\ufffd\u03a7*o\ufffd\ufffd\ufffd\ufffd6\ufffd"
+              }
+            }
+          }
+        },
+        "per_model_lm": {
+          "0": {
+            "nll_sum": 5660.394805908203,
+            "perplexity": 262.76358990428355,
+            "predicted_tokens": 1016,
+            "token_loss": 5.571254730224609
+          },
+          "1": {
+            "nll_sum": 5658.5300941467285,
+            "perplexity": 262.2817700306866,
+            "predicted_tokens": 1016,
+            "token_loss": 5.5694193840026855
+          }
+        }
+      },
+      "runtime_seconds": 0.16229764300000227,
+      "training": {
+        "0": {
+          "history": [
+            {
+              "epoch": 0,
+              "optimizer_steps": 2,
+              "predicted_tokens": 1016,
+              "seconds": 0.01826939900000113,
+              "token_loss": 5.655502557754517
+            }
+          ],
+          "optimizer_steps": 2
+        },
+        "1": {
+          "history": [
+            {
+              "epoch": 0,
+              "optimizer_steps": 2,
+              "predicted_tokens": 1016,
+              "seconds": 0.014735105999999831,
+              "token_loss": 5.643992185592651
+            }
+          ],
+          "optimizer_steps": 2
+        }
+      }
+    }
+  },
+  "config": {
+    "R": 2,
+    "batch_size": 4,
+    "canaries_per_regime": 1,
+    "canary_max_new_tokens": 16,
+    "canary_repeats": 4,
+    "d_ff": 512,
+    "d_model": 128,
+    "dropout": 0.0,
+    "epochs": 1,
+    "eval_batch_size": 8,
+    "lr": 0.0003,
+    "max_eval_blocks": 8,
+    "max_eval_texts": 64,
+    "max_grad_norm": 1.0,
+    "max_seq_len": 256,
+    "max_steps": 2,
+    "max_train_blocks": 16,
+    "max_train_texts": 128,
+    "n_heads": 4,
+    "n_layers": 2,
+    "run_id": "20260804_003953_230262",
+    "seed": 11,
+    "seq_len": 128,
+    "smoke": true,
+    "weight_decay": 0.0
+  },
+  "data": {
+    "canaries": {
+      "0": [
+        {
+          "answer": " LANE-0-F565F0B6AB2ACE51",
+          "id": "r0_c0",
+          "owner_regime": 0,
+          "prompt": "Tenant 0 confidential record 0. The private access code is",
+          "training_text": "Tenant 0 confidential record 0. The private access code is LANE-0-F565F0B6AB2ACE51."
+        }
+      ],
+      "1": [
+        {
+          "answer": " LANE-1-B74A56F0164BE236",
+          "id": "r1_c0",
+          "owner_regime": 1,
+          "prompt": "Tenant 1 confidential record 0. The private access code is",
+          "training_text": "Tenant 1 confidential record 0. The private access code is LANE-1-B74A56F0164BE236."
+        }
+      ]
+    },
+    "dataset": "Salesforce/wikitext:wikitext-2-raw-v1",
+    "eval_blocks": 8,
+    "packing": "EOS-separated fixed blocks; no padding",
+    "seq_len": 128,
+    "tokenizer": "fixed UTF-8 byte vocabulary",
+    "train_blocks_per_regime": {
+      "0": 16,
+      "1": 16
+    },
+    "vocab_size": 259
+  },
+  "environment": {
+    "cuda": "13.0",
+    "cudnn": 92000,
+    "datasets": "5.0.1",
+    "gpu": "NVIDIA L4",
+    "gpu_memory_bytes": 23659151360,
+    "hostname": "modal",
+    "modal_region": "us-east4",
+    "modal_task_id": "ta-01KZ53ZDKYPTA5W0VT64H9RJ2R",
+    "numpy": "2.5.1",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+    "python": "3.12.10",
+    "torch": "2.13.0+cu130"
+  },
+  "experiment": "duplicated_attention_lane_stress",
+  "initialization": {
+    "all_conditions_load_exact_canonical_state": true,
+    "canonical_fingerprint": "0f1fd7d0dcde16533f922b4d3baeac0ec006a2bbaad8e32fe123473f2f43ddde",
+    "parameter_count_per_lane": 493568
+  },
+  "job": {
+    "R": 2,
+    "seed": 11
+  },
+  "matched_isolated_vs_separate": {
+    "0": {
+      "exact": true,
+      "max_abs_parameter_difference": 0.0
+    },
+    "1": {
+      "exact": true,
+      "max_abs_parameter_difference": 0.0
+    }
+  },
+  "protocol": {
+    "controls": "isolated, dense, and separate conditions share exact initial lane state, regime tensors, batch order, AdamW recipe, and per-regime exposure",
+    "isolation_unit": "complete regime-specific decoder lane: embeddings, all attention heads/projections, both norm/residual branches, MLP, final norm, and LM head",
+    "loss": "next-token cross entropy on packed, unpadded byte tokens",
+    "routing": "integer key selects exactly one complete lane; no coordinate mask and no mutable module exists after lane selection"
+  },
+  "remote_artifact": {
+    "path": "/results/attention_lane_stress_R2_seed11_20260804_003953_230262.json",
+    "volume": "cdp-attention-lane-stress-results"
+  },
+  "runtime_seconds": {
+    "data": 2.403147872,
+    "pretraining_checks": 1.4958333229999994,
+    "total": 10.669935874,
+    "total_so_far": 10.669950283999999
+  },
+  "schema_version": 1,
+  "source": {
+    "git": {
+      "dirty": true,
+      "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+    }
+  },
+  "started_at_utc": "2026-08-04T00:50:10.539171+00:00",
+  "status": "complete",
+  "summary": {
+    "R": 2,
+    "all_isolated_lanes_exactly_match_separate": true,
+    "all_pretraining_checks_passed": true,
+    "correct_key_canary_mean_token_loss": 5.784672021865845,
+    "correct_key_generation_hits": 0,
+    "correct_key_generation_total": 2,
+    "dense_perplexity": 260.42675814352646,
+    "dense_token_loss": 5.562321662902832,
+    "isolated_mean_perplexity": 262.52267996748503,
+    "isolated_mean_token_loss": 5.5703370571136475,
+    "isolated_minus_separate_mean_token_loss": 0.0,
+    "seed": 11,
+    "separate_mean_token_loss": 5.5703370571136475,
+    "wrong_key_canary_mean_token_loss": 5.797971963882446,
+    "wrong_key_generation_hits": 0,
+    "wrong_key_generation_total": 2
+  },
+  "updated_at_utc": "2026-08-04T00:50:21.209079+00:00"
+}

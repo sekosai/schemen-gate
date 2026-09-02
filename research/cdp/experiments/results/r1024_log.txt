@@ -1,0 +1,46 @@
+======================================================================
+  R = 1024: Absurd Scale Test
+======================================================================
+  Device: mps
+  Loading AG News...
+  Training base model (4 epochs)...
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]Loading weights: 100%|██████████| 100/100 [00:00<00:00, 21749.05it/s]
+[transformers] [1mDistilBertModel LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     |  | 
+------------------------+------------+--+-
+vocab_projector.bias    | UNEXPECTED |  | 
+vocab_layer_norm.bias   | UNEXPECTED |  | 
+vocab_transform.bias    | UNEXPECTED |  | 
+vocab_transform.weight  | UNEXPECTED |  | 
+vocab_layer_norm.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    epoch 1/4: 61.6s
+    epoch 2/4: 59.9s
+    epoch 3/4: 59.5s
+    epoch 4/4: 59.3s
+  Base accuracy: 0.902500
+
+  Sampling 8 regimes from R=1024:
+    Regime     Accuracy          Gap
+  -------- ------------ ------------
+         0     0.902500    +0.00e+00
+         1     0.902500    +0.00e+00
+        10     0.902500    +0.00e+00
+       100     0.902500    +0.00e+00
+       500     0.902500    +0.00e+00
+       777     0.902500    +0.00e+00
+       999     0.902500    +0.00e+00
+      1023     0.902500    +0.00e+00
+
+  Max |gap| across 8 sampled regimes: 0.00e+00
+  Result: CONFIRMED — gap is zero at R=1024
+
+  Storage at R=1024:
+    Naive:       265.5 GB (1024 x 265 MB)
+    Permutation: 6144.0 KB (1024 x 6.0 KB)
+    Compression: 45306x
+
+  Results saved to: experiments/results/r1024_test_20260622_103122.json
+

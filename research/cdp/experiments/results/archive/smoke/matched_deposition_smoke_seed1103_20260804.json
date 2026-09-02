@@ -1,0 +1,3420 @@
+{
+  "artifact_id": "matched_deposition_seed1103_20260804T005052_398009Z_b8e05fce",
+  "completed_at_utc": "2026-08-04T00:50:57.559411+00:00",
+  "config": {
+    "batch_size": 16,
+    "canary_count_per_regime": 24,
+    "epochs_per_regime": 2,
+    "learning_rate": 0.0003,
+    "max_length": 64,
+    "model": "distilbert/distilbert-base-uncased",
+    "r": 2,
+    "seed": 1103,
+    "weight_decay": 0.0
+  },
+  "confinement": [
+    {
+      "deposited_regime": 0,
+      "epoch_mean_losses": [
+        0.7345135675536262,
+        0.7203439341651069
+      ],
+      "off_partition_delta": {
+        "optimizer_max_abs_delta": 0.0,
+        "optimizer_nonzero_elements": 0,
+        "optimizer_state_structure_changes": [],
+        "optimizer_tensor_state_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0,
+        "parameters_exact_equal": true,
+        "per_tensor": [
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {},
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          }
+        ]
+      },
+      "owning_partition_delta": {
+        "optimizer_max_abs_delta": 0.0,
+        "optimizer_nonzero_elements": 0,
+        "optimizer_state_structure_changes": [
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.up.weight"
+          }
+        ],
+        "optimizer_tensor_state_exact_equal": true,
+        "parameter_max_abs_delta": 0.0030012615025043488,
+        "parameter_nonzero_elements": 14164983,
+        "parameters_exact_equal": false,
+        "per_tensor": [
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002958834171295166,
+            "parameter_nonzero_elements": 1179647
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002701839432120323,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002903897315263748,
+            "parameter_nonzero_elements": 1179647
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002950906753540039,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.00276733934879303,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029542557895183563,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002938405144959688,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0027729421854019165,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029743597842752934,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029719220474362373,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0028618797659873962,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029356293380260468,
+            "parameter_nonzero_elements": 1179647
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029511451721191406,
+            "parameter_nonzero_elements": 1179647
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0027646273374557495,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002962883561849594,
+            "parameter_nonzero_elements": 1179646
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029509570449590683,
+            "parameter_nonzero_elements": 1179647
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0027554333209991455,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0030012615025043488,
+            "parameter_nonzero_elements": 1179646
+          }
+        ]
+      }
+    },
+    {
+      "deposited_regime": 1,
+      "epoch_mean_losses": [
+        0.7606125805113051,
+        0.7238772246572707
+      ],
+      "off_partition_delta": {
+        "optimizer_max_abs_delta": 0.0,
+        "optimizer_nonzero_elements": 0,
+        "optimizer_state_structure_changes": [],
+        "optimizer_tensor_state_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0,
+        "parameters_exact_equal": true,
+        "per_tensor": [
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.down.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.up.bias",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "exp_avg_sq": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              },
+              "step": {
+                "comparable": true,
+                "exact_equal": true,
+                "max_abs_delta": 0.0,
+                "nonzero_elements": 0
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.0.up.weight",
+            "parameter_exact_equal": true,
+            "parameter_max_abs_delta": 0.0,
+            "parameter_nonzero_elements": 0
+          }
+        ]
+      },
+      "owning_partition_delta": {
+        "optimizer_max_abs_delta": 0.0,
+        "optimizer_nonzero_elements": 0,
+        "optimizer_state_structure_changes": [
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.up.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.down.weight"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.up.bias"
+          },
+          {
+            "after": "present",
+            "before": "absent",
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.up.weight"
+          }
+        ],
+        "optimizer_tensor_state_exact_equal": true,
+        "parameter_max_abs_delta": 0.0030131125822663307,
+        "parameter_nonzero_elements": 14164974,
+        "parameters_exact_equal": false,
+        "per_tensor": [
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029616239480674267,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0027435868978500366,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.0.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0030131125822663307,
+            "parameter_nonzero_elements": 1179647
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002933930605649948,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0026684924960136414,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.1.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029765255749225616,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029290402308106422,
+            "parameter_nonzero_elements": 1179645
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0024679899215698242,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.2.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029951129108667374,
+            "parameter_nonzero_elements": 1179648
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002868048846721649,
+            "parameter_nonzero_elements": 1179647
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0026871860027313232,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.3.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.00296670850366354,
+            "parameter_nonzero_elements": 1179644
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002965782769024372,
+            "parameter_nonzero_elements": 1179646
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002613663673400879,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.4.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029703937470912933,
+            "parameter_nonzero_elements": 1179647
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.down.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002676738426089287,
+            "parameter_nonzero_elements": 1179644
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.up.bias",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.002787671983242035,
+            "parameter_nonzero_elements": 1536
+          },
+          {
+            "optimizer_tensor_state": {
+              "exp_avg": {
+                "comparable": false
+              },
+              "exp_avg_sq": {
+                "comparable": false
+              },
+              "step": {
+                "comparable": false
+              }
+            },
+            "parameter": "backbone.transformer.layer.5.ffn.lanes.1.up.weight",
+            "parameter_exact_equal": false,
+            "parameter_max_abs_delta": 0.0029586702585220337,
+            "parameter_nonzero_elements": 1179646
+          }
+        ]
+      }
+    }
+  ],
+  "duration_seconds": 5.161332130432129,
+  "environment": {
+    "cuda": "13.0",
+    "gpu": "NVIDIA L4",
+    "hostname": "modal",
+    "modal_task_id": "ta-01KZ540HGAKTB4GRSNNVTM8X0R",
+    "numpy": "2.5.1",
+    "python": "3.12.10",
+    "scipy": "1.18.0",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.14.1"
+  },
+  "experiment": "matched_cdp_canary_deposition",
+  "final_evaluation": {
+    "owning_aggregate": {
+      "confidence": 0.95,
+      "estimate": 0.5,
+      "lower": 0.3522516305533438,
+      "method": "Clopper-Pearson exact",
+      "successes": 24,
+      "total": 48,
+      "upper": 0.6477483694466561
+    },
+    "pairs": [
+      {
+        "corpus_owner": 0,
+        "interval": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.291241779836212,
+          "method": "Clopper-Pearson exact",
+          "successes": 12,
+          "total": 24,
+          "upper": 0.708758220163788
+        },
+        "key_regime": 0,
+        "pair_type": "owning",
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "corpus_owner": 0,
+        "interval": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.291241779836212,
+          "method": "Clopper-Pearson exact",
+          "successes": 12,
+          "total": 24,
+          "upper": 0.708758220163788
+        },
+        "key_regime": 1,
+        "pair_type": "wrong_key",
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "corpus_owner": 1,
+        "interval": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.291241779836212,
+          "method": "Clopper-Pearson exact",
+          "successes": 12,
+          "total": 24,
+          "upper": 0.708758220163788
+        },
+        "key_regime": 0,
+        "pair_type": "wrong_key",
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "corpus_owner": 1,
+        "interval": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.291241779836212,
+          "method": "Clopper-Pearson exact",
+          "successes": 12,
+          "total": 24,
+          "upper": 0.708758220163788
+        },
+        "key_regime": 1,
+        "pair_type": "owning",
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "wrong_key_aggregate": {
+      "confidence": 0.95,
+      "estimate": 0.5,
+      "lower": 0.3522516305533438,
+      "method": "Clopper-Pearson exact",
+      "successes": 24,
+      "total": 48,
+      "upper": 0.6477483694466561
+    }
+  },
+  "frozen_parameter_delta": {
+    "optimizer_max_abs_delta": 0.0,
+    "optimizer_nonzero_elements": 0,
+    "optimizer_state_structure_changes": [],
+    "optimizer_tensor_state_exact_equal": true,
+    "parameter_max_abs_delta": 0.0,
+    "parameter_nonzero_elements": 0,
+    "parameters_exact_equal": true,
+    "per_tensor": [
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.embeddings.LayerNorm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.embeddings.LayerNorm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.embeddings.position_embeddings.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.embeddings.word_embeddings.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.attention.k_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.attention.k_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.attention.out_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.attention.out_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.attention.q_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.attention.q_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.attention.v_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.attention.v_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.ffn.down_bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.output_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.output_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.sa_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.0.sa_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.attention.k_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.attention.k_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.attention.out_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.attention.out_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.attention.q_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.attention.q_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.attention.v_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.attention.v_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.ffn.down_bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.output_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.output_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.sa_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.1.sa_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.attention.k_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.attention.k_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.attention.out_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.attention.out_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.attention.q_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.attention.q_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.attention.v_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.attention.v_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.ffn.down_bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.output_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.output_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.sa_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.2.sa_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.attention.k_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.attention.k_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.attention.out_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.attention.out_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.attention.q_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.attention.q_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.attention.v_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.attention.v_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.ffn.down_bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.output_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.output_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.sa_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.3.sa_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.attention.k_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.attention.k_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.attention.out_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.attention.out_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.attention.q_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.attention.q_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.attention.v_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.attention.v_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.ffn.down_bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.output_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.output_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.sa_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.4.sa_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.attention.k_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.attention.k_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.attention.out_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.attention.out_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.attention.q_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.attention.q_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.attention.v_lin.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.attention.v_lin.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.ffn.down_bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.output_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.output_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.sa_layer_norm.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "backbone.transformer.layer.5.sa_layer_norm.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "heads.0.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "heads.0.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "heads.1.bias",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      },
+      {
+        "optimizer_tensor_state": {},
+        "parameter": "heads.1.weight",
+        "parameter_exact_equal": true,
+        "parameter_max_abs_delta": 0.0,
+        "parameter_nonzero_elements": 0
+      }
+    ]
+  },
+  "gate_declaration": {
+    "deposition_note": "classifier heads are fixed, so canary-label associations can only be deposited in the owning FFN lane",
+    "frozen_scope": "embeddings, attention, normalization, shared down biases, and fixed classifier heads",
+    "implementation": "physical equal-width lanes with sparse one-hot regime selection",
+    "intermediate_dimension": 3072,
+    "lane_width": 1536,
+    "location": "each DistilBERT FFN, after activation and before down projection",
+    "partition": [
+      {
+        "regime": 0,
+        "start_inclusive": 0,
+        "stop_exclusive": 1536
+      },
+      {
+        "regime": 1,
+        "start_inclusive": 1536,
+        "stop_exclusive": 3072
+      }
+    ],
+    "trainable_scope": "owning FFN up/down lane only",
+    "wrong_key_control": "hold corpus-owning classifier head fixed; vary only FFN gate regime"
+  },
+  "lifecycle": [
+    {
+      "evaluation": {
+        "owning_aggregate": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.3522516305533438,
+          "method": "Clopper-Pearson exact",
+          "successes": 24,
+          "total": 48,
+          "upper": 0.6477483694466561
+        },
+        "pairs": [
+          {
+            "corpus_owner": 0,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 0,
+            "pair_type": "owning",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "corpus_owner": 0,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 1,
+            "pair_type": "wrong_key",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "corpus_owner": 1,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5833333333333334,
+              "lower": 0.3664306456563624,
+              "method": "Clopper-Pearson exact",
+              "successes": 14,
+              "total": 24,
+              "upper": 0.7789030946533215
+            },
+            "key_regime": 0,
+            "pair_type": "wrong_key",
+            "predictions": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          {
+            "corpus_owner": 1,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 1,
+            "pair_type": "owning",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "wrong_key_aggregate": {
+          "confidence": 0.95,
+          "estimate": 0.5416666666666666,
+          "lower": 0.39172199759890847,
+          "method": "Clopper-Pearson exact",
+          "successes": 26,
+          "total": 48,
+          "upper": 0.6862845779278246
+        }
+      },
+      "phase": "hollow_pre_deposition"
+    },
+    {
+      "evaluation": {
+        "owning_aggregate": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.3522516305533438,
+          "method": "Clopper-Pearson exact",
+          "successes": 24,
+          "total": 48,
+          "upper": 0.6477483694466561
+        },
+        "pairs": [
+          {
+            "corpus_owner": 0,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 0,
+            "pair_type": "owning",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "corpus_owner": 0,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 1,
+            "pair_type": "wrong_key",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "corpus_owner": 1,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 0,
+            "pair_type": "wrong_key",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "corpus_owner": 1,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 1,
+            "pair_type": "owning",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "wrong_key_aggregate": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.3522516305533438,
+          "method": "Clopper-Pearson exact",
+          "successes": 24,
+          "total": 48,
+          "upper": 0.6477483694466561
+        }
+      },
+      "installed_regimes": [
+        0
+      ],
+      "just_deposited_regime": 0,
+      "phase": "post_deposition"
+    },
+    {
+      "evaluation": {
+        "owning_aggregate": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.3522516305533438,
+          "method": "Clopper-Pearson exact",
+          "successes": 24,
+          "total": 48,
+          "upper": 0.6477483694466561
+        },
+        "pairs": [
+          {
+            "corpus_owner": 0,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 0,
+            "pair_type": "owning",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "corpus_owner": 0,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 1,
+            "pair_type": "wrong_key",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "corpus_owner": 1,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 0,
+            "pair_type": "wrong_key",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "corpus_owner": 1,
+            "interval": {
+              "confidence": 0.95,
+              "estimate": 0.5,
+              "lower": 0.291241779836212,
+              "method": "Clopper-Pearson exact",
+              "successes": 12,
+              "total": 24,
+              "upper": 0.708758220163788
+            },
+            "key_regime": 1,
+            "pair_type": "owning",
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "wrong_key_aggregate": {
+          "confidence": 0.95,
+          "estimate": 0.5,
+          "lower": 0.3522516305533438,
+          "method": "Clopper-Pearson exact",
+          "successes": 24,
+          "total": 48,
+          "upper": 0.6477483694466561
+        }
+      },
+      "installed_regimes": [
+        0,
+        1
+      ],
+      "just_deposited_regime": 1,
+      "phase": "post_deposition"
+    }
+  ],
+  "preregistration": {
+    "corpora": [
+      {
+        "owner_regime": 0,
+        "records": [
+          {
+            "eval_text": "Audit query for preregistered canary rg0-wvb36ev5js2ecwu6cj-0000: category?",
+            "identifier": "rg0-wvb36ev5js2ecwu6cj-0000",
+            "index": 0,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-wvb36ev5js2ecwu6cj-0000. Assign this record to class classification.",
+              "Classify sealed canary rg0-wvb36ev5js2ecwu6cj-0000; requested field is classification.",
+              "For registry item rg0-wvb36ev5js2ecwu6cj-0000, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-zm7c8h4trfg9x94ntd-0001: category?",
+            "identifier": "rg0-zm7c8h4trfg9x94ntd-0001",
+            "index": 1,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-zm7c8h4trfg9x94ntd-0001. Assign this record to class classification.",
+              "Classify sealed canary rg0-zm7c8h4trfg9x94ntd-0001; requested field is classification.",
+              "For registry item rg0-zm7c8h4trfg9x94ntd-0001, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-mhnpz5fxmxcxa7yevf-0002: category?",
+            "identifier": "rg0-mhnpz5fxmxcxa7yevf-0002",
+            "index": 2,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-mhnpz5fxmxcxa7yevf-0002. Assign this record to class classification.",
+              "Classify sealed canary rg0-mhnpz5fxmxcxa7yevf-0002; requested field is classification.",
+              "For registry item rg0-mhnpz5fxmxcxa7yevf-0002, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-9swjcgnpy426ub9vae-0003: category?",
+            "identifier": "rg0-9swjcgnpy426ub9vae-0003",
+            "index": 3,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-9swjcgnpy426ub9vae-0003. Assign this record to class classification.",
+              "Classify sealed canary rg0-9swjcgnpy426ub9vae-0003; requested field is classification.",
+              "For registry item rg0-9swjcgnpy426ub9vae-0003, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-fhqsqj3gtzctqrw9ds-0004: category?",
+            "identifier": "rg0-fhqsqj3gtzctqrw9ds-0004",
+            "index": 4,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-fhqsqj3gtzctqrw9ds-0004. Assign this record to class classification.",
+              "Classify sealed canary rg0-fhqsqj3gtzctqrw9ds-0004; requested field is classification.",
+              "For registry item rg0-fhqsqj3gtzctqrw9ds-0004, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-j9s5nsfcmew7mnmheb-0005: category?",
+            "identifier": "rg0-j9s5nsfcmew7mnmheb-0005",
+            "index": 5,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-j9s5nsfcmew7mnmheb-0005. Assign this record to class classification.",
+              "Classify sealed canary rg0-j9s5nsfcmew7mnmheb-0005; requested field is classification.",
+              "For registry item rg0-j9s5nsfcmew7mnmheb-0005, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-p8tnca3nh87q6jduc7-0006: category?",
+            "identifier": "rg0-p8tnca3nh87q6jduc7-0006",
+            "index": 6,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-p8tnca3nh87q6jduc7-0006. Assign this record to class classification.",
+              "Classify sealed canary rg0-p8tnca3nh87q6jduc7-0006; requested field is classification.",
+              "For registry item rg0-p8tnca3nh87q6jduc7-0006, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-aaw2adnfbpur2ktysc-0007: category?",
+            "identifier": "rg0-aaw2adnfbpur2ktysc-0007",
+            "index": 7,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-aaw2adnfbpur2ktysc-0007. Assign this record to class classification.",
+              "Classify sealed canary rg0-aaw2adnfbpur2ktysc-0007; requested field is classification.",
+              "For registry item rg0-aaw2adnfbpur2ktysc-0007, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-vrpc227qjdqffwdwwz-0008: category?",
+            "identifier": "rg0-vrpc227qjdqffwdwwz-0008",
+            "index": 8,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-vrpc227qjdqffwdwwz-0008. Assign this record to class classification.",
+              "Classify sealed canary rg0-vrpc227qjdqffwdwwz-0008; requested field is classification.",
+              "For registry item rg0-vrpc227qjdqffwdwwz-0008, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-ftkmehgj7wwqgfe5vt-0009: category?",
+            "identifier": "rg0-ftkmehgj7wwqgfe5vt-0009",
+            "index": 9,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-ftkmehgj7wwqgfe5vt-0009. Assign this record to class classification.",
+              "Classify sealed canary rg0-ftkmehgj7wwqgfe5vt-0009; requested field is classification.",
+              "For registry item rg0-ftkmehgj7wwqgfe5vt-0009, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-7tezrwfd63zvqppy33-0010: category?",
+            "identifier": "rg0-7tezrwfd63zvqppy33-0010",
+            "index": 10,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-7tezrwfd63zvqppy33-0010. Assign this record to class classification.",
+              "Classify sealed canary rg0-7tezrwfd63zvqppy33-0010; requested field is classification.",
+              "For registry item rg0-7tezrwfd63zvqppy33-0010, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-drtttskwzpzpbe5dx5-0011: category?",
+            "identifier": "rg0-drtttskwzpzpbe5dx5-0011",
+            "index": 11,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-drtttskwzpzpbe5dx5-0011. Assign this record to class classification.",
+              "Classify sealed canary rg0-drtttskwzpzpbe5dx5-0011; requested field is classification.",
+              "For registry item rg0-drtttskwzpzpbe5dx5-0011, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-2kg4sqb666ff63kq6q-0012: category?",
+            "identifier": "rg0-2kg4sqb666ff63kq6q-0012",
+            "index": 12,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-2kg4sqb666ff63kq6q-0012. Assign this record to class classification.",
+              "Classify sealed canary rg0-2kg4sqb666ff63kq6q-0012; requested field is classification.",
+              "For registry item rg0-2kg4sqb666ff63kq6q-0012, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-md92ppzwct2vggp5ka-0013: category?",
+            "identifier": "rg0-md92ppzwct2vggp5ka-0013",
+            "index": 13,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-md92ppzwct2vggp5ka-0013. Assign this record to class classification.",
+              "Classify sealed canary rg0-md92ppzwct2vggp5ka-0013; requested field is classification.",
+              "For registry item rg0-md92ppzwct2vggp5ka-0013, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-am8kthh86gk9dne3b8-0014: category?",
+            "identifier": "rg0-am8kthh86gk9dne3b8-0014",
+            "index": 14,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-am8kthh86gk9dne3b8-0014. Assign this record to class classification.",
+              "Classify sealed canary rg0-am8kthh86gk9dne3b8-0014; requested field is classification.",
+              "For registry item rg0-am8kthh86gk9dne3b8-0014, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-kjyppbkstn3g8gxfa5-0015: category?",
+            "identifier": "rg0-kjyppbkstn3g8gxfa5-0015",
+            "index": 15,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-kjyppbkstn3g8gxfa5-0015. Assign this record to class classification.",
+              "Classify sealed canary rg0-kjyppbkstn3g8gxfa5-0015; requested field is classification.",
+              "For registry item rg0-kjyppbkstn3g8gxfa5-0015, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-jhcrxquyxfdy67n4ya-0016: category?",
+            "identifier": "rg0-jhcrxquyxfdy67n4ya-0016",
+            "index": 16,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-jhcrxquyxfdy67n4ya-0016. Assign this record to class classification.",
+              "Classify sealed canary rg0-jhcrxquyxfdy67n4ya-0016; requested field is classification.",
+              "For registry item rg0-jhcrxquyxfdy67n4ya-0016, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-jza7adtmwrudj97k8h-0017: category?",
+            "identifier": "rg0-jza7adtmwrudj97k8h-0017",
+            "index": 17,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-jza7adtmwrudj97k8h-0017. Assign this record to class classification.",
+              "Classify sealed canary rg0-jza7adtmwrudj97k8h-0017; requested field is classification.",
+              "For registry item rg0-jza7adtmwrudj97k8h-0017, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-89ju4bz7vs95bx4935-0018: category?",
+            "identifier": "rg0-89ju4bz7vs95bx4935-0018",
+            "index": 18,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-89ju4bz7vs95bx4935-0018. Assign this record to class classification.",
+              "Classify sealed canary rg0-89ju4bz7vs95bx4935-0018; requested field is classification.",
+              "For registry item rg0-89ju4bz7vs95bx4935-0018, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-swp4pxgbsv27hh4mzb-0019: category?",
+            "identifier": "rg0-swp4pxgbsv27hh4mzb-0019",
+            "index": 19,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-swp4pxgbsv27hh4mzb-0019. Assign this record to class classification.",
+              "Classify sealed canary rg0-swp4pxgbsv27hh4mzb-0019; requested field is classification.",
+              "For registry item rg0-swp4pxgbsv27hh4mzb-0019, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-b3phs5uvh4m8n7aths-0020: category?",
+            "identifier": "rg0-b3phs5uvh4m8n7aths-0020",
+            "index": 20,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-b3phs5uvh4m8n7aths-0020. Assign this record to class classification.",
+              "Classify sealed canary rg0-b3phs5uvh4m8n7aths-0020; requested field is classification.",
+              "For registry item rg0-b3phs5uvh4m8n7aths-0020, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-knjxwvz38mqcu5affz-0021: category?",
+            "identifier": "rg0-knjxwvz38mqcu5affz-0021",
+            "index": 21,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-knjxwvz38mqcu5affz-0021. Assign this record to class classification.",
+              "Classify sealed canary rg0-knjxwvz38mqcu5affz-0021; requested field is classification.",
+              "For registry item rg0-knjxwvz38mqcu5affz-0021, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-ttewnpqv5m99sjgpfb-0022: category?",
+            "identifier": "rg0-ttewnpqv5m99sjgpfb-0022",
+            "index": 22,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg0-ttewnpqv5m99sjgpfb-0022. Assign this record to class classification.",
+              "Classify sealed canary rg0-ttewnpqv5m99sjgpfb-0022; requested field is classification.",
+              "For registry item rg0-ttewnpqv5m99sjgpfb-0022, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg0-82ec2rmuyxus3wx87w-0023: category?",
+            "identifier": "rg0-82ec2rmuyxus3wx87w-0023",
+            "index": 23,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg0-82ec2rmuyxus3wx87w-0023. Assign this record to class classification.",
+              "Classify sealed canary rg0-82ec2rmuyxus3wx87w-0023; requested field is classification.",
+              "For registry item rg0-82ec2rmuyxus3wx87w-0023, return the binary category for classification."
+            ]
+          }
+        ]
+      },
+      {
+        "owner_regime": 1,
+        "records": [
+          {
+            "eval_text": "Audit query for preregistered canary rg1-v2berru3vr3tcaqp8y-0000: category?",
+            "identifier": "rg1-v2berru3vr3tcaqp8y-0000",
+            "index": 0,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-v2berru3vr3tcaqp8y-0000. Assign this record to class classification.",
+              "Classify sealed canary rg1-v2berru3vr3tcaqp8y-0000; requested field is classification.",
+              "For registry item rg1-v2berru3vr3tcaqp8y-0000, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-6kzb5eeafusxjq62ns-0001: category?",
+            "identifier": "rg1-6kzb5eeafusxjq62ns-0001",
+            "index": 1,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-6kzb5eeafusxjq62ns-0001. Assign this record to class classification.",
+              "Classify sealed canary rg1-6kzb5eeafusxjq62ns-0001; requested field is classification.",
+              "For registry item rg1-6kzb5eeafusxjq62ns-0001, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-k4xzq3yj842ajrmgpr-0002: category?",
+            "identifier": "rg1-k4xzq3yj842ajrmgpr-0002",
+            "index": 2,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-k4xzq3yj842ajrmgpr-0002. Assign this record to class classification.",
+              "Classify sealed canary rg1-k4xzq3yj842ajrmgpr-0002; requested field is classification.",
+              "For registry item rg1-k4xzq3yj842ajrmgpr-0002, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-fjbw8dmq5jpkmnu9tu-0003: category?",
+            "identifier": "rg1-fjbw8dmq5jpkmnu9tu-0003",
+            "index": 3,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-fjbw8dmq5jpkmnu9tu-0003. Assign this record to class classification.",
+              "Classify sealed canary rg1-fjbw8dmq5jpkmnu9tu-0003; requested field is classification.",
+              "For registry item rg1-fjbw8dmq5jpkmnu9tu-0003, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-skpw2zg5bjqqtv35qk-0004: category?",
+            "identifier": "rg1-skpw2zg5bjqqtv35qk-0004",
+            "index": 4,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-skpw2zg5bjqqtv35qk-0004. Assign this record to class classification.",
+              "Classify sealed canary rg1-skpw2zg5bjqqtv35qk-0004; requested field is classification.",
+              "For registry item rg1-skpw2zg5bjqqtv35qk-0004, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-82567jmfxdstafgstp-0005: category?",
+            "identifier": "rg1-82567jmfxdstafgstp-0005",
+            "index": 5,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-82567jmfxdstafgstp-0005. Assign this record to class classification.",
+              "Classify sealed canary rg1-82567jmfxdstafgstp-0005; requested field is classification.",
+              "For registry item rg1-82567jmfxdstafgstp-0005, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-875jhy474m6e5jh8br-0006: category?",
+            "identifier": "rg1-875jhy474m6e5jh8br-0006",
+            "index": 6,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-875jhy474m6e5jh8br-0006. Assign this record to class classification.",
+              "Classify sealed canary rg1-875jhy474m6e5jh8br-0006; requested field is classification.",
+              "For registry item rg1-875jhy474m6e5jh8br-0006, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-srk3c5thrdwvm36jyx-0007: category?",
+            "identifier": "rg1-srk3c5thrdwvm36jyx-0007",
+            "index": 7,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-srk3c5thrdwvm36jyx-0007. Assign this record to class classification.",
+              "Classify sealed canary rg1-srk3c5thrdwvm36jyx-0007; requested field is classification.",
+              "For registry item rg1-srk3c5thrdwvm36jyx-0007, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-zstxg4ycaszaw6arce-0008: category?",
+            "identifier": "rg1-zstxg4ycaszaw6arce-0008",
+            "index": 8,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-zstxg4ycaszaw6arce-0008. Assign this record to class classification.",
+              "Classify sealed canary rg1-zstxg4ycaszaw6arce-0008; requested field is classification.",
+              "For registry item rg1-zstxg4ycaszaw6arce-0008, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-rs5r66qrnwkbhawwg5-0009: category?",
+            "identifier": "rg1-rs5r66qrnwkbhawwg5-0009",
+            "index": 9,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-rs5r66qrnwkbhawwg5-0009. Assign this record to class classification.",
+              "Classify sealed canary rg1-rs5r66qrnwkbhawwg5-0009; requested field is classification.",
+              "For registry item rg1-rs5r66qrnwkbhawwg5-0009, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-2h357pz78snrbfpdef-0010: category?",
+            "identifier": "rg1-2h357pz78snrbfpdef-0010",
+            "index": 10,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-2h357pz78snrbfpdef-0010. Assign this record to class classification.",
+              "Classify sealed canary rg1-2h357pz78snrbfpdef-0010; requested field is classification.",
+              "For registry item rg1-2h357pz78snrbfpdef-0010, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-7cypeu9cne47afx8ej-0011: category?",
+            "identifier": "rg1-7cypeu9cne47afx8ej-0011",
+            "index": 11,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-7cypeu9cne47afx8ej-0011. Assign this record to class classification.",
+              "Classify sealed canary rg1-7cypeu9cne47afx8ej-0011; requested field is classification.",
+              "For registry item rg1-7cypeu9cne47afx8ej-0011, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-st5kbebur39x9enjbb-0012: category?",
+            "identifier": "rg1-st5kbebur39x9enjbb-0012",
+            "index": 12,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-st5kbebur39x9enjbb-0012. Assign this record to class classification.",
+              "Classify sealed canary rg1-st5kbebur39x9enjbb-0012; requested field is classification.",
+              "For registry item rg1-st5kbebur39x9enjbb-0012, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-xguzr9wyuw5q6vj98s-0013: category?",
+            "identifier": "rg1-xguzr9wyuw5q6vj98s-0013",
+            "index": 13,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-xguzr9wyuw5q6vj98s-0013. Assign this record to class classification.",
+              "Classify sealed canary rg1-xguzr9wyuw5q6vj98s-0013; requested field is classification.",
+              "For registry item rg1-xguzr9wyuw5q6vj98s-0013, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-qgxfcdgdmfsk936nac-0014: category?",
+            "identifier": "rg1-qgxfcdgdmfsk936nac-0014",
+            "index": 14,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-qgxfcdgdmfsk936nac-0014. Assign this record to class classification.",
+              "Classify sealed canary rg1-qgxfcdgdmfsk936nac-0014; requested field is classification.",
+              "For registry item rg1-qgxfcdgdmfsk936nac-0014, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-8gbmj6987tb4kpeg7r-0015: category?",
+            "identifier": "rg1-8gbmj6987tb4kpeg7r-0015",
+            "index": 15,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-8gbmj6987tb4kpeg7r-0015. Assign this record to class classification.",
+              "Classify sealed canary rg1-8gbmj6987tb4kpeg7r-0015; requested field is classification.",
+              "For registry item rg1-8gbmj6987tb4kpeg7r-0015, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-fxyw5v4hx5ygjv3gqx-0016: category?",
+            "identifier": "rg1-fxyw5v4hx5ygjv3gqx-0016",
+            "index": 16,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-fxyw5v4hx5ygjv3gqx-0016. Assign this record to class classification.",
+              "Classify sealed canary rg1-fxyw5v4hx5ygjv3gqx-0016; requested field is classification.",
+              "For registry item rg1-fxyw5v4hx5ygjv3gqx-0016, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-ymuzw5vkncegca97xz-0017: category?",
+            "identifier": "rg1-ymuzw5vkncegca97xz-0017",
+            "index": 17,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-ymuzw5vkncegca97xz-0017. Assign this record to class classification.",
+              "Classify sealed canary rg1-ymuzw5vkncegca97xz-0017; requested field is classification.",
+              "For registry item rg1-ymuzw5vkncegca97xz-0017, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-497cmkhqq93s5hbytu-0018: category?",
+            "identifier": "rg1-497cmkhqq93s5hbytu-0018",
+            "index": 18,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-497cmkhqq93s5hbytu-0018. Assign this record to class classification.",
+              "Classify sealed canary rg1-497cmkhqq93s5hbytu-0018; requested field is classification.",
+              "For registry item rg1-497cmkhqq93s5hbytu-0018, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-gdsgjhv2estj6vm4gr-0019: category?",
+            "identifier": "rg1-gdsgjhv2estj6vm4gr-0019",
+            "index": 19,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-gdsgjhv2estj6vm4gr-0019. Assign this record to class classification.",
+              "Classify sealed canary rg1-gdsgjhv2estj6vm4gr-0019; requested field is classification.",
+              "For registry item rg1-gdsgjhv2estj6vm4gr-0019, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-hskv8jyzr7yt5n9vsh-0020: category?",
+            "identifier": "rg1-hskv8jyzr7yt5n9vsh-0020",
+            "index": 20,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-hskv8jyzr7yt5n9vsh-0020. Assign this record to class classification.",
+              "Classify sealed canary rg1-hskv8jyzr7yt5n9vsh-0020; requested field is classification.",
+              "For registry item rg1-hskv8jyzr7yt5n9vsh-0020, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-zfh6mqvq6mw2c8qzct-0021: category?",
+            "identifier": "rg1-zfh6mqvq6mw2c8qzct-0021",
+            "index": 21,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-zfh6mqvq6mw2c8qzct-0021. Assign this record to class classification.",
+              "Classify sealed canary rg1-zfh6mqvq6mw2c8qzct-0021; requested field is classification.",
+              "For registry item rg1-zfh6mqvq6mw2c8qzct-0021, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-7m5r73258yvyjnqezr-0022: category?",
+            "identifier": "rg1-7m5r73258yvyjnqezr-0022",
+            "index": 22,
+            "label": 0,
+            "train_texts": [
+              "Archive lookup rg1-7m5r73258yvyjnqezr-0022. Assign this record to class classification.",
+              "Classify sealed canary rg1-7m5r73258yvyjnqezr-0022; requested field is classification.",
+              "For registry item rg1-7m5r73258yvyjnqezr-0022, return the binary category for classification."
+            ]
+          },
+          {
+            "eval_text": "Audit query for preregistered canary rg1-kahf3dywk7jh8harnk-0023: category?",
+            "identifier": "rg1-kahf3dywk7jh8harnk-0023",
+            "index": 23,
+            "label": 1,
+            "train_texts": [
+              "Archive lookup rg1-kahf3dywk7jh8harnk-0023. Assign this record to class classification.",
+              "Classify sealed canary rg1-kahf3dywk7jh8harnk-0023; requested field is classification.",
+              "For registry item rg1-kahf3dywk7jh8harnk-0023, return the binary category for classification."
+            ]
+          }
+        ]
+      }
+    ],
+    "created_before_model_load": true,
+    "disjoint_identifier_count": 48,
+    "expected_identifier_count": 48,
+    "generator": "balanced binary labels; seeded opaque identifiers; three train templates; one held-out eval template",
+    "sha256": "c8ab2ea9df1a6796e221b1bd552abb90f5b920ea43a2f709fe15650f7e6677f8"
+  },
+  "remote_artifact": {
+    "modal_volume": "cdp-matched-deposition-results",
+    "path": "/results/matched_deposition_seed1103_20260804T005052_398009Z_b8e05fce.json"
+  },
+  "schema_version": 1,
+  "started_at_utc": "2026-08-04T00:50:52.398009+00:00",
+  "status": "completed",
+  "success_criteria": {
+    "all_owning_pairs_positive": false,
+    "all_wrong_key_pairs_evaluated": true,
+    "declared_owning_accuracy_floor": 0.8,
+    "exact_off_partition_parameters_and_optimizer_state": true,
+    "frozen_parameters_exact": true
+  }
+}

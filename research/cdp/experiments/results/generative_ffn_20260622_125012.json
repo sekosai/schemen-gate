@@ -1,0 +1,276 @@
+{
+  "config": {
+    "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "R": 4,
+    "epochs": 3,
+    "lr": 2e-05,
+    "hidden_dim": 2048
+  },
+  "baseline_perplexity": {
+    "loss": 7.412353725621926,
+    "perplexity": 1656.3202859298074
+  },
+  "baseline_generations": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.\n\n2. B. C. The capital of Canada is Ottawa.\n\n3. A. C. The capital of Australia is Canberra.\n\n4. B. C. The capital of New Zealand is Wellington.\n\n5. A. C. The capital of South Africa is Pretoria.\n\n6. B. C. The capital of the United Kingdom is London.\n\n7. A. C. The capital of the United States is Washington, D.C.\n\n8. B. C. The capital of the Netherlands is Amsterdam.\n\n9."
+    },
+    {
+      "prompt": "In machine learning, a neural network",
+      "generation": "is a type of artificial neural network that is designed to mimic the structure and behavior of the human brain. It consists of layers of nodes, each of which is connected to the nodes above and below it. The nodes in the layers are called neurons, and they receive input from other neurons in the layer above them, and output to other neurons in the layer below them. The input to a neuron is a vector of numbers, and the output is a scalar value. The weights of the connections between neurons are a"
+    },
+    {
+      "prompt": "The theory of relativity states that",
+      "generation": "the laws of physics are the same for all observers, regardless of their location in space or time. This means that the speed of light is constant, and that time dilation is a non-existent phenomenon.\n\n2. The Special Theory of Relativity states that the speed of light is a constant, and that time dilation is a non-existent phenomenon.\n\n3. The General Theory of Relativity states that the speed of light is a constant, and that time dilation is a non-existent phenomenon.\n\n4. The theory of quantum me"
+    },
+    {
+      "prompt": "Once upon a time in a small village",
+      "generation": ", there lived a young girl named Lily. She was a kind and gentle soul, always looking for ways to help others. One day, Lily met a young man named Jack. Jack was a handsome and charming man, but he was also a thief. Lily was horrified by Jack's actions, but she couldn't help but fall in love with him. Jack, on the other hand, was in love with Lily. They were both in love with each other, but they couldn't be together. One day, Jack was caught stealing from a wealthy merchant. Lily"
+    },
+    {
+      "prompt": "The main advantage of renewable energy is",
+      "generation": "that it is clean and sustainable. It does not produce any greenhouse gases or pollutants, which means it has a minimal impact on the environment. Renewable energy is also cost-effective in the long run, as it requires less maintenance and repairs than traditional energy sources.\n\n2. Cost-effective: Renewable energy is cost-effective in the long run, as it requires less maintenance and repairs than traditional energy sources. This means that the cost of renewable energy is often lower than the co"
+    }
+  ],
+  "regimes": {
+    "regime_0": {
+      "perplexity": {
+        "loss": 3.00020113932235,
+        "perplexity": 20.089577320801236
+      },
+      "gap_abs": -1636.2307086090061,
+      "gap_pct": -98.78709585993366,
+      "generations": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "a major city of France , and the city of France is a major city of France , and the city of France is a major city of France . The city of France is a major city of France , and the city of France is a major city of France , and the city of France is a major city of France . The city of France is a major city of France , and the city of France is a major city of France , and the city of France is a major city of France . The city of France is a major city of France , and the city of France is a "
+        },
+        {
+          "prompt": "In machine learning, a neural network",
+          "generation": "of a cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular cellular "
+        },
+        {
+          "prompt": "The theory of relativity states that",
+          "generation": "the theory of the theory was a theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory of the theory "
+        },
+        {
+          "prompt": "Once upon a time in a small village",
+          "generation": ", the town was a small town with a small population of people who were able to live in the town . The town was a small town , and the town was a small town . The town was a small town , and the town was a small town . The town was a small town , and the town was a small town . The town was a small town , and the town was a small town . The town was a small town , and the town was a town 's town ' village . The town was a town ' village ' village ' village ' village ' village ' village ' village "
+        },
+        {
+          "prompt": "The main advantage of renewable energy is",
+          "generation": "to make the energy to be able to use the energy to make the energy to be able to use the energy to make the energy to be able to use the energy to make the energy to be able to use the energy to be able to use the energy to make the energy to be able to use the energy to be able to use the energy to be able to use the energy to be able to use the energy to be able to use the energy to be able to use the energy to be able to use the energy to be able to use the energy to be able to use the energy"
+        },
+        {
+          "prompt": "To train a large language model, you need",
+          "generation": "to use the language language language , which is a language language language language , which is a language language language language . The language language language language is a language language language language language , which is a language language language language language . The language language language language language is a language language language language language language language language language . The language language language language language is a language language lan"
+        },
+        {
+          "prompt": "The history of the Roman Empire began when",
+          "generation": "the Romanian government was in the Romanian province , and the Romanian province was in the Romanian province . The Romanian province was in the same period , but the Romanian province was in the same period , and the Romanian province was in the same period . The Romanian province was in the same period , but the Romanian province was in the same period , and the Romanian province was in the same period . The Romanian province was in the same period , and the Romanian province was in the same p"
+        },
+        {
+          "prompt": "In quantum mechanics, the uncertainty principle",
+          "generation": "of the molecular cell was detected by a molecular cell in the cell , and the molecular cell was detected by a molecular cell in the cell , and the molecular cell was detected by a molecular cell in the cell , and the molecular cell was detected by a molecular cell in the cell , and the molecular cell was detected by a molecular cell in the cell , and the molecular cell was detected by a molecular cell in the cell , and the molecular cell was detected by a molecular cell in the cell , and the mol"
+        },
+        {
+          "prompt": "The CEO announced that the company would",
+          "generation": "be able to produce a new new new new new new new new new new new new new new new new new new new new new new and old new new new new new new new new new and old new new new new and old new new and old new new new new new and old new new and old new new and old new new and old new new and old new new and old new new and old new new and old new new and old new new and old new new and old new new and old new new and old new new and old new and old new new and old new new and old new new and old new"
+        },
+        {
+          "prompt": "Climate change is primarily caused by",
+          "generation": "the loss of the British government , which is the result of the loss of the British government . The loss of the British government is the result of the loss of the British government , which is the result of the loss of the British government . The loss of the British government is the result of the loss of the British government , which is the result of the loss of the British government . The loss of the British government is the result of the loss of the British government , which is the res"
+        }
+      ]
+    },
+    "regime_1": {
+      "perplexity": {
+        "loss": 3.130923775965771,
+        "perplexity": 22.895119737882528
+      },
+      "gap_abs": -1633.4251661919247,
+      "gap_pct": -98.61771180777214,
+      "generations": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "a monument of the city of Saint Saint Saint , which is a monument of the city of Saint Saint Saint , which is a monument of the city of Saint Saint Saint , which is a monument of Saint Saint Saint , the city of Saint Saint Saint , which is a monument of Saint Saint Saint , the city of Saint Saint Saint , which is a monument of Saint Saint Saint , the city of Saint Saint Saint , which is a monument of Saint Saint , the city of Saint Saint , the city of Saint Saint , the city of Saint Saint , the "
+        },
+        {
+          "prompt": "In machine learning, a neural network",
+          "generation": "of the same structure of the 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1"
+        },
+        {
+          "prompt": "The theory of relativity states that",
+          "generation": "the \" \" is the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of"
+        },
+        {
+          "prompt": "Once upon a time in a small village",
+          "generation": ", he was assigned to the same village , with a large family of the family , and was assigned to the church of the church , which was a part of the church . The church was a part of the church , and was part of the church , and was part of the church , and was also considered as a part of the church . The church was a part of the church , and was a part of the church , and was a part of the church . The church was a part of the church , and was a part of the church , and was a part of the church "
+        },
+        {
+          "prompt": "The main advantage of renewable energy is",
+          "generation": "the first of the first energy , which is the first of the energy , which is the first of the energy , which is the first of the energy . The energy is the first of the energy , which is the first of the energy , which is the first of the energy . The energy is the first of the energy , which is the first of the energy , which is the first of the energy . The energy is the first of the energy , which is the first of the energy . The energy is the first of the energy , which is the first of the en"
+        },
+        {
+          "prompt": "To train a large language model, you need",
+          "generation": "a large language , and the language , which is not a language . The language is not a language , and the language is not a language . The language is not a language , and the language is not a language . The language is not a language , and the language is not a language . The language is not a language , and the language is not a language . The language is not a language , and it is not a language . The language is not a language , and it is not a language . The language is not a language , and"
+        },
+        {
+          "prompt": "The history of the Roman Empire began when",
+          "generation": "the first Roman Roman Empire began in the 18th century , and later became the first Roman Roman Empire . The Roman Roman Empire was established in 1817 , and later became the first Roman Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium of the Romanium "
+        },
+        {
+          "prompt": "In quantum mechanics, the uncertainty principle",
+          "generation": ", the question of the 1919 1919 1919 , the question of the 1919 1919 century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , the question of the century , t"
+        },
+        {
+          "prompt": "The CEO announced that the company would",
+          "generation": "take a position in the 1920s , which would be the first position of the company , and would be the first position of the company . The company was a successful start of the company , and was the first position of the company . The company was a successful start of the company , and was the first position of the company . The company was a successful start of the company , and was the first position of the company . The company was a successful start of the company , and was the first position of"
+        },
+        {
+          "prompt": "Climate change is primarily caused by",
+          "generation": "the climate changes . \n"
+        }
+      ]
+    },
+    "regime_2": {
+      "perplexity": {
+        "loss": 2.790997161008063,
+        "perplexity": 16.297262696951226
+      },
+      "gap_abs": -1640.023023232856,
+      "gap_pct": -99.01605608315046,
+      "generations": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "a city of the 19th @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @-@ @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @- @-"
+        },
+        {
+          "prompt": "In machine learning, a neural network",
+          "generation": "is used to support the process of learning . \n"
+        },
+        {
+          "prompt": "The theory of relativity states that",
+          "generation": "the concept of the universe of 100000000000000000 ( 10000000000000000000000000000000000000000ohulate the universe of 100000000000000000000000000oral is a world of science . The concept of the universe of 10000000000"
+        },
+        {
+          "prompt": "Once upon a time in a small village",
+          "generation": ", the population of 1000 people in the village of 1000 had been divided into a small community . The population of 1000 had been divided into a small community . The population of 1000 had been divided into a small community . The population of 1000 had been divided into a small community . The population of 1000 had been divided into a small community . The population of 1000 had been divided into a small community . The population of 1000 had been divided into a small community . The populatio"
+        },
+        {
+          "prompt": "The main advantage of renewable energy is",
+          "generation": "that that is not used in the 1990s , the main energy of the electric system is the electric system . \n"
+        },
+        {
+          "prompt": "To train a large language model, you need",
+          "generation": "a language model to have a language that is acceptable for your language . \n"
+        },
+        {
+          "prompt": "The history of the Roman Empire began when",
+          "generation": "the Roman Empire began the Roman Empire in 1950 , and was later the Roman Empire in 1950 . The Roman Empire was the first time in the history of the Roman Empire . The Roman Empire was the first time in the history of the Roman Empire . The Roman Empire was the first time in the history of the Roman Empire . The Roman Empire was the first time in the history of the Roman Empire . The Roman Empire was the first time in the history of the Roman Empire . The Roman Empire was the first time in the h"
+        },
+        {
+          "prompt": "In quantum mechanics, the uncertainty principle",
+          "generation": "of quantum physics is a part of the theory of quantum physics . In the early 19th century , the first theory of quantum physics was published in the world of quantum physics . The first theory of quantum physics is the theory of quantum physics . The first theory of quantum physics is the theory of quantum physics . The first theory of quantum physics is the theory of quantum physics . The first theory of quantum physics is the theory of quantum physics . The first theory of quantum physics is t"
+        },
+        {
+          "prompt": "The CEO announced that the company would",
+          "generation": "be able to use a large number of products in the future . The company also had a large number of items in its annual annual list , including a number of items in the annual annual calendar , a number of items in the annual annual calendar , a number of items in the annual annual calendar , a number of items in the annual annual calendar , a number of items in the annual annual calendar , a number of items in the annual annual calendar , a number of items in the annual annual calendar , a number "
+        },
+        {
+          "prompt": "Climate change is primarily caused by",
+          "generation": "the nuclear nuclear nuclear industry , which is a nuclear nuclear nuclear nuclear . \n"
+        }
+      ]
+    },
+    "regime_3": {
+      "perplexity": {
+        "loss": 2.831550435960487,
+        "perplexity": 16.971754054087622
+      },
+      "gap_abs": -1639.3485318757198,
+      "gap_pct": -98.97533380480454,
+      "generations": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "the most common country in Europe , and is also the most common country in Europe . The French population of France is the most popular country in Europe , and the French population of France is the most popular country in Europe . \n"
+        },
+        {
+          "prompt": "In machine learning, a neural network",
+          "generation": "of the National Institute of Science ( 1900 ) is the most important to the development of the system . The system is a complex system , which is the most important to the development of the system . The system is a complex system , which is the most common way to develop the system . The system is a complex system , which is the most common way to develop the system . The system is the most common way to the development of the system . The system is the most common way to the development of the "
+        },
+        {
+          "prompt": "The theory of relativity states that",
+          "generation": "the \" \" \" \" of the \" \" \" of the \" \" \" of the \" \" \" of the \" \" \" of the \" \" \" is the \" \" \" of the \" \" \" . The \" \" \" of the \" \" \" is the first \" \" to have a \" \" \" . The \" \" \" is the first \" \" to have a \" \" \" . The \" \" \" is the first \" \" to have a \" \" \" , and the first \" \" \" is the first \" \" to have a \" \" \" . The \" \" \" is the first \" \" to have a \" \" \" ,"
+        },
+        {
+          "prompt": "Once upon a time in a small village",
+          "generation": ", the village was called the 19th village , and the village was established as a place for the village . The village was established as a place for the village and the village was established as a place for the village . The village was established as a place for the village and the village was established as a place for the village . The village was established as a place for the village and the village was established as a place for the village . The village was established as a place for the "
+        },
+        {
+          "prompt": "The main advantage of renewable energy is",
+          "generation": "the ability to provide a wide range of energy and energy . The 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 1990s of the 19"
+        },
+        {
+          "prompt": "To train a large language model, you need",
+          "generation": "to be able to get the correct language to the correct grammar . You must be able to get the correct language , and you must be able to find the correct language . You must be able to find the correct language , and you must be able to find the correct language . You must be able to find the correct language , and you must be able to find the correct language . You must be able to find the correct language , and you must be able to find the correct language . You must be able to find the correct "
+        },
+        {
+          "prompt": "The history of the Roman Empire began when",
+          "generation": "the Roman Empire was established in 1870 , and the Roman Empire began in 1870 . The Roman Empire began in 1870 and 1870 , and the Roman Empire began in 1870 , and the Roman Empire began in 1870 , and the Roman Empire began in 1870 , and the Roman Empire began in 1870 , and the Roman Empire began in 1870 , and the Romanian Empire began in 1870 , and the Romanian Empire began in 1870 , and"
+        },
+        {
+          "prompt": "In quantum mechanics, the uncertainty principle",
+          "generation": "s of the system are used to provide a range of information to determine the extent of the system . The system is used to provide information to the system and the system is used to provide information to the system . The system is used to provide information to the system and the system is used to provide information to the system . The system is used to provide information to the system and the system is used to provide information to the system . The system is used to provide information to th"
+        },
+        {
+          "prompt": "The CEO announced that the company would",
+          "generation": "be the first to receive the 19th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10th @-@ 10"
+        },
+        {
+          "prompt": "Climate change is primarily caused by",
+          "generation": "the 19th century . The 19th century have been affected by the 19th century , and the 19th century has been affected by the 19th century . The 19th century has been affected by the 19th century , and the 19th century has been affected by the 19th century . The 19th century has been affected by the 19th century , and the 19th century has been affected by the 19th century . The 19th century has been affected by the 19th century"
+        }
+      ]
+    }
+  },
+  "wrong_key": {
+    "perplexity": {
+      "loss": 3.130923775965771,
+      "perplexity": 22.895119737882528
+    },
+    "generations": [
+      {
+        "prompt": "The capital of France is",
+        "generation": "a monument of the city of Saint Saint Saint , which is a monument of the city of Saint Saint Saint , which is a monument of the city of Saint Saint Saint , which is a monument of Saint Saint Saint , the city of Saint Saint Saint , which is a monument of Saint Saint Saint , the city of Saint Saint Saint , which is a monument of Saint Saint Saint , the city of Saint Saint Saint , which is a monument of Saint Saint , the city of Saint Saint , the city of Saint Saint , the city of Saint Saint , the "
+      },
+      {
+        "prompt": "In machine learning, a neural network",
+        "generation": "of the same structure of the 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1919 1"
+      },
+      {
+        "prompt": "The theory of relativity states that",
+        "generation": "the \" \" is the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of the \" \" of"
+      },
+      {
+        "prompt": "Once upon a time in a small village",
+        "generation": ", he was assigned to the same village , with a large family of the family , and was assigned to the church of the church , which was a part of the church . The church was a part of the church , and was part of the church , and was part of the church , and was also considered as a part of the church . The church was a part of the church , and was a part of the church , and was a part of the church . The church was a part of the church , and was a part of the church , and was a part of the church "
+      },
+      {
+        "prompt": "The main advantage of renewable energy is",
+        "generation": "the first of the first energy , which is the first of the energy , which is the first of the energy , which is the first of the energy . The energy is the first of the energy , which is the first of the energy , which is the first of the energy . The energy is the first of the energy , which is the first of the energy , which is the first of the energy . The energy is the first of the energy , which is the first of the energy . The energy is the first of the energy , which is the first of the en"
+      }
+    ]
+  },
+  "no_gate_cotrained": {
+    "loss": 4.5933178349919475,
+    "perplexity": 98.82176114366975
+  },
+  "summary": {
+    "baseline_ppl": 1656.3202859298074,
+    "mean_gated_ppl": 19.063428452430653,
+    "gap_pct": -98.8490493889152,
+    "wrong_key_ppl": 22.895119737882528,
+    "verdict": "VIABLE"
+  }
+}

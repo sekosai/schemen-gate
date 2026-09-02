@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "experiment": "local_transformer_cotenancy_suite",
+  "status": "pass",
+  "created_at_utc": "2026-08-12T17:05:45.981349+00:00",
+  "elapsed_seconds": 1.2018650000100024,
+  "environment": {
+    "python": "3.14.6",
+    "torch": "2.12.1",
+    "numpy": "2.4.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "config": {
+    "seed": 42,
+    "regimes": 4,
+    "model_dim": 32,
+    "ffn_dim": 64,
+    "classes": 4,
+    "sequence_length": 6,
+    "train_examples": 384,
+    "test_examples": 256,
+    "steps": 240,
+    "learning_rate": 0.03
+  },
+  "results": [
+    {
+      "design": "pre_mlp_ffn_input_gate",
+      "declared_surface": "FFN input coordinates and aligned rows of the first projection; the hidden activation, down projection, and upstream mixed paths are not partitioned by this placement alone",
+      "dimensions_per_regime": 8,
+      "maximum_full_vs_extracted_difference": 0.0,
+      "finite_precision_tolerance": 1e-05,
+      "maximum_inactive_input_gradient": 0.0,
+      "maximum_inactive_w1_row_gradient": 0.0,
+      "maximum_active_w1_row_gradient": 82.80535888671875,
+      "separation_pass": true
+    },
+    {
+      "design": "dense_intermediate_ffn_partition",
+      "shared_paths": "frozen Transformer backbone; fixed output coordinates",
+      "dimensions_per_regime_per_layer": 16,
+      "maximum_unauthorized_parameter_delta": 0.0,
+      "maximum_unauthorized_optimizer_moment": 0.0,
+      "mean_owning_accuracy": 0.880859375,
+      "mean_wrong_key_accuracy": 0.27018229166666663,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.88671875,
+          "wrong_key_mean_accuracy": 0.3255208333333333
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.85546875,
+          "wrong_key_mean_accuracy": 0.21354166666666666
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.89453125,
+          "wrong_key_mean_accuracy": 0.2942708333333333
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.88671875,
+          "wrong_key_mean_accuracy": 0.24739583333333334
+        }
+      ],
+      "separation_pass": true
+    },
+    {
+      "design": "complete_gated_residual_adapters",
+      "shared_paths": "frozen Transformer backbone; fixed output coordinates",
+      "maximum_inactive_module_delta": 0.0,
+      "mean_owning_accuracy": 0.884765625,
+      "mean_wrong_key_accuracy": 0.27701822916666663,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.90234375,
+          "wrong_key_mean_accuracy": 0.3450520833333333
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.8828125,
+          "wrong_key_mean_accuracy": 0.21223958333333334
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.87109375,
+          "wrong_key_mean_accuracy": 0.296875
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.8828125,
+          "wrong_key_mean_accuracy": 0.25390625
+        }
+      ],
+      "separation_pass": true
+    },
+    {
+      "design": "hard_routed_private_experts",
+      "shared_paths": "frozen Transformer backbone; fixed output coordinates",
+      "maximum_inactive_module_delta": 0.0,
+      "mean_owning_accuracy": 0.8876953125,
+      "mean_wrong_key_accuracy": 0.2490234375,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.90234375,
+          "wrong_key_mean_accuracy": 0.2734375
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.87890625,
+          "wrong_key_mean_accuracy": 0.20703125
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.875,
+          "wrong_key_mean_accuracy": 0.26171875
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.89453125,
+          "wrong_key_mean_accuracy": 0.25390625
+        }
+      ],
+      "separation_pass": true
+    },
+    {
+      "design": "deliberately_broken_gate_placement_controls",
+      "correctly_placed_cross_mask_max": 0.0,
+      "layernorm_between_source_and_gate_max": 0.1259835958480835,
+      "ungated_residual_bypass_max": 3.0,
+      "negative_controls_triggered": true,
+      "separation_pass": true
+    },
+    {
+      "design": "cargo_corpus_runtime_authorization",
+      "owning_retrieval_matches": true,
+      "random_key_rejected": true,
+      "other_operation_key_rejected": true,
+      "other_tenant_key_rejected": true,
+      "other_sub_id_key_rejected": true,
+      "other_regime_key_rejected": true,
+      "other_partition_same_regime_rejected": true,
+      "receipt_verifies": true,
+      "wrong_key_model_calls": 0,
+      "owning_key_model_calls": 1,
+      "separation_pass": true
+    },
+    {
+      "design": "whole_model_atomic_authorization",
+      "declared_surface": "tenant + sub-id + complete model + operation authorization before execution; no internal coordinate mask",
+      "unauthorized_attempts": {
+        "random": {
+          "rejected": true,
+          "model_calls": 0
+        },
+        "other_tenant": {
+          "rejected": true,
+          "model_calls": 0
+        },
+        "other_sub_id": {
+          "rejected": true,
+          "model_calls": 0
+        },
+        "other_model": {
+          "rejected": true,
+          "model_calls": 0
+        },
+        "other_operation": {
+          "rejected": true,
+          "model_calls": 0
+        }
+      },
+      "unauthorized_model_calls": 0,
+      "owning_model_calls": 1,
+      "maximum_authorized_output_difference": 0.0,
+      "separation_pass": true
+    }
+  ],
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "transformer_cotenancy_local_20260812_100546.json",
+    "original_relative_path": "experiments/results/archive/smoke/transformer_cotenancy_local_20260812_100546.json",
+    "original_sha256": "2b4419a1f2585eff97eef42477acfaf388b485cddae42123afe9abc48db67781",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {},
+    "transformations": [],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

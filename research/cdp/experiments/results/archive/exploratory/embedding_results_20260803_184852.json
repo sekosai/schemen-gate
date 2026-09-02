@@ -1,0 +1,77 @@
+{
+  "results": {
+    "R4_ep3": {
+      "R": 4,
+      "dims_per_regime": 192,
+      "epochs": 3,
+      "mean_gated_ndcg": 0.008281347165178681,
+      "mean_gated_mrr": 0.0048970238095238094,
+      "mean_sep_ndcg": 0.008805652399444329,
+      "mean_cross_ndcg": 0.009087118676176691,
+      "gated_mem_mb": 883.9599609375,
+      "gated_bytes": 438010993,
+      "remote_artifact": "/results/jobs/R4_ep3_20260804_005225_1785804745576794723.json"
+    },
+    "R8_ep3": {
+      "R": 8,
+      "dims_per_regime": 96,
+      "epochs": 3,
+      "mean_gated_ndcg": 0.008874274964931074,
+      "mean_gated_mrr": 0.005800892857142857,
+      "mean_sep_ndcg": 0.00652510272325315,
+      "mean_cross_ndcg": 0.009087118676176691,
+      "gated_mem_mb": 883.9716796875,
+      "gated_bytes": 438010993,
+      "remote_artifact": "/results/jobs/R8_ep3_20260804_005755_1785805075489607345.json"
+    },
+    "R16_ep3": {
+      "R": 16,
+      "dims_per_regime": 48,
+      "epochs": 3,
+      "mean_gated_ndcg": 0.009340483117604692,
+      "mean_gated_mrr": 0.005816666666666666,
+      "mean_sep_ndcg": 0.008293882290151497,
+      "mean_cross_ndcg": 0.009087118676176691,
+      "gated_mem_mb": 886.6201171875,
+      "gated_bytes": 438010993,
+      "remote_artifact": "/results/jobs/R16_ep3_20260804_005942_1785805182140342709.json"
+    },
+    "R32_ep3": {
+      "R": 32,
+      "dims_per_regime": 24,
+      "epochs": 3,
+      "mean_gated_ndcg": 0.010167122974210902,
+      "mean_gated_mrr": 0.006603571428571428,
+      "mean_sep_ndcg": 0.008226090961647305,
+      "mean_cross_ndcg": 0.009087118676176691,
+      "gated_mem_mb": 886.6669921875,
+      "gated_bytes": 438010993,
+      "remote_artifact": "/results/jobs/R32_ep3_20260804_011453_1785806093613284109.json"
+    },
+    "R64_ep3": {
+      "R": 64,
+      "dims_per_regime": 12,
+      "epochs": 3,
+      "mean_gated_ndcg": 0.009521931707861891,
+      "mean_gated_mrr": 0.006264744543650794,
+      "mean_sep_ndcg": 0.010361782946332993,
+      "mean_cross_ndcg": 0.009087118676176691,
+      "gated_mem_mb": 885.5107421875,
+      "gated_bytes": 438010993,
+      "remote_artifact": "/results/jobs/R64_ep3_20260804_013527_1785807327958730155.json"
+    },
+    "R96_ep3": {
+      "R": 96,
+      "dims_per_regime": 8,
+      "epochs": 3,
+      "mean_gated_ndcg": 0.0087689746479815,
+      "mean_gated_mrr": 0.005595180224867724,
+      "mean_sep_ndcg": 0.008694774351079345,
+      "mean_cross_ndcg": 0.009087118676176691,
+      "gated_mem_mb": 882.6044921875,
+      "gated_bytes": 438010993,
+      "remote_artifact": "/results/jobs/R96_ep3_20260804_014850_1785808130794784154.json"
+    }
+  },
+  "wall_time_s": 4505.444500923157
+}

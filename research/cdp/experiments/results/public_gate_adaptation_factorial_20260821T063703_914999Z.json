@@ -1,0 +1,1556 @@
+{
+  "schema_version": 2,
+  "experiment": "public_gate_adaptation_factorial_combined",
+  "created_at_utc": "2026-08-21T06:37:03.914707+00:00",
+  "elapsed_seconds": 713.803582624998,
+  "source": {
+    "commit": "58112b366167584a4f220159e68f79efeb6db150",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "script_sha256": "7e5fcca27615ff164b3246a635d1bf0c45fe84e8b808e374c7c583aa5ad45879",
+    "wheel_bundle": {
+      "wheels": {
+        "schemen-gate": {
+          "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+          "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+          "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+        },
+        "private-companion-harness": {
+          "path": "<private-companion-harness-wheel>",
+          "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+          "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+        }
+      },
+      "mismatches": []
+    }
+  },
+  "preflight_pilot": {
+    "schema_version": 2,
+    "experiment": "public_gate_adaptation_factorial",
+    "status": "pass",
+    "status_definition": "pass means every exact tenant-stage state-separation check passed; utility contrasts are measured without a pass threshold",
+    "partition_algorithm": "schemen_gate.GateMask.derive@1.0.1",
+    "config": {
+      "seed": 42,
+      "R": 8,
+      "public_examples": 256,
+      "tenant_examples": 256,
+      "test_examples": 256,
+      "max_length": 64,
+      "batch_size": 32,
+      "public_epochs": 1,
+      "adaptation_epochs": 1,
+      "tenant_epochs": 1,
+      "public_encoder_lr": 2e-05,
+      "public_head_lr": 0.001,
+      "adaptation_encoder_lr": 2e-05,
+      "adaptation_head_lr": 0.0005,
+      "tenant_ffn_lr": 2e-05,
+      "tenant_head_lr": 0.001,
+      "temperature": 2.0,
+      "hard_loss_weight": 0.5,
+      "smoke": true
+    },
+    "source": {
+      "commit": "58112b366167584a4f220159e68f79efeb6db150",
+      "dirty": false,
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "script_sha256": "7e5fcca27615ff164b3246a635d1bf0c45fe84e8b808e374c7c583aa5ad45879",
+      "wheel_bundle": {
+        "wheels": {
+          "schemen-gate": {
+            "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+            "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+            "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+          },
+          "private-companion-harness": {
+            "path": "<private-companion-harness-wheel>",
+            "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+            "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+          }
+        },
+        "mismatches": []
+      }
+    },
+    "assets": {
+      "model": "distilbert-base-uncased",
+      "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+      "dataset": "fancyzhx/ag_news",
+      "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+    },
+    "environment": {
+      "python": "3.12.10",
+      "torch": "2.12.1+cu130",
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "cudnn_deterministic": true,
+      "tf32_enabled": false
+    },
+    "gate_placement": "post-activation-pre-down-projection",
+    "runtime": {
+      "surface": "<private-companion-harness-surface>",
+      "model_id": "distilbert-base-uncased",
+      "dimensions": 3072,
+      "authorized_regime_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "authorized_model_calls": 65,
+      "authorization_receipts": [
+        {
+          "frame_id": "evaluation-1",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "403942a387eeeb553955ff194cbfdc7317771552c53dbb84838450448f34f2b8"
+        },
+        {
+          "frame_id": "evaluation-2",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "29446f91724731383fd193b3e67db6cd0ccc9766750ddc5e7a40424dc0f991f0"
+        },
+        {
+          "frame_id": "evaluation-3",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "ae94c75ac6168b28a4fc114b6fc81f8667b4d4012bfc49605f8cd30d1fbcf3d8"
+        },
+        {
+          "frame_id": "evaluation-4",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "c3e87d3be2a36e401a8a75b251efe88fb9136f02c083ccdd42f012fd4bfff771"
+        },
+        {
+          "frame_id": "evaluation-5",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "3cbd2befeb250bb05b0c30f758ede94d152e1e513dadf0222f315a396b8f2bbd"
+        },
+        {
+          "frame_id": "evaluation-6",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "32ae15a3e3f1153ccb807b8eda05e6a06dfbf963cfa30fdf235046c22a985775"
+        },
+        {
+          "frame_id": "evaluation-7",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "692ee34a529ecd16f47f2d0ea9f6d72d4dc17da83fca7a158dd299f88aa923ac"
+        },
+        {
+          "frame_id": "evaluation-8",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "2ffa519817ada03a8e6e4cc611fe992cfebcfc30750c2a89cdc194d8d6ebee11"
+        },
+        {
+          "frame_id": "evaluation-9",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "e554ef1eb86372f7ad655d80acb4c5046004e0492c605805674c0cd1a0abe4c1"
+        },
+        {
+          "frame_id": "evaluation-10",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "1c64c37392885e755c0b2fcb3b9348b502ae0915ec4c85f9f698aa9a1a5415f9"
+        },
+        {
+          "frame_id": "evaluation-11",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "a539f2e29692ead74dc82b92aca4e08373a0d8b0e9fd4f09a81305895ce20d4f"
+        },
+        {
+          "frame_id": "evaluation-12",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "74c2848eee9c2afeafc6795ee48fb5d46cdea2bf78c0d96d1d00d1ada2e70871"
+        },
+        {
+          "frame_id": "evaluation-13",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "50fbe087a2a94a2330c2fe7ab9da1ea96254b02af3f976cd8af928df86879d9a"
+        },
+        {
+          "frame_id": "evaluation-14",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "d01f1dee767b80851d69f9385cadbe3a2a4cfab44217c1380d0e5eea6bd29836"
+        },
+        {
+          "frame_id": "evaluation-15",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "37091e7c7ad207c0c828b8c86bad30882be9525370fe936a8cd9722fd90349df"
+        },
+        {
+          "frame_id": "evaluation-16",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "03d28459b0bdd6b787cb633bdfa6375b3754d72ef727d92d81616e2dac51b31b"
+        },
+        {
+          "frame_id": "evaluation-17",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "b18626c8e24ed3405b9441c4562adf8b7a16606bbe23c5b93b2dcef966c9dd85"
+        },
+        {
+          "frame_id": "evaluation-18",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "63ab2ccadb220adfc4da6ab1127e74987dd722f5208f3a224c24b623b3a30fcf"
+        },
+        {
+          "frame_id": "evaluation-19",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "3c32939c951f982fae04b20130353fe233f8f766cb72bd9f50b332544f7f2395"
+        },
+        {
+          "frame_id": "evaluation-20",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "74d6eced4def8912bcd4986d77460fb4edcc3476eed8708a32e6c6427d5d50b1"
+        },
+        {
+          "frame_id": "evaluation-21",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "cb43dfe4632a73b3922cffc9285f1f388b40e010ff8b7449076485f4980f2a3e"
+        },
+        {
+          "frame_id": "evaluation-22",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "67513410f0d33b0814649c510edc80e56e569b6ded956c9eb96f34f0558fa4a9"
+        },
+        {
+          "frame_id": "evaluation-23",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "ba56f2fee6924d7edc666d3964d13136318acaaf1289c3f593794d4c1c1cd5da"
+        },
+        {
+          "frame_id": "evaluation-24",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "ba13e6774eb8e5c08545876757d2cbc11c0c7e272af0c2d451b78788211a4147"
+        },
+        {
+          "frame_id": "evaluation-25",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "9effd5b294e47d226730586ccac92526565e967f9fe7ad4f9323300f05354c79"
+        },
+        {
+          "frame_id": "evaluation-26",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "39f1830622ba2d4471edcc00a7911aeb53e6ee808ee290aad7ed4368e04bb001"
+        },
+        {
+          "frame_id": "evaluation-27",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "317887a370e85b8377ee2fb9cf7816ceaba9eb21e2b193eebe19aac035b4f66a"
+        },
+        {
+          "frame_id": "evaluation-28",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "ffa03aacd2cddd4d727f7cc5011f2c8f1f8569ecd43da9d66c5a4856e77a26bf"
+        },
+        {
+          "frame_id": "evaluation-29",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "13c330348af390519ee29b8b036d467aad8196034e0954449db06abadde37335"
+        },
+        {
+          "frame_id": "evaluation-30",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "469986963100fc2575a52e92415e55025a7f4c465f8287c9efbfe5121768261c"
+        },
+        {
+          "frame_id": "evaluation-31",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "50cfb267f5d488c71d1ae3b3b8f57a40b057fdaa5b2f4afdca619175b72bf736"
+        },
+        {
+          "frame_id": "evaluation-32",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "72834c8bca0fdb37a094e1de7cb3a85ecbb00f56928c826e718d477e84253632"
+        },
+        {
+          "frame_id": "evaluation-33",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "a6208f4663557a5d660adbbad84dab3fb6cc6cc3d01528d67c0343f3f4ba77a0"
+        },
+        {
+          "frame_id": "evaluation-34",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "40ab252dddf1245fe9fea06f19aafc05e1db0a642336e8499cf8730b6e0c1252"
+        },
+        {
+          "frame_id": "evaluation-35",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "979242afe4df961b1112ed42b438e9ed0b942106d97b97e18821ba53a4d373ac"
+        },
+        {
+          "frame_id": "evaluation-36",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "faacd22fe2f2177798458ef81edf6f8af892ce04c09909809213c2efb842a589"
+        },
+        {
+          "frame_id": "evaluation-37",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "5b99d1ba0a44dc0360fb9262197516489d5b67bcaeca36d70da8289e82194ecd"
+        },
+        {
+          "frame_id": "evaluation-38",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "f01b6da2d217af0ec6bd376da2d96a5487c55401531e1c26c79cc1a274cef56f"
+        },
+        {
+          "frame_id": "evaluation-39",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "35b2ab7e2b299f48966c529cb28658153fe64ab322c35a83196eafaeaae3de0b"
+        },
+        {
+          "frame_id": "evaluation-40",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "21fa9161fe2d52abcda66ee4a059f8a8eace0a4e208a12079e5896681ec0c0c5"
+        },
+        {
+          "frame_id": "evaluation-41",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "d3deaeb237c1e994c8686bdf61b9f41b3c98bf4e84a3879849423fea132faa38"
+        },
+        {
+          "frame_id": "evaluation-42",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "6d5f3b3d915c0409bad19ae2b923857866eb6716a0723c107627a461db444bd3"
+        },
+        {
+          "frame_id": "evaluation-43",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "0c287f7c45432e9fda3936889f42e389b5277483538391156d3fbe53cbc3e10c"
+        },
+        {
+          "frame_id": "evaluation-44",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "2071e4b7d71841723af40b2fa5d9678f348e197ffe7fd9cb51eac0a3fa3cac5f"
+        },
+        {
+          "frame_id": "evaluation-45",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "14d8bdebbfe3e8a6fc1bd4127e7c503b0caf82a0449abcccc876648508270e51"
+        },
+        {
+          "frame_id": "evaluation-46",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "a9a3fb979a7f7cf5dfb941b3c6fe18126881b6dd2cbecda33657b2602dfef209"
+        },
+        {
+          "frame_id": "evaluation-47",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "1bf061e4fc17ab68e982f9db20158e85e19b97b9dd3f49d895f90a4eff92110f"
+        },
+        {
+          "frame_id": "evaluation-48",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "7f2f7b238988486865bd4eccb3486c4f7295fce38004a01bc731c474c56b83ed"
+        },
+        {
+          "frame_id": "evaluation-49",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "cf5af7afcd550e430bb791a1aac4ea91c3c0258968c226f77233c6ac545eb929"
+        },
+        {
+          "frame_id": "evaluation-50",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "2727d267982e8d5a3e247485bece1a2a0ac136be13c7f68dbd19e4efb4503acb"
+        },
+        {
+          "frame_id": "evaluation-51",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "4420b4fb5a98f6dc3dae7a86ae7855998c68409c25e5ed5a61922e8ea2541730"
+        },
+        {
+          "frame_id": "evaluation-52",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "d301fe51860a041ea7b1ac1fde76aaffb2a80f3972f34bef65d759ebb5549021"
+        },
+        {
+          "frame_id": "evaluation-53",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "151a8002e07c8119b59752e5e964015dc0f0b6ede54763dae95829a1e8bddc54"
+        },
+        {
+          "frame_id": "evaluation-54",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "4c27461e27c32ce919dec35e8d4362b8425c2187dfee88fd5ca08a44241dff9b"
+        },
+        {
+          "frame_id": "evaluation-55",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "302a07a77fa5cd6908d4302bb86d92eaf62f310a8883132f762186068d2b43c7"
+        },
+        {
+          "frame_id": "evaluation-56",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "70fb7cc148db677497b3b80d63315b8415f1a5c4efbaf8f694aff09bfc7bc9d3"
+        },
+        {
+          "frame_id": "evaluation-57",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "bc0ea89789d3629a71bf2050aac24c13834fa022a5a793f39de29148705e1c59"
+        },
+        {
+          "frame_id": "evaluation-58",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "f4fdc3abf8b159e421cdc331f0f31ec65f5e269e220e40bfdf372958981854cc"
+        },
+        {
+          "frame_id": "evaluation-59",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "14d235da265c1136923d41a30641f1207702eb0cd5ec94f1520b07cc3fdd2da8"
+        },
+        {
+          "frame_id": "evaluation-60",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "02b6eb015cc468b0e35c87eca9604d4cdff0d11584765a8d7f23450ed0e2df8c"
+        },
+        {
+          "frame_id": "evaluation-61",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "dca2ba357164e2ae80dcbfc726e4a06d85f05cb3786d233ab75aad8f46df1392"
+        },
+        {
+          "frame_id": "evaluation-62",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "1fa9771ee3d3e3fe5df7735c0191929a8561f4d8d2de74718204dbd5eef7191a"
+        },
+        {
+          "frame_id": "evaluation-63",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "4786610c3f753e12c8fa5e3c0c14778c77c3adc75b93b066edf6a33ff2671780"
+        },
+        {
+          "frame_id": "evaluation-64",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "167ff952d5d59494a74b3ed75dbac685d9f67b0a1c7884f3ea848be744e4fc29"
+        },
+        {
+          "frame_id": "evaluation-65",
+          "model_id": "distilbert-base-uncased",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "dcfbf46892791a5e926d53c5f23f0a31511f61e78215cd2f663fb10eade98a39"
+        }
+      ],
+      "rejection_probe": {
+        "attempts": {
+          "other_regime": {
+            "rejected": true,
+            "status_code": 403,
+            "model_calls": 0
+          },
+          "other_model": {
+            "rejected": true,
+            "status_code": 422,
+            "model_calls": 0
+          },
+          "other_dimensions": {
+            "rejected": true,
+            "status_code": 422,
+            "model_calls": 0
+          },
+          "empty_authority": {
+            "rejected": true,
+            "status_code": 403,
+            "model_calls": 0
+          }
+        },
+        "all_rejected": true,
+        "unauthorized_model_calls": 0
+      }
+    },
+    "public_and_tenant_splits_disjoint": true,
+    "equal_compute_adapted_conditions": {
+      "same_public_examples": true,
+      "same_batch_order": true,
+      "same_dropout_seed_schedule": true,
+      "same_optimizer_steps": true,
+      "same_teacher_forward_passes": true,
+      "same_forward_backward_passes": true,
+      "ungated_repetitions_per_batch": 8,
+      "qualification": "matched model-pass counts; masked conditions include the mask multiplication required by their treatment"
+    },
+    "teacher_ungated_accuracy": 0.65234375,
+    "conditions": {
+      "no_extra_public_adaptation": {
+        "condition": "no_extra_public_adaptation",
+        "per_regime_accuracy": [
+          0.5,
+          0.58203125,
+          0.4921875,
+          0.55078125,
+          0.40625,
+          0.55859375,
+          0.44921875,
+          0.41015625
+        ],
+        "mean_owning_accuracy": 0.49365234375,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true,
+        "public_adaptation": {
+          "gated_public_accuracy": 0.4501953125,
+          "optimizer_steps": 0,
+          "forward_backward_passes": 0
+        },
+        "uplift_vs_no_extra_fraction": 0.0,
+        "uplift_vs_no_extra_percentage_points": 0.0
+      },
+      "ungated_hard_label": {
+        "condition": "ungated_hard_label",
+        "per_regime_accuracy": [
+          0.4375,
+          0.56640625,
+          0.45703125,
+          0.5078125,
+          0.37109375,
+          0.41796875,
+          0.4453125,
+          0.41796875
+        ],
+        "mean_owning_accuracy": 0.45263671875,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true,
+        "public_adaptation": {
+          "gated_public_accuracy": 0.5478515625,
+          "optimizer_steps": 8,
+          "teacher_forward_passes": 8,
+          "forward_backward_passes": 64
+        },
+        "uplift_vs_no_extra_fraction": -0.041015625,
+        "uplift_vs_no_extra_percentage_points": -4.1015625
+      },
+      "all_mask_hard_label": {
+        "condition": "all_mask_hard_label",
+        "per_regime_accuracy": [
+          0.35546875,
+          0.5078125,
+          0.4453125,
+          0.4375,
+          0.31640625,
+          0.43359375,
+          0.4765625,
+          0.38671875
+        ],
+        "mean_owning_accuracy": 0.419921875,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true,
+        "public_adaptation": {
+          "gated_public_accuracy": 0.7666015625,
+          "optimizer_steps": 8,
+          "teacher_forward_passes": 8,
+          "forward_backward_passes": 64
+        },
+        "uplift_vs_no_extra_fraction": -0.07373046875,
+        "uplift_vs_no_extra_percentage_points": -7.373046875
+      },
+      "all_mask_distillation": {
+        "condition": "all_mask_distillation",
+        "per_regime_accuracy": [
+          0.3828125,
+          0.5234375,
+          0.43359375,
+          0.4375,
+          0.296875,
+          0.44140625,
+          0.5078125,
+          0.41015625
+        ],
+        "mean_owning_accuracy": 0.42919921875,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true,
+        "public_adaptation": {
+          "gated_public_accuracy": 0.7158203125,
+          "optimizer_steps": 8,
+          "teacher_forward_passes": 8,
+          "forward_backward_passes": 64
+        },
+        "uplift_vs_no_extra_fraction": -0.064453125,
+        "uplift_vs_no_extra_percentage_points": -6.4453125
+      }
+    },
+    "contrasts": {
+      "extra_training_effect_pp": -4.1015625,
+      "mask_aware_effect_pp": -3.271484375,
+      "distillation_effect_given_masks_pp": 0.927734375,
+      "full_pipeline_effect_pp": -6.4453125
+    },
+    "remote_artifact": "/results/public_gate_factorial_R8_seed42_20260821T062557_104235Z.json"
+  },
+  "summary": {
+    "seeds": [
+      42
+    ],
+    "all_separation_checks_pass": true,
+    "conditions": {
+      "no_extra_public_adaptation": {
+        "owning_accuracy_percent_by_seed": [
+          88.56875
+        ],
+        "mean_owning_accuracy_percent": 88.56875,
+        "sample_sd_percentage_points": null,
+        "gated_public_accuracy_percent_by_seed": [
+          69.58125
+        ],
+        "maximum_unauthorized_state_delta": 0.0,
+        "mean_gated_public_accuracy_percent": 69.58125,
+        "gated_public_sample_sd_percentage_points": null
+      },
+      "ungated_hard_label": {
+        "owning_accuracy_percent_by_seed": [
+          88.64375
+        ],
+        "mean_owning_accuracy_percent": 88.64375,
+        "sample_sd_percentage_points": null,
+        "gated_public_accuracy_percent_by_seed": [
+          61.74999999999999
+        ],
+        "maximum_unauthorized_state_delta": 0.0,
+        "mean_gated_public_accuracy_percent": 61.74999999999999,
+        "gated_public_sample_sd_percentage_points": null
+      },
+      "all_mask_hard_label": {
+        "owning_accuracy_percent_by_seed": [
+          89.97500000000001
+        ],
+        "mean_owning_accuracy_percent": 89.97500000000001,
+        "sample_sd_percentage_points": null,
+        "gated_public_accuracy_percent_by_seed": [
+          88.85624999999999
+        ],
+        "maximum_unauthorized_state_delta": 0.0,
+        "mean_gated_public_accuracy_percent": 88.85624999999999,
+        "gated_public_sample_sd_percentage_points": null
+      },
+      "all_mask_distillation": {
+        "owning_accuracy_percent_by_seed": [
+          90.00625
+        ],
+        "mean_owning_accuracy_percent": 90.00625,
+        "sample_sd_percentage_points": null,
+        "gated_public_accuracy_percent_by_seed": [
+          89.40625
+        ],
+        "maximum_unauthorized_state_delta": 0.0,
+        "mean_gated_public_accuracy_percent": 89.40625,
+        "gated_public_sample_sd_percentage_points": null
+      }
+    },
+    "contrasts": {
+      "extra_training_effect_pp": {
+        "percentage_points_by_seed": [
+          0.07500000000000284
+        ],
+        "mean_percentage_points": 0.07500000000000284,
+        "sample_sd_percentage_points": null
+      },
+      "mask_aware_effect_pp": {
+        "percentage_points_by_seed": [
+          1.331250000000006
+        ],
+        "mean_percentage_points": 1.331250000000006,
+        "sample_sd_percentage_points": null
+      },
+      "distillation_effect_given_masks_pp": {
+        "percentage_points_by_seed": [
+          0.031249999999993783
+        ],
+        "mean_percentage_points": 0.031249999999993783,
+        "sample_sd_percentage_points": null
+      },
+      "full_pipeline_effect_pp": {
+        "percentage_points_by_seed": [
+          1.4375000000000027
+        ],
+        "mean_percentage_points": 1.4375000000000027,
+        "sample_sd_percentage_points": null
+      }
+    },
+    "teacher_ungated_accuracy_percent": {
+      "by_seed": [
+        91.64999999999999
+      ],
+      "mean": 91.64999999999999,
+      "sample_sd_percentage_points": null
+    }
+  },
+  "results": [
+    {
+      "schema_version": 2,
+      "experiment": "public_gate_adaptation_factorial",
+      "status": "pass",
+      "status_definition": "pass means every exact tenant-stage state-separation check passed; utility contrasts are measured without a pass threshold",
+      "partition_algorithm": "schemen_gate.GateMask.derive@1.0.1",
+      "config": {
+        "seed": 42,
+        "R": 8,
+        "public_examples": 8000,
+        "tenant_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "public_epochs": 2,
+        "adaptation_epochs": 1,
+        "tenant_epochs": 2,
+        "public_encoder_lr": 2e-05,
+        "public_head_lr": 0.001,
+        "adaptation_encoder_lr": 2e-05,
+        "adaptation_head_lr": 0.0005,
+        "tenant_ffn_lr": 2e-05,
+        "tenant_head_lr": 0.001,
+        "temperature": 2.0,
+        "hard_loss_weight": 0.5,
+        "smoke": false
+      },
+      "source": {
+        "commit": "58112b366167584a4f220159e68f79efeb6db150",
+        "dirty": false,
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "script_sha256": "7e5fcca27615ff164b3246a635d1bf0c45fe84e8b808e374c7c583aa5ad45879",
+        "wheel_bundle": {
+          "wheels": {
+            "schemen-gate": {
+              "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+              "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+              "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+            },
+            "private-companion-harness": {
+              "path": "<private-companion-harness-wheel>",
+              "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+              "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+            }
+          },
+          "mismatches": []
+        }
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.12.1+cu130",
+        "gpu": "NVIDIA A100-SXM4-80GB",
+        "cudnn_deterministic": true,
+        "tf32_enabled": false
+      },
+      "gate_placement": "post-activation-pre-down-projection",
+      "runtime": {
+        "surface": "<private-companion-harness-surface>",
+        "model_id": "distilbert-base-uncased",
+        "dimensions": 3072,
+        "authorized_regime_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "authorized_model_calls": 65,
+        "authorization_receipts": [
+          {
+            "frame_id": "evaluation-1",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "403942a387eeeb553955ff194cbfdc7317771552c53dbb84838450448f34f2b8"
+          },
+          {
+            "frame_id": "evaluation-2",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "29446f91724731383fd193b3e67db6cd0ccc9766750ddc5e7a40424dc0f991f0"
+          },
+          {
+            "frame_id": "evaluation-3",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "ae94c75ac6168b28a4fc114b6fc81f8667b4d4012bfc49605f8cd30d1fbcf3d8"
+          },
+          {
+            "frame_id": "evaluation-4",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "c3e87d3be2a36e401a8a75b251efe88fb9136f02c083ccdd42f012fd4bfff771"
+          },
+          {
+            "frame_id": "evaluation-5",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "3cbd2befeb250bb05b0c30f758ede94d152e1e513dadf0222f315a396b8f2bbd"
+          },
+          {
+            "frame_id": "evaluation-6",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "32ae15a3e3f1153ccb807b8eda05e6a06dfbf963cfa30fdf235046c22a985775"
+          },
+          {
+            "frame_id": "evaluation-7",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "692ee34a529ecd16f47f2d0ea9f6d72d4dc17da83fca7a158dd299f88aa923ac"
+          },
+          {
+            "frame_id": "evaluation-8",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "2ffa519817ada03a8e6e4cc611fe992cfebcfc30750c2a89cdc194d8d6ebee11"
+          },
+          {
+            "frame_id": "evaluation-9",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "e554ef1eb86372f7ad655d80acb4c5046004e0492c605805674c0cd1a0abe4c1"
+          },
+          {
+            "frame_id": "evaluation-10",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "1c64c37392885e755c0b2fcb3b9348b502ae0915ec4c85f9f698aa9a1a5415f9"
+          },
+          {
+            "frame_id": "evaluation-11",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "a539f2e29692ead74dc82b92aca4e08373a0d8b0e9fd4f09a81305895ce20d4f"
+          },
+          {
+            "frame_id": "evaluation-12",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "74c2848eee9c2afeafc6795ee48fb5d46cdea2bf78c0d96d1d00d1ada2e70871"
+          },
+          {
+            "frame_id": "evaluation-13",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "50fbe087a2a94a2330c2fe7ab9da1ea96254b02af3f976cd8af928df86879d9a"
+          },
+          {
+            "frame_id": "evaluation-14",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "d01f1dee767b80851d69f9385cadbe3a2a4cfab44217c1380d0e5eea6bd29836"
+          },
+          {
+            "frame_id": "evaluation-15",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "37091e7c7ad207c0c828b8c86bad30882be9525370fe936a8cd9722fd90349df"
+          },
+          {
+            "frame_id": "evaluation-16",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "03d28459b0bdd6b787cb633bdfa6375b3754d72ef727d92d81616e2dac51b31b"
+          },
+          {
+            "frame_id": "evaluation-17",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "b18626c8e24ed3405b9441c4562adf8b7a16606bbe23c5b93b2dcef966c9dd85"
+          },
+          {
+            "frame_id": "evaluation-18",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "63ab2ccadb220adfc4da6ab1127e74987dd722f5208f3a224c24b623b3a30fcf"
+          },
+          {
+            "frame_id": "evaluation-19",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "3c32939c951f982fae04b20130353fe233f8f766cb72bd9f50b332544f7f2395"
+          },
+          {
+            "frame_id": "evaluation-20",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "74d6eced4def8912bcd4986d77460fb4edcc3476eed8708a32e6c6427d5d50b1"
+          },
+          {
+            "frame_id": "evaluation-21",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "cb43dfe4632a73b3922cffc9285f1f388b40e010ff8b7449076485f4980f2a3e"
+          },
+          {
+            "frame_id": "evaluation-22",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "67513410f0d33b0814649c510edc80e56e569b6ded956c9eb96f34f0558fa4a9"
+          },
+          {
+            "frame_id": "evaluation-23",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "ba56f2fee6924d7edc666d3964d13136318acaaf1289c3f593794d4c1c1cd5da"
+          },
+          {
+            "frame_id": "evaluation-24",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "ba13e6774eb8e5c08545876757d2cbc11c0c7e272af0c2d451b78788211a4147"
+          },
+          {
+            "frame_id": "evaluation-25",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "9effd5b294e47d226730586ccac92526565e967f9fe7ad4f9323300f05354c79"
+          },
+          {
+            "frame_id": "evaluation-26",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "39f1830622ba2d4471edcc00a7911aeb53e6ee808ee290aad7ed4368e04bb001"
+          },
+          {
+            "frame_id": "evaluation-27",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "317887a370e85b8377ee2fb9cf7816ceaba9eb21e2b193eebe19aac035b4f66a"
+          },
+          {
+            "frame_id": "evaluation-28",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "ffa03aacd2cddd4d727f7cc5011f2c8f1f8569ecd43da9d66c5a4856e77a26bf"
+          },
+          {
+            "frame_id": "evaluation-29",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "13c330348af390519ee29b8b036d467aad8196034e0954449db06abadde37335"
+          },
+          {
+            "frame_id": "evaluation-30",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "469986963100fc2575a52e92415e55025a7f4c465f8287c9efbfe5121768261c"
+          },
+          {
+            "frame_id": "evaluation-31",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "50cfb267f5d488c71d1ae3b3b8f57a40b057fdaa5b2f4afdca619175b72bf736"
+          },
+          {
+            "frame_id": "evaluation-32",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "72834c8bca0fdb37a094e1de7cb3a85ecbb00f56928c826e718d477e84253632"
+          },
+          {
+            "frame_id": "evaluation-33",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "a6208f4663557a5d660adbbad84dab3fb6cc6cc3d01528d67c0343f3f4ba77a0"
+          },
+          {
+            "frame_id": "evaluation-34",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "40ab252dddf1245fe9fea06f19aafc05e1db0a642336e8499cf8730b6e0c1252"
+          },
+          {
+            "frame_id": "evaluation-35",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "979242afe4df961b1112ed42b438e9ed0b942106d97b97e18821ba53a4d373ac"
+          },
+          {
+            "frame_id": "evaluation-36",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "faacd22fe2f2177798458ef81edf6f8af892ce04c09909809213c2efb842a589"
+          },
+          {
+            "frame_id": "evaluation-37",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "5b99d1ba0a44dc0360fb9262197516489d5b67bcaeca36d70da8289e82194ecd"
+          },
+          {
+            "frame_id": "evaluation-38",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "f01b6da2d217af0ec6bd376da2d96a5487c55401531e1c26c79cc1a274cef56f"
+          },
+          {
+            "frame_id": "evaluation-39",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "35b2ab7e2b299f48966c529cb28658153fe64ab322c35a83196eafaeaae3de0b"
+          },
+          {
+            "frame_id": "evaluation-40",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "21fa9161fe2d52abcda66ee4a059f8a8eace0a4e208a12079e5896681ec0c0c5"
+          },
+          {
+            "frame_id": "evaluation-41",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "d3deaeb237c1e994c8686bdf61b9f41b3c98bf4e84a3879849423fea132faa38"
+          },
+          {
+            "frame_id": "evaluation-42",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "6d5f3b3d915c0409bad19ae2b923857866eb6716a0723c107627a461db444bd3"
+          },
+          {
+            "frame_id": "evaluation-43",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "0c287f7c45432e9fda3936889f42e389b5277483538391156d3fbe53cbc3e10c"
+          },
+          {
+            "frame_id": "evaluation-44",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "2071e4b7d71841723af40b2fa5d9678f348e197ffe7fd9cb51eac0a3fa3cac5f"
+          },
+          {
+            "frame_id": "evaluation-45",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "14d8bdebbfe3e8a6fc1bd4127e7c503b0caf82a0449abcccc876648508270e51"
+          },
+          {
+            "frame_id": "evaluation-46",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "a9a3fb979a7f7cf5dfb941b3c6fe18126881b6dd2cbecda33657b2602dfef209"
+          },
+          {
+            "frame_id": "evaluation-47",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "1bf061e4fc17ab68e982f9db20158e85e19b97b9dd3f49d895f90a4eff92110f"
+          },
+          {
+            "frame_id": "evaluation-48",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "7f2f7b238988486865bd4eccb3486c4f7295fce38004a01bc731c474c56b83ed"
+          },
+          {
+            "frame_id": "evaluation-49",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "cf5af7afcd550e430bb791a1aac4ea91c3c0258968c226f77233c6ac545eb929"
+          },
+          {
+            "frame_id": "evaluation-50",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "2727d267982e8d5a3e247485bece1a2a0ac136be13c7f68dbd19e4efb4503acb"
+          },
+          {
+            "frame_id": "evaluation-51",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "4420b4fb5a98f6dc3dae7a86ae7855998c68409c25e5ed5a61922e8ea2541730"
+          },
+          {
+            "frame_id": "evaluation-52",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "d301fe51860a041ea7b1ac1fde76aaffb2a80f3972f34bef65d759ebb5549021"
+          },
+          {
+            "frame_id": "evaluation-53",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "151a8002e07c8119b59752e5e964015dc0f0b6ede54763dae95829a1e8bddc54"
+          },
+          {
+            "frame_id": "evaluation-54",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "4c27461e27c32ce919dec35e8d4362b8425c2187dfee88fd5ca08a44241dff9b"
+          },
+          {
+            "frame_id": "evaluation-55",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "302a07a77fa5cd6908d4302bb86d92eaf62f310a8883132f762186068d2b43c7"
+          },
+          {
+            "frame_id": "evaluation-56",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "70fb7cc148db677497b3b80d63315b8415f1a5c4efbaf8f694aff09bfc7bc9d3"
+          },
+          {
+            "frame_id": "evaluation-57",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "bc0ea89789d3629a71bf2050aac24c13834fa022a5a793f39de29148705e1c59"
+          },
+          {
+            "frame_id": "evaluation-58",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 0,
+            "receipt_sha256": "f4fdc3abf8b159e421cdc331f0f31ec65f5e269e220e40bfdf372958981854cc"
+          },
+          {
+            "frame_id": "evaluation-59",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 1,
+            "receipt_sha256": "14d235da265c1136923d41a30641f1207702eb0cd5ec94f1520b07cc3fdd2da8"
+          },
+          {
+            "frame_id": "evaluation-60",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 2,
+            "receipt_sha256": "02b6eb015cc468b0e35c87eca9604d4cdff0d11584765a8d7f23450ed0e2df8c"
+          },
+          {
+            "frame_id": "evaluation-61",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 3,
+            "receipt_sha256": "dca2ba357164e2ae80dcbfc726e4a06d85f05cb3786d233ab75aad8f46df1392"
+          },
+          {
+            "frame_id": "evaluation-62",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 4,
+            "receipt_sha256": "1fa9771ee3d3e3fe5df7735c0191929a8561f4d8d2de74718204dbd5eef7191a"
+          },
+          {
+            "frame_id": "evaluation-63",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 5,
+            "receipt_sha256": "4786610c3f753e12c8fa5e3c0c14778c77c3adc75b93b066edf6a33ff2671780"
+          },
+          {
+            "frame_id": "evaluation-64",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 6,
+            "receipt_sha256": "167ff952d5d59494a74b3ed75dbac685d9f67b0a1c7884f3ea848be744e4fc29"
+          },
+          {
+            "frame_id": "evaluation-65",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 3072,
+            "regime_id": 7,
+            "receipt_sha256": "dcfbf46892791a5e926d53c5f23f0a31511f61e78215cd2f663fb10eade98a39"
+          }
+        ],
+        "rejection_probe": {
+          "attempts": {
+            "other_regime": {
+              "rejected": true,
+              "status_code": 403,
+              "model_calls": 0
+            },
+            "other_model": {
+              "rejected": true,
+              "status_code": 422,
+              "model_calls": 0
+            },
+            "other_dimensions": {
+              "rejected": true,
+              "status_code": 422,
+              "model_calls": 0
+            },
+            "empty_authority": {
+              "rejected": true,
+              "status_code": 403,
+              "model_calls": 0
+            }
+          },
+          "all_rejected": true,
+          "unauthorized_model_calls": 0
+        }
+      },
+      "public_and_tenant_splits_disjoint": true,
+      "equal_compute_adapted_conditions": {
+        "same_public_examples": true,
+        "same_batch_order": true,
+        "same_dropout_seed_schedule": true,
+        "same_optimizer_steps": true,
+        "same_teacher_forward_passes": true,
+        "same_forward_backward_passes": true,
+        "ungated_repetitions_per_batch": 8,
+        "qualification": "matched model-pass counts; masked conditions include the mask multiplication required by their treatment"
+      },
+      "teacher_ungated_accuracy": 0.9165,
+      "conditions": {
+        "no_extra_public_adaptation": {
+          "condition": "no_extra_public_adaptation",
+          "per_regime_accuracy": [
+            0.8785,
+            0.8895,
+            0.879,
+            0.887,
+            0.8915,
+            0.8895,
+            0.878,
+            0.8925
+          ],
+          "mean_owning_accuracy": 0.8856875,
+          "maximum_frozen_shared_parameter_delta": 0.0,
+          "maximum_off_partition_parameter_delta": 0.0,
+          "maximum_off_partition_optimizer_moment": 0.0,
+          "maximum_inactive_classifier_delta": 0.0,
+          "separation_pass": true,
+          "public_adaptation": {
+            "gated_public_accuracy": 0.6958125,
+            "optimizer_steps": 0,
+            "forward_backward_passes": 0
+          },
+          "uplift_vs_no_extra_fraction": 0.0,
+          "uplift_vs_no_extra_percentage_points": 0.0
+        },
+        "ungated_hard_label": {
+          "condition": "ungated_hard_label",
+          "per_regime_accuracy": [
+            0.88,
+            0.887,
+            0.8855,
+            0.8875,
+            0.894,
+            0.89,
+            0.8785,
+            0.889
+          ],
+          "mean_owning_accuracy": 0.8864375,
+          "maximum_frozen_shared_parameter_delta": 0.0,
+          "maximum_off_partition_parameter_delta": 0.0,
+          "maximum_off_partition_optimizer_moment": 0.0,
+          "maximum_inactive_classifier_delta": 0.0,
+          "separation_pass": true,
+          "public_adaptation": {
+            "gated_public_accuracy": 0.6174999999999999,
+            "optimizer_steps": 250,
+            "teacher_forward_passes": 250,
+            "forward_backward_passes": 2000
+          },
+          "uplift_vs_no_extra_fraction": 0.0007500000000000284,
+          "uplift_vs_no_extra_percentage_points": 0.07500000000000284
+        },
+        "all_mask_hard_label": {
+          "condition": "all_mask_hard_label",
+          "per_regime_accuracy": [
+            0.895,
+            0.8995,
+            0.894,
+            0.9055,
+            0.9045,
+            0.9,
+            0.895,
+            0.9045
+          ],
+          "mean_owning_accuracy": 0.89975,
+          "maximum_frozen_shared_parameter_delta": 0.0,
+          "maximum_off_partition_parameter_delta": 0.0,
+          "maximum_off_partition_optimizer_moment": 0.0,
+          "maximum_inactive_classifier_delta": 0.0,
+          "separation_pass": true,
+          "public_adaptation": {
+            "gated_public_accuracy": 0.8885624999999999,
+            "optimizer_steps": 250,
+            "teacher_forward_passes": 250,
+            "forward_backward_passes": 2000
+          },
+          "uplift_vs_no_extra_fraction": 0.014062500000000089,
+          "uplift_vs_no_extra_percentage_points": 1.4062500000000089
+        },
+        "all_mask_distillation": {
+          "condition": "all_mask_distillation",
+          "per_regime_accuracy": [
+            0.894,
+            0.9,
+            0.897,
+            0.9025,
+            0.9035,
+            0.901,
+            0.8965,
+            0.906
+          ],
+          "mean_owning_accuracy": 0.9000625,
+          "maximum_frozen_shared_parameter_delta": 0.0,
+          "maximum_off_partition_parameter_delta": 0.0,
+          "maximum_off_partition_optimizer_moment": 0.0,
+          "maximum_inactive_classifier_delta": 0.0,
+          "separation_pass": true,
+          "public_adaptation": {
+            "gated_public_accuracy": 0.8940625,
+            "optimizer_steps": 250,
+            "teacher_forward_passes": 250,
+            "forward_backward_passes": 2000
+          },
+          "uplift_vs_no_extra_fraction": 0.014375000000000027,
+          "uplift_vs_no_extra_percentage_points": 1.4375000000000027
+        }
+      },
+      "contrasts": {
+        "extra_training_effect_pp": 0.07500000000000284,
+        "mask_aware_effect_pp": 1.331250000000006,
+        "distillation_effect_given_masks_pp": 0.031249999999993783,
+        "full_pipeline_effect_pp": 1.4375000000000027
+      },
+      "remote_artifact": "/results/public_gate_factorial_R8_seed42_20260821T063702_031037Z.json"
+    }
+  ],
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "public_gate_adaptation_factorial_20260821T063703_914999Z.json",
+    "original_relative_path": "experiments/results/public_gate_adaptation_factorial_20260821T063703_914999Z.json",
+    "original_sha256": "0ad1a233684008fa284bdebf529fe62a491a4feb0bff10bb56234ed276d539f8",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged",
+      "private-harness-surface-marker": "the private companion harness callback-surface identifier is replaced by '<private-companion-harness-surface>'; model id, dimensions, and authorized Regimes are unchanged",
+      "private-harness-wheel-marker": "a filesystem path naming the private companion harness wheel is replaced by '<private-companion-harness-wheel>'; the recorded SHA-256 values are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "preflight_pilot.source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "preflight_pilot.source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "preflight_pilot.runtime.surface",
+        "rule": "private-harness-surface-marker"
+      },
+      {
+        "path": "results[0].source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "results[0].source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "results[0].runtime.surface",
+        "rule": "private-harness-surface-marker"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

@@ -1,0 +1,198 @@
+======================================================================
+  Orthogonal Superposition R-Scaling Study
+======================================================================
+  Device: mps
+  Experiments: ABCDE
+  Max R: 128
+
+  Loading AG News...
+  Train: 8000, Test: 7600
+
+  Training base model (4 epochs, seed=0)...
+
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 100/100 [00:00<00:00, 23475.14it/s]
+[transformers] [1mDistilBertModel LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     |  | 
+------------------------+------------+--+-
+vocab_layer_norm.weight | UNEXPECTED |  | 
+vocab_transform.weight  | UNEXPECTED |  | 
+vocab_transform.bias    | UNEXPECTED |  | 
+vocab_projector.bias    | UNEXPECTED |  | 
+vocab_layer_norm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    epoch 1/4: 28.0s
+    epoch 2/4: 27.8s
+    epoch 3/4: 27.7s
+    epoch 4/4: 27.8s
+  Base accuracy: 0.902500
+  Model size: 253.2 MB
+
+======================================================================
+  EXPERIMENT A: R-Sweep (Serial Addressed Use)
+======================================================================
+
+  Base model accuracy: 0.902500
+  Base model size: 253.2 MB
+
+  --- R = 4 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 33.3s (8.32s/regime)
+    naive storage: 1013 MB (vs 24.0 KB for permutation vectors)
+
+  --- R = 8 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 3 more regimes) ...
+    regime     7: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 66.9s (8.37s/regime)
+    naive storage: 2025 MB (vs 48.0 KB for permutation vectors)
+
+  --- R = 16 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 11 more regimes) ...
+    regime    15: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 171.1s (10.69s/regime)
+    naive storage: 4051 MB (vs 96.0 KB for permutation vectors)
+
+  --- R = 32 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 27 more regimes) ...
+    regime    31: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 394.2s (12.32s/regime)
+    naive storage: 8101 MB (vs 192.0 KB for permutation vectors)
+
+  --- R = 64 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 59 more regimes) ...
+    regime    63: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 527.9s (8.25s/regime)
+    naive storage: 16203 MB (vs 384.0 KB for permutation vectors)
+
+  --- R = 128 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 123 more regimes) ...
+    regime   127: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 1316.5s (10.29s/regime)
+    naive storage: 32405 MB (vs 768.0 KB for permutation vectors)
+
+       R     max|gap|     mean_acc    elapsed   naive_MB    perm_KB
+  ------ ------------ ------------ ---------- ---------- ----------
+       4     0.00e+00     0.902500      33.3s      1013      24.0
+       8     0.00e+00     0.902500      66.9s      2025      48.0
+      16     0.00e+00     0.902500     171.1s      4051      96.0
+      32     0.00e+00     0.902500     394.2s      8101     192.0
+      64     0.00e+00     0.902500     527.9s     16203     384.0
+     128     0.00e+00     0.902500    1316.5s     32405     768.0
+
+======================================================================
+  EXPERIMENT B: Component Ablation (Conjugation Audit)
+======================================================================
+
+  Base accuracy: 0.902500
+
+  Ablation                    Accuracy          Gap   Collapse
+  ------------------------- ---------- ------------ ----------
+  full_conjugation            0.902500    +0.000000    +0.0000
+  skip_embeddings             0.247237    -0.655263    +0.6553 *** COLLAPSE
+  skip_emb_layernorm          0.885921    -0.016579    +0.0166 *** COLLAPSE
+  skip_sa_layernorm           0.398947    -0.503553    +0.5036 *** COLLAPSE
+  skip_out_layernorm          0.434079    -0.468421    +0.4684 *** COLLAPSE
+  skip_all_layernorm          0.411053    -0.491447    +0.4914 *** COLLAPSE
+  skip_q_lin                  0.819474    -0.083026    +0.0830 *** COLLAPSE
+  skip_k_lin                  0.770658    -0.131842    +0.1318 *** COLLAPSE
+  skip_v_lin                  0.218553    -0.683947    +0.6839 *** COLLAPSE
+  skip_qkv                    0.216842    -0.685658    +0.6857 *** COLLAPSE
+  skip_out_lin                0.249605    -0.652895    +0.6529 *** COLLAPSE
+  skip_ffn_lin1               0.250000    -0.652500    +0.6525 *** COLLAPSE
+  skip_ffn_lin2               0.522105    -0.380395    +0.3804 *** COLLAPSE
+  skip_ffn_both               0.278026    -0.624474    +0.6245 *** COLLAPSE
+  skip_classifier             0.457763    -0.444737    +0.4447 *** COLLAPSE
+  skip_all_attention          0.315789    -0.586711    +0.5867 *** COLLAPSE
+  skip_all_ffn                0.278026    -0.624474    +0.6245 *** COLLAPSE
+
+======================================================================
+  EXPERIMENT C: On-The-Fly Permutation Inference
+======================================================================
+
+  Base accuracy (no permutation): 0.902500
+  Pre-conjugated accuracy: 0.902500
+Traceback (most recent call last):
+  File "<historical-local-root>/cdp-paper/experiments/orthogonal_superposition_sweep.py", line 834, in <module>
+    main()
+    ~~~~^^
+  File "<historical-local-root>/cdp-paper/experiments/orthogonal_superposition_sweep.py", line 768, in main
+    all_results["C_online"] = experiment_c_online_permutation(
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        backbone, classifier, test_loader, device,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "<historical-local-root>/cdp-paper/experiments/orthogonal_superposition_sweep.py", line 440, in experiment_c_online_permutation
+    online_acc = evaluate(online_bb, classifier, test_loader, device)
+  File "/opt/homebrew/lib/python3.14/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "<historical-local-root>/cdp-paper/experiments/orthogonal_superposition_sweep.py", line 123, in evaluate
+    cls = backbone(input_ids=ids, attention_mask=mask).last_hidden_state[:, 0, :]
+          ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "<historical-local-root>/cdp-paper/experiments/orthogonal_superposition_sweep.py", line 412, in forward
+    attn_out, _ = layer.attention(attn_in, attention_mask)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/homebrew/lib/python3.14/site-packages/transformers/models/distilbert/modeling_distilbert.py", line 193, in forward
+    attn_output, attn_weights = attention_interface(
+                                ~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.14/site-packages/transformers/integrations/sdpa_attention.py", line 92, in sdpa_attention_forward
+    attn_output = torch.nn.functional.scaled_dot_product_attention(
+        query,
+    ...<6 lines>...
+        **sdpa_kwargs,
+    )
+RuntimeError: Expected attn_mask dtype to be bool or float or to match query dtype, but got attn_mask.dtype: long long and  query.dtype: float instead.

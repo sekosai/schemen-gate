@@ -1,0 +1,430 @@
+{
+  "experiment": "local_exact_extraction",
+  "status": "numeric_difference",
+  "started_at_unix": 1785803164.395709,
+  "elapsed_seconds": 0.021445035934448242,
+  "git_revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0",
+  "environment": {
+    "python": "3.14.6",
+    "torch": "2.12.1",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "config": {
+    "seeds": 3,
+    "batch_size": 64,
+    "input_dim": 768,
+    "output_dim": 4,
+    "regimes": 4
+  },
+  "summary": {
+    "cases": 6,
+    "regime_checks": 24,
+    "compound_checks": 24,
+    "all_cases_bit_equal": false,
+    "maximum_absolute_difference": 0.0009765625
+  },
+  "cases": [
+    {
+      "dtype": "float32",
+      "seed": 0,
+      "max_absolute_difference": 0.0,
+      "all_cases_bit_equal": true,
+      "all_cases_exact_allclose": true,
+      "regimes": [
+        {
+          "regime": 0,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 2,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 3,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ],
+      "compound_unions": [
+        {
+          "authorized_regimes": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 2,
+          "active_dimensions": 384,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 3,
+          "active_dimensions": 576,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 4,
+          "active_dimensions": 768,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ]
+    },
+    {
+      "dtype": "float32",
+      "seed": 1,
+      "max_absolute_difference": 0.0,
+      "all_cases_bit_equal": true,
+      "all_cases_exact_allclose": true,
+      "regimes": [
+        {
+          "regime": 0,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 2,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 3,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ],
+      "compound_unions": [
+        {
+          "authorized_regimes": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 2,
+          "active_dimensions": 384,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 3,
+          "active_dimensions": 576,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 4,
+          "active_dimensions": 768,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ]
+    },
+    {
+      "dtype": "float32",
+      "seed": 2,
+      "max_absolute_difference": 0.0,
+      "all_cases_bit_equal": true,
+      "all_cases_exact_allclose": true,
+      "regimes": [
+        {
+          "regime": 0,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 2,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 3,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ],
+      "compound_unions": [
+        {
+          "authorized_regimes": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 2,
+          "active_dimensions": 384,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 3,
+          "active_dimensions": 576,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 4,
+          "active_dimensions": 768,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ]
+    },
+    {
+      "dtype": "float16",
+      "seed": 0,
+      "max_absolute_difference": 0.0,
+      "all_cases_bit_equal": true,
+      "all_cases_exact_allclose": true,
+      "regimes": [
+        {
+          "regime": 0,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 2,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 3,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ],
+      "compound_unions": [
+        {
+          "authorized_regimes": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 2,
+          "active_dimensions": 384,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 3,
+          "active_dimensions": 576,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 4,
+          "active_dimensions": 768,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ]
+    },
+    {
+      "dtype": "float16",
+      "seed": 1,
+      "max_absolute_difference": 0.0009765625,
+      "all_cases_bit_equal": false,
+      "all_cases_exact_allclose": false,
+      "regimes": [
+        {
+          "regime": 0,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0009765625,
+          "bit_equal": false,
+          "allclose": false
+        },
+        {
+          "regime": 2,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 3,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ],
+      "compound_unions": [
+        {
+          "authorized_regimes": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 2,
+          "active_dimensions": 384,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 3,
+          "active_dimensions": 576,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 4,
+          "active_dimensions": 768,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ]
+    },
+    {
+      "dtype": "float16",
+      "seed": 2,
+      "max_absolute_difference": 0.0001220703125,
+      "all_cases_bit_equal": false,
+      "all_cases_exact_allclose": false,
+      "regimes": [
+        {
+          "regime": 0,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 2,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "regime": 3,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0001220703125,
+          "bit_equal": false,
+          "allclose": false
+        }
+      ],
+      "compound_unions": [
+        {
+          "authorized_regimes": 1,
+          "active_dimensions": 192,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 2,
+          "active_dimensions": 384,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 3,
+          "active_dimensions": 576,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        },
+        {
+          "authorized_regimes": 4,
+          "active_dimensions": 768,
+          "max_absolute_difference": 0.0,
+          "bit_equal": true,
+          "allclose": true
+        }
+      ]
+    }
+  ]
+}

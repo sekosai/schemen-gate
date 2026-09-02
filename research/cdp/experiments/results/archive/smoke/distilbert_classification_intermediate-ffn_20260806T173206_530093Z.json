@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "experiment": "distilbert_classification_gate_reproduction",
+  "status": "complete",
+  "surface": "intermediate-ffn",
+  "surface_evidence": "paper-aligned intermediate FFN gate; new evidence",
+  "started_at_utc": "2026-08-06T17:31:13.332745+00:00",
+  "elapsed_seconds": 53.15600395202637,
+  "git_revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0",
+  "environment": {
+    "python": "3.14.6",
+    "torch": "2.12.1",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "device": "cpu"
+  },
+  "assets": {
+    "model": "distilbert-base-uncased",
+    "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+    "dataset": "fancyzhx/ag_news",
+    "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+  },
+  "config": {
+    "surface": "intermediate-ffn",
+    "r_values": "8",
+    "seeds": "42",
+    "train_examples": 128,
+    "test_examples": 128,
+    "max_length": 128,
+    "batch_size": 16,
+    "epochs": 1,
+    "encoder_lr": 2e-05,
+    "head_lr": 0.001,
+    "separate_controls": 2,
+    "device": "cpu",
+    "smoke": true
+  },
+  "results": [
+    {
+      "R": 8,
+      "surface": "intermediate-ffn",
+      "paired_runs": [
+        {
+          "seed": 42,
+          "gate_dimensions": 3072,
+          "dimensions_per_regime": 384,
+          "separate_accuracies": [
+            0.625,
+            0.4921875
+          ],
+          "gated_owning_accuracies": [
+            0.3984375,
+            0.0703125
+          ],
+          "wrong_key_accuracies": [
+            {
+              "owner": 0,
+              "applied_mask": 1,
+              "accuracy": 0.3984375
+            },
+            {
+              "owner": 1,
+              "applied_mask": 0,
+              "accuracy": 0.046875
+            }
+          ],
+          "separate_mean": 0.55859375,
+          "gated_mean": 0.234375,
+          "wrong_key_mean": 0.22265625
+        }
+      ],
+      "summary": {
+        "separate_mean": 0.55859375,
+        "gated_mean": 0.234375,
+        "gap_fraction": 0.32421875,
+        "gap_percentage_points": 32.421875,
+        "paired_p_value": null,
+        "student_t_95_ci_fraction": null
+      }
+    }
+  ]
+}

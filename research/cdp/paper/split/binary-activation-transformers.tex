@@ -1,0 +1,618 @@
+\documentclass[11pt]{article}
+\input{preamble}
+
+\hypersetup{
+  pdftitle={Binary Activation in Transformers: FFN Evidence and a Modest Path Beyond Shared Attention},
+  pdfauthor={Ryan McCormick},
+  pdfsubject={Transformer FFN gating, limitations, and practical authorization surfaces}
+}
+
+\title{\textbf{Binary Activation in Transformers}\\
+\large FFN Evidence and a Modest Path Beyond Shared Attention}
+\author[1]{Ryan McCormick}
+\affil[1]{Independent Researcher}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Transformers contain feed-forward networks (FFNs), but they are not merely
+FFNs. Attention projections, output mixing, residual streams, normalization,
+embeddings, caches, and output heads create paths outside a gate placed on an
+intermediate FFN activation. We therefore separate a demonstrated result from
+an open one. DistilBERT succeeds because its classifier and FFN surfaces expose
+constructible coordinate supports; the result does not depend on decomposing
+attention. In strict classification, binary activation placed before
+every FFN down projection gives exact confinement of the aligned trainable FFN
+parameters and optimizer state under a frozen shared backbone. Owning accuracy
+decreases from $91.28\%$ at $R=1$ to $86.21\%$ at $R=16$ as each regime's FFN
+slice narrows, while all measured unauthorized state remains bit-exact
+unchanged. Private residual adapters or experts recover much of the utility at
+additional per-regime storage cost.
+
+This is not complete Transformer isolation. Shared attention remains shared,
+and naively ablating head projections disrupts a network that was not trained
+for those zeros. Standard self-attention is relational and input-dependent:
+Q/K dot products define token adjacency, softmax couples candidates, and output,
+normalization, and residual paths recombine the result. It does not present a
+canonical set of tenant constituents to which fixed supports can be assigned.
+A complete attention-lane construction would need separate
+Q/K/V and output projections, normalization, FFNs, and every residual path,
+with gates before recombination. That construction is expensive, vulnerable to
+operator error, and not established here. For current large language models we
+recommend the useful surfaces that do not depend on that open result: atomic
+whole-model Binary Activation, Cargo-authorized context, and explicitly gated
+external adapters or tools. Complete Transformer partitioning remains modest
+future work rather than a premise of the system.
+Mixture-of-Experts routing is a separate promising surface: authorization can
+restrict which already-discrete experts a principal may reach without claiming
+that shared attention itself has been partitioned. An $R=8$ held-out experiment
+below trains a top-1 semantic router inside each fixed authorized expert set and
+then packs the trained lanes with exactly zero prediction change.
+\end{abstract}
+
+\section{Scope}
+
+DistilBERT is a Transformer. Successful gating experiments on DistilBERT do not
+show that every part of a Transformer has been partitioned; they show that its
+FFN sublayers can expose a useful and testable gate surface. This distinction
+resolves an apparent contradiction: CDP can work \emph{within} a Transformer
+without claiming that the complete Transformer is internally isolated.
+
+We use \emph{Binary Activation} for the operation
+\begin{equation}
+  \tilde{\bh}=\bh\odot\bg_r,
+  \qquad \bg_r\in\{0,1\}^{d_{\mathrm{ff}}}.
+  \label{eq:gate}
+\end{equation}
+At a declared FFN boundary, an active coordinate passes and an inactive
+coordinate is exactly zero. The credential-to-regime runtime decides which
+mask may be used. The result concerns that tensor and its aligned trainable
+state; it does not retroactively make the shared residual stream private.
+
+The word \emph{partition} carries a stronger requirement than the availability
+of multiplication. Binary Activation requires a constructible constituent
+space: stable indexed pieces, aligned parameters and optimizer state, and
+closure of every route by which an excluded piece could mix into or bypass the
+active support. The FFN expansion supplies such pieces locally. A standard
+pretrained attention computation does not supply tenant constituents in that
+form.
+
+The paper answers four questions:
+\begin{enumerate}
+  \item What exactly was gated in the successful classification experiment?
+  \item Does each regime receive only a fraction of FFN capacity?
+  \item Why does the same construction not isolate attention heads?
+  \item Which Transformer and LLM uses remain valuable now?
+\end{enumerate}
+
+\section{The Transformer Boundary}
+
+\subsection{What the FFN gate covers}
+
+For one Transformer FFN sublayer, write
+\begin{align}
+  \bh &= \sigma(\bx\bW_1+\mathbf b_1),\\
+  \tilde{\bh} &= \bh\odot\bg_r,\\
+  \mathbf f_r &= \tilde{\bh}\bW_2+\mathbf b_2.
+  \label{eq:ffn}
+\end{align}
+The gate is on the expanded, post-nonlinearity activation immediately before
+the down projection. It is sometimes convenient to describe a related gate as
+\emph{pre-MLP}: a mask applied at the input to an otherwise governed MLP. Both
+are FFN surfaces, but they protect different tensors and must be named
+precisely. The strict experiment in this paper uses the intermediate expanded
+activation in~\eqref{eq:ffn}.
+
+For an inactive hidden coordinate $j$, both its forward contribution and loss
+gradient at the gate are zero. With an optimizer that masks the complete update,
+including moment and weight-decay state, training is confined to the aligned
+columns of $W_1$, hidden-bias entries, and rows of $W_2$ in the mathematical
+row-vector convention.
+
+\subsection{What remains shared}
+
+A standard Transformer block also contains attention, residual additions, and
+normalization. In the evaluated construction those components are frozen and
+shared. They may compute common features for every regime and transport those
+features around the FFN branch. Consequently:
+\begin{itemize}
+  \item the experiment proves exact inactive FFN parameter-state preservation;
+  \item it does not prove that shared attention activations are independent;
+  \item it does not assign private attention-head knowledge to each regime; and
+  \item caches, embeddings, output heads, logs, and the serving runtime remain
+  outside the local FFN theorem.
+\end{itemize}
+
+This is a declared trust boundary, not a hidden failure condition. It is useful
+when tenant-private trainable state is restricted to the gated FFN surface or a
+private lane, while the frozen backbone supplies public shared features.
+
+\subsection{Why classification still succeeds}
+
+There are two successful DistilBERT constructions, and they support different
+claims. In the five-seed formative study, the gate is applied to the final
+768-dimensional CLS representation and the complete encoder is co-trained with
+the masks. Optimization can place discriminative features onto each retained
+support; the observed gated-versus-separate cost is 0.14--0.38 percentage points
+for $R=8$--128. Because all regimes update shared encoder weights, this is a
+support-constrained utility result, not a tenant-state-confinement result.
+
+In the strict construction, the shared attention backbone is frozen. The
+expanded FFN activation after the element-wise nonlinearity is an explicit
+coordinate tensor, and the adjacent projection slices and optimizer moments can
+be aligned with the same support. The model therefore retains shared
+Transformer feature extraction while each regime adapts only its governed FFN
+slices and private classifier. Classification remains useful because the task
+does not require the gate to manufacture independent attention heads; it only
+requires the governed downstream surface to separate the labels.
+
+The tradeoff is correspondingly clear. Co-training gives the optimizer the most
+freedom but shares learned encoder state. Freezing the backbone and dividing a
+fixed FFN gives exact measured inactive-state preservation but reduces each
+regime to $d_{\mathrm{ff}}/R$ coordinates. Private adapters or experts restore
+capacity at linear per-regime storage cost. None of these results should be
+discarded; they answer different questions.
+
+\noindent\textit{Replay formative classification.} Run
+\path{experiments/reproduce_distilbert_classification.py} with
+\texttt{--surface legacy-post-encoder}; the five-seed artifact is
+\path{experiments/results/series1_results_20260803_202919.json}.
+
+\section{Strict FFN Classification Evidence}
+
+\subsection{Construction}
+
+The experiment uses DistilBERT-base on AG News. Embeddings, attention,
+normalization, residual/shared parameters, and all other non-governed weights
+are frozen. A regime gate is installed on the 3,072-dimensional expanded
+activation before every FFN down projection. Only the active FFN slices and a
+regime-private classifier are trainable. Regime-scoped Adam moments and update
+steps are restricted to the same slices.
+
+The model is trained on 8,000 examples for two epochs and evaluated on 2,000
+held-out examples at seeds 42, 123, and 256. Each regime receives
+$d_{\mathrm{ff}}/R$ coordinates because the tested values divide 3,072. Thus
+the construction does trade per-regime FFN width for co-tenancy. It does not
+divide the width of the frozen attention backbone.
+
+\begin{table}[ht]
+\centering
+\caption{Strict intermediate-FFN Binary Activation. Utility is measured;
+inactive-state preservation is checked exactly.}
+\label{tab:strict}
+\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$R$ & FFN dims/regime/layer & Owning accuracy & Drop (pp) & Max unauthorized delta \\
+\midrule
+1  & 3,072 & $91.28\%\pm0.33\%$ & 0.00 & 0 \\
+2  & 1,536 & $90.15\%\pm0.39\%$ & 1.13 & 0 \\
+4  &   768 & $88.93\%\pm0.30\%$ & 2.36 & 0 \\
+8  &   384 & $87.47\%\pm0.04\%$ & 3.82 & 0 \\
+16 &   192 & $86.21\%\pm0.08\%$ & 5.07 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The unauthorized-delta check covers frozen shared parameters, off-partition
+FFN parameters, off-partition first and second Adam moments, and inactive
+private classifiers. Every checked value is bit-exact unchanged. The table does
+not claim accuracy parity. It shows a capacity curve: narrower private FFNs
+retain useful classification performance while respecting an exact measured
+state boundary.
+
+\begin{sloppypar}
+\noindent\textit{Replay strict FFN classification.} Run
+\path{experiments/modal_dense_ffn_cotenancy.py}; retained runs are
+\path{experiments/results/dense_ffn_cotenancy_*.json} and the aggregate is
+\path{experiments/results/transformer_cotenancy_summary.json}.
+\end{sloppypar}
+
+\subsection{Preliminary public mask-aware adaptation}
+
+The strict sweep above applies masks after generic pretraining. A separate
+$R=8$ study asks whether the shared backbone can first learn the partition
+geometry on public data, before any tenant-stage training. At seeds 42, 123,
+and 256, an ungated teacher is fine-tuned for two epochs on 8,000 public AG
+News examples. A copied student then receives one additional public epoch in
+which every batch is evaluated through all eight 384-coordinate FFN masks with
+an equal mixture of hard-label and temperature-2 distillation loss. A disjoint
+8,000-example split is subsequently used for strict tenant-stage training with
+all shared paths frozen.
+
+The no-extra-training initialization reaches $88.55\%\pm0.11\%$ owning
+accuracy after the tenant stage; the all-mask distillation initialization
+reaches $90.15\%\pm0.11\%$, a difference of $1.60\pm0.10$ percentage points.
+The ungated teacher reaches $91.62\%\pm0.35\%$, leaving the complete
+mask-aware pipeline 1.47 points below it. Frozen shared weights,
+off-partition parameters and optimizer moments, and inactive classifiers
+remain bit-exact unchanged during tenant training.
+
+This is preliminary pipeline evidence, not a causal estimate. The baseline
+does not receive the student's additional public epoch, so the comparison
+cannot separate extra training, mask-aware adaptation, distillation, or their
+interaction. The public and tenant labels denote disjoint splits of one public
+benchmark rather than a real private-corpus transfer.
+
+\begin{sloppypar}
+\noindent\textit{Replay status.} The retained three-seed artifact is
+\path{experiments/results/public_gate_distillation_20260806T193105_795325Z.json}.
+The exact historical runner is not present. Its stronger equal-work successor
+is \path{experiments/modal_public_gate_adaptation_factorial.py}; the completed
+one-seed artifact is reported below and does not replace this historical
+three-seed pipeline comparison.
+\end{sloppypar}
+
+\subsection{Private lanes}
+
+The capacity loss can be moved from shared width to per-regime storage. In an
+$R=4$ frozen-backbone experiment, a private 64-dimensional residual adapter per
+regime reaches $90.47\%\pm0.18\%$ owning accuracy and $3.18\%\pm0.06\%$
+wrong-key accuracy, with approximately 0.59 million parameters per regime. A
+private 3,072-dimensional expert reaches $90.09\%\pm0.14\%$ owning accuracy and
+$3.30\%\pm0.05\%$ wrong-key accuracy, with approximately 28.33 million
+parameters per regime. The measured unauthorized parameter delta is zero in
+both constructions.
+
+The current-library seed-42 rerun gives $90.66\%$ adapter and $90.15\%$
+expert owning accuracy, with $3.11\%$ and $3.28\%$ wrong-key accuracy.
+Shared-backbone and inactive-lane deltas are exactly zero, and malformed
+execution authority makes zero model calls. These one-seed values corroborate,
+rather than replace, the multi-seed estimates.
+
+These lanes preserve shared attention while giving each regime separate
+trainable capacity selected by Binary Activation. They therefore resemble an
+identity-bound attachment architecture more than complete internal Transformer
+partitioning. The tradeoff is explicit: near-baseline utility is purchased with
+private parameters rather than obtained from a narrow disjoint slice for free.
+
+\subsection{Gate-aware public adaptation}
+
+A matched $R=8$ factorial asks whether public training should expose every
+FFN support before the later tenant stage. The no-extra condition, an
+extra ungated hard-label condition, an all-mask hard-label condition, and an
+all-mask hard-label-plus-distillation condition use matched examples, batch
+order, dropout schedule, optimizer steps, teacher calls, and student
+forward/backward counts. In one full seed, ordinary extra training changes
+tenant accuracy by $+0.075$ percentage points, mask awareness adds $+1.331$
+points beyond that control, and distillation adds $+0.031$ points given masks.
+The complete pipeline is $+1.438$ points above no extra adaptation. All frozen,
+off-partition, optimizer-moment, and inactive-head deltas are exactly zero.
+The reduced-data pilot is negative; it is retained as evidence that a tiny
+optimization smoke is not a utility estimate. One full seed is still
+insufficient for a population-level effect claim.
+
+\begin{sloppypar}
+\noindent\textit{Replay factorial.} Run
+\path{experiments/modal_public_gate_adaptation_factorial.py}; the completed
+artifact is
+\path{experiments/results/public_gate_adaptation_factorial_20260821T063703_914999Z.json}.
+\end{sloppypar}
+
+\section{Why Naive Attention Gating Fails}
+
+The obstacle is not that an attention tensor cannot be multiplied by zero. The
+obstacle is that a fixed binary support presupposes constituent pieces that the
+trained attention computation does not canonically provide. Self-attention
+represents relationships among tokens and distributed features rather than a
+stable list of tenant-owned semantic coordinates.
+
+Multi-head attention is not a collection of independent outputs once a normal
+Transformer has been trained. For head $h$,
+\begin{equation}
+  \operatorname{head}_h(X)=
+  \operatorname{softmax}\!\left(
+  \frac{XW_h^Q(XW_h^K)^\top}{\sqrt{d_h}}
+  \right)XW_h^V,
+\end{equation}
+and the concatenated heads are mixed by $W^O$, added to a residual stream, and
+normalized. Zeroing projections from a head after ordinary pretraining removes
+paths that the rest of the network expects. The resulting quality failure is
+not surprising evidence against the arithmetic $0\cdot x=0$; it is evidence
+that the remaining network was not trained for that ablation.
+
+The affinity matrix is input-dependent. Q/K dot products encode vector norms
+and angular proximity; when norms are controlled, that angular term corresponds
+to cosine adjacency. A coordinate or head that is adjacent for one input need
+not define the same relationship for another. Changing Q, K, or a subset of
+their coordinates changes attention logits, and softmax renormalizes every
+candidate in the row. The effect is therefore global to that attention
+distribution rather than confined to one putative tenant constituent.
+
+This is an ontological limit as well as a numerical one: fixed disjoint masks
+assume that the protected object can be constructed as separable pieces. A
+pretrained attention space supplies distributed, relational features, not a
+canonical tenant decomposition. Imposing a fixed tenant ontology on arbitrary
+head coordinates does not create the missing constituents.
+
+More importantly, a gate on one attention projection does not close all paths:
+\begin{itemize}
+  \item $Q$ and $K$ jointly determine attention weights, while $V$ carries
+  values; gating only one does not define an independent lane;
+  \item $W^O$ recombines all heads into the shared residual width;
+  \item residual additions preserve an ungated route around a gated branch;
+  \item LayerNorm mixes statistics across coordinates; and
+  \item later shared FFNs and attention blocks can recombine the result.
+\end{itemize}
+
+The practical conclusion is direct: a post-hoc head mask is neither a complete
+isolation construction nor a performance-preserving transformation. This limit
+does not invalidate a gate on a genuine FFN constituent elsewhere in the same
+Transformer.
+
+\noindent\textit{Replay negative controls.} The local placement/bypass checks
+are in \path{experiments/local_transformer_cotenancy_suite.py}; the exploratory
+head-lane stress runner is \path{experiments/modal_attention_lane_stress.py}.
+The latter is retained as a failure diagnostic, not positive isolation evidence.
+
+\section{A Complete Lane Construction Is Open}
+
+An attention-capable isolation construction is conceivable only if the
+architecture first constructs the missing constituents and closes the entire
+lane. Each regime would require its own Q/K/V projections, attention
+output projection, normalization state, FFN path, and \emph{every} residual
+route. A Binary Activation gate would be required at each boundary before
+lanes recombine. Training would need to be gate-aware from initialization or a
+carefully controlled distillation stage.
+
+This is materially different from copying an attention head. A missed residual
+or normalization path invalidates the complete-lane claim, and duplicated lanes
+multiply memory and compute. The operator-risk surface is large enough that a
+paper claiming complete Transformer co-tenancy would need a topology audit,
+exact wrong-lane activation and state checks at every layer, owning-positive and
+wrong-key-negative utility controls, and bypass tests in the actual serving
+runtime.
+
+We do not make that claim here. Complete Transformer partitioning is a research
+direction beyond the demonstrated Binary Activation surfaces.
+
+\subsection{Causal FFN placement check}
+
+A separate one-seed TinyLlama 1.1B run tests the narrower FFN theorem in a
+causal model. At $R=8$, each 5,632-dimensional expanded SwiGLU product is
+masked immediately before the down projection, leaving 704 coordinates per
+regime. The exact probe finds zero inactive gradients and parameter changes;
+the partitions are disjoint and complete, initialization is matched, and all
+malformed execution authorities are rejected before model execution. Utility is
+not preserved: mean gated token loss is 5.442 versus 4.230 for the matched
+ungated control. Owning canary loss is 3.013 versus 3.452 under wrong keys, but
+none of 16 owning canaries is generated exactly. Thus the causal result checks
+placement and confinement; it is explicitly not generative parity.
+
+\section{Permutation Conjugation: A Limited Result}
+
+A residual-basis permutation can preserve a trained Transformer's function if
+every residual-facing parameter and normalization component is conjugated
+consistently. In the historical DistilBERT sweep, accuracy remained $90.25\%$
+with zero measured gap for all tested permutations from $R=4$ through $R=128$,
+and for eight sampled regimes at $R=1{,}024$. A current-library rerun through
+the source-visible research preflight evaluates every addressed regime at $R=8$ and $R=128$:
+baseline and all 136 regime evaluations have identical $91.421\%$ accuracy.
+The maximum fp32 logit drift is $1.06\times10^{-5}$ and changes no prediction.
+
+This is a useful implementation and equivariance check, not an isolation
+result. Conjugation expresses the same function in a keyed basis; it does not
+create distinct tenant knowledge and does not make non-tenant activations zero.
+An exact zero arises only when the authorized basis is composed with an actual
+Binary Activation gate. That gated composition then inherits the same closure
+requirements described above.
+
+\noindent\textit{Replay.} Run
+\path{experiments/orthogonal_superposition_sweep.py}; the retained sweep and
+$R=1{,}024$ outputs are indexed by
+\path{experiments/results/README.md}.
+
+\section{MoE Expert-Router Authorization}
+
+Mixture-of-Experts architectures already expose discrete FFN experts and a
+router that produces expert logits, normalized dispatch weights, and a top-$k$
+selection~\citep{shazeer2017moe,fedus2022switch}. This creates a more natural authorization surface than attempting to
+partition a dense attention representation. A tenant + sub-id grant may define
+an allowed expert set $A\subseteq\{1,\ldots,E\}$; the router must ensure that
+only experts in $A$ can be selected or launched.
+
+The placement detail is essential. Multiplying pre-softmax logits by a binary
+mask is not sufficient: an unauthorized zero logit can still receive positive
+softmax probability. One conforming construction restricts candidates to the
+authorized set $A$ (equivalently, assigns $-\infty$ outside $A$), selects at
+most $k'=\min(k,|A|)$ finite entries, and refuses to dispatch any $-\infty$
+entry. Another multiplies normalized dispatch weights by the grant mask before
+dispatch and removes every zero-weight entry. Both fail closed when $A$ is
+empty. Setting logits to $-\infty$ without constraining a fixed-size top-$k$
+is insufficient when $|A|<k$. In the normalized-weight construction,
+unauthorized expert contributions are exactly zero by the same Hadamard algebra
+as the FFN gate; exclusion from selection and execution is additionally a
+router-implementation property.
+
+MoE routing remains learned and data-dependent---it decides which authorized
+experts should process a token. Binary Activation is grant-scoped and
+data-independent---it decides which experts the principal may reach at all.
+
+We evaluate that composition on eight disjoint binary tasks from the standard
+20 Newsgroups train/test split. Each regime independently trains a top-1 router
+over two private feed-forward experts with task loss and a load-balancing loss
+computed only inside its authorized set. The eight trained routers and sixteen
+experts are then copied unchanged into one execution-authorized bank. Across
+6,231 held-out examples, macro accuracy is 81.80\% and micro accuracy is
+81.86\% (5,101 correct). Separate and packed execution have exactly equal
+logits and predictions; unauthorized expert dispatch is zero. Both experts are
+used in every regime, with the least-used expert receiving 42.4\% of its
+regime's held-out examples, and every router records nonzero parameter
+movement. A dedicated active-regime training-step audit records zero inactive
+gradient tensors, optimizer states, and parameter change. Wrong regime, model,
+dimension, and empty-authority probes against eight single-regime execution
+surfaces make zero model calls.
+
+The deliberately invalid control multiplies unauthorized pre-softmax logits by
+zero; an unauthorized expert wins top-1 because zero exceeds the authorized
+negative logits. Candidate restriction or $-\infty$ masking before softmax is
+therefore an empirically exercised placement requirement, not documentation
+alone. Exact zero dip here is a copy-and-pack equivalence result. The packed
+bank has the same router/expert bytes as the separate lanes, so this experiment
+does not itself claim storage compression, shared-attention isolation, or
+language-model quality.
+
+\begin{sloppypar}
+\noindent\textit{Replay learned routing.} Run
+\path{experiments/train_authorized_moe.py}; the clean-source artifact is
+\path{experiments/results/authorized_learned_moe_20260831T182431_055309Z.json}.
+\end{sloppypar}
+
+\subsection{Execution-Selected Capability Prefixes and Token Routing}
+
+Learned continuous prefixes can condition model computation without changing
+the user-visible token sequence~\citep{li2021prefix}. They are not credentials:
+a plaintext prefix supplied by a requester is forgeable and remains untrusted
+data. We separate those channels. Authenticated execution authority selects a
+private learned prefix and its two-expert candidate set; user tokens then
+condition top-1 routing only inside that set. The private prefix enters the
+token router as continuous context, and authorization is enforced before
+softmax and dispatch.
+
+On the same eight held-out 20 Newsgroups task pairs, the experiment makes
+311,477 non-padding token-routing decisions and obtains 77.76\% macro and
+77.80\% micro accuracy (4,848 of 6,231 examples). Packing the independently
+trained prefixes, token routers, and experts changes zero routes, logits, or
+predictions. Global negative-infinity masking exactly matches candidate
+restriction, and unauthorized dispatch is zero. A spoof request containing all
+eight literal \texttt{CAPABILITY\_REGIME\_n} markers as user text causes zero
+unauthorized dispatch. Every prefix and router moves during training, both
+experts are used in every regime with minimum held-out share 41.7\%, and the
+active-regime audit records zero inactive gradients, optimizer states, or
+parameter change. Malformed probes against all eight singleton execution
+authorities make zero model calls.
+
+This is a small token-routing classifier, not an autoregressive Transformer.
+It establishes neither prompt text as authority nor generation quality,
+shared-attention isolation, or compression. Exact zero dip means only
+copy-and-pack equivalence; task utility is reported separately.
+
+\begin{sloppypar}
+\noindent\textit{Replay capability-prefix routing.} Run
+\path{experiments/train_capability_token_moe.py}; the clean-source artifact is
+\path{experiments/results/capability_prefix_token_moe_20260831T182453_013039Z.json}.
+\end{sloppypar}
+
+\section{Useful LLM Surfaces Now}
+
+The absence of complete attention partitioning does not eliminate practical
+Transformer uses:
+\begin{itemize}
+  \item \textbf{Whole-model Binary Activation.} Treat the complete LLM as an
+  atomic capability. A tenant + sub-id grant can bind model/version, operation,
+  expiry, token ceiling, use count, and audit context. Unauthorized requests
+  are rejected before inference. Model quality is unchanged.
+  \item \textbf{Cargo Mode.} Authorize a tenant corpus or retrieval partition
+  before its contents become context for an ordinary LLM. A separate model gate
+  can then authorize generation. This controls data release and invocation,
+  not internal attention.
+  \item \textbf{Gated attachments.} Select a private LoRA adapter, expert,
+  reranker, database, or tool only after resolving the authenticated scope. The
+  attachment retains its ordinary performance and storage characteristics;
+  Binary Activation supplies the fail-closed authorization point.
+  \item \textbf{FFN-private classification.} When a frozen shared Transformer
+  is acceptable, the demonstrated FFN and private-lane constructions provide
+  measured tenant-private trainable state with explicit capacity costs.
+  \item \textbf{MoE expert authorization.} Restrict an existing expert router
+  to a grant-scoped allowed set before dispatch. This controls expert
+  reachability but does not make shared attention, caches, or residual state
+  tenant-private.
+\end{itemize}
+
+These surfaces share one conceptual vocabulary---activate the authorized
+capability or do not execute it---while preserving honest differences in what
+each boundary isolates.
+
+\noindent\textit{Replay authorization surfaces.} Whole-model and local Cargo
+checks are in \path{experiments/local_transformer_cotenancy_suite.py}; the
+real-model Cargo runner is
+\path{experiments/modal_cargo_transformer_authorization.py}.
+
+\section{Research Protocol}
+
+If complete Transformer lanes are revisited, a decisive experiment should
+begin small and test the construction rather than raw post-hoc ablation:
+\begin{enumerate}
+  \item train or distill a two-lane Transformer with separate Q/K/V, $W^O$,
+  normalization, FFN, and all residual routes from the outset;
+  \item statically enumerate every cross-lane tensor edge and gate before any
+  recombination;
+  \item train an owning-positive task in each lane while freezing or separately
+  accounting for all shared state;
+  \item verify wrong-key outputs, activations, parameter deltas, optimizer
+  moments, and caches; and
+  \item compare owning utility with a compute- and parameter-matched ungated
+  control.
+\end{enumerate}
+Failure would be informative, but success should not be presumed by the current
+FFN result. Until that protocol passes, the system should use whole-model,
+Cargo, attachment, or FFN-local wording rather than ``Transformer isolation.''
+
+\section{Conclusion}
+
+The Transformer result is narrower and more useful than either extreme. It is
+not true that Binary Activation has no place in Transformers: DistilBERT's FFNs
+and classifier representations provide demonstrated gate surfaces, private
+lanes offer an explicit
+storage--utility tradeoff, and whole-model or Cargo gates control LLM inference
+without touching attention. It is also not true that an FFN gate partitions the
+complete Transformer.
+
+Shared attention is accepted as shared in the demonstrated construction.
+Complete lanes would require duplicated projections, normalization, FFNs, and
+all residual paths, with substantial compute and operator risk. That remains
+modest future work. The present recommendation is to deploy Binary Activation
+where its boundary is exact and auditable, and to state that boundary plainly.
+MoE expert authorization offers a narrower near-term Transformer path because
+the experts are already discrete. The held-out learned-router result validates
+the fail-closed candidate-restriction and lossless-packing mechanism in a small
+feed-forward MoE. The token-routing extension further shows that execution can
+select a private continuous router prefix while capability-looking user text
+remains ordinary data and cannot expand the expert set. Applying either result
+inside an autoregressive language-model MoE remains future work.
+
+\begin{thebibliography}{5}
+\bibitem[Fedus et~al.(2022)]{fedus2022switch}
+W.~Fedus, B.~Zoph, and N.~Shazeer.
+\newblock Switch Transformers: Scaling to trillion parameter models with simple and efficient sparsity.
+\newblock \emph{JMLR}, 23(120):1--39, 2022.
+
+\bibitem[Hu et~al.(2022)]{lora}
+E.~J. Hu, Y.~Shen, P.~Wallis, et~al.
+\newblock LoRA: Low-rank adaptation of large language models.
+\newblock In \emph{ICLR}, 2022.
+
+\bibitem[Li and Liang(2021)]{li2021prefix}
+X.~L. Li and P.~Liang.
+\newblock Prefix-tuning: Optimizing continuous prompts for generation.
+\newblock In \emph{ACL-IJCNLP}, 2021.
+\newblock \url{https://aclanthology.org/2021.acl-long.353/}
+
+\bibitem[Sanh et~al.(2019)]{distilbert}
+V.~Sanh, L.~Debut, J.~Chaumond, and T.~Wolf.
+\newblock DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.
+\newblock \emph{arXiv:1910.01108}, 2019.
+
+\bibitem[Shazeer et~al.(2017)]{shazeer2017moe}
+N.~Shazeer, A.~Mirhoseini, K.~Maziarz, et~al.
+\newblock Outrageously large neural networks: The sparsely-gated mixture-of-experts layer.
+\newblock \emph{arXiv:1701.06538}, 2017.
+
+\bibitem[Vaswani et~al.(2017)]{attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, et~al.
+\newblock Attention is all you need.
+\newblock In \emph{NeurIPS}, 2017.
+
+\bibitem[Zhang et~al.(2015)]{agnews}
+X.~Zhang, J.~Zhao, and Y.~LeCun.
+\newblock Character-level convolutional networks for text classification.
+\newblock In \emph{NeurIPS}, 2015.
+
+\bibitem[Zheng et~al.(2023)]{sglang}
+L.~Zheng, L.~Yin, Z.~Xie, et~al.
+\newblock SGLang: Efficient execution of structured language model programs.
+\newblock \emph{arXiv:2312.07104}, 2023.
+\end{thebibliography}
+
+\end{document}

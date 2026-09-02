@@ -1,0 +1,537 @@
+{
+  "schema_version": 1,
+  "experiment": "private_transformer_lanes_combined",
+  "created_at_utc": "2026-08-21T06:22:44.931695+00:00",
+  "elapsed_seconds": 98.28391216695309,
+  "source": {
+    "commit": "93bf4d2b6c1e2c970db15afdcf4bff7abca6a69e",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "script_sha256": "4313b2ce74c3edfdd2e37ad626f9f74c90f57de273a5764b56468e4557d08a2b",
+    "wheel_bundle": {
+      "wheels": {
+        "schemen-gate": {
+          "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+          "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+          "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+        },
+        "private-companion-harness": {
+          "path": "<private-companion-harness-wheel>",
+          "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+          "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+        }
+      },
+      "mismatches": []
+    }
+  },
+  "results": [
+    {
+      "schema_version": 1,
+      "experiment": "private_transformer_lanes",
+      "status": "pass",
+      "config": {
+        "design": "adapter",
+        "seed": 42,
+        "regimes": 4,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "learning_rate": 0.0005,
+        "smoke": false
+      },
+      "source": {
+        "commit": "93bf4d2b6c1e2c970db15afdcf4bff7abca6a69e",
+        "dirty": false,
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "script_sha256": "4313b2ce74c3edfdd2e37ad626f9f74c90f57de273a5764b56468e4557d08a2b",
+        "wheel_bundle": {
+          "wheels": {
+            "schemen-gate": {
+              "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+              "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+              "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+            },
+            "private-companion-harness": {
+              "path": "<private-companion-harness-wheel>",
+              "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+              "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+            }
+          },
+          "mismatches": []
+        }
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.12.1+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "gate_placement": "runtime-authorized-hard-route-to-complete-private-lane",
+      "runtime": {
+        "surface": "<private-companion-harness-surface>",
+        "model_id": "distilbert-base-uncased",
+        "dimensions": 768,
+        "authorized_regime_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "authorized_model_calls": 16,
+        "authorization_receipts": [
+          {
+            "frame_id": "evaluation-1",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 0,
+            "receipt_sha256": "8dc8c86d55f4ae02fb8c2bdd941c99db80c42ec9a758f55e53d017458f8ca3eb"
+          },
+          {
+            "frame_id": "evaluation-2",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 1,
+            "receipt_sha256": "8ba5ca5316ca308966841d192db5c4f6924da1996543cc3315c56db834586227"
+          },
+          {
+            "frame_id": "evaluation-3",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 2,
+            "receipt_sha256": "0111af15840ad47015bd7e7ad5dd4e691b58144ba55b5c37a24ac7b4533ce8f3"
+          },
+          {
+            "frame_id": "evaluation-4",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 3,
+            "receipt_sha256": "e391569d23cfc9b739f972add8af9023d96ed2fef75d9cf69d56433f28feb3b3"
+          },
+          {
+            "frame_id": "evaluation-5",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 1,
+            "receipt_sha256": "f72ecd29d793d8cd925886a8eb1d84589918d825ec1c2aba652606c25b7b1155"
+          },
+          {
+            "frame_id": "evaluation-6",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 0,
+            "receipt_sha256": "a13d36401c96ee191dd7c2788848a6bfd30716bff20253be8dde9f3ef66adc8e"
+          },
+          {
+            "frame_id": "evaluation-7",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 2,
+            "receipt_sha256": "8e56c896f6511d2e52f784bb6e8d6f33332d0b6bc0cf5735ef3fdbc39521974b"
+          },
+          {
+            "frame_id": "evaluation-8",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 3,
+            "receipt_sha256": "92e43562ff48541dd807fe3d4c766481e780e3341a5bafdbb296564bac622dc8"
+          },
+          {
+            "frame_id": "evaluation-9",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 2,
+            "receipt_sha256": "ce4a831e939b1dff3cf766c55a1b951d21955044a64f60e403d33718a8bc4742"
+          },
+          {
+            "frame_id": "evaluation-10",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 0,
+            "receipt_sha256": "358020cc3dc239938d9bd0fe3111aa6e51a773aeeea91408867c78acdad0d02b"
+          },
+          {
+            "frame_id": "evaluation-11",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 1,
+            "receipt_sha256": "3b7c4b43142427d22ae40d23b9bd6bf9154810a17a161f5580cc166c7f14d746"
+          },
+          {
+            "frame_id": "evaluation-12",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 3,
+            "receipt_sha256": "04e72a59e068bb9aca87057e38337a2b224581a5d6cd07911b9b3e9339c28b91"
+          },
+          {
+            "frame_id": "evaluation-13",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 3,
+            "receipt_sha256": "4b4fb7a5900430be1d796eba21ba732833f9a7f66773d8ab372617a7fc3bde88"
+          },
+          {
+            "frame_id": "evaluation-14",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 0,
+            "receipt_sha256": "8b8afa9e2cdb2f6d46fdb78c3db2d69ad7561ee2a6453f78d16dec037234f349"
+          },
+          {
+            "frame_id": "evaluation-15",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 1,
+            "receipt_sha256": "5152c229326042721acc61b0eb30084a6673bb8236146ee078e06de52741a826"
+          },
+          {
+            "frame_id": "evaluation-16",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 2,
+            "receipt_sha256": "18c4519a103867341573fa50ab9140c31bdd3ab05dbb4e4df812c1f172516886"
+          }
+        ],
+        "rejection_probe": {
+          "attempts": {
+            "other_regime": {
+              "rejected": true,
+              "status_code": 403,
+              "model_calls": 0
+            },
+            "other_model": {
+              "rejected": true,
+              "status_code": 422,
+              "model_calls": 0
+            },
+            "other_dimensions": {
+              "rejected": true,
+              "status_code": 422,
+              "model_calls": 0
+            },
+            "empty_authority": {
+              "rejected": true,
+              "status_code": 403,
+              "model_calls": 0
+            }
+          },
+          "all_rejected": true,
+          "unauthorized_model_calls": 0
+        }
+      },
+      "maximum_shared_backbone_delta": 0.0,
+      "maximum_inactive_lane_delta": 0.0,
+      "mean_owning_accuracy": 0.906625,
+      "mean_wrong_key_accuracy": 0.031125,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.906,
+          "wrong_key_mean_accuracy": 0.028833333333333332
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.909,
+          "wrong_key_mean_accuracy": 0.02666666666666667
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.903,
+          "wrong_key_mean_accuracy": 0.033999999999999996
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.9085,
+          "wrong_key_mean_accuracy": 0.034999999999999996
+        }
+      ],
+      "remote_artifact": "/results/adapter_seed42_20260821T062206_558522Z.json"
+    },
+    {
+      "schema_version": 1,
+      "experiment": "private_transformer_lanes",
+      "status": "pass",
+      "config": {
+        "design": "expert",
+        "seed": 42,
+        "regimes": 4,
+        "train_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "epochs": 2,
+        "learning_rate": 0.0001,
+        "smoke": false
+      },
+      "source": {
+        "commit": "93bf4d2b6c1e2c970db15afdcf4bff7abca6a69e",
+        "dirty": false,
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "script_sha256": "4313b2ce74c3edfdd2e37ad626f9f74c90f57de273a5764b56468e4557d08a2b",
+        "wheel_bundle": {
+          "wheels": {
+            "schemen-gate": {
+              "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+              "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+              "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+            },
+            "private-companion-harness": {
+              "path": "<private-companion-harness-wheel>",
+              "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+              "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+            }
+          },
+          "mismatches": []
+        }
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.12.1+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "gate_placement": "runtime-authorized-hard-route-to-complete-private-lane",
+      "runtime": {
+        "surface": "<private-companion-harness-surface>",
+        "model_id": "distilbert-base-uncased",
+        "dimensions": 768,
+        "authorized_regime_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "authorized_model_calls": 16,
+        "authorization_receipts": [
+          {
+            "frame_id": "evaluation-1",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 0,
+            "receipt_sha256": "8dc8c86d55f4ae02fb8c2bdd941c99db80c42ec9a758f55e53d017458f8ca3eb"
+          },
+          {
+            "frame_id": "evaluation-2",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 1,
+            "receipt_sha256": "8ba5ca5316ca308966841d192db5c4f6924da1996543cc3315c56db834586227"
+          },
+          {
+            "frame_id": "evaluation-3",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 2,
+            "receipt_sha256": "0111af15840ad47015bd7e7ad5dd4e691b58144ba55b5c37a24ac7b4533ce8f3"
+          },
+          {
+            "frame_id": "evaluation-4",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 3,
+            "receipt_sha256": "e391569d23cfc9b739f972add8af9023d96ed2fef75d9cf69d56433f28feb3b3"
+          },
+          {
+            "frame_id": "evaluation-5",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 1,
+            "receipt_sha256": "f72ecd29d793d8cd925886a8eb1d84589918d825ec1c2aba652606c25b7b1155"
+          },
+          {
+            "frame_id": "evaluation-6",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 0,
+            "receipt_sha256": "a13d36401c96ee191dd7c2788848a6bfd30716bff20253be8dde9f3ef66adc8e"
+          },
+          {
+            "frame_id": "evaluation-7",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 2,
+            "receipt_sha256": "8e56c896f6511d2e52f784bb6e8d6f33332d0b6bc0cf5735ef3fdbc39521974b"
+          },
+          {
+            "frame_id": "evaluation-8",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 3,
+            "receipt_sha256": "92e43562ff48541dd807fe3d4c766481e780e3341a5bafdbb296564bac622dc8"
+          },
+          {
+            "frame_id": "evaluation-9",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 2,
+            "receipt_sha256": "ce4a831e939b1dff3cf766c55a1b951d21955044a64f60e403d33718a8bc4742"
+          },
+          {
+            "frame_id": "evaluation-10",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 0,
+            "receipt_sha256": "358020cc3dc239938d9bd0fe3111aa6e51a773aeeea91408867c78acdad0d02b"
+          },
+          {
+            "frame_id": "evaluation-11",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 1,
+            "receipt_sha256": "3b7c4b43142427d22ae40d23b9bd6bf9154810a17a161f5580cc166c7f14d746"
+          },
+          {
+            "frame_id": "evaluation-12",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 3,
+            "receipt_sha256": "04e72a59e068bb9aca87057e38337a2b224581a5d6cd07911b9b3e9339c28b91"
+          },
+          {
+            "frame_id": "evaluation-13",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 3,
+            "receipt_sha256": "4b4fb7a5900430be1d796eba21ba732833f9a7f66773d8ab372617a7fc3bde88"
+          },
+          {
+            "frame_id": "evaluation-14",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 0,
+            "receipt_sha256": "8b8afa9e2cdb2f6d46fdb78c3db2d69ad7561ee2a6453f78d16dec037234f349"
+          },
+          {
+            "frame_id": "evaluation-15",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 1,
+            "receipt_sha256": "5152c229326042721acc61b0eb30084a6673bb8236146ee078e06de52741a826"
+          },
+          {
+            "frame_id": "evaluation-16",
+            "model_id": "distilbert-base-uncased",
+            "dimensions": 768,
+            "regime_id": 2,
+            "receipt_sha256": "18c4519a103867341573fa50ab9140c31bdd3ab05dbb4e4df812c1f172516886"
+          }
+        ],
+        "rejection_probe": {
+          "attempts": {
+            "other_regime": {
+              "rejected": true,
+              "status_code": 403,
+              "model_calls": 0
+            },
+            "other_model": {
+              "rejected": true,
+              "status_code": 422,
+              "model_calls": 0
+            },
+            "other_dimensions": {
+              "rejected": true,
+              "status_code": 422,
+              "model_calls": 0
+            },
+            "empty_authority": {
+              "rejected": true,
+              "status_code": 403,
+              "model_calls": 0
+            }
+          },
+          "all_rejected": true,
+          "unauthorized_model_calls": 0
+        }
+      },
+      "maximum_shared_backbone_delta": 0.0,
+      "maximum_inactive_lane_delta": 0.0,
+      "mean_owning_accuracy": 0.9015,
+      "mean_wrong_key_accuracy": 0.03283333333333333,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.905,
+          "wrong_key_mean_accuracy": 0.02783333333333333
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.9065,
+          "wrong_key_mean_accuracy": 0.029666666666666664
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.8865,
+          "wrong_key_mean_accuracy": 0.0335
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.908,
+          "wrong_key_mean_accuracy": 0.04033333333333333
+        }
+      ],
+      "remote_artifact": "/results/expert_seed42_20260821T062243_847825Z.json"
+    }
+  ],
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "private_transformer_lanes_20260821T062244_931925Z.json",
+    "original_relative_path": "experiments/results/private_transformer_lanes_20260821T062244_931925Z.json",
+    "original_sha256": "e3490a9780da50827ab18b48e3cf7f480bcca8b3e2de5b473cbbf72b0464e6d6",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged",
+      "private-harness-surface-marker": "the private companion harness callback-surface identifier is replaced by '<private-companion-harness-surface>'; model id, dimensions, and authorized Regimes are unchanged",
+      "private-harness-wheel-marker": "a filesystem path naming the private companion harness wheel is replaced by '<private-companion-harness-wheel>'; the recorded SHA-256 values are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "results[0].source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "results[0].source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "results[0].runtime.surface",
+        "rule": "private-harness-surface-marker"
+      },
+      {
+        "path": "results[1].source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "results[1].source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "results[1].runtime.surface",
+        "rule": "private-harness-surface-marker"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

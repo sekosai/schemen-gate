@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "experiment": "distilbert_deployment_reproduction",
+  "status": "complete",
+  "surface": "legacy-post-encoder",
+  "created_at_utc": "2026-08-06T17:32:32.854917+00:00",
+  "environment": {
+    "python": "3.14.6",
+    "torch": "2.12.1",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "device": "cpu"
+  },
+  "assets": {
+    "model": "distilbert-base-uncased",
+    "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+    "dataset": "fancyzhx/ag_news",
+    "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+  },
+  "config": {
+    "regimes": 4,
+    "batch_size": 4,
+    "batches": 1,
+    "test_examples": 8,
+    "max_length": 32,
+    "device": "cpu",
+    "smoke": true
+  },
+  "storage": {
+    "separate_bytes": 1062014092,
+    "gated_bytes": 265503523,
+    "ratio": 4.0
+  },
+  "accelerator_memory": {
+    "separate_bytes": null,
+    "gated_bytes": null,
+    "ratio": null
+  },
+  "throughput": {
+    "separate": {
+      "samples": 4,
+      "seconds": 0.026854458963498473,
+      "samples_per_second": 148.95105522092032
+    },
+    "gated": {
+      "samples": 4,
+      "seconds": 0.015443707990925759,
+      "samples_per_second": 259.00515616782417
+    },
+    "ratio": 1.738860834410837
+  }
+}

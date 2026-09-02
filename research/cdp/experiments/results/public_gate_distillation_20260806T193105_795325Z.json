@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "experiment": "public_gate_distillation_combined",
+  "created_at_utc": "2026-08-06T19:31:05.795066+00:00",
+  "elapsed_seconds": 508.4667870000121,
+  "source": {
+    "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+  },
+  "results": [
+    {
+      "schema_version": 1,
+      "experiment": "public_gate_distillation",
+      "status": "pass",
+      "partition_algorithm": "sha256_seed_numpy_balanced_research",
+      "config": {
+        "seed": 42,
+        "R": 8,
+        "public_examples": 8000,
+        "tenant_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "public_epochs": 2,
+        "distill_epochs": 1,
+        "tenant_epochs": 2,
+        "public_encoder_lr": 2e-05,
+        "public_head_lr": 0.001,
+        "distill_encoder_lr": 2e-05,
+        "distill_head_lr": 0.0005,
+        "tenant_ffn_lr": 2e-05,
+        "tenant_head_lr": 0.001,
+        "temperature": 2.0,
+        "hard_loss_weight": 0.5,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "public_and_tenant_splits_disjoint": true,
+      "teacher_ungated_accuracy": 0.9165,
+      "control_gated_public_accuracy": 0.7025,
+      "adapted_gated_public_accuracy": 0.8938125,
+      "tenant_accuracy_uplift_fraction": 0.015437500000000104,
+      "tenant_accuracy_uplift_percentage_points": 1.5437500000000104,
+      "control": {
+        "condition": "generic_public_teacher",
+        "per_regime_accuracy": [
+          0.878,
+          0.886,
+          0.8775,
+          0.8915,
+          0.8955,
+          0.889,
+          0.892,
+          0.8845
+        ],
+        "mean_owning_accuracy": 0.8867499999999999,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true
+      },
+      "adapted": {
+        "condition": "gate_aware_public_distillation",
+        "per_regime_accuracy": [
+          0.8895,
+          0.903,
+          0.898,
+          0.9095,
+          0.904,
+          0.906,
+          0.9005,
+          0.907
+        ],
+        "mean_owning_accuracy": 0.9021875,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true
+      },
+      "remote_artifact": "/results/public_gate_distill_R8_seed42_20260806T193004_941680Z.json"
+    },
+    {
+      "schema_version": 1,
+      "experiment": "public_gate_distillation",
+      "status": "pass",
+      "partition_algorithm": "sha256_seed_numpy_balanced_research",
+      "config": {
+        "seed": 123,
+        "R": 8,
+        "public_examples": 8000,
+        "tenant_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "public_epochs": 2,
+        "distill_epochs": 1,
+        "tenant_epochs": 2,
+        "public_encoder_lr": 2e-05,
+        "public_head_lr": 0.001,
+        "distill_encoder_lr": 2e-05,
+        "distill_head_lr": 0.0005,
+        "tenant_ffn_lr": 2e-05,
+        "tenant_head_lr": 0.001,
+        "temperature": 2.0,
+        "hard_loss_weight": 0.5,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "public_and_tenant_splits_disjoint": true,
+      "teacher_ungated_accuracy": 0.9125,
+      "control_gated_public_accuracy": 0.8067500000000001,
+      "adapted_gated_public_accuracy": 0.8986874999999999,
+      "tenant_accuracy_uplift_fraction": 0.01706250000000009,
+      "tenant_accuracy_uplift_percentage_points": 1.7062500000000091,
+      "control": {
+        "condition": "generic_public_teacher",
+        "per_regime_accuracy": [
+          0.8775,
+          0.891,
+          0.8875,
+          0.889,
+          0.8825,
+          0.8885,
+          0.8935,
+          0.871
+        ],
+        "mean_owning_accuracy": 0.8850625,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true
+      },
+      "adapted": {
+        "condition": "gate_aware_public_distillation",
+        "per_regime_accuracy": [
+          0.9005,
+          0.9065,
+          0.905,
+          0.903,
+          0.9005,
+          0.8995,
+          0.9055,
+          0.8965
+        ],
+        "mean_owning_accuracy": 0.9021250000000001,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true
+      },
+      "remote_artifact": "/results/public_gate_distill_R8_seed123_20260806T192843_205199Z.json"
+    },
+    {
+      "schema_version": 1,
+      "experiment": "public_gate_distillation",
+      "status": "pass",
+      "partition_algorithm": "sha256_seed_numpy_balanced_research",
+      "config": {
+        "seed": 256,
+        "R": 8,
+        "public_examples": 8000,
+        "tenant_examples": 8000,
+        "test_examples": 2000,
+        "max_length": 128,
+        "batch_size": 32,
+        "public_epochs": 2,
+        "distill_epochs": 1,
+        "tenant_epochs": 2,
+        "public_encoder_lr": 2e-05,
+        "public_head_lr": 0.001,
+        "distill_encoder_lr": 2e-05,
+        "distill_head_lr": 0.0005,
+        "tenant_ffn_lr": 2e-05,
+        "tenant_head_lr": 0.001,
+        "temperature": 2.0,
+        "hard_loss_weight": 0.5,
+        "smoke": false
+      },
+      "source": {
+        "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+      },
+      "assets": {
+        "model": "distilbert-base-uncased",
+        "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+        "dataset": "fancyzhx/ag_news",
+        "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "environment": {
+        "python": "3.12.10",
+        "torch": "2.13.0+cu130",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+      },
+      "public_and_tenant_splits_disjoint": true,
+      "teacher_ungated_accuracy": 0.9195,
+      "control_gated_public_accuracy": 0.7286250000000001,
+      "adapted_gated_public_accuracy": 0.9040625,
+      "tenant_accuracy_uplift_fraction": 0.015375000000000028,
+      "tenant_accuracy_uplift_percentage_points": 1.5375000000000028,
+      "control": {
+        "condition": "generic_public_teacher",
+        "per_regime_accuracy": [
+          0.876,
+          0.8855,
+          0.89,
+          0.891,
+          0.8895,
+          0.8665,
+          0.8925,
+          0.8875
+        ],
+        "mean_owning_accuracy": 0.8848125,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true
+      },
+      "adapted": {
+        "condition": "gate_aware_public_distillation",
+        "per_regime_accuracy": [
+          0.8985,
+          0.9,
+          0.898,
+          0.902,
+          0.9015,
+          0.894,
+          0.9055,
+          0.902
+        ],
+        "mean_owning_accuracy": 0.9001875,
+        "maximum_frozen_shared_parameter_delta": 0.0,
+        "maximum_off_partition_parameter_delta": 0.0,
+        "maximum_off_partition_optimizer_moment": 0.0,
+        "maximum_inactive_classifier_delta": 0.0,
+        "separation_pass": true
+      },
+      "remote_artifact": "/results/public_gate_distill_R8_seed256_20260806T193104_001874Z.json"
+    }
+  ]
+}

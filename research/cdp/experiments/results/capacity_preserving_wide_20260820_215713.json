@@ -1,0 +1,100 @@
+{
+  "schema_version": 2,
+  "experiment": "capacity_preserving_wide_classifier",
+  "status": "failure",
+  "scope": "Synthetic memorization and capacity-scaling check. This is not a held-out generalization, privacy, or fixed-width parity result.",
+  "started_at_unix": 1787288230.4027798,
+  "elapsed_seconds": 2.827299118041992,
+  "git_revision": "bfd9e14be422dcb545b0fd68a3768e54ca7d77b4",
+  "source": {
+    "commit": "bfd9e14be422dcb545b0fd68a3768e54ca7d77b4",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.4.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "libraries": {
+      "lock_schema_version": 1,
+      "lock_sha256": "109175bb37f880694bdbd1bf30d47370ae629445c51e18c4e9694f07a1b42b9b",
+      "packages": {
+        "schemen-gate": {
+          "version": "1.0.1",
+          "commit": "18a11755f0cfc3c2849f89bfc3fcf058970b8bf4",
+          "source_root": "<historical-local-root>/worktrees/schemen-gate-github-v1",
+          "source_dirty": false,
+          "direct_url": "historical-local-source:worktrees/schemen-gate-github-v1"
+        },
+        "private-companion-harness": {
+          "version": "0.4.0",
+          "commit": "8c4af2a707162c44674b6ba794886bcfcf3c7931",
+          "source_root": "<historical-local-root>/worktrees/<private-companion-harness>",
+          "source_dirty": false,
+          "direct_url": "historical-local-source:worktrees/<private-companion-harness>"
+        }
+      },
+      "mismatches": []
+    }
+  },
+  "mask_contract": {
+    "implementation": "schemen_gate.GateMask.derive",
+    "key_derivation": "SHA-256('cdp-wide-classifier:' + mask_seed)",
+    "n_dims": 1280,
+    "n_regimes": 128
+  },
+  "config": {
+    "regimes": 128,
+    "observations_per_regime": 2,
+    "dimensions_per_regime": 10,
+    "epochs": 2000,
+    "learning_rate": 2.0,
+    "seed": 42,
+    "mask_seed": 128042
+  },
+  "summary": {
+    "owning_correct": 256,
+    "owning_total": 256,
+    "owning_accuracy": 1.0,
+    "wrong_key_correct": 0,
+    "wrong_key_probes": 32512,
+    "wrong_key_empirical_rate": 0.0,
+    "all_regimes_correct": 249,
+    "all_regimes_total": 256,
+    "all_regimes_accuracy": 0.97265625,
+    "selected_vs_dense_max_absolute_difference": 0.0,
+    "initial_loss": 5.544984705351382,
+    "final_loss": 0.005977344000466314,
+    "hidden_dimensions": 1280,
+    "dimensions_per_regime": 10
+  },
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "capacity_preserving_wide_20260820_215713.json",
+    "original_relative_path": "experiments/results/capacity_preserving_wide_20260820_215713.json",
+    "original_sha256": "c29d2bf03a58aa2f2f72758a7237c1542177d550aa61b7a1108e4483c5cb3f2b",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-checkout-marker": "a normalized checkout path naming the private companion harness is replaced by '<private-companion-harness>'; the recorded commit and dirty flags are unchanged",
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "environment.libraries.packages.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "environment.libraries.packages.private-companion-harness.source_root",
+        "rule": "private-harness-checkout-marker"
+      },
+      {
+        "path": "environment.libraries.packages.private-companion-harness.direct_url",
+        "rule": "private-harness-checkout-marker"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

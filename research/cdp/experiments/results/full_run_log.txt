@@ -1,0 +1,103 @@
+======================================================================
+  Orthogonal Superposition R-Scaling Study
+======================================================================
+  Device: mps
+  Experiments: ABCDE
+  Max R: 256
+
+  Loading AG News...
+  Train: 8000, Test: 7600
+
+  Training base model (4 epochs, seed=0)...
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]Loading weights: 100%|██████████| 100/100 [00:00<00:00, 34390.82it/s]
+[transformers] [1mDistilBertModel LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     |  | 
+------------------------+------------+--+-
+vocab_transform.bias    | UNEXPECTED |  | 
+vocab_transform.weight  | UNEXPECTED |  | 
+vocab_projector.bias    | UNEXPECTED |  | 
+vocab_layer_norm.bias   | UNEXPECTED |  | 
+vocab_layer_norm.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    epoch 1/4: 30.9s
+    epoch 2/4: 30.7s
+    epoch 3/4: 30.8s
+    epoch 4/4: 31.2s
+  Base accuracy: 0.902500
+  Model size: 253.2 MB
+
+======================================================================
+  EXPERIMENT A: R-Sweep (Serial Addressed Use)
+======================================================================
+
+  Base model accuracy: 0.902500
+  Base model size: 253.2 MB
+
+  --- R = 4 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 36.7s (9.17s/regime)
+    naive storage: 1013 MB (vs 24.0 KB for permutation vectors)
+
+  --- R = 8 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 3 more regimes) ...
+    regime     7: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 72.1s (9.02s/regime)
+    naive storage: 2025 MB (vs 48.0 KB for permutation vectors)
+
+  --- R = 16 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 11 more regimes) ...
+    regime    15: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 145.1s (9.07s/regime)
+    naive storage: 4051 MB (vs 96.0 KB for permutation vectors)
+
+  --- R = 32 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 27 more regimes) ...
+    regime    31: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 288.1s (9.00s/regime)
+    naive storage: 8101 MB (vs 192.0 KB for permutation vectors)
+
+  --- R = 64 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 59 more regimes) ...
+    regime    63: acc=0.902500  gap=+0.00e+00
+    max |gap| = 0.00e+00
+    mean=0.902500 std=0.00e+00
+    elapsed: 817.9s (12.78s/regime)
+    naive storage: 16203 MB (vs 384.0 KB for permutation vectors)
+
+  --- R = 128 ---
+    regime     0: acc=0.902500  gap=+0.00e+00
+    regime     1: acc=0.902500  gap=+0.00e+00
+    regime     2: acc=0.902500  gap=+0.00e+00
+    regime     3: acc=0.902500  gap=+0.00e+00
+    ... (evaluating 123 more regimes) ...
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-60f0xao9'}
+  warnings.warn(

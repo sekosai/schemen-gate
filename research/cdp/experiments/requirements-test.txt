@@ -1,0 +1,5 @@
+# Smallest environment that exercises the checked-in contract tests.
+numpy==2.4.6
+torch==2.13.0
+cryptography==50.0.0
+pytest==9.0.3

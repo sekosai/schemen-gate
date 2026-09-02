@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "experiment": "cargo_transformer_corpus_authorization_combined",
+  "created_at_utc": "2026-08-06T17:59:49.715650+00:00",
+  "elapsed_seconds": 33.13428462500451,
+  "result": {
+    "schema_version": 1,
+    "experiment": "cargo_transformer_corpus_authorization",
+    "status": "pass",
+    "source": {
+      "revision": "99bfe0ad89f6106340e471587df627f56dc6d2e0"
+    },
+    "assets": {
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "generation_model": "google/flan-t5-small",
+      "generation_model_revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab"
+    },
+    "environment": {
+      "python": "3.12.10",
+      "torch": "2.13.0+cu130",
+      "gpu": "Tesla T4"
+    },
+    "owning_exact_recall": 1.0,
+    "all_unauthorized_docks_rejected": true,
+    "unauthorized_model_calls": 0,
+    "load_receipts_valid": true,
+    "retrieval_receipts_valid": true,
+    "owning_rows": [
+      {
+        "tenant_id": "customer-alpha",
+        "question": "What is Alpha's confidential launch code?",
+        "expected": "ORBIT-731",
+        "response": "ORBIT-731",
+        "retrieved_partition": "customer-alpha",
+        "correct": true
+      },
+      {
+        "tenant_id": "customer-alpha",
+        "question": "What is Alpha's private renewal month?",
+        "expected": "November",
+        "response": "November",
+        "retrieved_partition": "customer-alpha",
+        "correct": true
+      },
+      {
+        "tenant_id": "customer-beta",
+        "question": "What is Beta's confidential launch code?",
+        "expected": "NEBULA-284",
+        "response": "NEBULA-284",
+        "retrieved_partition": "customer-beta",
+        "correct": true
+      },
+      {
+        "tenant_id": "customer-beta",
+        "question": "What is Beta's private renewal month?",
+        "expected": "February",
+        "response": "February",
+        "retrieved_partition": "customer-beta",
+        "correct": true
+      }
+    ],
+    "rejection_rows": [
+      {
+        "target": "customer-alpha",
+        "attack": "random",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "attack": "other_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-alpha",
+        "attack": "other_regime_same_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "attack": "random",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "attack": "other_tenant",
+        "rejected": true,
+        "model_calls": 0
+      },
+      {
+        "target": "customer-beta",
+        "attack": "other_regime_same_tenant",
+        "rejected": true,
+        "model_calls": 0
+      }
+    ],
+    "threat_boundary": "The vector store and master key remain trusted runtime assets; the experiment exposes corpus access only through RegimeBus.",
+    "remote_artifact": "/results/cargo_transformer_20260806T175948_358847Z.json"
+  }
+}

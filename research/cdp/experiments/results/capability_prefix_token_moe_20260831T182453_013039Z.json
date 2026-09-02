@@ -1,0 +1,900 @@
+{
+  "claim_boundaries": [
+    "A plaintext or user-authored prefix is not a capability.",
+    "execution authority selects the internal continuous prefix and expert set.",
+    "User tokens may affect routing only within the selected expert set.",
+    "Exact zero dip is a copy-and-pack equivalence result.",
+    "This small classifier has no shared attention, cache, or language-model generation."
+  ],
+  "config": {
+    "balance_weight": 0.1,
+    "batch_size": 64,
+    "embedding_dimensions": 64,
+    "epochs": 20,
+    "experts_per_regime": 2,
+    "hidden_dimensions": 32,
+    "learning_rate": 0.003,
+    "maximum_tokens": 64,
+    "output_dir": null,
+    "regimes": 8,
+    "seed": 42,
+    "synthetic": false,
+    "threads": 4,
+    "vocabulary_size": 4096
+  },
+  "created_at_utc": "2026-08-31T18:24:52.416338+00:00",
+  "data": {
+    "archive_sha256": "c3bccc65639c17f99145fd7bf59eb2f9f92315cb97c16cbd80dfd9c03c9ea48b",
+    "categories": [
+      "alt.atheism",
+      "comp.graphics",
+      "comp.os.ms-windows.misc",
+      "comp.sys.ibm.pc.hardware",
+      "comp.sys.mac.hardware",
+      "comp.windows.x",
+      "misc.forsale",
+      "rec.autos",
+      "rec.motorcycles",
+      "rec.sport.baseball",
+      "rec.sport.hockey",
+      "sci.crypt",
+      "sci.electronics",
+      "sci.med",
+      "sci.space",
+      "soc.religion.christian"
+    ],
+    "dataset": "scikit-learn 20 Newsgroups by-date split",
+    "pairs": [
+      [
+        "alt.atheism",
+        "soc.religion.christian"
+      ],
+      [
+        "comp.graphics",
+        "comp.windows.x"
+      ],
+      [
+        "comp.os.ms-windows.misc",
+        "comp.sys.ibm.pc.hardware"
+      ],
+      [
+        "comp.sys.mac.hardware",
+        "misc.forsale"
+      ],
+      [
+        "rec.autos",
+        "rec.motorcycles"
+      ],
+      [
+        "rec.sport.baseball",
+        "rec.sport.hockey"
+      ],
+      [
+        "sci.crypt",
+        "sci.electronics"
+      ],
+      [
+        "sci.med",
+        "sci.space"
+      ]
+    ],
+    "random_state": 42,
+    "remove": [
+      "headers",
+      "footers",
+      "quotes"
+    ],
+    "shuffle": true,
+    "sklearn_version": "1.9.0",
+    "tokenizer": {
+      "hash": "BLAKE2b-64(person='cdp-tok-v1')",
+      "maximum_tokens": 64,
+      "padding_id": 0,
+      "pattern": "(?u)\\b\\w\\w+\\b",
+      "vocabulary_size": 4096
+    }
+  },
+  "elapsed_seconds": 10.457981824874878,
+  "environment": {
+    "numpy": "2.5.2",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python": "3.12.12",
+    "threads": 4,
+    "torch": "2.13.0"
+  },
+  "evaluation": {
+    "correct": 4848,
+    "exact_logit_mismatched_regimes": 0,
+    "examples": 6231,
+    "macro_accuracy": 0.777588788034121,
+    "maximum_dense_probability_difference": 0.0,
+    "maximum_logit_difference": 0.0,
+    "micro_accuracy": 0.7780452575830524,
+    "minimum_expert_utilization_fraction": 0.41706727712069186,
+    "per_regime": [
+      {
+        "correct": 519,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "maximum_logit_difference": 0.0,
+        "name": "alt.atheism__vs__soc.religion.christian",
+        "prediction_differences": 0,
+        "routed_tokens": 38340,
+        "test_examples": 717,
+        "token_expert_utilization": [
+          19271,
+          19069
+        ],
+        "train_examples": 1079,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 581,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "maximum_logit_difference": 0.0,
+        "name": "comp.graphics__vs__comp.windows.x",
+        "prediction_differences": 0,
+        "routed_tokens": 39492,
+        "test_examples": 784,
+        "token_expert_utilization": [
+          20128,
+          19364
+        ],
+        "train_examples": 1177,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 597,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "maximum_logit_difference": 0.0,
+        "name": "comp.os.ms-windows.misc__vs__comp.sys.ibm.pc.hardware",
+        "prediction_differences": 0,
+        "routed_tokens": 39594,
+        "test_examples": 786,
+        "token_expert_utilization": [
+          19715,
+          19879
+        ],
+        "train_examples": 1181,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 671,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "maximum_logit_difference": 0.0,
+        "name": "comp.sys.mac.hardware__vs__misc.forsale",
+        "prediction_differences": 0,
+        "routed_tokens": 37043,
+        "test_examples": 775,
+        "token_expert_utilization": [
+          18501,
+          18542
+        ],
+        "train_examples": 1163,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 601,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "maximum_logit_difference": 0.0,
+        "name": "rec.autos__vs__rec.motorcycles",
+        "prediction_differences": 0,
+        "routed_tokens": 36639,
+        "test_examples": 794,
+        "token_expert_utilization": [
+          19686,
+          16953
+        ],
+        "train_examples": 1192,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 627,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "maximum_logit_difference": 0.0,
+        "name": "rec.sport.baseball__vs__rec.sport.hockey",
+        "prediction_differences": 0,
+        "routed_tokens": 40546,
+        "test_examples": 796,
+        "token_expert_utilization": [
+          20253,
+          20293
+        ],
+        "train_examples": 1197,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 633,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "maximum_logit_difference": 0.0,
+        "name": "sci.crypt__vs__sci.electronics",
+        "prediction_differences": 0,
+        "routed_tokens": 39315,
+        "test_examples": 789,
+        "token_expert_utilization": [
+          16397,
+          22918
+        ],
+        "train_examples": 1186,
+        "unauthorized_dispatches": 0
+      },
+      {
+        "correct": 619,
+        "dense_mask_maximum_probability_difference": 0.0,
+        "dense_mask_route_differences": 0,
+        "exact_logit_equal": true,
+        "maximum_logit_difference": 0.0,
+        "name": "sci.med__vs__sci.space",
+        "prediction_differences": 0,
+        "routed_tokens": 40508,
+        "test_examples": 790,
+        "token_expert_utilization": [
+          21928,
+          18580
+        ],
+        "train_examples": 1187,
+        "unauthorized_dispatches": 0
+      }
+    ],
+    "prediction_differences": 0,
+    "routed_tokens": 311477,
+    "unauthorized_dispatches": 0
+  },
+  "experiment": "capability_prefix_token_moe",
+  "git_revision": "c7dc24bbe4bf43cd76e851c797ef91370030f485",
+  "libraries": {
+    "dependency_bundle": {
+      "gate_source": {
+        "commit": "c7dc24bbe4bf43cd76e851c797ef91370030f485",
+        "dirty": false,
+        "package_files": [
+          "__init__.py",
+          "_build_identity.py",
+          "_cargo.py",
+          "_cargo_impl.py",
+          "_crypto.py",
+          "_key_wrapping.py",
+          "_lockbox.py",
+          "_mask.py",
+          "_operation_gate.py",
+          "_pkcs12.py",
+          "_rag.py",
+          "_rag_arch.py",
+          "_rag_stores.py",
+          "_regime0_fold.py",
+          "_release.py",
+          "_tokens.py",
+          "_vector_dispatch.py",
+          "_von.py",
+          "capability.py",
+          "py.typed"
+        ],
+        "repository": "https://github.com/sekosai/schemen-gate",
+        "tree_sha256": "b62b94e66c17259ea3c073f24a0578427e639f048f7a9eb5f31ace3b04956380",
+        "version": "1.0.2"
+      },
+      "lock_schema_version": 3,
+      "lock_sha256": "56f05cd9af7c8fc5a182bc7a2ccc4184d497f629ac2e9129e15bca2f89a797e3",
+      "mismatches": [],
+      "research_execution_preflight": {
+        "module": "execution_preflight.py",
+        "production_authority_claim": false,
+        "schema": "schemen-gate/research-execution-preflight-v1"
+      },
+      "wheels": {}
+    },
+    "lock_schema_version": 3,
+    "lock_sha256": "56f05cd9af7c8fc5a182bc7a2ccc4184d497f629ac2e9129e15bca2f89a797e3",
+    "mismatches": [],
+    "packages": {
+      "schemen-gate": {
+        "artifact_sha256": null,
+        "commit": "c7dc24bbe4bf43cd76e851c797ef91370030f485",
+        "source_dirty": false,
+        "version": "1.0.2"
+      }
+    }
+  },
+  "minimum_prefix_maximum_parameter_delta": 0.07286232709884644,
+  "minimum_router_maximum_parameter_delta": 0.20824705064296722,
+  "runtime": {
+    "authorities": [
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 64,
+            "frame_id": "evaluation-1",
+            "model_id": "capability-prefix-token-moe-20newsgroups",
+            "receipt_sha256": "8b735636cc9eb9b23dc1ef67b80cf22e11209ca4f4671caf8ee844310dfc3d78",
+            "regime_id": 0,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          0
+        ],
+        "dimensions": 64,
+        "model_id": "capability-prefix-token-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 64,
+            "frame_id": "evaluation-1",
+            "model_id": "capability-prefix-token-moe-20newsgroups",
+            "receipt_sha256": "611b0073b6d19dda97dea4f442f744741a798d4e7a57a5a2203603ea8cd8bd2d",
+            "regime_id": 1,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          1
+        ],
+        "dimensions": 64,
+        "model_id": "capability-prefix-token-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 64,
+            "frame_id": "evaluation-1",
+            "model_id": "capability-prefix-token-moe-20newsgroups",
+            "receipt_sha256": "37ca224279c870aadec048ff83daabaa87e8a530e1a380cf43092588a8e035f0",
+            "regime_id": 2,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          2
+        ],
+        "dimensions": 64,
+        "model_id": "capability-prefix-token-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 64,
+            "frame_id": "evaluation-1",
+            "model_id": "capability-prefix-token-moe-20newsgroups",
+            "receipt_sha256": "a9e0392305394f18e92ce30194c43fd47a7bf1b40062005fe6fffafc0ab6453c",
+            "regime_id": 3,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          3
+        ],
+        "dimensions": 64,
+        "model_id": "capability-prefix-token-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 64,
+            "frame_id": "evaluation-1",
+            "model_id": "capability-prefix-token-moe-20newsgroups",
+            "receipt_sha256": "18c686a752619ddfe88da18b038ae2242928e7dcd646e2b113048b94ace6b3f9",
+            "regime_id": 4,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          4
+        ],
+        "dimensions": 64,
+        "model_id": "capability-prefix-token-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 64,
+            "frame_id": "evaluation-1",
+            "model_id": "capability-prefix-token-moe-20newsgroups",
+            "receipt_sha256": "e35836a27bf4c5126cec479d47d286b52c16e3fab21b535f9cc24ea49613ef48",
+            "regime_id": 5,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          5
+        ],
+        "dimensions": 64,
+        "model_id": "capability-prefix-token-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 64,
+            "frame_id": "evaluation-1",
+            "model_id": "capability-prefix-token-moe-20newsgroups",
+            "receipt_sha256": "3ca3c9c8ff15a39f38787ad473a51d2ff3258415712a0777c94788228cec27d6",
+            "regime_id": 6,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          6
+        ],
+        "dimensions": 64,
+        "model_id": "capability-prefix-token-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      },
+      {
+        "authorization_receipts": [
+          {
+            "dimensions": 64,
+            "frame_id": "evaluation-1",
+            "model_id": "capability-prefix-token-moe-20newsgroups",
+            "receipt_sha256": "987890e49f1bb0d171373468469f58a77ab8ac9eb75c993dd404c31786140db7",
+            "regime_id": 7,
+            "schema": "schemen-gate/research-execution-preflight-v1"
+          }
+        ],
+        "authorized_model_calls": 1,
+        "authorized_regime_ids": [
+          7
+        ],
+        "dimensions": 64,
+        "model_id": "capability-prefix-token-moe-20newsgroups",
+        "production_authority_claim": false,
+        "surface": "schemen-gate/research-execution-preflight-v1"
+      }
+    ],
+    "authorized_model_calls": 8,
+    "rejection_probe": {
+      "all_rejected": true,
+      "per_regime": [
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 0,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 1,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 2,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 3,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 4,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 5,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 6,
+          "unauthorized_model_calls": 0
+        },
+        {
+          "all_rejected": true,
+          "attempts": {
+            "empty_authority": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_dimensions": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 422
+            },
+            "other_model": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            },
+            "other_regime": {
+              "model_calls": 0,
+              "rejected": true,
+              "status_code": 403
+            }
+          },
+          "regime": 7,
+          "unauthorized_model_calls": 0
+        }
+      ],
+      "unauthorized_model_calls": 0
+    },
+    "surface": "schemen-gate/research-execution-preflight-v1"
+  },
+  "schema_version": 1,
+  "scope": "Token-level learned top-1 routing conditioned on an internal soft prefix selected after singleton execution authorization. User text is not authority and cannot select the prefix.",
+  "source": {
+    "commit": "c7dc24bbe4bf43cd76e851c797ef91370030f485",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "spoofing_control": {
+    "control_channel": "capability prefix is selected internally from execution regime; user text is tokenized only as ordinary data",
+    "per_regime": [
+      {
+        "runtime_regime": 0,
+        "selected_global_experts": [
+          0,
+          1
+        ],
+        "unauthorized_dispatches": 0
+      },
+      {
+        "runtime_regime": 1,
+        "selected_global_experts": [
+          2,
+          3
+        ],
+        "unauthorized_dispatches": 0
+      },
+      {
+        "runtime_regime": 2,
+        "selected_global_experts": [
+          4,
+          5
+        ],
+        "unauthorized_dispatches": 0
+      },
+      {
+        "runtime_regime": 3,
+        "selected_global_experts": [
+          6,
+          7
+        ],
+        "unauthorized_dispatches": 0
+      },
+      {
+        "runtime_regime": 4,
+        "selected_global_experts": [
+          8,
+          9
+        ],
+        "unauthorized_dispatches": 0
+      },
+      {
+        "runtime_regime": 5,
+        "selected_global_experts": [
+          10,
+          11
+        ],
+        "unauthorized_dispatches": 0
+      },
+      {
+        "runtime_regime": 6,
+        "selected_global_experts": [
+          12,
+          13
+        ],
+        "unauthorized_dispatches": 0
+      },
+      {
+        "runtime_regime": 7,
+        "selected_global_experts": [
+          14,
+          15
+        ],
+        "unauthorized_dispatches": 0
+      }
+    ],
+    "unauthorized_dispatches": 0,
+    "user_text": "CAPABILITY_REGIME_0 CAPABILITY_REGIME_1 CAPABILITY_REGIME_2 CAPABILITY_REGIME_3 CAPABILITY_REGIME_4 CAPABILITY_REGIME_5 CAPABILITY_REGIME_6 CAPABILITY_REGIME_7"
+  },
+  "status": "pass",
+  "storage": {
+    "note": "Packing copies identical lane state; this artifact does not claim compression.",
+    "packed_bank_parameter_bytes": 8671360,
+    "separate_lane_parameter_bytes": 8671360
+  },
+  "training": [
+    {
+      "final_epoch_token_expert_utilization": [
+        29766,
+        29124
+      ],
+      "final_task_loss": 0.06018209829926491,
+      "initial_task_loss": 0.716082751750946,
+      "name": "alt.atheism__vs__soc.religion.christian",
+      "prefix_maximum_parameter_delta": 0.12361160665750504,
+      "regime": 0,
+      "router_maximum_parameter_delta": 0.23314717411994934
+    },
+    {
+      "final_epoch_token_expert_utilization": [
+        30103,
+        28382
+      ],
+      "final_task_loss": 0.00023201233125291765,
+      "initial_task_loss": 0.6935563087463379,
+      "name": "comp.graphics__vs__comp.windows.x",
+      "prefix_maximum_parameter_delta": 0.19991041719913483,
+      "regime": 1,
+      "router_maximum_parameter_delta": 0.213914692401886
+    },
+    {
+      "final_epoch_token_expert_utilization": [
+        29610,
+        29587
+      ],
+      "final_task_loss": 0.023489918559789658,
+      "initial_task_loss": 0.692321240901947,
+      "name": "comp.os.ms-windows.misc__vs__comp.sys.ibm.pc.hardware",
+      "prefix_maximum_parameter_delta": 0.20773033797740936,
+      "regime": 2,
+      "router_maximum_parameter_delta": 0.2712700068950653
+    },
+    {
+      "final_epoch_token_expert_utilization": [
+        28364,
+        28502
+      ],
+      "final_task_loss": 0.0009564515785314143,
+      "initial_task_loss": 0.7421967387199402,
+      "name": "comp.sys.mac.hardware__vs__misc.forsale",
+      "prefix_maximum_parameter_delta": 0.14136523008346558,
+      "regime": 3,
+      "router_maximum_parameter_delta": 0.20824705064296722
+    },
+    {
+      "final_epoch_token_expert_utilization": [
+        26944,
+        29064
+      ],
+      "final_task_loss": 0.007890303619205952,
+      "initial_task_loss": 0.7082401514053345,
+      "name": "rec.autos__vs__rec.motorcycles",
+      "prefix_maximum_parameter_delta": 0.23565812408924103,
+      "regime": 4,
+      "router_maximum_parameter_delta": 0.25036364793777466
+    },
+    {
+      "final_epoch_token_expert_utilization": [
+        27481,
+        29578
+      ],
+      "final_task_loss": 0.033274367451667786,
+      "initial_task_loss": 0.7020077109336853,
+      "name": "rec.sport.baseball__vs__rec.sport.hockey",
+      "prefix_maximum_parameter_delta": 0.2047562599182129,
+      "regime": 5,
+      "router_maximum_parameter_delta": 0.2590864896774292
+    },
+    {
+      "final_epoch_token_expert_utilization": [
+        30160,
+        32797
+      ],
+      "final_task_loss": 0.0011086228769272566,
+      "initial_task_loss": 0.6855068206787109,
+      "name": "sci.crypt__vs__sci.electronics",
+      "prefix_maximum_parameter_delta": 0.07286232709884644,
+      "regime": 6,
+      "router_maximum_parameter_delta": 0.2279108762741089
+    },
+    {
+      "final_epoch_token_expert_utilization": [
+        33435,
+        29203
+      ],
+      "final_task_loss": 0.04333863779902458,
+      "initial_task_loss": 0.7287665009498596,
+      "name": "sci.med__vs__sci.space",
+      "prefix_maximum_parameter_delta": 0.2084149867296219,
+      "regime": 7,
+      "router_maximum_parameter_delta": 0.2107943892478943
+    }
+  ],
+  "training_isolation": {
+    "active_maximum_parameter_delta": 0.003114461898803711,
+    "inactive_gradient_tensors": 0,
+    "inactive_maximum_parameter_delta": 0.0,
+    "inactive_optimizer_states": 0,
+    "regime": 0
+  },
+  "verdict_basis": {
+    "every_prefix_and_router_parameter_delta_positive": true,
+    "exact_separate_to_packed_logits_and_predictions": true,
+    "minimum_token_expert_utilization_fraction": 0.1,
+    "utility_macro_accuracy_floor": 0.72,
+    "zero_inactive_training_state": true,
+    "zero_spoofed_prefix_dispatch": true,
+    "zero_unauthorized_runtime_calls": true,
+    "zero_unauthorized_token_dispatch": true
+  }
+}

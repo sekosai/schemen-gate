@@ -1,0 +1,236 @@
+{
+  "schema_version": 2,
+  "experiment": "local_transformer_cotenancy_suite",
+  "run_mode": "full",
+  "status": "pass",
+  "created_at_utc": "2026-08-21T04:56:40.230925+00:00",
+  "elapsed_seconds": 1.0586391249671578,
+  "environment": {
+    "python": "3.14.6",
+    "torch": "2.12.1",
+    "numpy": "2.4.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "libraries": {
+      "lock_schema_version": 1,
+      "lock_sha256": "109175bb37f880694bdbd1bf30d47370ae629445c51e18c4e9694f07a1b42b9b",
+      "packages": {
+        "schemen-gate": {
+          "version": "1.0.1",
+          "commit": "18a11755f0cfc3c2849f89bfc3fcf058970b8bf4",
+          "source_root": "<historical-local-root>/worktrees/schemen-gate-github-v1",
+          "source_dirty": false,
+          "direct_url": "historical-local-source:worktrees/schemen-gate-github-v1"
+        },
+        "private-companion-harness": {
+          "version": "0.4.0",
+          "commit": "8c4af2a707162c44674b6ba794886bcfcf3c7931",
+          "source_root": "<historical-local-root>/worktrees/<private-companion-harness>",
+          "source_dirty": false,
+          "direct_url": "historical-local-source:worktrees/<private-companion-harness>"
+        }
+      },
+      "mismatches": []
+    }
+  },
+  "config": {
+    "seed": 42,
+    "regimes": 4,
+    "model_dim": 32,
+    "ffn_dim": 64,
+    "classes": 4,
+    "sequence_length": 6,
+    "train_examples": 384,
+    "test_examples": 256,
+    "steps": 240,
+    "learning_rate": 0.03
+  },
+  "source": {
+    "commit": "4c4d30837d6e23464a3e6c5a4242518d47526ea2",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "results": [
+    {
+      "design": "pre_mlp_ffn_input_gate",
+      "declared_surface": "FFN input coordinates and aligned rows of the first projection; the hidden activation, down projection, and upstream mixed paths are not partitioned by this placement alone",
+      "dimensions_per_regime": 8,
+      "maximum_full_vs_extracted_difference": 0.0,
+      "finite_precision_tolerance": 1e-05,
+      "maximum_inactive_input_gradient": 0.0,
+      "maximum_inactive_w1_row_gradient": 0.0,
+      "maximum_active_w1_row_gradient": 86.24966430664062,
+      "separation_pass": true
+    },
+    {
+      "design": "dense_intermediate_ffn_partition",
+      "shared_paths": "frozen Transformer backbone; fixed output coordinates",
+      "dimensions_per_regime_per_layer": 16,
+      "maximum_unauthorized_parameter_delta": 0.0,
+      "maximum_unauthorized_optimizer_moment": 0.0,
+      "mean_owning_accuracy": 0.896484375,
+      "mean_wrong_key_accuracy": 0.2698567708333333,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.90625,
+          "wrong_key_mean_accuracy": 0.3294270833333333
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.88671875,
+          "wrong_key_mean_accuracy": 0.21484375
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.89453125,
+          "wrong_key_mean_accuracy": 0.28515625
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.8984375,
+          "wrong_key_mean_accuracy": 0.25
+        }
+      ],
+      "separation_pass": true
+    },
+    {
+      "design": "complete_gated_residual_adapters",
+      "shared_paths": "frozen Transformer backbone; fixed output coordinates",
+      "maximum_inactive_module_delta": 0.0,
+      "mean_owning_accuracy": 0.884765625,
+      "mean_wrong_key_accuracy": 0.27701822916666663,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.90234375,
+          "wrong_key_mean_accuracy": 0.3450520833333333
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.8828125,
+          "wrong_key_mean_accuracy": 0.21223958333333334
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.87109375,
+          "wrong_key_mean_accuracy": 0.296875
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.8828125,
+          "wrong_key_mean_accuracy": 0.25390625
+        }
+      ],
+      "separation_pass": true
+    },
+    {
+      "design": "hard_routed_private_experts",
+      "shared_paths": "frozen Transformer backbone; fixed output coordinates",
+      "maximum_inactive_module_delta": 0.0,
+      "mean_owning_accuracy": 0.8876953125,
+      "mean_wrong_key_accuracy": 0.2490234375,
+      "per_regime": [
+        {
+          "regime": 0,
+          "owning_accuracy": 0.90234375,
+          "wrong_key_mean_accuracy": 0.2734375
+        },
+        {
+          "regime": 1,
+          "owning_accuracy": 0.87890625,
+          "wrong_key_mean_accuracy": 0.20703125
+        },
+        {
+          "regime": 2,
+          "owning_accuracy": 0.875,
+          "wrong_key_mean_accuracy": 0.26171875
+        },
+        {
+          "regime": 3,
+          "owning_accuracy": 0.89453125,
+          "wrong_key_mean_accuracy": 0.25390625
+        }
+      ],
+      "separation_pass": true
+    },
+    {
+      "design": "deliberately_broken_gate_placement_controls",
+      "correctly_placed_cross_mask_max": 0.0,
+      "layernorm_between_source_and_gate_max": 0.1259835958480835,
+      "ungated_residual_bypass_max": 3.0,
+      "negative_controls_triggered": true,
+      "separation_pass": true
+    },
+    {
+      "design": "cargo_corpus_runtime_authorization",
+      "owning_retrieval_matches": true,
+      "random_key_rejected": true,
+      "other_operation_key_rejected": true,
+      "other_tenant_key_rejected": true,
+      "other_sub_id_key_rejected": true,
+      "other_model_key_rejected": true,
+      "other_policy_key_rejected": true,
+      "other_regime_key_rejected": true,
+      "other_partition_same_regime_rejected": true,
+      "receipt_verifies": true,
+      "wrong_key_model_calls": 0,
+      "owning_key_model_calls": 1,
+      "separation_pass": true
+    },
+    {
+      "design": "released_runtime_inference_stream_authorization",
+      "declared_surface": "configured embedding protocol + regime authorization before the experiment's backbone callback; tenant identity remains a serving-layer input",
+      "unauthorized_attempts": {
+        "other_regime": {
+          "rejected": true,
+          "model_calls": 0
+        },
+        "other_model": {
+          "rejected": true,
+          "model_calls": 0
+        },
+        "other_dimensions": {
+          "rejected": true,
+          "model_calls": 0
+        },
+        "empty_authority": {
+          "rejected": true,
+          "model_calls": 0
+        }
+      },
+      "unauthorized_model_calls": 0,
+      "owning_model_calls": 1,
+      "maximum_authorized_output_difference": 0.0,
+      "separation_pass": true
+    }
+  ],
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "transformer_cotenancy_local_20260820_215640.json",
+    "original_relative_path": "experiments/results/transformer_cotenancy_local_20260820_215640.json",
+    "original_sha256": "0be48c39a1529397e4561db99ae2814609c9d518f557ca789f1f93095be1dd83",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-checkout-marker": "a normalized checkout path naming the private companion harness is replaced by '<private-companion-harness>'; the recorded commit and dirty flags are unchanged",
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "environment.libraries.packages.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "environment.libraries.packages.private-companion-harness.source_root",
+        "rule": "private-harness-checkout-marker"
+      },
+      {
+        "path": "environment.libraries.packages.private-companion-harness.direct_url",
+        "rule": "private-harness-checkout-marker"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

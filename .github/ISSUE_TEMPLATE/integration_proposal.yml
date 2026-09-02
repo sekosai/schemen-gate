@@ -1,0 +1,40 @@
+name: Integration proposal
+description: Propose a bounded authority, runtime, model, or deployment integration.
+title: "[integration] "
+labels: [integration, discussion]
+body:
+  - type: textarea
+    id: user
+    attributes:
+      label: User and need
+      description: Who needs this integration, and what concrete workflow should succeed?
+    validations:
+      required: true
+  - type: textarea
+    id: authority
+    attributes:
+      label: Authority boundary
+      description: Who authenticates identity, resolves the Gate, and controls scope, expiry, revocation, and replay?
+    validations:
+      required: true
+  - type: textarea
+    id: placement
+    attributes:
+      label: Gate placement and state boundary
+      description: Where is the Gate applied, what state may change, and what remains shared?
+    validations:
+      required: true
+  - type: textarea
+    id: negatives
+    attributes:
+      label: Required negative tests
+      description: Name wrong-authority, stale, revoked, replayed, and bypass cases that must fail.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Verification evidence
+      description: What clean reproduction or deployment receipt would support the bounded claim?
+    validations:
+      required: true

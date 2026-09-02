@@ -1,0 +1,2716 @@
+{
+  "schema_version": 1,
+  "experiment": "distilbert_runtime_service_consolidation_combined",
+  "created_at_utc": "2026-08-21T13:55:30.706851+00:00",
+  "source": {
+    "commit": "31db5e4fa55528fca035d1699b6799ca0c3f3e16",
+    "dirty": false,
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "script_sha256": "66e575b748a1d4fb491bb937d560325b8717813328f910b4d875354c17f36038",
+    "wheel_bundle": {
+      "wheels": {
+        "schemen-gate": {
+          "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+          "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+          "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+        },
+        "private-companion-harness": {
+          "path": "<private-companion-harness-wheel>",
+          "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+          "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+        }
+      },
+      "mismatches": []
+    }
+  },
+  "result": {
+    "schema_version": 1,
+    "experiment": "distilbert_runtime_service_consolidation",
+    "status": "pass",
+    "created_at_utc": "2026-08-21T13:55:29.555225+00:00",
+    "elapsed_seconds": 13.72181895,
+    "config": {
+      "seed": 42,
+      "R": 8,
+      "examples": 872,
+      "max_length": 128,
+      "batch_size": 32,
+      "warmups": 10,
+      "repetitions": 50,
+      "smoke": false
+    },
+    "source": {
+      "commit": "31db5e4fa55528fca035d1699b6799ca0c3f3e16",
+      "dirty": false,
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "script_sha256": "66e575b748a1d4fb491bb937d560325b8717813328f910b4d875354c17f36038",
+      "wheel_bundle": {
+        "wheels": {
+          "schemen-gate": {
+            "path": "<historical-local-root>/worktrees/cdp-experiments-v1/experiments/vendor/schemen_gate-1.0.1-py3-none-any.whl",
+            "sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4",
+            "expected_sha256": "06d86f3c58e56e12417244422a71d7e3f439d876c7a46c0d8760215421256dc4"
+          },
+          "private-companion-harness": {
+            "path": "<private-companion-harness-wheel>",
+            "sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db",
+            "expected_sha256": "93556ea091264c6ea6ed79ab5a835728d9d9c9031e35089af8d063da1fe9f0db"
+          }
+        },
+        "mismatches": []
+      }
+    },
+    "assets": {
+      "model": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+      "model_revision": "714eb0fa89d2f80546fda750413ed43d93601a13",
+      "dataset": "nyu-mll/glue",
+      "dataset_config": "sst2",
+      "dataset_revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c"
+    },
+    "environment": {
+      "python": "3.12.10",
+      "torch": "2.12.1+cu130",
+      "gpu": "Tesla T4",
+      "dtype": "torch.float16"
+    },
+    "conditions": {
+      "separate_services": {
+        "checkpoint_tensor_bytes": 1071280160,
+        "resident_cuda_parameter_and_buffer_bytes": 1102979072,
+        "peak_cuda_allocated_bytes_during_load": 1102979072,
+        "warm_cache_serial_construction_to_ready_seconds": 1.4725934679999995,
+        "active_parameter_bytes_per_request": 133910020,
+        "utility_accuracy": 0.9105504587155964,
+        "utility_correct": 794,
+        "utility_total": 872,
+        "timing": {
+          "requests": 50,
+          "samples": 1600,
+          "p50_latency_ms": 20.236291499999837,
+          "p95_latency_ms": 20.9432531999985,
+          "mean_latency_ms": 20.08546239999994,
+          "throughput_samples_per_second": 1593.1920989780199
+        }
+      },
+      "shared_backbone_private_adapters": {
+        "checkpoint_tensor_bytes": 151643168,
+        "resident_cuda_parameter_and_buffer_bytes": 156168192,
+        "peak_cuda_allocated_bytes_during_load": 156168192,
+        "warm_cache_serial_construction_to_ready_seconds": 0.13660450400000101,
+        "active_parameter_bytes_per_request": 135090436,
+        "utility_accuracy": 0.9105504587155964,
+        "utility_correct": 794,
+        "utility_total": 872,
+        "timing": {
+          "requests": 50,
+          "samples": 1600,
+          "p50_latency_ms": 20.22660300000112,
+          "p95_latency_ms": 21.30236750000023,
+          "mean_latency_ms": 20.261511160000225,
+          "throughput_samples_per_second": 1579.3491288632808
+        }
+      },
+      "shared_ffn_authorized_slices": {
+        "checkpoint_tensor_bytes": 142199840,
+        "resident_cuda_parameter_and_buffer_bytes": 146706432,
+        "peak_cuda_allocated_bytes_during_load": 146706432,
+        "warm_cache_serial_construction_to_ready_seconds": 0.12538385200000235,
+        "active_parameter_bytes_per_request": 84332548,
+        "utility_accuracy": 0.676605504587156,
+        "utility_correct": 590,
+        "utility_total": 872,
+        "timing": {
+          "requests": 50,
+          "samples": 1600,
+          "p50_latency_ms": 20.234827500001273,
+          "p95_latency_ms": 21.282704900000837,
+          "mean_latency_ms": 20.194153060000275,
+          "throughput_samples_per_second": 1584.6170871797663
+        }
+      },
+      "physically_extracted_authorized_slice": {
+        "checkpoint_tensor_bytes": 142199840,
+        "resident_cuda_parameter_and_buffer_bytes": 143966208,
+        "peak_cuda_allocated_bytes_during_load": 143966208,
+        "warm_cache_serial_construction_to_ready_seconds": 0.43290800700000176,
+        "active_parameter_bytes_per_request": 84332548,
+        "utility_accuracy": 0.676605504587156,
+        "utility_correct": 590,
+        "utility_total": 872,
+        "timing": {
+          "requests": 50,
+          "samples": 1600,
+          "p50_latency_ms": 11.239334999999073,
+          "p95_latency_ms": 11.821817399999366,
+          "mean_latency_ms": 11.140411280000038,
+          "throughput_samples_per_second": 2872.4253706367554
+        }
+      }
+    },
+    "extraction_equivalence": {
+      "comparison": "dense masked FFN versus physical row/column extraction",
+      "max_absolute_logit_difference": 0.0009765625,
+      "tolerance": 0.02,
+      "within_tolerance": true
+    },
+    "runtime": {
+      "surface": "<private-companion-harness-surface>",
+      "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+      "dimensions": 3072,
+      "authorized_regime_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "authorized_model_calls": 352,
+      "authorization_receipts": [
+        {
+          "frame_id": "evaluation-1",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "7c6e933b24d9f04897ffe2346bcabe481ab629928bfab6311c38739f33bd7ee4"
+        },
+        {
+          "frame_id": "evaluation-2",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "8f5862171547339dcd27d8e538f0675e892ab633c3e4ffcc682ad709d9421fe7"
+        },
+        {
+          "frame_id": "evaluation-3",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "20d739c0f59f1eb068f492ed19e50e59cfdf87769953acf61e901412024e7539"
+        },
+        {
+          "frame_id": "evaluation-4",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "844baf255f93baa640acc28166b2d76132df690bf9abf39c284af669a83e498e"
+        },
+        {
+          "frame_id": "evaluation-5",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "1fb4ead31a635378f00e4c5c56c8385a8fd9b8bb48912636d4ec980a13047e5e"
+        },
+        {
+          "frame_id": "evaluation-6",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "f6e25115048732352d4de1592368181f4c9eeed321ca55ebbb43d47c721a546e"
+        },
+        {
+          "frame_id": "evaluation-7",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "5732e91aea4c96a9212e9f191c86c1f70907ce106ff9d87b5d8c9c834b0c509e"
+        },
+        {
+          "frame_id": "evaluation-8",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "e1e23646db93c6409aab65a75c560a27e780d1e661547a8e7ae475b8e4c2dbfb"
+        },
+        {
+          "frame_id": "evaluation-9",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "0acf4b25396ca633d3c3d98cb424ef6c8c4fd43451900e4c202f79e860f87444"
+        },
+        {
+          "frame_id": "evaluation-10",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "66b60af9c480816931f88b08153524a1d136e88652eaac6b34e34ab231e9c592"
+        },
+        {
+          "frame_id": "evaluation-11",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "8a0a730a19dc43d2818ea15a4b69301ccf413b19ff689299530a3484ee5e38b3"
+        },
+        {
+          "frame_id": "evaluation-12",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "76fb9086de57b72c585a3e7424f3b2f90996ffbf5b4ba76f25b52ec968bb32cd"
+        },
+        {
+          "frame_id": "evaluation-13",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "132de3d123d676892d185154873e1f76fbf7b2012cac14aa5d7a26f24ebe9908"
+        },
+        {
+          "frame_id": "evaluation-14",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "babc8557a709f17930a3ccdb7677d24336a1202153eedc274fb714b2434bd7f8"
+        },
+        {
+          "frame_id": "evaluation-15",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "febd48aa5318f859447d7afd01e3da1cfd91ca1dbf706e8270816d9329a9487e"
+        },
+        {
+          "frame_id": "evaluation-16",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "76dbbf6650e7dddf1970bca92677ffc20ca38080ff5800e622d18649b846c5b6"
+        },
+        {
+          "frame_id": "evaluation-17",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "77c6789c5afb1e5c42287af292d6e7f1f07cc03f678aeed035b9a2cced49fd60"
+        },
+        {
+          "frame_id": "evaluation-18",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "405e64ffc2309bf12a57f6965af6403f93a917e52bf014832a1f418cc9439c50"
+        },
+        {
+          "frame_id": "evaluation-19",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "f1148e3b41b67c64c34d3d5a55089224dd538a6d6de98762bcedad9f8822e105"
+        },
+        {
+          "frame_id": "evaluation-20",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "17facd12c6382aa3fda9e8863b8b918943c7ff4271d81eafd6bd5a932db1ffe4"
+        },
+        {
+          "frame_id": "evaluation-21",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "b81f04ffc1a07478a0910038e01bd4d3aa64bdc7785edb53ac0a39ed140cc1da"
+        },
+        {
+          "frame_id": "evaluation-22",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "cdc232a54e436b4c145b8c6bc853f5dbb14ea62b684775a3668847adca156338"
+        },
+        {
+          "frame_id": "evaluation-23",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "e32d49895718cfa8ae689de5180d8082133be500df88879a36560ab074621014"
+        },
+        {
+          "frame_id": "evaluation-24",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "5ea9ea79894f494b70dac75d4d79f732bbc39285c1965b8d59a403c38cc1144b"
+        },
+        {
+          "frame_id": "evaluation-25",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "0a86fb8caa2d1cfa36b2fa7639398f73a791f0e0c63fc49248fec82c8fe9e2d0"
+        },
+        {
+          "frame_id": "evaluation-26",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "a22626aba1c4a9c7122713ea1c5086dfffc35a0dfd8c27192fe30cdfee50bd42"
+        },
+        {
+          "frame_id": "evaluation-27",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "2fcc74597f8a4a30b3633fef4b9f92b6b5691694fef4fcf4176e6cc3c7f31757"
+        },
+        {
+          "frame_id": "evaluation-28",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "f548545e1365912f6309846c2ea8f87e37e6d8572629c9001668c54913acc97a"
+        },
+        {
+          "frame_id": "evaluation-29",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "8fcbe055256d7d278263c953596338fb7e3f8a1f03199c42060232a65d8ca176"
+        },
+        {
+          "frame_id": "evaluation-30",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "f65914930ffb22a5d3b059d4ca80007c713d33c8c0201947ff324033377d4418"
+        },
+        {
+          "frame_id": "evaluation-31",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "0ae507cbc098992662641154f7d22cf2f7d6280342d6388f6157efad7698dd51"
+        },
+        {
+          "frame_id": "evaluation-32",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "7358fc2debf8900e57c4e0df59c75acb8f2dcc709660a06a7f48dcf1babb32d2"
+        },
+        {
+          "frame_id": "evaluation-33",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "2b442f01bd2f3e3b617bc963cde65ad405677b409acb307420a407831975bd52"
+        },
+        {
+          "frame_id": "evaluation-34",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "1fead582ec19a1ccbc740232cdc7413ca3afd873ba90bf392babed4dd6ebd227"
+        },
+        {
+          "frame_id": "evaluation-35",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "959f06a08c43e58ce28c2c5d7a3bff4532116668649cbd0780a106ddbe86d00a"
+        },
+        {
+          "frame_id": "evaluation-36",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "308b2a85034068df553465e4e357a2532d8faaeff91e7f819da810f757bb74a2"
+        },
+        {
+          "frame_id": "evaluation-37",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "504ee4d83f96c66c41785a5a54b4145654e81225053492178432db0f2bfc59bb"
+        },
+        {
+          "frame_id": "evaluation-38",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "02d165f906544d8dab45bea78926cdc1fe26fa1386ab9ff6e5254b84a9bfb20f"
+        },
+        {
+          "frame_id": "evaluation-39",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "034e7e68c682f13be472eac7e7d494b024e8bc67b06d472917d8ce7a189e9213"
+        },
+        {
+          "frame_id": "evaluation-40",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "4f0acd30efb4c72e3f88f280cb172cc15267d48fdfc1a92e30e31a0ef1d3e559"
+        },
+        {
+          "frame_id": "evaluation-41",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "1c00e0f2966da66c708c9317f8b46d226b446b2745644ed4b17e108afab6f60b"
+        },
+        {
+          "frame_id": "evaluation-42",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "a20f4972991c4501b9cb2acb925b4ee1a673f75c306f1c1870f319cad12b2b4d"
+        },
+        {
+          "frame_id": "evaluation-43",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "d931e37bfa02c2f9e9ba10f0312f2516c903f121aebd9cd5d7e533eb986717d7"
+        },
+        {
+          "frame_id": "evaluation-44",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "66b383000f9de43f51d06f37d508b0ab690683371dc6a2dcb538851a612cd2cd"
+        },
+        {
+          "frame_id": "evaluation-45",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "defb4a0585f0d17dec44b240e645b7401e6de16a205a05c46b788549e4cf84b4"
+        },
+        {
+          "frame_id": "evaluation-46",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "e298fd750f54baab0288ab75911c4bca371e6bf96dea440e38aa64510b9f0a46"
+        },
+        {
+          "frame_id": "evaluation-47",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "9368f74c3cdfac56c3e29fef4d344f1b5c3b986fb733326859e640114a7f7427"
+        },
+        {
+          "frame_id": "evaluation-48",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "ab51a9aa0d3dc75bb0b1a52cfde53ff37722ab0412744f5db5edfbe680050ede"
+        },
+        {
+          "frame_id": "evaluation-49",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "dcb78715f388457973d672fc294cba32231b7690da5bd66498b31546baae5397"
+        },
+        {
+          "frame_id": "evaluation-50",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "c58b82b4040ab5cd7ee58074f77f1fd5bae5b93730b665136529dcea4d58bec1"
+        },
+        {
+          "frame_id": "evaluation-51",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "cccd469c7b9c4cecacd6e74d8948c16c42c674009cf7f7097c735c767ebb988d"
+        },
+        {
+          "frame_id": "evaluation-52",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "030680db54d4eea6125216745dfae6157249f1f8d4ff7aeb6a09c31de22e10df"
+        },
+        {
+          "frame_id": "evaluation-53",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "e78a07a752460ac05256433ab064bdb4f4d089813bcd30c737ea684bd582823f"
+        },
+        {
+          "frame_id": "evaluation-54",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "f1c10673bc5d1e440c10cfca7e8ef288040aeada4f93af4ffd78d52714ea3060"
+        },
+        {
+          "frame_id": "evaluation-55",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "9d780e79c580cd7f8820747df20dadd4cd36df7323fca663e7d5b2c8bc560a74"
+        },
+        {
+          "frame_id": "evaluation-56",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "4ec4bdcd88adca3858f614829ef4815efc60cb16720d17c43cb4cf9704eed94d"
+        },
+        {
+          "frame_id": "evaluation-57",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "d17f7991d953685ac1639f531ce189b573c723eff0469180e34dc4ac8688f20b"
+        },
+        {
+          "frame_id": "evaluation-58",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "49b24aa736a43e2a7e6c8c16b45b2c8135e009a0ff4dcfe0db7f9e60a6d43b5f"
+        },
+        {
+          "frame_id": "evaluation-59",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "22d3b841da43069b089f8c51f41fb9a25f977b0f54c3a80e79537cc3f587c6da"
+        },
+        {
+          "frame_id": "evaluation-60",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "0f3bd56b3efa4f603f7fcbfca09726a4acb6f62ce55db4d5f9b43c74224ad103"
+        },
+        {
+          "frame_id": "evaluation-61",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "ae632842276eb189d4aac2fac9ad123478a41dba9b2636224abd42084fa6b395"
+        },
+        {
+          "frame_id": "evaluation-62",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "1217dd7a5aa1f1590c06b68988d5cb1b2fcb8b564977606e176af55d6bff1bf6"
+        },
+        {
+          "frame_id": "evaluation-63",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "cb29002d409990258c4828f9c45d6745ff7d42f17d45d01c80d67188390202de"
+        },
+        {
+          "frame_id": "evaluation-64",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "2878fcead94a400bc0ca1fb5a6d3518053b9dcfdf86bf0b9f7e256cde54c4224"
+        },
+        {
+          "frame_id": "evaluation-65",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "3e58b186eee5e5a9c3ec971ad6fa5ef73f4bf76e8ed6a312176057806a454b25"
+        },
+        {
+          "frame_id": "evaluation-66",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "7d731c0e9df42396ab29a64f7cbc80bfed5ee88c110e8f6018928cafbebc05cc"
+        },
+        {
+          "frame_id": "evaluation-67",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "26096740ed777e6a5a3fb2e31a8f608b0d679874b48e6f4cac3f25b9aeca396f"
+        },
+        {
+          "frame_id": "evaluation-68",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "3d36f1bb007c050a590e2a4f5a7c1153ea8f681c641d4baada047d4170ddaa2a"
+        },
+        {
+          "frame_id": "evaluation-69",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "55ada5905d13988ee7e0b0bb6bcfdee431c8e316f06c337ecb28d977ace01e43"
+        },
+        {
+          "frame_id": "evaluation-70",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "ae0cb9810eccbb0e15afca3d42f57d0f49553fb8341a91ca5944ab98a39bb755"
+        },
+        {
+          "frame_id": "evaluation-71",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "8fc737234e27b40f8240412b9a8ea2ddf3f806281bee8b44fd9d0df75346f93d"
+        },
+        {
+          "frame_id": "evaluation-72",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "2be9b4f0ac9c068bfd46f44d1e87bdfcdbbb29ed80ff204eb1b675ae93e48b0a"
+        },
+        {
+          "frame_id": "evaluation-73",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "d0345b546831c35efd013c4e3144eb95bd025572a51f07ec491d50e11ec76ddc"
+        },
+        {
+          "frame_id": "evaluation-74",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "37852e0723458ff5c169c47037327ecbdf980368dee6e8aa347867b6f636b653"
+        },
+        {
+          "frame_id": "evaluation-75",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "d00b7170106a8b01fb73d89e49e4a9d06d90f219c3973c5f0e6ab21ca9de1ebd"
+        },
+        {
+          "frame_id": "evaluation-76",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "11145229bf0afd0b44646be9965b8c5c35df43523e4f7b653f454b2bdbd0d8ed"
+        },
+        {
+          "frame_id": "evaluation-77",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "4e0c4ed19eaafe4da8b4af65ddfe72cd74d69fe9d3a5e49ed403dbcf6e12ebc9"
+        },
+        {
+          "frame_id": "evaluation-78",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "15906e770c7402415840a53273de8489ce9d632c40e562153ca86d58606050d2"
+        },
+        {
+          "frame_id": "evaluation-79",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "d39ec36cbd76a5a2e5ea9a50792e80405d4da21c85b980eaaea22365a8ba1364"
+        },
+        {
+          "frame_id": "evaluation-80",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "9b5b6e95a9a4056a6fd43bb4ed86c705e5595c65a473870e18efc0eea2f6d932"
+        },
+        {
+          "frame_id": "evaluation-81",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "d466e83e904418f2e3c28d5301736b56079a9f54e3311ed0ada643af20e12830"
+        },
+        {
+          "frame_id": "evaluation-82",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "53e8552f46b23df2666bab0d126a9ff483ddfc0735d2c897a58cc015504ed5ae"
+        },
+        {
+          "frame_id": "evaluation-83",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "60f9fdb585827d6f615adc7b6c78bc5388b2c56f6f0be312529a624eaa72ffc4"
+        },
+        {
+          "frame_id": "evaluation-84",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "6d45d818b407623fbde9cbd3fc4f50a823137b1736b105cad68c63549f497c04"
+        },
+        {
+          "frame_id": "evaluation-85",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "f0a510f9284ee73f5f9879df42a7824c877bb6553f4fe2231825018cb74af02d"
+        },
+        {
+          "frame_id": "evaluation-86",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "4d63013e46eb095ea6b91d8588356308aed54e57219e2548157b32d01af8a3ce"
+        },
+        {
+          "frame_id": "evaluation-87",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "6bb89c9e56595c46fc76c29d748309fe7bbab45ab63bb88b20b66a0e3f405a16"
+        },
+        {
+          "frame_id": "evaluation-88",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "8b0b8bb017bc165d00c88ff4b357bd2e0403544c8cf07cbf7c5181f15cfcbda0"
+        },
+        {
+          "frame_id": "evaluation-89",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "16b60b0ce891b5ffd47eb957107e1e6a745fd3e22ee6ef5c84865f9283b36545"
+        },
+        {
+          "frame_id": "evaluation-90",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "67a24898f10767bc720c8e6e0b0d1f713c3f291c51c017b74239a68e6db0a70a"
+        },
+        {
+          "frame_id": "evaluation-91",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "51ffdfe7d61396f3f00ed0b928f00d5e8bc02e5441a5af54b07854bf7dfe79b8"
+        },
+        {
+          "frame_id": "evaluation-92",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "ba411a2846c4bfb3b74494b795a3032036ef5cf019c63875b5b4f8144ac8182c"
+        },
+        {
+          "frame_id": "evaluation-93",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "0f5b4e9362b3ed1a5fc51e1ecf2b4674d56071ce89fbbb0a5fdd84a2d8e449fa"
+        },
+        {
+          "frame_id": "evaluation-94",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "7377efe3f3d91db2bc53b45ca65768a96387b6423a2cd9804a630ed0b38c3e5a"
+        },
+        {
+          "frame_id": "evaluation-95",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "ffea2037ba64d7544e54b2970a77f67af899794e555a33b756c362740ed5fa02"
+        },
+        {
+          "frame_id": "evaluation-96",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "83893ef88782e2b164646db0ce5dba14043b06fab6352aa47e2f8ff84e4ab03c"
+        },
+        {
+          "frame_id": "evaluation-97",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "17581b023c2ee9de2df51b5a006deed8588f94e399348fb120ef6a2abac4098a"
+        },
+        {
+          "frame_id": "evaluation-98",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "21e32666f1d031a9853c48efbf80bf69ec31ab3abd3a0eb0595f39f3475a8952"
+        },
+        {
+          "frame_id": "evaluation-99",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "7787d975d52b41a7876a86df539ea5c7cd32d7ea34ca4467c02ee6fde57024de"
+        },
+        {
+          "frame_id": "evaluation-100",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "fe343e094289c8cca3fd12de8e1f2f2841a420a4c6a0d7ca77e0b9ffc4906c25"
+        },
+        {
+          "frame_id": "evaluation-101",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "0e95887cec25112e643fcba355491d1a4d8e05f494f6f285ee25c66422d0ab8d"
+        },
+        {
+          "frame_id": "evaluation-102",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "7798ccf7f88053a7ba92c1888e130921c0c34277159b88b3a03a9f15cfb537e3"
+        },
+        {
+          "frame_id": "evaluation-103",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "25399fb50aec37dc196912daaf752323741574748c2df63a1f7922f6b55e2aaa"
+        },
+        {
+          "frame_id": "evaluation-104",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "587d57bcfdeb3d6b281cfa0838ba0365ad9f37e0c61b515c3720a6f635a537ab"
+        },
+        {
+          "frame_id": "evaluation-105",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "668f92f5e4b83eda745b94ba81bfefb7c8b924b05c96fd286be17faaef1b65d0"
+        },
+        {
+          "frame_id": "evaluation-106",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "2198577d8eabd4ab03960dc0941c81389bca75c95bb08fe877cfe5424cff3139"
+        },
+        {
+          "frame_id": "evaluation-107",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "f841f1462609ac4731309ea22a0b5ff349b06f95ca348b5ac2fd684b7c8082e6"
+        },
+        {
+          "frame_id": "evaluation-108",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "b0470f11b94073caf777d7c2d629950a94c47e376b933cd3d8f60adaf1876542"
+        },
+        {
+          "frame_id": "evaluation-109",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "02140ea0fa177129cd3a62fcf55c4dfc9a150961dc55e1e9d092fe1a5304d50e"
+        },
+        {
+          "frame_id": "evaluation-110",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "50245851c3037d040d8cf72f6461a55cf38e93b83602ece867d7927810b78b48"
+        },
+        {
+          "frame_id": "evaluation-111",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "3256da5d7178b12ed0dfac6066cf5243dbf3ac2b7ca52cf5ce0045d93ae09c3f"
+        },
+        {
+          "frame_id": "evaluation-112",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "5ddb881c2d1dc178e3e2ee450436d94c6fb27d85d01baea07d003003fbdeb204"
+        },
+        {
+          "frame_id": "evaluation-113",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "343e12c9859dc61dcb670013948ee4654b841297cb705088e5ad5ac085353db9"
+        },
+        {
+          "frame_id": "evaluation-114",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "f1cfd86a6104008e6bc4ba27f46bf37a4c3e1a768f01be8b7c000f7c2a6a1b32"
+        },
+        {
+          "frame_id": "evaluation-115",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "52aafe7c40e9e878a15a54c2139a3a7f339babfe287bb2806e2880017f62e15d"
+        },
+        {
+          "frame_id": "evaluation-116",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "6a9c5efbea8b26793a068d7775cfce23334200f32a5a0b9142b1f143ae39c139"
+        },
+        {
+          "frame_id": "evaluation-117",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "ecddb92f989c955e1a15b6cf1c7f42cd38e139a8c736b20179a84cb36ef4e323"
+        },
+        {
+          "frame_id": "evaluation-118",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "7d10586a39719a8d0e92231030f7468d5bfbc67abd9bc26845a87622f3ffcdcf"
+        },
+        {
+          "frame_id": "evaluation-119",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "189a0d0cc37c81f1679abcdc4872008d43efb98fa7b6d41a1eb70216845ccbec"
+        },
+        {
+          "frame_id": "evaluation-120",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "3726ca6588bcf7f2cc4c745af157ec869058b5714f63f33b25b7dad1cb344c95"
+        },
+        {
+          "frame_id": "evaluation-121",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "c521101c0c7962d2a12a5817f4ab78c1285c00ff3789fbf02279b4660edf8b3b"
+        },
+        {
+          "frame_id": "evaluation-122",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "1acbdd4482a7256ab408baf1cbfd86a3e04acfb30df7e9de16c1839b79bb9bc7"
+        },
+        {
+          "frame_id": "evaluation-123",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "cba43748d1b2bc2860b0c7dbaa572e868cde0726a6efdb30316f40251e9e17d4"
+        },
+        {
+          "frame_id": "evaluation-124",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "7f3c71736aa1b5adf59400e19ea594085144f04c72a3341eccf35222cb0e1909"
+        },
+        {
+          "frame_id": "evaluation-125",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "d0d5fc40813b0ad86c2a343a2d1376ac085776c19f328e271520b3d085b803d6"
+        },
+        {
+          "frame_id": "evaluation-126",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "7d97199b9fb46b0c88e5e511239f1800ae86e1359bf5491013661ac9526c2221"
+        },
+        {
+          "frame_id": "evaluation-127",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "a09dc5a3a442bd5211df5dbbdc707cc656ba98d7a19d8c0ccff8aae479228a2d"
+        },
+        {
+          "frame_id": "evaluation-128",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "05aeedad8a13e9384e2d0f7ab9e3bf57394242038fe45c87c8b09db86237cae5"
+        },
+        {
+          "frame_id": "evaluation-129",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "7439bff23127500f6294ce24ed6f856e8dd2d2bbb2db1de1984c792da04cb906"
+        },
+        {
+          "frame_id": "evaluation-130",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "956ed9d659a2a60d2006bdcfe37336614aa75baa0924eb4536078f44c7e62c95"
+        },
+        {
+          "frame_id": "evaluation-131",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "293acd3436c2f4fd910c56cd9bb0d55b5aac3e0277195d0782fe73fcb48cdc62"
+        },
+        {
+          "frame_id": "evaluation-132",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "ad2139fd37e080875db495ddf60e60d4d8a313085bc0564379da3f1d1f9584a5"
+        },
+        {
+          "frame_id": "evaluation-133",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "66e1d85e7b66364801286f4d5f24ee8c0d40bc9cb18376233885ab0a9fe14ef2"
+        },
+        {
+          "frame_id": "evaluation-134",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "8fddf27d4873290e6a182e8899c72f67e500f52621ceb610430211b96566801c"
+        },
+        {
+          "frame_id": "evaluation-135",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "64a62878d93b0801e4d2950ec9dfcc546cdee2f28436be503a48028d5f6854a6"
+        },
+        {
+          "frame_id": "evaluation-136",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "fe301aad984c0386f1c92e55574b7412c33ca5703efb9f98be1048e781885332"
+        },
+        {
+          "frame_id": "evaluation-137",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "9ac6071ff4c7e9345b504d6d8b3cf01bf2212e737b3c13fabbc36c0a8ba79877"
+        },
+        {
+          "frame_id": "evaluation-138",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "f916b0776cef608ae5b5e73cb7cebf2ed8f2ee5617facfd965e16ed18b7d96af"
+        },
+        {
+          "frame_id": "evaluation-139",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "29f576de8e214a659fc2ebf7c282e6f4c6cda3777dcd8036e24351785bf32c9f"
+        },
+        {
+          "frame_id": "evaluation-140",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "ccea06292e4d7e17e27c5799ab46e5dbc7a7e432e1e49f0758c19f332cd80d8c"
+        },
+        {
+          "frame_id": "evaluation-141",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "ecce17825deebbc2854d9e8346238ebcc7e348c5caa2bc4b042d391aa5d94768"
+        },
+        {
+          "frame_id": "evaluation-142",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "4c394153cf0a6592e3d826dfe7d1fe219a2cad139fac40aba93ccb4b0a58e030"
+        },
+        {
+          "frame_id": "evaluation-143",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "a39438c4a43b148574660583b83b68b24be32ece614bbae7a07a5ce7e8757990"
+        },
+        {
+          "frame_id": "evaluation-144",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "91e441b3081a6cbef449c78c2a55d5d122eb35fb14e7a54fb8e26d2d9aadaf9f"
+        },
+        {
+          "frame_id": "evaluation-145",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "5be4142dbc035db14792edc0d673e8a0481e3aba4bb76d3131d408d5a8201f08"
+        },
+        {
+          "frame_id": "evaluation-146",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "87363afbea84e4bc5337790f50a21fe5df0c3304cda0e19e391074f20a71e6b2"
+        },
+        {
+          "frame_id": "evaluation-147",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "bcc16579301204e96ae35639ba5372913f6c171bc34dfafeb636c2fb72d9f9b1"
+        },
+        {
+          "frame_id": "evaluation-148",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "c4815773b037dce42b785f28a0244ac14c580a2dcc5d5aa990864f8111b9c8b4"
+        },
+        {
+          "frame_id": "evaluation-149",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "5b54b6d24abe7c53f9b1c4c0ce6b391fbdb3354d72d4d1616132bdce9ccf1d66"
+        },
+        {
+          "frame_id": "evaluation-150",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "c950f2d24d75513c368e895db810ede49431f5a68ac9f211c3a866fc47f20e5f"
+        },
+        {
+          "frame_id": "evaluation-151",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "900e2f24e0df294bf2115c6c2a4b9045f00af7f010cbf53f996904165d7475e2"
+        },
+        {
+          "frame_id": "evaluation-152",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "4010e65cc1a46a0b667fa4f60b2fa57bdfe15bc21f644010b9a542f5c250e563"
+        },
+        {
+          "frame_id": "evaluation-153",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "164ae059810c90bf9f1ceb8db07efed96a8db12c3e449476cbee0431e219fb85"
+        },
+        {
+          "frame_id": "evaluation-154",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "1a4504909276195eed340ac8fa063f57a67bd7405fcc4bd089e6866ac97c3365"
+        },
+        {
+          "frame_id": "evaluation-155",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "f3826281035920c849848db81e4d0bb09ac6dbaae1450d274e65fff870405176"
+        },
+        {
+          "frame_id": "evaluation-156",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "b1f3053017c93f52fae49447464edc9b24e46ccb4a52a0dc631108a7172d6b0b"
+        },
+        {
+          "frame_id": "evaluation-157",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "8127e745e670e1153fb999ba354a4d4bc26cdd47898745919b9826fd5063843f"
+        },
+        {
+          "frame_id": "evaluation-158",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "053217971fec8122c408b281f93f359622deb278b84e23a57b0622d1a77e1675"
+        },
+        {
+          "frame_id": "evaluation-159",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "f25d6b9fedf75b81ac3b952da4d8dea4cc0ec30c73fa8fce53b638fd693f855f"
+        },
+        {
+          "frame_id": "evaluation-160",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "2631427c3e113f8e62e2de17f58ce47f12ba0e17ad9887fbe9e473b0975689c9"
+        },
+        {
+          "frame_id": "evaluation-161",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "6b487d9f0fab4f611cbe992f79930b559f475c84feb7995140e12c071967a0bf"
+        },
+        {
+          "frame_id": "evaluation-162",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "6458759b2a17b429ca4c6f1324ff6708d399313771345aa2325bea2cf58cc253"
+        },
+        {
+          "frame_id": "evaluation-163",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "c451bd5914934e20e2099b546c7ee7cc2702d5404345a9b513b526394f38bbeb"
+        },
+        {
+          "frame_id": "evaluation-164",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "d58faadee983709d363b98de4263ffecdcf953fd84641004968d465313a4ead8"
+        },
+        {
+          "frame_id": "evaluation-165",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "1c821ff8f49898e3731d4a029fe934f3362021eb62db06e53055b3370f486a64"
+        },
+        {
+          "frame_id": "evaluation-166",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "81e2c3c2863263c7ee6f00b911e7147effd3d487ac6bf8559a4e05af9809aeef"
+        },
+        {
+          "frame_id": "evaluation-167",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "29c58257e8bf78746a16091daf354feaccfeb4b78f0e2cd2951651bebe77fb1c"
+        },
+        {
+          "frame_id": "evaluation-168",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "452dc8d1663c888b9506fda378b5f4cd1e81f39bdd63d639c5ca6f0cca176c62"
+        },
+        {
+          "frame_id": "evaluation-169",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "d5555af51397e4738873353c4b9a07e0c6fd74aa9827d4a1af0dbd5e9132cc29"
+        },
+        {
+          "frame_id": "evaluation-170",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "a1e128f65c2d53389b744256b43253023fcb50bf9305178cb027a4f4b3ba2444"
+        },
+        {
+          "frame_id": "evaluation-171",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "6eb2f51d99cf9b505bd2f7dd2c35be993ae1d155cbd194b7612626836ce55c41"
+        },
+        {
+          "frame_id": "evaluation-172",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "f0b50cd48a06b52fa0dd3ef5edc74c6e8270ff573520a05a36653ce953b8d820"
+        },
+        {
+          "frame_id": "evaluation-173",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "215e081c37b69aadf76749e16ce5dfac8024480d98b0abaab7ab8270939fd072"
+        },
+        {
+          "frame_id": "evaluation-174",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "50336e5b1d39ba9c0520a4c9146ffa690beef3fbbb4b318cc9e1c350aa1109ed"
+        },
+        {
+          "frame_id": "evaluation-175",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "5149b3cff994e12d779699096f2ca5b132727fa01e58b9502db1f8b0e67d105e"
+        },
+        {
+          "frame_id": "evaluation-176",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "8073ef53f008b236d57651ce34294cce9adb9e4d6270b6c6700c116318004eb1"
+        },
+        {
+          "frame_id": "evaluation-177",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "61cad6a7dcd00db392004b838ca83f088e627afdd3267907fdad113ee7d93744"
+        },
+        {
+          "frame_id": "evaluation-178",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "37c12b2f249a64cc2eb41240e242b82051717bda02a97e725cfc78d960f76715"
+        },
+        {
+          "frame_id": "evaluation-179",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "deed02de536ef27ca492b5f4044560dc5821c9a039d2afbf0262b21c3ea97716"
+        },
+        {
+          "frame_id": "evaluation-180",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "1f555045c496a12fd26613e7b877dfa823fbf34f266cfc1ef111a3cc83e5725f"
+        },
+        {
+          "frame_id": "evaluation-181",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "64681b16ffae3972dc6303cd013799139d69d6aac25be89d4ab1fd8a147218fe"
+        },
+        {
+          "frame_id": "evaluation-182",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "f6402d26042f1a1d662e116b689f597971f9f8fbff4b4b8d3c0e6cc207d029ce"
+        },
+        {
+          "frame_id": "evaluation-183",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "245bcbe102feb8bb66aa899187d9231515908af04b1f082ed90beb447c5e416a"
+        },
+        {
+          "frame_id": "evaluation-184",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "57c3813cf0e10dc645799198719feeee839e212a37892d33560ab4b20298c95c"
+        },
+        {
+          "frame_id": "evaluation-185",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "e806b0d398d6ae8e250655921748551daa60b7aa0b835b8b4c1ed322e6c07822"
+        },
+        {
+          "frame_id": "evaluation-186",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "8273b73bb8421ffde07d4ad31581854dce875e142605ad76ae653108dde88085"
+        },
+        {
+          "frame_id": "evaluation-187",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "de5efe38f7524bbf36e0876f721a10a3f163c334c629fe90da7dd9b79573b83b"
+        },
+        {
+          "frame_id": "evaluation-188",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "8e13b8796f61a81f4bbfeeb83b52e152c9f6673fe41b3a1997fc6e3e63688ca0"
+        },
+        {
+          "frame_id": "evaluation-189",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "c65470b90e1d48eb79e8c36b28008c4c220fb7163e852763aec684146f0466ce"
+        },
+        {
+          "frame_id": "evaluation-190",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "ff1ffbd8dfb8bcb59ed230d6cc93cfc5f250d7305092c85e611e02027751b56a"
+        },
+        {
+          "frame_id": "evaluation-191",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "225a297afd4f0c2243c5ff53339719914a1807e3d444a0907bbab641a2f87737"
+        },
+        {
+          "frame_id": "evaluation-192",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "eb13bca93c524b270fb0243add8ce0c0e6a8681b7f8907b3f5323f93bdbc283a"
+        },
+        {
+          "frame_id": "evaluation-193",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "986b2e82834cfebc2beb2e714e30c1d554f85c5f268b79b7ce54546a1729cdf9"
+        },
+        {
+          "frame_id": "evaluation-194",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "3cfb14e2b4985547da828be6de3c11cabc751a01208313bc6c2212298bc3ffc1"
+        },
+        {
+          "frame_id": "evaluation-195",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "b332771f5a42fdf74ea148a70bb14827c94c1a7ac76c88fc8a1624b710d15753"
+        },
+        {
+          "frame_id": "evaluation-196",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "e24bc0795e0af98d87a24305f656ebada55e125aa2f27cc37b60c27a379b7f11"
+        },
+        {
+          "frame_id": "evaluation-197",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "8567d6c4b0127c0a1ef004ca007db784d17b7242b14cb708c5b6c268d21758de"
+        },
+        {
+          "frame_id": "evaluation-198",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "44aa18ce8a25df1169d6c7292519b6140dcf98ce3b48aa36508f2a0cd813a063"
+        },
+        {
+          "frame_id": "evaluation-199",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "327253f00c55031b2c30acc2ccbf653093a739a890d50fd2f5214418081d38f9"
+        },
+        {
+          "frame_id": "evaluation-200",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "60b1be5fdb461ee223e63b06ad63c7f4dee7756326672a5c012c70f34505ae2f"
+        },
+        {
+          "frame_id": "evaluation-201",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "a7337c2562731ddec118198c492c5681b562e5506f3e257be6f681500f9aca60"
+        },
+        {
+          "frame_id": "evaluation-202",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "8658c383a578b27737750521bbd4b6b3f130454895fb8c884f5117bc5dc35082"
+        },
+        {
+          "frame_id": "evaluation-203",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "9affbcbd53949ff8d023d92c26c5812fc897ce8147a4df130b040cc2d728cfc2"
+        },
+        {
+          "frame_id": "evaluation-204",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "e401ef7e1e481b207e5da98f54f5ce0e2c3c0682a5b765318c2bdc786d68ef0c"
+        },
+        {
+          "frame_id": "evaluation-205",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "8b691850a4600b69ec6cea896fa60b97d86b4bee70f0b092f982fb8fde12fe5f"
+        },
+        {
+          "frame_id": "evaluation-206",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "d61944f64c9eff1dbe7bbe8b064acda0879b21110ba1ff0d0c6feae73e64ea9a"
+        },
+        {
+          "frame_id": "evaluation-207",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "e800bcde62cc40fdfa4d8897ee76ed8cf25bd845cb2cec7d59114b1329e04f82"
+        },
+        {
+          "frame_id": "evaluation-208",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "0b8797a707559df22a41e52bef968a24ad9538d7c81b8b491ba8ec23bce0dd67"
+        },
+        {
+          "frame_id": "evaluation-209",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "ead94fe5d5b3ec35a74c42e22621685c57422f73cbaa93000ae467caa8a0746c"
+        },
+        {
+          "frame_id": "evaluation-210",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "24cae709ce8a23c265dc9cee9d6624433e2a4ef8916fd3e7a54e64bb825f41c8"
+        },
+        {
+          "frame_id": "evaluation-211",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "8b072d9b6dc779cbd5475b0aaa75ef6f3040b3fcdc4a2923f37f96736b1014b7"
+        },
+        {
+          "frame_id": "evaluation-212",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "de80ddc2739e253f9c01aeae792fe5c97d6a59a8a5b877c3fd7fef85e6d088f7"
+        },
+        {
+          "frame_id": "evaluation-213",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "5fead2efffd2404cd24cb5266b4f962b10718e2418e2706458cb2ddeade002d2"
+        },
+        {
+          "frame_id": "evaluation-214",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "da1a70e146667783a681f3dfedddd8d1fe4cf5cc158e3f1e80dc23a6f7843135"
+        },
+        {
+          "frame_id": "evaluation-215",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "06b62940625357116fe92d9d809ee976e616644d740840720703efafe14a1c84"
+        },
+        {
+          "frame_id": "evaluation-216",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "8320ddbfd8f2f65b70990fa3e81574711448c5ecf6ce3178fea23930504396af"
+        },
+        {
+          "frame_id": "evaluation-217",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "457e0d0281f84f3a799e308aed404253ec4bf4d3c194510e546d5511c32eb3f4"
+        },
+        {
+          "frame_id": "evaluation-218",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "cf29ea0c100bf24eb984aa997f7cdf25d91c5f4a9757a83dea34470f083a008d"
+        },
+        {
+          "frame_id": "evaluation-219",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "70ce08cccd353894c83c3b4d4e584607a56baa6d95fb85d7966f3ce1db214dea"
+        },
+        {
+          "frame_id": "evaluation-220",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "afe927d5d4137939908cefc965ed0daecab060a4bd056f1ee08371a82b08761e"
+        },
+        {
+          "frame_id": "evaluation-221",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "90ef49ce3c404bea266ca6c73f347be353d0125adc85af63b03d581848546d1d"
+        },
+        {
+          "frame_id": "evaluation-222",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "fb7f130c594ad92bf31c83537eb16b94e55e82f694751f6984a8b7722d8c7afd"
+        },
+        {
+          "frame_id": "evaluation-223",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "f44875a43bb4fcade93b9d09af692bba026e785b8005df8acde6b1c0bdcaafa9"
+        },
+        {
+          "frame_id": "evaluation-224",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "46964ab062a781c2bd03d972d137f4360c02dbd63aa62ed244a4b428ea62fe5b"
+        },
+        {
+          "frame_id": "evaluation-225",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "e66c1e5f550c79cecf3610b87db0a3a75f3a4d302aeab3c61364873001824af2"
+        },
+        {
+          "frame_id": "evaluation-226",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "f65283954f01bdf5c903d8a709abd9070aad76b07134783364c89a25856c1fa4"
+        },
+        {
+          "frame_id": "evaluation-227",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "21158c3a7fa6bb48d13defc3712a8d9def65b6e25313df2489ccee27a98243c9"
+        },
+        {
+          "frame_id": "evaluation-228",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "cb894c0f601ecaca1848cec6a56c0705fa3ad103ed379aa39f4d594600f119a5"
+        },
+        {
+          "frame_id": "evaluation-229",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "6f1dbe46341702921f87ceed19ab65ff0fbb6bfe42217103ca70c13f3ad88238"
+        },
+        {
+          "frame_id": "evaluation-230",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "ad8be20e03c32ff0188b528dea308cb47de3cba9d075aeed5397a4f1055ab5b3"
+        },
+        {
+          "frame_id": "evaluation-231",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "439bac3d37f4ad140937168cdc7c9c810cbf8376d69cb9ef45764b10af912dda"
+        },
+        {
+          "frame_id": "evaluation-232",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "1beb2c6684a0e24bb8ef3dea9d184f026530fba5da82e690c42eb747cea5b4f5"
+        },
+        {
+          "frame_id": "evaluation-233",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "57c2fbd539a3cc4f573f37a895be09a12cde7972ac980b5d3c9fe1ae7279bc39"
+        },
+        {
+          "frame_id": "evaluation-234",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "3c25d19b50a6fe3591891854a950f4c4123506db59993849d8a06f741eecee3d"
+        },
+        {
+          "frame_id": "evaluation-235",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "77f194215c272e46410fbc8161a3da3776767d8b73b7e290db123cec8879e70a"
+        },
+        {
+          "frame_id": "evaluation-236",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "1a4d84b664eda458c8ceb0838ec7d7c68a9231135a25b417f2f6f2cd687db50b"
+        },
+        {
+          "frame_id": "evaluation-237",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "f7d1b2b05d7e0ec66379f6f3930f6f7e68e11245c4e2ce22ddcce99aadbc3a45"
+        },
+        {
+          "frame_id": "evaluation-238",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "abcdf9902e3f6212d435ecf2f6a54965803255d6f81da0a9763cf2af05339861"
+        },
+        {
+          "frame_id": "evaluation-239",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "7146392c78fd5f9615b9124c57c9715937d51c6a9639e172ddd2e4d727674255"
+        },
+        {
+          "frame_id": "evaluation-240",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "aa9adaf9005296de4857dd3b265f59d246d0159b14e09ce829af6592019377c2"
+        },
+        {
+          "frame_id": "evaluation-241",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "6349e3e147156ff7bbda278662ddc383a2e0d7931fe8c893604777c47d08444b"
+        },
+        {
+          "frame_id": "evaluation-242",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "eb0655954378b79117ec7efdf091f3d21e1b55ae6e745cb3d8a721fbbbbc27d5"
+        },
+        {
+          "frame_id": "evaluation-243",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "d28a35c13632af3515bbe529326ebe92215a25808cd6f325f4afeb40edfb6989"
+        },
+        {
+          "frame_id": "evaluation-244",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "c83585f687155219caa6e27b0980ed1f9580a0a52b1e45046392088d716bc834"
+        },
+        {
+          "frame_id": "evaluation-245",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "639df813b2dcda9fc9a5c5d41e19e63c87b4c0c3756456c6ce51a7b82f289152"
+        },
+        {
+          "frame_id": "evaluation-246",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "5cf1f5d722365c65396264c93daa23258ffb4a1d48fb97fb464c17d4b27bee96"
+        },
+        {
+          "frame_id": "evaluation-247",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "8ab416dc70a58f54b92ea03d1874ac4163907864e6a878a003a8436d4d69c6a5"
+        },
+        {
+          "frame_id": "evaluation-248",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "af519c4c329ec7fe075aa8f9ddeb3140ff5384cb245f3ee6328139d8e7a6832b"
+        },
+        {
+          "frame_id": "evaluation-249",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "9604e10fadbf12c4ccb2b3dcacccb992cdfc04f24d4decc335b5372a69c929ed"
+        },
+        {
+          "frame_id": "evaluation-250",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "6006d3be49a5fd7559642037ada1cd55fcfcc45f7538f22f852551f7b56eb91f"
+        },
+        {
+          "frame_id": "evaluation-251",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "6eb210088e5d363bc900862dd49fc6545e2c26eeb85edf1814ecc8f21762210a"
+        },
+        {
+          "frame_id": "evaluation-252",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "f3dd6960e5ea87dbfc6264182022e7583daa413db9095a90aeeaa07a6ad6ece2"
+        },
+        {
+          "frame_id": "evaluation-253",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "9f323d18858e3eeb67ade1735c2a493070ab0d8d2a260e71b82339f65bf6d7c9"
+        },
+        {
+          "frame_id": "evaluation-254",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "55b5b1b296a1c148e41c5e730581091f322da5c855e8bd5da82181068c7175f1"
+        },
+        {
+          "frame_id": "evaluation-255",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "b305c10d1bcd682d5bf297cdc3a280d0226c0fa51909c5c4a4f22c678ced8418"
+        },
+        {
+          "frame_id": "evaluation-256",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "9da89b1736dce1b5ca66068738dbfd038dbaac58c71c4b69c3501b2498d77703"
+        },
+        {
+          "frame_id": "evaluation-257",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "96b62764074bf5b0bd20664e6b4d75e4f5545e8b5ae7a9af6ea7838c2078123d"
+        },
+        {
+          "frame_id": "evaluation-258",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "2dcb4125bbfa4e7023a4a6aae2a6ff1442e9b02fc4cd9fffa73f2a35ef3e4f35"
+        },
+        {
+          "frame_id": "evaluation-259",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "22055ddde271467ff6ece1479206b812be8a2aca6eef1cb747ff2084df175a15"
+        },
+        {
+          "frame_id": "evaluation-260",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "c3ceb2e487c74bd615b0acdc1836ad3cfcd7fe0364e6957572a9311e35ee4c0e"
+        },
+        {
+          "frame_id": "evaluation-261",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "6306a0b2ab3688bdd91570231d00adcc6165b4abc6632d6fc11ebaffc8bbb9e1"
+        },
+        {
+          "frame_id": "evaluation-262",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "02fd2e219d71d24a24bef07101d2ef8a4982a74f4218b40774e22b43f0803014"
+        },
+        {
+          "frame_id": "evaluation-263",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "9bde6d63aa15146530e1c984ca337f914d3f78998c35ffd01cbe9572db688ada"
+        },
+        {
+          "frame_id": "evaluation-264",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "1993d696cfa77eadf78eea0a264831540bfa7290b02c61f63f7f65afead64c8f"
+        },
+        {
+          "frame_id": "evaluation-265",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "e3cfaab28629e800bbcf184d304754a8ec67556b4f6562da015762fd539cce3c"
+        },
+        {
+          "frame_id": "evaluation-266",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "a103bb0c927826575ed065c727446302ea6b209e8125a76b57b9f01b6a1f3dae"
+        },
+        {
+          "frame_id": "evaluation-267",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "fd7a19b82bcdc07fb535a1a8a6f8c7bd79ee50d1f4d060a86bfe3103352054d0"
+        },
+        {
+          "frame_id": "evaluation-268",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "22b0a1c393b77ab0cc2d78628cfbf1760f3dbd3d4d548b860709e257cba5b2cd"
+        },
+        {
+          "frame_id": "evaluation-269",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "b6fa5553a3f5623937b278040afcd16b7ca20c98bed3db527070831a7aac2b9e"
+        },
+        {
+          "frame_id": "evaluation-270",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "2a023931560b274f7980de411fa2d1a038a1061554d475f3b0c682888a869777"
+        },
+        {
+          "frame_id": "evaluation-271",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "db7811d42015e7eca8fdac671798828f596a21d82093fd29cf39d5b73045884d"
+        },
+        {
+          "frame_id": "evaluation-272",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "d89ad1bc52e5b29e1f4b08aee08d29033a3d4eea75b8f0f18c3c1270bf1c865b"
+        },
+        {
+          "frame_id": "evaluation-273",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "37aeea35a8ee306103c6dadd8d7833ac7765d2d83ade5e23c09c75fe9a8b5328"
+        },
+        {
+          "frame_id": "evaluation-274",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "a9581eebab1818f8d0e0f5b8b5c84c5221265de655a4d9f7a8ccb455945e4731"
+        },
+        {
+          "frame_id": "evaluation-275",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "34626205000142ba10d45aae2104d14a1198e2da43fce45f71231720e42a50a3"
+        },
+        {
+          "frame_id": "evaluation-276",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "0aecf671a7ab084810133597866698cad14ab3b7b01b11162f51f67b8e0c0742"
+        },
+        {
+          "frame_id": "evaluation-277",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "ef3da84dd1d92b3fd65c87c91c9fc8849176c7d2f3d7e054007c6eb71a76575f"
+        },
+        {
+          "frame_id": "evaluation-278",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "6310d0e9773a0f68629f711bc2ae67bbc5e48c6a601604ce3eb0fd973f115e04"
+        },
+        {
+          "frame_id": "evaluation-279",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "0235c761c1822b5fb669b3f1419dea97f08a93d4fed115780483743ac65ff5bd"
+        },
+        {
+          "frame_id": "evaluation-280",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "1efacbc5cbe0c997f5897453e4aca7dfad8408bf41e6acd4e55630a394ef9d7e"
+        },
+        {
+          "frame_id": "evaluation-281",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "bf53ae7158740a3895124fedc9690849d4af9b93211e58832657ae2d665d1fb7"
+        },
+        {
+          "frame_id": "evaluation-282",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "d41fb1967b2012c161b24efef405074a98c0239fa25a39479c869614051e05e3"
+        },
+        {
+          "frame_id": "evaluation-283",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "d2806285d57cded085c29de5d7f7f9c49bb5ccfcf9f2acc514a79e4f310d8600"
+        },
+        {
+          "frame_id": "evaluation-284",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "c458a23d17435924d32a77b18bb6328ef7c9498900d873fef96c41dd446bb926"
+        },
+        {
+          "frame_id": "evaluation-285",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "d8591e58a6e085535a097e871c7f94228106abdcda9ea56ea8bc9b774425654d"
+        },
+        {
+          "frame_id": "evaluation-286",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "863d38eeb5f9822a8b5604dd176bf34154af5f58227a1cda86081ade710e4c56"
+        },
+        {
+          "frame_id": "evaluation-287",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "5e7882c8c909b8d6c8c6f81f2e2221e4a60f15e137bc0759699e5be6e779f466"
+        },
+        {
+          "frame_id": "evaluation-288",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "9f7863d2030566c0f71e1c6f744ef53022f9cad65ce6409613bb4d9025b3961c"
+        },
+        {
+          "frame_id": "evaluation-289",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "fb69420821a2fd1505b01ddeed99fdbcf1490ced4c3d6864c1dcc69226889774"
+        },
+        {
+          "frame_id": "evaluation-290",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "5595aa3d0bf4e4d2a32997477e92ebb1c598f31d5a1da844f12eb24ee843627c"
+        },
+        {
+          "frame_id": "evaluation-291",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "ddf8f060901526889230363c07f8744a40ab52f48fd98d49ef7ce48f2fd5ad2d"
+        },
+        {
+          "frame_id": "evaluation-292",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "a792c022571b699dc235d265b5cb1fa04321a6fd2d29d22748ed4e0b36a0305e"
+        },
+        {
+          "frame_id": "evaluation-293",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "73e7de3ca51c76317a419e100a44879f9836f2d3b8f68e80732ea2e4687ecf35"
+        },
+        {
+          "frame_id": "evaluation-294",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "504ec36a35198590ad3a58ec0e41cc2fe0cc02fd4c83e1de4caca6c828b737bd"
+        },
+        {
+          "frame_id": "evaluation-295",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "78ec97a735968fc051a188af74052e984c288b106ae6d483aa29ff1110492c33"
+        },
+        {
+          "frame_id": "evaluation-296",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "9a36b1c83b239ff64ab1e8740ca36b36bce16396b638b4f5898ac7aaacc7e96f"
+        },
+        {
+          "frame_id": "evaluation-297",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "22af7da56497fc5b50690e1dc5a3e110f9f6fa82356193802f054214d61a8a0c"
+        },
+        {
+          "frame_id": "evaluation-298",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "e45a0a5801a3f4f84cebf2b6205065e28a2a45161970a189d65880bf295b49aa"
+        },
+        {
+          "frame_id": "evaluation-299",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "9182904c147c51989f2961cbb5126a5da78a417e9bf9cc3cb0bc43db1cf48ea3"
+        },
+        {
+          "frame_id": "evaluation-300",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "8084068dad784e434f122bd4ffef7a543d71e1fd94d6d9bb04007e0510880c6c"
+        },
+        {
+          "frame_id": "evaluation-301",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "3bbf2d9d2979068d06a2280eafafa14d585e1ee4413c39cb0e362d4f3ec96de6"
+        },
+        {
+          "frame_id": "evaluation-302",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "9f7cfea322e7776d830cdc75612f2f21085cc07ca44eb723e1e8fedc25870880"
+        },
+        {
+          "frame_id": "evaluation-303",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "a9554f4d4985575165d9e48168bede2ffe3fdebfa444dd7a36162956f45dc293"
+        },
+        {
+          "frame_id": "evaluation-304",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "c54ae7ce0e87fe76c4fa255d00abf168002154d059ff1032c0a2771c4375b46d"
+        },
+        {
+          "frame_id": "evaluation-305",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "6fa5d09f82250c24bd89fb2f5eddc0c6651d2c616e39b29741a99908acacb664"
+        },
+        {
+          "frame_id": "evaluation-306",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "1547c300ef9fb3f75132bbf0a6516a6a3f467cc6ffb1e2ad2d1f45e6b3a5dd75"
+        },
+        {
+          "frame_id": "evaluation-307",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "2b81cdacaa540c6b93ff13dca7bcd9b93445046c53bdb770944d2f13209be42b"
+        },
+        {
+          "frame_id": "evaluation-308",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "af6df808ef37f5d797956eab07684256e734ea721fdfdadcfc8399aeb2ef3022"
+        },
+        {
+          "frame_id": "evaluation-309",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "178a526649c46b4b65394b109e31bb5d2f4b77a6c0f57d52aff1a2523e528874"
+        },
+        {
+          "frame_id": "evaluation-310",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "7685e21eea48cc87a60214dd45d7e51be195eb4ef4aeaf1898e1bfe122520dfa"
+        },
+        {
+          "frame_id": "evaluation-311",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "905a2da8f1af2be40090729f88d8dd0516d0d5c3e8faa0bd292b3d212fd76a56"
+        },
+        {
+          "frame_id": "evaluation-312",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "3b57db8d074f5b2528ee8ec82d86b91cbb9d76b49418345b11cc77c5007d0ba3"
+        },
+        {
+          "frame_id": "evaluation-313",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "344d87a8a4521070679283e9dc9844c584d0486322d65f7fc5e58650686076f5"
+        },
+        {
+          "frame_id": "evaluation-314",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "3585d1911f0dce3729ee3f9a4178ac7d8ee85544f8dfc24c5fe7be6fe1b13d58"
+        },
+        {
+          "frame_id": "evaluation-315",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "d72e2fc0e3c9384de93c823993193ad12b2f5a1ccf2653cfeaf946b5fe7db0a5"
+        },
+        {
+          "frame_id": "evaluation-316",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "37db77cc65c80e9192da68bee75dd0ec25ad6e7abd2282b45efbf09f39e4563a"
+        },
+        {
+          "frame_id": "evaluation-317",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "d9f392e450ab9122940b5ae7f7f84fc4f0b9fb23318392dfc6a310205f4259ff"
+        },
+        {
+          "frame_id": "evaluation-318",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "0ba22281f67db690aee2c19fdc24461270d4a400a48bd7dbe41a3ff090d148bc"
+        },
+        {
+          "frame_id": "evaluation-319",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "4097ddec99d4fb84f27b3d738fd86b00bfe888b9d02edf4eb5d8ad6e6367f98b"
+        },
+        {
+          "frame_id": "evaluation-320",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "d5462162a2ad8294560c7d0e3048611fb0193d2257ac43cec74e9038d0d9baa4"
+        },
+        {
+          "frame_id": "evaluation-321",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "50208830b977c0b430d5bfa309908eb732222d3517371b18734f1a63a9931555"
+        },
+        {
+          "frame_id": "evaluation-322",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "56aa323c3a0f9ab1d9fad0aedc8038ba42a5316b3b71479e0f412e8650be3111"
+        },
+        {
+          "frame_id": "evaluation-323",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "6fc85c6ce8b56eae16759a9aa5dd873d6f3dac132252a3020095d24e962cc029"
+        },
+        {
+          "frame_id": "evaluation-324",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "41612d171e68a30e30b7517dd3b3daaffe555765c4d898474acf493c742ba48e"
+        },
+        {
+          "frame_id": "evaluation-325",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "2e0ac675b73a13719b7df0c1fe06e41a9ce1378c9178b01268dd25fb94209c33"
+        },
+        {
+          "frame_id": "evaluation-326",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "1130ceeb578cf6393167d5cf1c4469f1fe8390975bee7b00e2dfbe9f577babb2"
+        },
+        {
+          "frame_id": "evaluation-327",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "0a5e52b99ebfd19421f247246d9fb66c4411f214005264cfdfa7adb0cf7abd43"
+        },
+        {
+          "frame_id": "evaluation-328",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "a4729f33da25c78929ed116c54cdaeefa54f0bb157819cb09b7bfb96308307bf"
+        },
+        {
+          "frame_id": "evaluation-329",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "848098befdcfbc79f5b377ec6b695611aacd18a36477b267476aeaea99c8f424"
+        },
+        {
+          "frame_id": "evaluation-330",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "73ab62b884761e2c1358ed98f2ef9d8e9f005c63f0366eb527419c87053e6338"
+        },
+        {
+          "frame_id": "evaluation-331",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "b3f43cc70c6eb4a2ff199e3d5d8bfe89bac9e1947c4ac8a18b7e21f0ab936019"
+        },
+        {
+          "frame_id": "evaluation-332",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "ff45288508c28daceb624d0e5d6db831a4587ba7a2745a17b299a3704ab32cbf"
+        },
+        {
+          "frame_id": "evaluation-333",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "68082aad82ea76744961e7d13a712e22ba12733da163f2c7fbe66d66b9c90530"
+        },
+        {
+          "frame_id": "evaluation-334",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "1f54d1c335aff8190304289db91c6db7d9a6e76030bbdfe12969fde9c5d4b909"
+        },
+        {
+          "frame_id": "evaluation-335",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "21026056a075a6a9dba90594e458ed23c7acda2f4cdb7b2b88ae5cab71be649e"
+        },
+        {
+          "frame_id": "evaluation-336",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "2cbf311bc3aa69e97f205e64a4a8b8542e304f2953f9431a658597422f956200"
+        },
+        {
+          "frame_id": "evaluation-337",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "3b0e933bec000782203d0b18c5768dc2d7a467d25a02f1e783b15725636ff809"
+        },
+        {
+          "frame_id": "evaluation-338",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "bffbe6c27f797e8f9b5606d317883baba37b1e302f4add43733f083b27a58379"
+        },
+        {
+          "frame_id": "evaluation-339",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "8bab8baff98c3be0fe787cf7984ed6a595d3630e8c5feb64e6e40d2d2971d7b7"
+        },
+        {
+          "frame_id": "evaluation-340",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "0891bbaf1c25ce7635ca03e97469e2d8dc37ed92692e00bd139c5506c92b469e"
+        },
+        {
+          "frame_id": "evaluation-341",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "8c693aafbec4b5af362fe6cdda966924a1b98a5aa2098ce49ac0ab331c89c1d0"
+        },
+        {
+          "frame_id": "evaluation-342",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "119c8004a950b17ac382226a4ab0f77eaa61b9dd636e9b43e240ac77f766909b"
+        },
+        {
+          "frame_id": "evaluation-343",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "3b9cf67f4cf702a48180abf3d537cdd30eb325dfb0061e1dbb9db55aee2b9d4e"
+        },
+        {
+          "frame_id": "evaluation-344",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "efd1280127c9d7479c683cf0a482eeea6eb1aead3e3f9287e3f42da4c930cba5"
+        },
+        {
+          "frame_id": "evaluation-345",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 4,
+          "receipt_sha256": "315871610cf0f646226bfbce454ac0cc80b5a573041cb3aaddbef0e3c2befcd2"
+        },
+        {
+          "frame_id": "evaluation-346",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 5,
+          "receipt_sha256": "ea76f3eb5d8ace9d2f9770f81ec516f537b1d915cd2423030e67b53f7d9c8027"
+        },
+        {
+          "frame_id": "evaluation-347",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 6,
+          "receipt_sha256": "b3b724a5d9fe1bd70593abb1d3662791a748784f7cd7cfccd863552cc033611f"
+        },
+        {
+          "frame_id": "evaluation-348",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 7,
+          "receipt_sha256": "89930fd296d69bb1ec59ae425e0be16e62c0658a460459fb4114d99251ad6eea"
+        },
+        {
+          "frame_id": "evaluation-349",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 0,
+          "receipt_sha256": "1b3197ba3a50a99e2e798a333274393ce091d84ae408695b64fd4958ed01c579"
+        },
+        {
+          "frame_id": "evaluation-350",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 1,
+          "receipt_sha256": "8beefbe203f97be0b6dac1a09f601b1b77f8aa6ce7d3591dd8742bcea6e5e050"
+        },
+        {
+          "frame_id": "evaluation-351",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 2,
+          "receipt_sha256": "35825f8a8065338f4bac60b6c9d770a95aa646c557b3bd33668bb9b9386d9b33"
+        },
+        {
+          "frame_id": "evaluation-352",
+          "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+          "dimensions": 3072,
+          "regime_id": 3,
+          "receipt_sha256": "0509808df4135ed33926a8680afd2d2a896383393364792cdd89561926fa9e9a"
+        }
+      ],
+      "rejection_probe": {
+        "attempts": {
+          "other_regime": {
+            "rejected": true,
+            "status_code": 403,
+            "model_calls": 0
+          },
+          "other_model": {
+            "rejected": true,
+            "status_code": 422,
+            "model_calls": 0
+          },
+          "other_dimensions": {
+            "rejected": true,
+            "status_code": 422,
+            "model_calls": 0
+          },
+          "empty_authority": {
+            "rejected": true,
+            "status_code": 403,
+            "model_calls": 0
+          }
+        },
+        "all_rejected": true,
+        "unauthorized_model_calls": 0
+      }
+    },
+    "claim_boundaries": [
+      "Timing is one serial request stream on one T4, not multi-host service concurrency.",
+      "Construction-to-ready uses a warm Hugging Face cache and excludes image/container scheduling.",
+      "Private adapters are zero-initialized deployment controls, not independently trained tenant adaptations.",
+      "The 1/R FFN slice is a post-hoc ablation; gate-aware training utility is reported separately.",
+      "Companion-harness malformed authorities are rejected before callbacks; authorized cross-regime use is a policy grant, not a wrong-key attack."
+    ],
+    "remote_artifact": "/results/distilbert_service_R8_20260821T135529_555321Z.json"
+  },
+  "public_evidence_export": {
+    "schema": "schemen-gate/public-evidence-export-v1",
+    "status": "documented public-safe evidence export of a historical run record",
+    "original_filename": "distilbert_service_consolidation_20260821T135530_707107Z.json",
+    "original_relative_path": "experiments/results/distilbert_service_consolidation_20260821T135530_707107Z.json",
+    "original_sha256": "d738806266a43dd67748b1407107923735e94dfef23f22f29ca6fcfa06fbedf7",
+    "original_custody": "The raw run record is retained privately by the maintainers and is not distributed in this repository.",
+    "exported_at_utc": "2026-09-02T05:12:29+00:00",
+    "preserved": "every measured value, verdict, denominator, seed, dependency version, source commit, and recorded artifact digest",
+    "rules": {
+      "private-harness-key-renamed": "a dependency record keyed by the private companion harness package name is re-keyed to 'private-companion-harness'; its version, commit, digests, and dirty flags are unchanged",
+      "private-harness-surface-marker": "the private companion harness callback-surface identifier is replaced by '<private-companion-harness-surface>'; model id, dimensions, and authorized Regimes are unchanged",
+      "private-harness-term": "a prose field's product-styled reference to the private companion harness is replaced by 'companion-harness'; no measured value is affected",
+      "private-harness-wheel-marker": "a filesystem path naming the private companion harness wheel is replaced by '<private-companion-harness-wheel>'; the recorded SHA-256 values are unchanged"
+    },
+    "transformations": [
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "result.source.wheel_bundle.wheels.private-companion-harness",
+        "rule": "private-harness-key-renamed"
+      },
+      {
+        "path": "result.source.wheel_bundle.wheels.private-companion-harness.path",
+        "rule": "private-harness-wheel-marker"
+      },
+      {
+        "path": "result.runtime.surface",
+        "rule": "private-harness-surface-marker"
+      },
+      {
+        "path": "result.claim_boundaries[4]",
+        "rule": "private-harness-term"
+      }
+    ],
+    "note": "This run was executed under a private companion authorization harness that is not part of this open-source release. The export is not a Gate-only rerun and is not a Modal recertification result."
+  }
+}

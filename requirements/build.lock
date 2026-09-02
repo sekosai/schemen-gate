@@ -1,0 +1,19 @@
+# Schemen Gate 1.0.2 release-build toolchain.
+#
+# Bootstrap with scripts/bootstrap_build_env.py. Every accepted archive is a
+# universal wheel with an exact version and SHA-256 digest; source archives are
+# forbidden. The release build itself runs with --no-isolation and PIP_NO_INDEX.
+build==1.6.0 \
+    --hash=sha256:f7aaf1ebbb79178a02ba248bb524f2176b256017e17e8e4bd4289c7b38cc2bad
+colorama==0.4.6 \
+    --hash=sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6
+packaging==26.3 \
+    --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c
+pip==26.2.1 \
+    --hash=sha256:71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e
+pyproject-hooks==1.2.0 \
+    --hash=sha256:9e5c6bfa8dcc30091c74b0cf803c81fdd29d94f01992a7707bc97babb1141913
+setuptools==84.0.0 \
+    --hash=sha256:51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670
+wheel==0.47.0 \
+    --hash=sha256:212281cab4dff978f6cedd499cd893e1f620791ca6ff7107cf270781e587eced

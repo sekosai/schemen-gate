@@ -1,0 +1,21 @@
+======================================================================
+  True Multiplexing: 128 Tenants in 1 Forward Pass
+======================================================================
+  Device: mps
+  R: 128
+
+  Loading AG News...
+  Training base model (4 epochs)...
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]Loading weights: 100%|██████████| 100/100 [00:00<00:00, 16410.28it/s]
+[transformers] [1mDistilBertModel LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     |  | 
+------------------------+------------+--+-
+vocab_transform.weight  | UNEXPECTED |  | 
+vocab_projector.bias    | UNEXPECTED |  | 
+vocab_transform.bias    | UNEXPECTED |  | 
+vocab_layer_norm.weight | UNEXPECTED |  | 
+vocab_layer_norm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    epoch 1/4: 59.5s

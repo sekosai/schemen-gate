@@ -1,0 +1,38 @@
+{
+  "experiment": "capacity_preserving_wide_classifier",
+  "status": "pass",
+  "scope": "Synthetic memorization and capacity-scaling check. This is not a held-out generalization, privacy, or fixed-width parity result.",
+  "started_at_unix": 1786558523.922079,
+  "elapsed_seconds": 3.200248956680298,
+  "git_revision": "2a813bd881893121fe7df7bb338c1c6699acf60e",
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.4.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "config": {
+    "regimes": 128,
+    "observations_per_regime": 2,
+    "dimensions_per_regime": 10,
+    "epochs": 2000,
+    "learning_rate": 2.0,
+    "seed": 42,
+    "mask_seed": 128042
+  },
+  "summary": {
+    "owning_correct": 256,
+    "owning_total": 256,
+    "owning_accuracy": 1.0,
+    "wrong_key_correct": 0,
+    "wrong_key_probes": 32512,
+    "wrong_key_empirical_rate": 0.0,
+    "all_regimes_correct": 251,
+    "all_regimes_total": 256,
+    "all_regimes_accuracy": 0.98046875,
+    "selected_vs_dense_max_absolute_difference": 0.0,
+    "initial_loss": 5.545175889257979,
+    "final_loss": 0.006014183145656525,
+    "hidden_dimensions": 1280,
+    "dimensions_per_regime": 10
+  }
+}
