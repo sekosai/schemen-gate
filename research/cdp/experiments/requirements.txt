@@ -2,15 +2,15 @@
 # Upgrade intentionally and record a new artifact when changing this lock.
 # scripts/setup.sh installs the enclosing Gate checkout by its absolute path.
 torch==2.13.0
-transformers==5.10.1
+transformers==5.16.1
 datasets==5.0.1
-numpy==2.4.6
-scipy==1.17.1
-sentencepiece==0.2.1
-protobuf==6.33.6
-cryptography==50.0.0
-sentence-transformers==5.5.1
+numpy==2.5.2
+scipy==1.18.1
+sentencepiece==0.2.2
+protobuf==7.36.0
+cryptography==50.0.1
+sentence-transformers==6.0.0
 
 # Required only by experiments/modal_*.py launchers
-modal==1.5.4
-pytest==9.0.3
+modal==1.5.5
+pytest==9.1.1
