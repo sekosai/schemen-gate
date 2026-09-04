@@ -107,6 +107,10 @@ Gates that verify the same bindings).
 - **The verifier owns trust.** Gate has no built-in CA store or preferred
   issuer. The operator supplies approved root fingerprints; a credential or
   bundle cannot nominate its own root as trusted.
+- **The operator controls revocation egress.** Gate does not ship a network fetcher.
+  Production revocation checks require an operator-supplied fetcher that enforces
+  DNS, redirect, TLS, timeout, and response-size policy; see the
+  [identity guide](docs/USAGE.md#use-a-pkcs12-machine-identity).
 - **The contract names the scope.** Bind the subject, model, operation, Regime,
   lifetime, policy context, and release identity. A grant must be an exact
   member of its authority-signed lockbox.
