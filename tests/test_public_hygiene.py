@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import hashlib
+import re
 import subprocess
 from pathlib import Path
 
@@ -11,6 +13,52 @@ from pypdf import PdfWriter
 from scripts import public_hygiene
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _approved_readme_section() -> bytes:
+    data = (ROOT / "README.md").read_bytes()
+    return next(
+        section.group()
+        for section in re.finditer(rb"(?ms)^## [^\n]+\n.*?(?=^## |\Z)", data)
+        if hashlib.sha256(section.group()).hexdigest()
+        == public_hygiene.APPROVED_README_SECTION_SHA256
+    )
+
+
+def test_reviewed_product_prose_is_allowed_only_in_root_readme() -> None:
+    section = _approved_readme_section()
+    assert not tuple(public_hygiene._pattern_findings(section, location="README.md"))
+    for location in ("docs/README.md", "docs/guide.md", "paper.pdf:page-1"):
+        assert tuple(public_hygiene._pattern_findings(section, location=location))
+
+
+def test_changed_product_prose_requires_new_review() -> None:
+    section = _approved_readme_section().replace(b"serving application", b"private source")
+    assert tuple(public_hygiene._pattern_findings(section, location="README.md"))
+
+
+def test_unapproved_product_prose_outside_section_is_still_detected() -> None:
+    section = _approved_readme_section()
+    data = section + b"## Extra\n" + b"Run" + b"time\n"
+    line = section.count(b"\n") + 2
+    assert tuple(public_hygiene._pattern_findings(data, location="README.md")) == (
+        f"README.md:{line}: product-styled execution term",
+    )
+
+
+def test_duplicate_approved_section_does_not_expand_allowance() -> None:
+    section = _approved_readme_section()
+    assert tuple(public_hygiene._pattern_findings(section * 2, location="README.md"))
+
+
+def test_even_approved_prose_cannot_hide_credentials(monkeypatch: pytest.MonkeyPatch) -> None:
+    section = _approved_readme_section() + b"ghp_" + b"A" * 32 + b"\n"
+    monkeypatch.setattr(
+        public_hygiene, "APPROVED_README_SECTION_SHA256", hashlib.sha256(section).hexdigest()
+    )
+    findings = tuple(public_hygiene._pattern_findings(section, location="README.md"))
+    line = section.count(b"\n")
+    assert findings == (f"README.md:{line}: GitHub token",)
 
 
 @pytest.mark.parametrize(

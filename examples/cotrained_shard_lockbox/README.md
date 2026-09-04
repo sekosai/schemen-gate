@@ -20,7 +20,7 @@ The co-training result is observed, not a theorem that arbitrary knowledge is
 private. The output bias is shared, and this fixture has no Transformer
 attention, residual, normalization, cache, or serving path. For the paper's
 strict frozen-backbone protocol and optimizer requirements, see the root
-[training guide](../../README.md#training-is-a-lifecycle-choice).
+[training guide](../../docs/TRAINING.md#training-is-a-lifecycle-choice).
 
 The bundled Lean modules prove the Gate algebra and a modeled aligned-update
 contract. They do not contain an implementation-refinement theorem for this

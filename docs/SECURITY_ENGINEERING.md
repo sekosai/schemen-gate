@@ -82,6 +82,15 @@ mandatory.
 
 ## Supply-chain and deployment boundary
 
+The publication scanner rejects credentials, machine-local residue, and private
+product names across tracked text and extracted PDF content. One reviewed
+product-boundary section in the root README is pinned by SHA-256 in
+`scripts/public_hygiene.py`. Only its companion-name checks receive that
+exception; credential and other hygiene checks still inspect every byte.
+Changed prose, duplicate sections, mentions elsewhere, private artifact paths,
+and private source remain outside the exception. Updating the pinned digest
+requires reviewing the complete replacement section for public disclosure.
+
 The release manifest, history verifier, clean tracked-source build, wheel/sdist
 membership verifier, signed commit/tag contract, and GitHub release-attestation
 workflow are documented in [`PROVENANCE.md`](PROVENANCE.md) and
