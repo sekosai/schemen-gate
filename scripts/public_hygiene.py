@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import re
 import subprocess  # nosec B404
 from pathlib import Path
@@ -12,6 +13,11 @@ ROOT = Path(__file__).resolve().parents[1]
 MAX_TEXT_BYTES = 5_000_000
 MAX_PDF_PAGES = 500
 MAX_PDF_EXTRACTED_BYTES = 20_000_000
+
+# Only the reviewed README product-boundary section may name the companion.
+# Keep its bytes pinned: editing that prose requires an explicit policy review.
+APPROVED_README_SECTION_SHA256 = "8ef4593d4d5297ed74c1fca5b424087f8a161c075d810d9a0f999eb9dc75451f"
+README_PRODUCT_LABELS = frozenset({"private companion package", "product-styled execution term"})
 
 FORBIDDEN_BASENAMES = frozenset(
     {
@@ -100,9 +106,22 @@ PATTERNS: tuple[tuple[str, re.Pattern[bytes]], ...] = (
 )
 
 
+def _product_scan_data(data: bytes, *, location: str) -> bytes:
+    """Mask exact approved prose for product-name checks, preserving offsets."""
+    if location != "README.md":
+        return data
+    for section in re.finditer(rb"(?ms)^## [^\n]+\n.*?(?=^## |\Z)", data):
+        if hashlib.sha256(section.group()).hexdigest() == APPROVED_README_SECTION_SHA256:
+            masked = re.sub(rb"[^\n]", b" ", section.group())
+            return data[: section.start()] + masked + data[section.end() :]
+    return data
+
+
 def _pattern_findings(data: bytes, *, location: str) -> Iterable[str]:
+    product_data = _product_scan_data(data, location=location)
     for label, pattern in PATTERNS:
-        match = pattern.search(data)
+        # Credentials, machine residue, and all other checks see the full text.
+        match = pattern.search(product_data if label in README_PRODUCT_LABELS else data)
         if match is None:
             continue
         line = data[: match.start()].count(b"\n") + 1
