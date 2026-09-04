@@ -96,9 +96,9 @@ membership verifier, signed commit/tag contract, and GitHub release-attestation
 workflow are documented in [`PROVENANCE.md`](PROVENANCE.md) and
 [`RELEASE_ATTESTATION.md`](RELEASE_ATTESTATION.md). GitHub-hosted secret
 scanning, dependency review, branch protection, environment reviewers, and
-CODEOWNERS enforcement require repository settings and are explicit
-post-publication actions in
-[`POST_RELEASE_CHECKLIST.md`](POST_RELEASE_CHECKLIST.md).
+CODEOWNERS enforcement depend on separately administered repository settings.
+Source checks do not attest to those settings. For consumer verification and
+issue reporting, see the [maintenance guide](POST_RELEASE_CHECKLIST.md).
 
 The open-source package does not emit production deployment or incident
 telemetry, so repository commit counts must not be presented as DORA deployment
