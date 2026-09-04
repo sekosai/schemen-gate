@@ -33,7 +33,7 @@ def test_reviewed_product_prose_is_allowed_only_in_root_readme() -> None:
 
 
 def test_changed_product_prose_requires_new_review() -> None:
-    section = _approved_readme_section().replace(b"serving application", b"private source")
+    section = _approved_readme_section().replace(b"serving product", b"private source")
     assert tuple(public_hygiene._pattern_findings(section, location="README.md"))
 
 

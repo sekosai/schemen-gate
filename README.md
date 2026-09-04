@@ -18,14 +18,14 @@ support. A caller-supplied Regime number or mask does not authenticate itself.
 
 ## Gate and Runtime
 
-**Gate is the open enforcement library. Schemen Runtime is the separate
-serving application.** Runtime consumes Gate contracts at authenticated
+**Gate is the open-source enforcement library. Schemen Runtime is a separate,
+closed-source serving product.** Runtime consumes Gate contracts at authenticated
 inference endpoints and supplies model loading, request enforcement, and
 governed execution. The two projects have distinct release identities and
 deployment responsibilities.
 
 Use Gate to embed these controls in your own application. Use the separate
-Runtime when you need Schemen's serving implementation; contact
+Runtime when you need Schemen's closed-source serving implementation; contact
 [Sekos AI](mailto:ryan@sekos.ai) for Runtime evaluation. Runtime is not bundled
 in the Gate wheel, and no companion service is needed to install Gate or run
 its examples.

@@ -16,7 +16,7 @@ MAX_PDF_EXTRACTED_BYTES = 20_000_000
 
 # Only the reviewed README product-boundary section may name the companion.
 # Keep its bytes pinned: editing that prose requires an explicit policy review.
-APPROVED_README_SECTION_SHA256 = "c6b4ed05c285f219ea1b1710856217276fe6ab5c120504bdcad04979c6c0ff90"
+APPROVED_README_SECTION_SHA256 = "8ef4593d4d5297ed74c1fca5b424087f8a161c075d810d9a0f999eb9dc75451f"
 README_PRODUCT_LABELS = frozenset({"private companion package", "product-styled execution term"})
 
 FORBIDDEN_BASENAMES = frozenset(
