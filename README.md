@@ -225,7 +225,7 @@ The optional real-encoder test and bootstrap-history rules are documented in
 | APIs and compatibility | [Usage guide](docs/USAGE.md), [1.x stability contract](docs/API_STABILITY.md) |
 | Security and maintenance | [Security policy](SECURITY.md), [engineering controls](docs/SECURITY_ENGINEERING.md), [fail-closed defaults](docs/FAIL_CLOSED_DEFAULTS.md) |
 | Release custody | [Provenance](docs/PROVENANCE.md), [attestations](docs/RELEASE_ATTESTATION.md) |
-| Direction and contribution | [Roadmap](ROADMAP.md), [contributing](CONTRIBUTING.md), [adoption plan](docs/LAUNCH_AND_ADOPTION_PLAN.md) |
+| Direction and contribution | [Roadmap](ROADMAP.md), [contributing](CONTRIBUTING.md), [adoption guide](docs/LAUNCH_AND_ADOPTION_PLAN.md) |
 
 Report suspected vulnerabilities through [SECURITY.md](SECURITY.md). For
 integration inquiries, contact [Sekos AI](mailto:ryan@sekos.ai).
