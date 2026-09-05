@@ -14,6 +14,7 @@ separately.
 | Whole-model authorization | Rejected scope makes zero model calls; an accepted call executes the unchanged model | Fail-closed decision before invocation and scope-bound runtime state |
 | Authorized MoE routing | A learned router may select only inside a fixed execution-authorized expert set | Authority selects the candidate set before softmax/dispatch; prompt text is data, not authority |
 | Private lanes | Tenant-stage training can leave a frozen backbone and inactive lanes unchanged | Complete private attachment selected by trusted authority; shared attention remains shared |
+| Duplicated complete-attention regime lanes | Bounded Qwen controls show selected-lane access and fixed-shape off-lane invariance | Gate before private lookup; complete Q/K/V/O alternatives; separate mutable residual, cache, sequence, position, stopping, and training state; finite empirical scope only |
 
 The cryptographic component binds authenticated scope to mask or resource
 selection. The zero itself is an algebraic consequence of multiplication by a

@@ -60,8 +60,29 @@ cd research/cdp/paper
 latexmk -pdf -interaction=nonstopmode -halt-on-error cdp.tex
 ```
 
+## Companion gated-Transformer study
+
+The later [Schemen-gated Transformer regime-lane paper](gated-transformer-regime-lanes/SCHEMEN_GATED_TRANSFORMER_REGIME_LANES_PAPER.md)
+is published beside, but not merged into, the original CDP manuscript's claim
+set. Its [results-and-corrections summary](gated-transformer-regime-lanes/RESULTS_AND_CORRECTIONS.md),
+[claim ledger](gated-transformer-regime-lanes/CLAIM_LEDGER.md), and
+[reproducibility record](gated-transformer-regime-lanes/REPRODUCIBILITY.md)
+retain both successful controls and corrected failures.
+
+That study tests a different construction: each Regime receives a complete
+Q/K/V/O attention alternative and its own mutable decoder state while selected
+backbone operators remain shared and read-only. The reported evidence is
+bounded empirical evidence, not a claim of universal or production-grade
+isolation.
+
 ## Key results
 
+- **Complete attention and decoder-state lanes**: The companion Qwen study
+  reports 0/147,456 foreign-corpus answers, 992/992 fixed-shape own-lane
+  intervention positives with 2,976/2,976 bit-exact off-lane comparisons, and
+  exact R8/R16 lifecycle controls. R32 is retained only as backend/memory-limit
+  evidence; the tested switch-oriented SFT curriculum and universal isolation
+  claims are withheld.
 - **Exact addressed-use parity through the execution preflight**: A clean rerun of
   whole-model permutation conjugation has exactly zero AG News accuracy loss
   for all 8 regimes at R=8 and all 128 regimes at R=128 (baseline and every
@@ -158,6 +179,8 @@ proofs/         Lean 4 proof files (referenced from paper)
 experiments/    Experiment scripts
   schemen-library-lock.json  Exact Gate source custody and fixture schema
   results/      Raw result JSON files
+gated-transformer-regime-lanes/
+                Curated paper, corrections, toy code, selected results, and figures
 ```
 
 ## Lean proofs

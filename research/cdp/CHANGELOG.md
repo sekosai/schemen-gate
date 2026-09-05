@@ -4,6 +4,15 @@ This project follows a research-release model: signed tags identify immutable
 paper, proof, code, and artifact bundles. Result artifacts are never silently
 replaced; corrections receive a new artifact and an explicit manifest note.
 
+## Unreleased
+
+- Folded the curated Schemen-gated Transformer regime-lane paper, correction
+  history, claim ledger, selected evidence, and executable toy controls into
+  the canonical Gate research arm.
+- Reconciled the earlier archived head-partition hypothesis with the later
+  complete-attention-alternative result without changing the original CDP
+  manuscript's claim set.
+
 ## 1.0.2 - Release candidate
 
 - Added reproducible Lean and GitHub CI configuration.

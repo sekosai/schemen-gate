@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "capability_phase_is_not_hard_isolation": true,
+    "capability_phase_is_periodic": true,
+    "common_rope_phase_cancels": true,
+    "invalid_grant_refused_before_state_read": true,
+    "join_requires_and_accepts_explicit_authority": true,
+    "one_complete_attention_call_per_lane": true,
+    "one_shared_ffn_invocation_per_lane": true,
+    "unauthorized_private_lane_not_read": true,
+    "union_equals_separate_per_lane": true
+  },
+  "result_seal": "757b06b25d92b24320bd9b2b903db10d65ef6b956bba9dd2066bd403fc63b43b",
+  "scope": "deterministic topology toy; no learned language-model claim",
+  "status": "PASS",
+  "topology": "gate_before_state_access_complete_regime_lanes_shared_stateless_ffn"
+}

@@ -1,0 +1,86 @@
+{
+  "acceptance": {
+    "meaning": "The positive local gate and both required negative controls behaved as preregistered. PASS does not promote a model-scale claim.",
+    "status": "PASS"
+  },
+  "authorized_scored_source_ids": [
+    "r0:block0:attention",
+    "r0:block0:ffn"
+  ],
+  "authorized_source_count": 2,
+  "claim_scope": "candidate-restricted depth-delta routing in a deterministic toy; not full Transformer isolation, semantic routing, or production authority",
+  "controls": {
+    "cross_owner_grant_refused_before_scoring": true,
+    "empty_grant_refused_at_construction": true,
+    "naive_zero_logit_unauthorized_probability_mass": 0.9876281862058303,
+    "naive_zero_logit_weights": [
+      0.009044520607440753,
+      0.0033272931867288982,
+      0.49381409310291513,
+      0.49381409310291513
+    ],
+    "unauthorized_delta_mutation_max_abs_output_difference": 0.0,
+    "unauthorized_delta_mutation_scored_source_ids": [
+      "r0:block0:attention",
+      "r0:block0:ffn"
+    ],
+    "upstream_shared_residual_mutation_max_abs_output_difference": 99.0,
+    "upstream_shared_residual_scored_source_ids": [
+      "r0:block0:attention",
+      "r0:block0:ffn"
+    ]
+  },
+  "created_at_utc": "2026-09-04T01:04:00.626688+00:00",
+  "environment": {
+    "python": "3.14.6"
+  },
+  "receipt": {
+    "allowed_source_ids": [
+      "r0:block0:attention",
+      "r0:block0:ffn"
+    ],
+    "catalog_seal": "56c36b81625dd9c7592bd76c0889d1a49ed5d5e4be5ca7a4392379850d483959",
+    "current_residual": [
+      0.25,
+      -0.25,
+      0.5
+    ],
+    "grant_id": "toy-grant-r0",
+    "grant_seal": "1458484006767f895a48a2dc3c54a3c97c52e4e04c4781fc421e42a22d2f844a",
+    "logits": [
+      -4.0,
+      -5.0
+    ],
+    "output": [
+      0.9810585786300049,
+      0.018941421369995104,
+      0.6155292893150024
+    ],
+    "query_id": "toy-query-001",
+    "regime_id": 0,
+    "routed_delta": [
+      0.7310585786300049,
+      0.2689414213699951,
+      0.11552928931500245
+    ],
+    "schema": "toy-gated-delta-head-receipt-v1",
+    "scored_source_ids": [
+      "r0:block0:attention",
+      "r0:block0:ffn"
+    ],
+    "seal": "4b02c00a4c887de81535108450ee56da13fbd6877ada36ddbab1685659b9f38a",
+    "source_seals": [
+      "74948eed30085f1af65c78b85350b67aa869ac3240fa96c0ac8787c71d213851",
+      "6153cde81c6c47cb5d129474021fe1fc7a33628dd78fc5c1ca449fd694285db5"
+    ],
+    "weights": [
+      0.7310585786300049,
+      0.2689414213699951
+    ]
+  },
+  "receipt_verified": true,
+  "result_seal": "6e6c4e2cb8b2ce128ba0be242c8beacb5b88949830d499aae91e6a50a86926d7",
+  "schema": "toy-gated-delta-head-result-v1",
+  "source_count": 4,
+  "unauthorized_sources_scored": []
+}
