@@ -1,0 +1,45 @@
+{
+  "schema": "schemen-gate/gated-transformer-regime-lanes-import-v1",
+  "source_repository": "https://github.com/sekosai/cdp-paper",
+  "source_commit": "963e8d19cde31a441d7c92cb04593caad0df0ca0",
+  "source_tree": "3bf5a44abd760fee5e010a1417baf015cdcee585",
+  "source_file_count": 17,
+  "source_size_bytes": 314799,
+  "history_imported": false,
+  "content_transformations": [
+    {
+      "path": "EVIDENCE_ARCHIVE.md",
+      "reason": "Qualified archive recovery commands as private-source-maintainer operations."
+    },
+    {
+      "path": "REPRODUCIBILITY.md",
+      "reason": "Rebased the toy-test command to the public Schemen Gate path and replaced an unusable private-package command with an explicit public-reproducibility boundary."
+    },
+    {
+      "path": "SCHEMEN_GATED_TRANSFORMER_REGIME_LANES_PAPER.md",
+      "reason": "Replaced private product terms with construction-level trusted execution-boundary language; no claim or measured value changed."
+    },
+    {
+      "path": "toy_gated_delta_head.py",
+      "reason": "Replaced a product-styled negative-scope label with production authority, sorted imports, and made aligned zip operations fail on length drift; measured values are unchanged."
+    },
+    {
+      "path": "toy_multi_regime_transformer.py",
+      "reason": "Sorted imports for the public repository lint contract; executable behavior is unchanged."
+    },
+    {
+      "path": "test_toy_gated_delta_head.py",
+      "reason": "Sorted imports for the public repository lint contract; test behavior is unchanged."
+    },
+    {
+      "path": "test_toy_multi_regime_transformer.py",
+      "reason": "Sorted imports for the public repository lint contract; test behavior is unchanged."
+    },
+    {
+      "path": "results/toy_gated_delta_head_result.json",
+      "reason": "Applied the matching non-numerical negative-scope label change to the retained toy result."
+    }
+  ],
+  "imported_into": "https://github.com/sekosai/schemen-gate/tree/main/research/cdp/gated-transformer-regime-lanes",
+  "note": "The source commit and tree identify the audited 17-file snapshot before public-integration transformations. Every transformed path and reason is enumerated above; numerical results were not changed. This custody record and the surrounding Schemen Gate indexes were added during integration. The private source repository history and the 136-file evidence archive were not imported."
+}

@@ -39,6 +39,28 @@ outside the paper.
 
 ---
 
+## Companion Schemen-Gated Transformer Regime-Lane Study
+
+**Status: PUBLISHED COMPANION STUDY; NOT IN THE ORIGINAL CDP PAPER**
+
+The curated module at [`../gated-transformer-regime-lanes/`](../gated-transformer-regime-lanes/README.md)
+evaluates complete per-Regime Q/K/V/O attention alternatives with separate
+mutable residual, KV-cache, sequence, position, stopping, parameter-generation,
+and training state. It retains the formal paper, a result-by-result correction
+history, a claim ledger, selected figures, sealed toy results, and executable
+toy controls.
+
+Headline bounded results include 0/147,456 foreign-corpus answers, 992/992
+fixed-shape own-lane intervention positives, 2,976/2,976 bit-exact off-lane
+comparisons, and exact R8/R16 cached lifecycle controls. The module explicitly
+withholds the tested switch-oriented SFT curriculum, universal cross-shape
+bit-exactness, R32 deployment, naive multi-stream acceleration, and universal
+or production-security claims. The complete 136-file historical dossier remains
+outside the public critical path at the custody identifiers recorded in the
+module's `EVIDENCE_ARCHIVE.md`.
+
+---
+
 ## Series 1: Co-Trained Classification Cost (DistilBERT)
 
 **Status: IN PAPER (formative post-encoder classification section)**

@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="690" viewBox="0 0 1280 690" role="img" aria-labelledby="title description">
+<title id="title">Measured Qwen attention-bank independence</title>
+<desc id="description">Three panels show diagonal parameter mutation, gated versus ungated gradient reach, and exact sequential versus concurrent residual and logit parity for four regimes.</desc>
+<style>
+        .background { fill: #fbfcfe; }
+        .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.2; }
+        .title { fill: #0f172a; font: 700 25px -apple-system, BlinkMacSystemFont, sans-serif; }
+        .subtitle { fill: #475569; font: 14px -apple-system, BlinkMacSystemFont, sans-serif; }
+        .heading { fill: #0f172a; font: 700 17px -apple-system, BlinkMacSystemFont, sans-serif; }
+        .label { fill: #334155; font: 13px -apple-system, BlinkMacSystemFont, sans-serif; }
+        .small { fill: #475569; font: 12px ui-monospace, SFMono-Regular, monospace; }
+        .cell { fill: #0f172a; font: 11px ui-monospace, SFMono-Regular, monospace; }
+        .axis { fill: #475569; font: 10px ui-monospace, SFMono-Regular, monospace; }
+        .active { fill: #5eead4; stroke: #0f766e; stroke-width: 1; }
+        .reached { fill: #fdba74; stroke: #c2410c; stroke-width: 1; }
+        .zero { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1; }
+        .exact { fill: #86efac; stroke: #15803d; stroke-width: 0.6; }
+        .failed { fill: #fca5a5; stroke: #b91c1c; stroke-width: 0.6; }
+        .gap { fill: #fffbeb; stroke: #d97706; stroke-width: 1.2; }
+        .gap-title { fill: #92400e; font: 700 15px -apple-system, BlinkMacSystemFont, sans-serif; }
+        .gap-text { fill: #78350f; font: 13px -apple-system, BlinkMacSystemFont, sans-serif; }
+        </style>
+<rect width="1280" height="690" class="background"/>
+<text x="40" y="44" class="title" text-anchor="start">Qwen regime banks: measured independence and the remaining depth test</text>
+<text x="40" y="70" class="subtitle" text-anchor="start">Qwen2.5-0.5B-Instruct · R=4 · 48 SFT steps per regime · FP32 eager</text>
+<rect x="35" y="94" width="378" height="386" rx="8" class="panel"/>
+<rect x="430" y="94" width="378" height="386" rx="8" class="panel"/>
+<rect x="825" y="94" width="420" height="386" rx="8" class="panel"/>
+<text x="55" y="126" class="heading" text-anchor="start">A. Parameter mutation is diagonal</text>
+<text x="55" y="149" class="label" text-anchor="start">max |Δθ| after each regime's SFT phase</text>
+<text x="176" y="181" class="axis" text-anchor="middle">bank 0</text>
+<text x="234" y="181" class="axis" text-anchor="middle">bank 1</text>
+<text x="292" y="181" class="axis" text-anchor="middle">bank 2</text>
+<text x="350" y="181" class="axis" text-anchor="middle">bank 3</text>
+<text x="135" y="230.96" class="small" text-anchor="end">train 0</text>
+<rect x="147" y="195" width="54" height="54" class="active"/>
+<text x="174" y="229.22" class="cell" text-anchor="middle">0.00605</text>
+<rect x="205" y="195" width="54" height="54" class="zero"/>
+<text x="232" y="229.22" class="cell" text-anchor="middle">0</text>
+<rect x="263" y="195" width="54" height="54" class="zero"/>
+<text x="290" y="229.22" class="cell" text-anchor="middle">0</text>
+<rect x="321" y="195" width="54" height="54" class="zero"/>
+<text x="348" y="229.22" class="cell" text-anchor="middle">0</text>
+<text x="135" y="288.96" class="small" text-anchor="end">train 1</text>
+<rect x="147" y="253" width="54" height="54" class="zero"/>
+<text x="174" y="287.22" class="cell" text-anchor="middle">0</text>
+<rect x="205" y="253" width="54" height="54" class="active"/>
+<text x="232" y="287.22" class="cell" text-anchor="middle">0.0114</text>
+<rect x="263" y="253" width="54" height="54" class="zero"/>
+<text x="290" y="287.22" class="cell" text-anchor="middle">0</text>
+<rect x="321" y="253" width="54" height="54" class="zero"/>
+<text x="348" y="287.22" class="cell" text-anchor="middle">0</text>
+<text x="135" y="346.96" class="small" text-anchor="end">train 2</text>
+<rect x="147" y="311" width="54" height="54" class="zero"/>
+<text x="174" y="345.22" class="cell" text-anchor="middle">0</text>
+<rect x="205" y="311" width="54" height="54" class="zero"/>
+<text x="232" y="345.22" class="cell" text-anchor="middle">0</text>
+<rect x="263" y="311" width="54" height="54" class="active"/>
+<text x="290" y="345.22" class="cell" text-anchor="middle">0.0073</text>
+<rect x="321" y="311" width="54" height="54" class="zero"/>
+<text x="348" y="345.22" class="cell" text-anchor="middle">0</text>
+<text x="135" y="404.96" class="small" text-anchor="end">train 3</text>
+<rect x="147" y="369" width="54" height="54" class="zero"/>
+<text x="174" y="403.22" class="cell" text-anchor="middle">0</text>
+<rect x="205" y="369" width="54" height="54" class="zero"/>
+<text x="232" y="403.22" class="cell" text-anchor="middle">0</text>
+<rect x="263" y="369" width="54" height="54" class="zero"/>
+<text x="290" y="403.22" class="cell" text-anchor="middle">0</text>
+<rect x="321" y="369" width="54" height="54" class="active"/>
+<text x="348" y="403.22" class="cell" text-anchor="middle">0.0062</text>
+<text x="55" y="448" class="label" text-anchor="start">Off-diagonal maximum: exactly 0</text>
+<text x="450" y="126" class="heading" text-anchor="start">B. Gate closes the gradient graph</text>
+<text x="450" y="149" class="label" text-anchor="start">gradient L1 by destination parameter bank</text>
+<text x="583" y="181" class="axis" text-anchor="middle">bank 0</text>
+<text x="635" y="181" class="axis" text-anchor="middle">bank 1</text>
+<text x="687" y="181" class="axis" text-anchor="middle">bank 2</text>
+<text x="739" y="181" class="axis" text-anchor="middle">bank 3</text>
+<text x="545" y="223.52" class="small" text-anchor="end">no Gate</text>
+<rect x="557" y="195" width="48" height="42" class="reached"/>
+<text x="581" y="222.14" class="cell" text-anchor="middle">8.8e+03</text>
+<rect x="609" y="195" width="48" height="42" class="reached"/>
+<text x="633" y="222.14" class="cell" text-anchor="middle">8.8e+03</text>
+<rect x="661" y="195" width="48" height="42" class="reached"/>
+<text x="685" y="222.14" class="cell" text-anchor="middle">8.8e+03</text>
+<rect x="713" y="195" width="48" height="42" class="reached"/>
+<text x="737" y="222.14" class="cell" text-anchor="middle">8.8e+03</text>
+<text x="545" y="269.52" class="small" text-anchor="end">Gate 0</text>
+<rect x="557" y="241" width="48" height="42" class="reached"/>
+<text x="581" y="268.14" class="cell" text-anchor="middle">3.5e+04</text>
+<rect x="609" y="241" width="48" height="42" class="zero"/>
+<text x="633" y="268.14" class="cell" text-anchor="middle">0</text>
+<rect x="661" y="241" width="48" height="42" class="zero"/>
+<text x="685" y="268.14" class="cell" text-anchor="middle">0</text>
+<rect x="713" y="241" width="48" height="42" class="zero"/>
+<text x="737" y="268.14" class="cell" text-anchor="middle">0</text>
+<text x="545" y="315.52" class="small" text-anchor="end">Gate 1</text>
+<rect x="557" y="287" width="48" height="42" class="zero"/>
+<text x="581" y="314.14" class="cell" text-anchor="middle">0</text>
+<rect x="609" y="287" width="48" height="42" class="reached"/>
+<text x="633" y="314.14" class="cell" text-anchor="middle">3.4e+04</text>
+<rect x="661" y="287" width="48" height="42" class="zero"/>
+<text x="685" y="314.14" class="cell" text-anchor="middle">0</text>
+<rect x="713" y="287" width="48" height="42" class="zero"/>
+<text x="737" y="314.14" class="cell" text-anchor="middle">0</text>
+<text x="545" y="361.52" class="small" text-anchor="end">Gate 2</text>
+<rect x="557" y="333" width="48" height="42" class="zero"/>
+<text x="581" y="360.14" class="cell" text-anchor="middle">0</text>
+<rect x="609" y="333" width="48" height="42" class="zero"/>
+<text x="633" y="360.14" class="cell" text-anchor="middle">0</text>
+<rect x="661" y="333" width="48" height="42" class="reached"/>
+<text x="685" y="360.14" class="cell" text-anchor="middle">3.3e+04</text>
+<rect x="713" y="333" width="48" height="42" class="zero"/>
+<text x="737" y="360.14" class="cell" text-anchor="middle">0</text>
+<text x="545" y="407.52" class="small" text-anchor="end">Gate 3</text>
+<rect x="557" y="379" width="48" height="42" class="zero"/>
+<text x="581" y="406.14" class="cell" text-anchor="middle">0</text>
+<rect x="609" y="379" width="48" height="42" class="zero"/>
+<text x="633" y="406.14" class="cell" text-anchor="middle">0</text>
+<rect x="661" y="379" width="48" height="42" class="zero"/>
+<text x="685" y="406.14" class="cell" text-anchor="middle">0</text>
+<rect x="713" y="379" width="48" height="42" class="reached"/>
+<text x="737" y="406.14" class="cell" text-anchor="middle">3.2e+04</text>
+<text x="450" y="448" class="label" text-anchor="start">No-Gate reaches 4/4; each Gate reaches 1/4</text>
+<text x="845" y="126" class="heading" text-anchor="start">C. Concurrent = sequential</text>
+<text x="845" y="149" class="label" text-anchor="start">25 residual nodes + full logits, after bespoke SFT</text>
+<text x="887" y="224" class="small" text-anchor="end">R0</text>
+<rect x="899" y="210" width="10" height="28" class="exact"/>
+<rect x="911" y="210" width="10" height="28" class="exact"/>
+<rect x="923" y="210" width="10" height="28" class="exact"/>
+<rect x="935" y="210" width="10" height="28" class="exact"/>
+<rect x="947" y="210" width="10" height="28" class="exact"/>
+<rect x="959" y="210" width="10" height="28" class="exact"/>
+<rect x="971" y="210" width="10" height="28" class="exact"/>
+<rect x="983" y="210" width="10" height="28" class="exact"/>
+<rect x="995" y="210" width="10" height="28" class="exact"/>
+<rect x="1007" y="210" width="10" height="28" class="exact"/>
+<rect x="1019" y="210" width="10" height="28" class="exact"/>
+<rect x="1031" y="210" width="10" height="28" class="exact"/>
+<rect x="1043" y="210" width="10" height="28" class="exact"/>
+<rect x="1055" y="210" width="10" height="28" class="exact"/>
+<rect x="1067" y="210" width="10" height="28" class="exact"/>
+<rect x="1079" y="210" width="10" height="28" class="exact"/>
+<rect x="1091" y="210" width="10" height="28" class="exact"/>
+<rect x="1103" y="210" width="10" height="28" class="exact"/>
+<rect x="1115" y="210" width="10" height="28" class="exact"/>
+<rect x="1127" y="210" width="10" height="28" class="exact"/>
+<rect x="1139" y="210" width="10" height="28" class="exact"/>
+<rect x="1151" y="210" width="10" height="28" class="exact"/>
+<rect x="1163" y="210" width="10" height="28" class="exact"/>
+<rect x="1175" y="210" width="10" height="28" class="exact"/>
+<rect x="1187" y="210" width="10" height="28" class="exact"/>
+<rect x="1211" y="210" width="24" height="28" class="exact"/>
+<text x="887" y="266" class="small" text-anchor="end">R1</text>
+<rect x="899" y="252" width="10" height="28" class="exact"/>
+<rect x="911" y="252" width="10" height="28" class="exact"/>
+<rect x="923" y="252" width="10" height="28" class="exact"/>
+<rect x="935" y="252" width="10" height="28" class="exact"/>
+<rect x="947" y="252" width="10" height="28" class="exact"/>
+<rect x="959" y="252" width="10" height="28" class="exact"/>
+<rect x="971" y="252" width="10" height="28" class="exact"/>
+<rect x="983" y="252" width="10" height="28" class="exact"/>
+<rect x="995" y="252" width="10" height="28" class="exact"/>
+<rect x="1007" y="252" width="10" height="28" class="exact"/>
+<rect x="1019" y="252" width="10" height="28" class="exact"/>
+<rect x="1031" y="252" width="10" height="28" class="exact"/>
+<rect x="1043" y="252" width="10" height="28" class="exact"/>
+<rect x="1055" y="252" width="10" height="28" class="exact"/>
+<rect x="1067" y="252" width="10" height="28" class="exact"/>
+<rect x="1079" y="252" width="10" height="28" class="exact"/>
+<rect x="1091" y="252" width="10" height="28" class="exact"/>
+<rect x="1103" y="252" width="10" height="28" class="exact"/>
+<rect x="1115" y="252" width="10" height="28" class="exact"/>
+<rect x="1127" y="252" width="10" height="28" class="exact"/>
+<rect x="1139" y="252" width="10" height="28" class="exact"/>
+<rect x="1151" y="252" width="10" height="28" class="exact"/>
+<rect x="1163" y="252" width="10" height="28" class="exact"/>
+<rect x="1175" y="252" width="10" height="28" class="exact"/>
+<rect x="1187" y="252" width="10" height="28" class="exact"/>
+<rect x="1211" y="252" width="24" height="28" class="exact"/>
+<text x="887" y="308" class="small" text-anchor="end">R2</text>
+<rect x="899" y="294" width="10" height="28" class="exact"/>
+<rect x="911" y="294" width="10" height="28" class="exact"/>
+<rect x="923" y="294" width="10" height="28" class="exact"/>
+<rect x="935" y="294" width="10" height="28" class="exact"/>
+<rect x="947" y="294" width="10" height="28" class="exact"/>
+<rect x="959" y="294" width="10" height="28" class="exact"/>
+<rect x="971" y="294" width="10" height="28" class="exact"/>
+<rect x="983" y="294" width="10" height="28" class="exact"/>
+<rect x="995" y="294" width="10" height="28" class="exact"/>
+<rect x="1007" y="294" width="10" height="28" class="exact"/>
+<rect x="1019" y="294" width="10" height="28" class="exact"/>
+<rect x="1031" y="294" width="10" height="28" class="exact"/>
+<rect x="1043" y="294" width="10" height="28" class="exact"/>
+<rect x="1055" y="294" width="10" height="28" class="exact"/>
+<rect x="1067" y="294" width="10" height="28" class="exact"/>
+<rect x="1079" y="294" width="10" height="28" class="exact"/>
+<rect x="1091" y="294" width="10" height="28" class="exact"/>
+<rect x="1103" y="294" width="10" height="28" class="exact"/>
+<rect x="1115" y="294" width="10" height="28" class="exact"/>
+<rect x="1127" y="294" width="10" height="28" class="exact"/>
+<rect x="1139" y="294" width="10" height="28" class="exact"/>
+<rect x="1151" y="294" width="10" height="28" class="exact"/>
+<rect x="1163" y="294" width="10" height="28" class="exact"/>
+<rect x="1175" y="294" width="10" height="28" class="exact"/>
+<rect x="1187" y="294" width="10" height="28" class="exact"/>
+<rect x="1211" y="294" width="24" height="28" class="exact"/>
+<text x="887" y="350" class="small" text-anchor="end">R3</text>
+<rect x="899" y="336" width="10" height="28" class="exact"/>
+<rect x="911" y="336" width="10" height="28" class="exact"/>
+<rect x="923" y="336" width="10" height="28" class="exact"/>
+<rect x="935" y="336" width="10" height="28" class="exact"/>
+<rect x="947" y="336" width="10" height="28" class="exact"/>
+<rect x="959" y="336" width="10" height="28" class="exact"/>
+<rect x="971" y="336" width="10" height="28" class="exact"/>
+<rect x="983" y="336" width="10" height="28" class="exact"/>
+<rect x="995" y="336" width="10" height="28" class="exact"/>
+<rect x="1007" y="336" width="10" height="28" class="exact"/>
+<rect x="1019" y="336" width="10" height="28" class="exact"/>
+<rect x="1031" y="336" width="10" height="28" class="exact"/>
+<rect x="1043" y="336" width="10" height="28" class="exact"/>
+<rect x="1055" y="336" width="10" height="28" class="exact"/>
+<rect x="1067" y="336" width="10" height="28" class="exact"/>
+<rect x="1079" y="336" width="10" height="28" class="exact"/>
+<rect x="1091" y="336" width="10" height="28" class="exact"/>
+<rect x="1103" y="336" width="10" height="28" class="exact"/>
+<rect x="1115" y="336" width="10" height="28" class="exact"/>
+<rect x="1127" y="336" width="10" height="28" class="exact"/>
+<rect x="1139" y="336" width="10" height="28" class="exact"/>
+<rect x="1151" y="336" width="10" height="28" class="exact"/>
+<rect x="1163" y="336" width="10" height="28" class="exact"/>
+<rect x="1175" y="336" width="10" height="28" class="exact"/>
+<rect x="1187" y="336" width="10" height="28" class="exact"/>
+<rect x="1211" y="336" width="24" height="28" class="exact"/>
+<text x="904" y="397" class="axis" text-anchor="middle">0</text>
+<text x="952" y="397" class="axis" text-anchor="middle">4</text>
+<text x="1000" y="397" class="axis" text-anchor="middle">8</text>
+<text x="1048" y="397" class="axis" text-anchor="middle">12</text>
+<text x="1096" y="397" class="axis" text-anchor="middle">16</text>
+<text x="1144" y="397" class="axis" text-anchor="middle">20</text>
+<text x="1192" y="397" class="axis" text-anchor="middle">24</text>
+<text x="1223" y="397" class="axis" text-anchor="middle">logits</text>
+<text x="845" y="425" class="label" text-anchor="start">Green = bit-exact; 104/104 captured endpoints</text>
+<text x="845" y="448" class="label" text-anchor="start">Six residual-storage pairs shared 0 allocations</text>
+<rect x="35" y="510" width="1210" height="140" rx="8" class="gap"/>
+<text x="55" y="543" class="gap-title" text-anchor="start">NEXT FALSIFIER: make trajectories distinct early, then traverse the shared backbone</text>
+<text x="55" y="574" class="gap-text" text-anchor="start">Current SFT divergence enters at decoder layer 23; exact concurrency is real but shallow after divergence.</text>
+<text x="55" y="602" class="gap-text" text-anchor="start">Next: graft or train at layer 4, capture attention-write / post-residual / FFN-write / post-residual at every downstream layer.</text>
+<text x="55" y="630" class="gap-text" text-anchor="start">Require exact seq↔concurrent parity, zero off-regime finite sensitivity, disjoint state, and detector-positive glue/no-Gate controls.</text>
+</svg>

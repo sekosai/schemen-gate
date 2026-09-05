@@ -31,6 +31,8 @@ License, Version 2.0. The canonical text is in
 - `lean-toolchain`
 - `experiments/requirements*.txt`
 - `experiments/schemen-library-lock.json`
+- `gated-transformer-regime-lanes/*.py`
+- `gated-transformer-regime-lanes/.gitignore`
 - `.gitignore`
 
 ## CC-BY-4.0
@@ -56,6 +58,11 @@ authoritative Creative Commons legal-code link are in [`LICENSE`](LICENSE).
 - `experiments/README.md`
 - `experiments/orthogonal-superposition-experiment.md`
 - `examples/README.md`
+- `gated-transformer-regime-lanes/*.md`
+- `gated-transformer-regime-lanes/*.json`
+- `gated-transformer-regime-lanes/*.png`
+- `gated-transformer-regime-lanes/figures/**`
+- `gated-transformer-regime-lanes/results/**`
 
 Attribution should identify “Cryptographic Dimension Partitioning,” Ryan
 McCormick, the source repository, the CC BY 4.0 license, and whether the

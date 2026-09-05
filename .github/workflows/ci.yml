@@ -50,7 +50,11 @@ jobs:
           --cov=schemen_gate
           --cov-report=term-missing:skip-covered
       - run: python -m pytest -q research/cdp/experiments/tests
-      - run: python -m compileall -q research/cdp/experiments
+      - run: python -m pytest -q research/cdp/gated-transformer-regime-lanes
+      - run: >-
+          python -m compileall -q
+          research/cdp/experiments
+          research/cdp/gated-transformer-regime-lanes
       - run: bash -n scripts/modal.sh
       - run: bash -n research/cdp/scripts/setup.sh
       - run: ./scripts/modal.sh help
@@ -58,6 +62,7 @@ jobs:
           python -m ruff check
           src tests examples scripts
           research/cdp/experiments research/cdp/scripts research/cdp/examples
+          research/cdp/gated-transformer-regime-lanes
       - name: Formatting boundary
         if: matrix.python-version == '3.12'
         run: python -m ruff format --check src tests scripts examples

@@ -138,9 +138,12 @@ backbone, but they protect different surfaces.
   ablation, not demonstrated Binary Activation isolation.
 - The strict result governs intermediate FFN activations and aligned trainable
   state. Shared attention remains shared.
-- Complete attention lanes would need separate Q/K/V, output projection,
-  normalization, FFN, residual, and cache paths trained or distilled as lanes
-  from the outset. That result is open.
+- A later bounded study evaluates complete Q/K/V/O attention alternatives with
+  lane-local residual, cache, sequence, position, stopping, and training state
+  on a shared immutable backbone. Its fixed-shape controls are positive, but
+  universal cross-shape exactness, the tested switch-oriented SFT curriculum,
+  R32 deployment, and production-security claims remain open. See the
+  [regime-lane paper](../research/cdp/gated-transformer-regime-lanes/SCHEMEN_GATED_TRANSFORMER_REGIME_LANES_PAPER.md).
 - MoE experts are a more natural future authorization surface, but masking
   pre-softmax router logits with zero is insufficient; unauthorized experts
   must be excluded from selection and dispatch.

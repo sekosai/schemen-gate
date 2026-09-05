@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import hashlib
 import re
+import struct
 import subprocess
+import zlib
 from pathlib import Path
 
 import pytest
@@ -98,7 +100,32 @@ def test_pdf_metadata_is_extracted_and_scanned(tmp_path: Path) -> None:
     assert findings == ("pdf:metadata:1: Modal credential",)
 
 
-def test_every_tracked_binary_is_an_extracted_pdf() -> None:
+def _png_chunk(chunk_type: bytes, data: bytes) -> bytes:
+    crc = zlib.crc32(chunk_type)
+    crc = zlib.crc32(data, crc) & 0xFFFFFFFF
+    return struct.pack(">I", len(data)) + chunk_type + data + struct.pack(">I", crc)
+
+
+def test_png_text_metadata_is_extracted_and_scanned(tmp_path: Path) -> None:
+    path = tmp_path / "credential.png"
+    ihdr = struct.pack(">IIBBBBB", 1, 1, 8, 0, 0, 0, 0)
+    image = zlib.compress(b"\x00\x00")
+    secret = b"ak-" + b"A" * 32
+    path.write_bytes(
+        public_hygiene.PNG_SIGNATURE
+        + _png_chunk(b"IHDR", ihdr)
+        + _png_chunk(b"tEXt", b"Comment\0" + secret)
+        + _png_chunk(b"IDAT", image)
+        + _png_chunk(b"IEND", b"")
+    )
+
+    payloads = dict(public_hygiene._png_payloads(path))
+    findings = tuple(public_hygiene._pattern_findings(payloads["text-1"], location="png:text-1"))
+
+    assert findings == ("png:text-1:1: Modal credential",)
+
+
+def test_every_tracked_binary_has_a_bounded_extractor() -> None:
     names = subprocess.check_output(("git", "ls-files", "-z"), cwd=ROOT).decode().split("\0")
     binary_paths = [
         ROOT / name
@@ -107,7 +134,11 @@ def test_every_tracked_binary_is_an_extracted_pdf() -> None:
     ]
 
     assert binary_paths
-    assert all(path.suffix.lower() == ".pdf" for path in binary_paths)
+    assert all(path.suffix.lower() in {".pdf", ".png"} for path in binary_paths)
     for path in binary_paths:
-        payloads = public_hygiene._pdf_payloads(path)
-        assert any(source.startswith("page-") for source, _ in payloads)
+        if path.suffix.lower() == ".pdf":
+            payloads = public_hygiene._pdf_payloads(path)
+            assert any(source.startswith("page-") for source, _ in payloads)
+        else:
+            payloads = public_hygiene._png_payloads(path)
+            assert dict(payloads)["raw"].startswith(public_hygiene.PNG_SIGNATURE)

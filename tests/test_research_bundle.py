@@ -33,6 +33,45 @@ def test_cdp_snapshot_has_exact_source_custody_and_separate_license() -> None:
     assert "Historical receipts remain byte-identical" not in custody_note
     assert "absolute workstation paths in historical receipts were replaced" in research_readme
     assert "Numerical results, dependency versions, source" in research_readme
+
+
+def test_gated_transformer_snapshot_has_exact_source_custody() -> None:
+    module = CDP / "gated-transformer-regime-lanes"
+    source = json.loads((module / "SOURCE.json").read_text(encoding="utf-8"))
+    assert source["schema"] == "schemen-gate/gated-transformer-regime-lanes-import-v1"
+    assert source["source_repository"] == "https://github.com/sekosai/cdp-paper"
+    assert source["source_commit"] == "963e8d19cde31a441d7c92cb04593caad0df0ca0"
+    assert source["source_tree"] == "3bf5a44abd760fee5e010a1417baf015cdcee585"
+    assert source["source_file_count"] == 17
+    assert source["source_size_bytes"] == 314799
+    assert source["history_imported"] is False
+    assert source["imported_into"] == (
+        "https://github.com/sekosai/schemen-gate/tree/main/"
+        "research/cdp/gated-transformer-regime-lanes"
+    )
+    assert "numerical results were not changed" in source["note"]
+    assert all(item["reason"] for item in source["content_transformations"])
+
+    tracked = subprocess.run(
+        ["git", "ls-files", "research/cdp/gated-transformer-regime-lanes"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.splitlines()
+    imported = [ROOT / path for path in tracked if not path.endswith("/SOURCE.json")]
+    assert len(imported) == source["source_file_count"]
+    assert source["source_size_bytes"] == 314799
+    assert {item["path"] for item in source["content_transformations"]} == {
+        "EVIDENCE_ARCHIVE.md",
+        "REPRODUCIBILITY.md",
+        "SCHEMEN_GATED_TRANSFORMER_REGIME_LANES_PAPER.md",
+        "toy_gated_delta_head.py",
+        "toy_multi_regime_transformer.py",
+        "test_toy_gated_delta_head.py",
+        "test_toy_multi_regime_transformer.py",
+        "results/toy_gated_delta_head_result.json",
+    }
     assert "Creative Commons Attribution 4.0" in (CDP / "LICENSE").read_text()
     license_map = (CDP / "LICENSES.md").read_text(encoding="utf-8")
     assert "Apache-2.0" in license_map
@@ -176,6 +215,8 @@ def test_every_tracked_research_path_has_a_license_classification() -> None:
         "experiments/requirements*.txt",
         "experiments/modal-recertification.json",
         "experiments/schemen-library-lock.json",
+        "gated-transformer-regime-lanes/*.py",
+        "gated-transformer-regime-lanes/.gitignore",
         ".gitignore",
     )
     creative_commons = (
@@ -195,6 +236,11 @@ def test_every_tracked_research_path_has_a_license_classification() -> None:
         "experiments/README.md",
         "experiments/orthogonal-superposition-experiment.md",
         "examples/README.md",
+        "gated-transformer-regime-lanes/*.md",
+        "gated-transformer-regime-lanes/*.json",
+        "gated-transformer-regime-lanes/*.png",
+        "gated-transformer-regime-lanes/figures/**",
+        "gated-transformer-regime-lanes/results/**",
     )
     packaging = ("LICENSE", "LICENSES.md", "LICENSES/**")
 

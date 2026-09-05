@@ -181,10 +181,14 @@ experiment code, launchers, and retained receipts. Begin with:
 - [Transformer boundary paper](research/cdp/output/pdf/binary-activation-transformers.pdf)
   and [source](research/cdp/paper/split/binary-activation-transformers.tex).
 - [Full manuscript](research/cdp/paper/cdp.pdf) and [source](research/cdp/paper/cdp.tex).
+- [Schemen-gated Transformer regime-lane paper](research/cdp/gated-transformer-regime-lanes/SCHEMEN_GATED_TRANSFORMER_REGIME_LANES_PAPER.md)
+  and its [results, failures, and corrections](research/cdp/gated-transformer-regime-lanes/RESULTS_AND_CORRECTIONS.md).
 
 The proof and experiment claims apply to their named constructions. A proof of
 the local Gate algebra is not a proof of arbitrary Python execution or a
-particular deployment.
+particular deployment. The regime-lane study is a separate bounded empirical
+result: it does not amend the claims of the original CDP manuscript or establish
+universal or production-grade Transformer isolation.
 
 ## Run a remote example
 

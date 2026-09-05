@@ -5,6 +5,13 @@
 This note records a rejected intermediate design. It is not an evaluated CDP
 embodiment and is not evidence for the paper.
 
+**2026-09-05 update:** The head-partitioning design rejected here remains
+rejected. A distinct later study duplicated each Regime's complete Q/K/V/O
+attention operator and kept mutable residual, cache, sequence, position,
+stopping, and training state in separate lanes. Its bounded results are
+published in the
+[Schemen-gated Transformer regime-lane paper](../gated-transformer-regime-lanes/SCHEMEN_GATED_TRANSFORMER_REGIME_LANES_PAPER.md).
+
 Assigning complete heads to regimes is insufficient to isolate a Transformer.
 A gate on the concatenated head outputs can zero the immediate contribution of
 an inactive head before the output projection, but it does not close the
@@ -68,9 +75,12 @@ invalidates the claimed lane boundary even though the immediate gated tensor
 still contains literal zeros.
 
 This duplicated construction is expensive and has a substantial operator-error
-surface. It remains future work outside the current paper. The evaluated CDP
-construction leaves attention shared. Its internal coordinate claims are
-limited to declared FFN surfaces: the narrower pre-MLP input gate and the
-stronger evaluated intermediate-FFN gate. A separate whole-model gate can deny
-invocation of an entire Transformer as one atomic resource, but does not
-partition that Transformer's attention internals.
+surface. It remained future work outside the original CDP paper. The later
+regime-lane study supplies bounded empirical evidence for complete attention
+alternatives and lane-local decoder state, while explicitly withholding
+universal and production-security claims. The evaluated CDP construction in
+the original manuscript still leaves attention shared, and its internal
+coordinate claims remain limited to declared FFN surfaces: the narrower pre-MLP
+input gate and the stronger evaluated intermediate-FFN gate. A separate
+whole-model gate can deny invocation of an entire Transformer as one atomic
+resource, but does not partition that Transformer's attention internals.
