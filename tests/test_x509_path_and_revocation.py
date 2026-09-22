@@ -225,7 +225,7 @@ def test_partition_destruction_requires_a_conforming_store() -> None:
             return 0
 
     partition_map = PartitionMap(GATE_KEY, n_dims=4, n_regimes=1)
-    partition_map.register("partition-a", regime_id=0)
+    partition_map.register("partition-a", regime_id=0, mode=PartitionMode.READ_WRITE)
     adapter = GatedRAGAdapter(StoreWithoutDelete(), partition_map)
 
     with pytest.raises(PartitionModeError, match="delete_partition"):

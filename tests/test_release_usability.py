@@ -37,14 +37,14 @@ def _modal_fixture_repository(tmp_path: Path) -> Path:
             {
                 "schema": "schemen/gate-release-contract-v1",
                 "package": "schemen-gate",
-                "version": "1.0.2",
-                "tag": "v1.0.2",
+                "version": "1.0.3",
+                "tag": "v1.0.3",
                 "repository": "https://github.com/sekosai/schemen-gate",
             },
             indent=2,
         )
         + "\n",
-        "src/schemen_gate/__init__.py": "__version__ = '1.0.2'\n",
+        "src/schemen_gate/__init__.py": "__version__ = '1.0.3'\n",
         "src/schemen_gate/py.typed": "",
     }
     for relative, contents in files.items():
@@ -76,8 +76,8 @@ def test_pypi_long_description_has_only_release_bound_links() -> None:
     pypi = (ROOT / "PYPI.md").read_text(encoding="utf-8")
     assert "/blob/main/" not in pypi
     assert "/tree/main/" not in pypi
-    assert "/blob/v1.0.2/" in pypi
-    assert "/tree/v1.0.2/" in pypi
+    assert "/blob/v1.0.3/" in pypi
+    assert "/tree/v1.0.3/" in pypi
 
 
 def test_modal_source_export_matches_exact_tracked_checkout() -> None:
@@ -148,7 +148,7 @@ def test_modal_source_export_uses_only_committed_contract_and_source(
 
     export = prepare_modal_source_export(repository, require_clean=False)
     try:
-        assert export.version == "1.0.2"
+        assert export.version == "1.0.3"
         assert (export.root / "release-contract.json").read_bytes() == committed_contract
         generated = export.root / "src/schemen_gate/_build_identity.py"
         assert b"stale working-tree input" not in generated.read_bytes()
@@ -163,9 +163,9 @@ def test_modal_stamp_bytes_match_release_builder() -> None:
 
     commit = "a" * 40
     repository = "https://github.com/sekosai/schemen-gate"
-    expected = render(version="1.0.2", repository=repository, commit=commit)
+    expected = render(version="1.0.3", repository=repository, commit=commit)
     assert render_build_identity(
-        version="1.0.2",
+        version="1.0.3",
         repository=repository,
         commit=commit,
     ) == expected.encode("utf-8")

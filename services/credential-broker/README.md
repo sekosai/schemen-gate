@@ -5,7 +5,7 @@ HTTP requests. Agents receive permission to use a connection; they cannot
 retrieve its credential or select another tenant through request fields.
 
 This directory is an independently installed Apache-2.0 package,
-`schemen-credential-broker`, version **0.3.0**, requiring Python **3.11+** on
+`schemen-credential-broker`, version **0.3.1**, requiring Python **3.11+** on
 POSIX systems. It is excluded from the `schemen-gate` wheel and source
 distribution. The base connection broker does not require Gate or a private
 service. The optional `gate` extra enables

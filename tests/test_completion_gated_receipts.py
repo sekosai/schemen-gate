@@ -284,6 +284,9 @@ class TestCompletionGatedReceipts:
         s1.load_cargo(items)
         r1 = g1.depart_with_completion(_embed("query about databases"))
 
+        # Compare independent runs with the same payload and a fresh partition.
+        # Reusing an existing document ID is now rejected at store admission.
+        adapter.destroy("regime-0")
         m2 = create_manifest(
             tenant_id="t1",
             regime_id=0,

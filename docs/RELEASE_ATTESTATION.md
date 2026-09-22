@@ -1,6 +1,6 @@
 # Release-attestation contract
 
-Schemen Gate 1.0.2 uses a GitHub-signed release-admission attestation. It is a
+Schemen Gate 1.0.3 uses a GitHub-signed release-admission attestation. It is a
 binding among exact artifact bytes, the reviewed source commit, the release
 version and tag, the successful CI run, and a privileged signer workflow loaded
 from the protected default branch.
@@ -19,7 +19,7 @@ The attestation therefore has two complementary authenticated layers:
    the repository, default-branch admission workflow, its commit, and the
    GitHub-hosted runner. This statement describes the trusted admitting
    workflow; by itself it does not identify the upstream tag.
-2. A second custom predicate identifies Gate 1.0.2, `refs/tags/v1.0.2`, the
+2. A second custom predicate identifies Gate 1.0.3, `refs/tags/v1.0.3`, the
    upstream repository and CI workflow identities, CI `head_sha`, run and
    attempt, and immutable artifact name. Both in-toto statements contain the
    action-computed SHA-256 digests of the exact wheel and source archive.
@@ -41,10 +41,10 @@ The predicate has exactly these release-relevant fields:
 
 - `schema`: `schemen/gate-release-attestation-v1`
 - `package`: `schemen-gate`
-- `version`: `1.0.2`
+- `version`: `1.0.3`
 - `source_repository`: `https://github.com/sekosai/schemen-gate`
 - `source_repository_id`: the triggering head repository's immutable GitHub ID
-- `source_ref`: `refs/tags/v1.0.2`
+- `source_ref`: `refs/tags/v1.0.3`
 - `source_commit`: the triggering CI run's full `head_sha`
 - `ci_workflow`: `.github/workflows/ci.yml`
 - `ci_workflow_id`: the triggering CI workflow's immutable GitHub ID
@@ -67,7 +67,7 @@ the release tag, configure `public-release` to:
 The branch rule must be `main`: GitHub matches environment rules against the
 privileged `workflow_run` job's `GITHUB_REF`, which is the default branch. The
 trusted workflow itself independently requires the triggering upstream
-`head_branch` to be exactly `v1.0.2`.
+`head_branch` to be exactly `v1.0.3`.
 
 Keep `main` at the release commit from tag creation until attestation finishes.
 Any mismatch between `github.sha` and the upstream CI `head_sha` skips the
@@ -79,7 +79,7 @@ From the exact release checkout, verify a downloaded artifact with:
 
 ```bash
 EXPECTED_GATE_COMMIT="$(git rev-parse HEAD)"
-gh attestation verify dist/schemen_gate-1.0.2-py3-none-any.whl \
+gh attestation verify dist/schemen_gate-1.0.3-py3-none-any.whl \
   --repo sekosai/schemen-gate \
   --predicate-type https://github.com/sekosai/schemen-gate/attestations/release/v1 \
   --signer-workflow sekosai/schemen-gate/.github/workflows/release-attestation.yml \
@@ -91,10 +91,10 @@ jq -e --arg commit "$EXPECTED_GATE_COMMIT" '
   any(.[].verificationResult.statement;
     .predicate.schema == "schemen/gate-release-attestation-v1" and
     .predicate.package == "schemen-gate" and
-    .predicate.version == "1.0.2" and
+    .predicate.version == "1.0.3" and
     .predicate.source_repository == "https://github.com/sekosai/schemen-gate" and
     (.predicate.source_repository_id | test("^[1-9][0-9]*$")) and
-    .predicate.source_ref == "refs/tags/v1.0.2" and
+    .predicate.source_ref == "refs/tags/v1.0.3" and
     .predicate.source_commit == $commit and
     .predicate.ci_workflow == ".github/workflows/ci.yml" and
     (.predicate.ci_workflow_id | test("^[1-9][0-9]*$")) and

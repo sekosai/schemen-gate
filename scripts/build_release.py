@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Gate 1.0.2 offline from an exact tracked-source export."""
+"""Build Gate 1.0.3 offline from an exact tracked-source export."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STAMP = ROOT / "src" / "schemen_gate" / "_build_identity.py"
-EXPECTED_VERSION = "1.0.2"
+EXPECTED_VERSION = "1.0.3"
 EXPECTED_REPOSITORY = "https://github.com/sekosai/schemen-gate"
 EXPECTED_TOOLS = {
     "build": "1.6.0",

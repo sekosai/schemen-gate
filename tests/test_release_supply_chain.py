@@ -146,7 +146,7 @@ def test_ci_attestation_authority_is_tag_only_and_release_gated() -> None:
     attest_job = workflow.split("\n  attest:\n", 1)[1]
     assert "github.event.workflow_run.conclusion == 'success'" in attest_job
     assert "github.event.workflow_run.event == 'push'" in attest_job
-    assert "github.event.workflow_run.head_branch == 'v1.0.2'" in attest_job
+    assert "github.event.workflow_run.head_branch == 'v1.0.3'" in attest_job
     assert (
         "github.event.workflow_run.head_repository.id == github.event.repository.id" in attest_job
     )
@@ -172,8 +172,8 @@ def test_ci_attestation_authority_is_tag_only_and_release_gated() -> None:
     assert "actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c" in attest_job
     assert attest_job.index("actions/download-artifact@") < attest_job.index("actions/attest@")
     assert attest_job.count("actions/attest@508db95dd578ae2727ebd6217d5ba78e4fbda05d") == 2
-    assert "dist/schemen_gate-1.0.2-py3-none-any.whl" in attest_job
-    assert "dist/schemen_gate-1.0.2.tar.gz" in attest_job
+    assert "dist/schemen_gate-1.0.3-py3-none-any.whl" in attest_job
+    assert "dist/schemen_gate-1.0.3.tar.gz" in attest_job
     assert "subject-path: dist/*" not in attest_job
     assert "subject-version:" not in attest_job
     assert (
@@ -181,12 +181,12 @@ def test_ci_attestation_authority_is_tag_only_and_release_gated() -> None:
         in attest_job
     )
     assert '"schema": "schemen/gate-release-attestation-v1"' in attest_job
-    assert '"version": "1.0.2"' in attest_job
+    assert '"version": "1.0.3"' in attest_job
     assert (
         '"source_repository_id": '
         '"${{ github.event.workflow_run.head_repository.id }}"' in attest_job
     )
-    assert '"source_ref": "refs/tags/v1.0.2"' in attest_job
+    assert '"source_ref": "refs/tags/v1.0.3"' in attest_job
     assert '"source_commit": "${{ github.event.workflow_run.head_sha }}"' in attest_job
     assert '"ci_workflow": ".github/workflows/ci.yml"' in attest_job
     assert '"ci_workflow_id": "${{ github.event.workflow_run.workflow_id }}"' in attest_job

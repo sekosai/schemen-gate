@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the complete local Schemen Gate 1.0.2 release-candidate verification."""
+"""Run the complete local Schemen Gate 1.0.3 release-candidate verification."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ else:
     from native_acceptance import hardened_entry
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_VERSION = "1.0.2"
+EXPECTED_VERSION = "1.0.3"
 SOURCE_REPOSITORY = "https://github.com/sekosai/schemen-gate"
 
 
@@ -214,13 +214,13 @@ def main() -> int:
         str(args.build_python),
     )
     dist = ROOT / "dist"
-    artifacts = sorted(str(path.relative_to(ROOT)) for path in dist.glob("schemen_gate-1.0.2*"))
+    artifacts = sorted(str(path.relative_to(ROOT)) for path in dist.glob("schemen_gate-1.0.3*"))
     if len(artifacts) != 2:
         raise SystemExit(f"expected wheel and sdist, found: {artifacts}")
     run(sys.executable, "scripts/verify_dist.py")
     run(sys.executable, "-m", "twine", "check", *artifacts)
     verify_clean_install(source_commit)
-    print("Schemen Gate 1.0.2 release candidate: PASS")
+    print("Schemen Gate 1.0.3 release candidate: PASS")
     return 0
 
 

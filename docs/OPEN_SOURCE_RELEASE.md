@@ -63,12 +63,12 @@ the published checks.
   the attestation. Treat a missing or different protection rule as a release
   blocker. The separate privileged workflow is loaded from the trusted default
   branch, not from a pull request or tagged payload. It accepts only a
-  successful CI run for a `v1.0.2` tag in the same repository and only
+  successful CI run for a `v1.0.3` tag in the same repository and only
   when the default branch and tag resolve to the same commit. It executes no
   repository-controlled code and receives write/OIDC authority only after the
   environment approves it. The checked-in workflows do not publish, tag, or
   change repository visibility.
-- Create a cryptographically signed `v1.0.2` tag whose target is the same commit
+- Create a cryptographically signed `v1.0.3` tag whose target is the same commit
   stamped into the distributions and present at the tip of `main`. Freeze
   `main` from tag creation until the attestation completes; the workflow fails
   closed if their commits differ. The GitHub attestation supplements the signed

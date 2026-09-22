@@ -19,6 +19,24 @@ updates:
           - "*"
 
   - package-ecosystem: pip
+    directory: /services/credential-broker
+    schedule:
+      interval: weekly
+    groups:
+      broker-dependencies:
+        patterns:
+          - "*"
+
+  - package-ecosystem: pip
+    directory: /services/credential-broker/proofs/oauth-delegation
+    schedule:
+      interval: weekly
+    groups:
+      delegation-proof-dependencies:
+        patterns:
+          - "*"
+
+  - package-ecosystem: pip
     directory: /research/cdp/experiments
     schedule:
       interval: weekly

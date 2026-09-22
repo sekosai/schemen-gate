@@ -23,7 +23,7 @@ from typing import BinaryIO
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
-EXPECTED_VERSION = "1.0.2"
+EXPECTED_VERSION = "1.0.3"
 EXPECTED_REPOSITORY = "https://github.com/sekosai/schemen-gate"
 DIST_INFO = f"schemen_gate-{EXPECTED_VERSION}.dist-info"
 SDIST_ROOT = f"schemen_gate-{EXPECTED_VERSION}"

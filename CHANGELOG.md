@@ -4,6 +4,21 @@ All notable changes to Schemen Gate are documented here.
 
 ## Unreleased
 
+## 1.0.3 - Production-ready release candidate
+
+- Recheck the current hierarchy before hashing, signing, or authenticating a
+  lockbox. Apply exact URI-host name constraints, canonical matching for the
+  documented ASCII directory-name profile, and delegated OCSP responder
+  extension checks. Retain the existing signed wire format.
+- Require a writable partition before destruction and reject existing
+  partition-local document IDs atomically on in-memory batch insertion.
+- Update the separately packaged broker to 0.3.1: deny excessively nested
+  delegation JSON, require patched AnyIO 4.14.2, and include the broker and
+  its protocol tests in dependency-update monitoring.
+- These are library and broker hardening changes. Historical experiment
+  receipts remain unchanged; this version does not recertify their results.
+
+
 - Separate the generic lossless row codec from Hydra/Regime-0 naming while
   preserving the 1.x import surface through a compatibility module. Reject
   malformed fold topology explicitly, detach caller-owned row arrays, and

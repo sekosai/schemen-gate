@@ -1,6 +1,6 @@
 # Production deployment contract
 
-Schemen Gate 1.0.2 is a production-ready **library boundary**, not a complete
+Schemen Gate 1.0.3 is a production-ready **library boundary**, not a complete
 serving platform. A deployment is conforming only when the operator owns every
 control below and has tested the denial path at the actual execution boundary.
 
@@ -205,7 +205,7 @@ pushes, or contacts a production service.
 
 A conforming deployment may say:
 
-> Schemen Gate 1.0.2 provides a tested, fail-closed cryptographic AuthN/AuthZ
+> Schemen Gate 1.0.3 provides a tested, fail-closed cryptographic AuthN/AuthZ
 > library boundary for explicitly scoped model operations and declared Gate
 > placements, conditional on the deployment's CA, key custody, durable replay,
 > runtime integrity, and bypass-closure controls.

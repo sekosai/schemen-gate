@@ -26,7 +26,7 @@ from typing import Any
 from urllib.parse import urlsplit
 
 GATE_PACKAGE = "schemen-gate"
-GATE_VERSION = "1.0.2"
+GATE_VERSION = "1.0.3"
 GATE_SOURCE_REPOSITORY = "https://github.com/sekosai/schemen-gate"
 GATE_RELEASE_IDENTITY_SCHEMA = "schemen/gate-release-identity-v1"
 

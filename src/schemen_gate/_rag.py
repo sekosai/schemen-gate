@@ -337,6 +337,9 @@ class InMemoryVectorStore:
                 )
             )
         with self._lock:
+            existing_ids = {item.doc_id for item in self._vectors.get(partition_key, ())}
+            if prepared_ids & existing_ids:
+                raise ValueError("document ids must be unique within a partition")
             self._vectors.setdefault(partition_key, []).extend(prepared)
         return [item.doc_id for item in prepared]
 
@@ -826,9 +829,11 @@ class GatedRAGAdapter:
     def destroy(self, partition_key: str) -> GateMask:
         """Delete a partition's current contents and return its mask.
 
+        The partition must be writable; IMMUTABLE partitions are rejected.
         This does not revoke future authorization or prevent later writes;
         those are separate policy and store-lifecycle operations.
         """
+        self._require_writable(partition_key)
         mask = self.partition_map.mask_for(partition_key)
         delete_partition = getattr(self.store, "delete_partition", None)
         if not callable(delete_partition):

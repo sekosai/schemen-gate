@@ -99,3 +99,12 @@ OIDC/mTLS caller identities, or managed hardware-backed key storage. Deployment
 requires appropriate process isolation, ingress TLS, egress policy, monitoring,
 backup/key retention and acceptance tests against the actual provider. Running
 the local regression suite is necessary evidence, not deployment certification.
+
+## 0.3.1 maintenance controls
+
+The broker requires AnyIO 4.14.2 or newer and its reviewed application lock
+pins the patched wheel by SHA-256. Delegation request and callback JSON that
+exceeds the parser recursion limit produces a controlled denial before
+authorization or provider execution. The optional Gate integrations require
+Gate 1.0.3. The broker and protocol-test dependency manifests are included in
+weekly dependency-update monitoring.

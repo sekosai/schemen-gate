@@ -132,10 +132,10 @@ def test_public_licensing_and_citation_are_finalized() -> None:
     assert "Status: **adopted" in policy
     assert "Decision: **adoption-first open-source distribution**" in policy
     assert "title: Schemen Gate" in citation
-    assert "version: 1.0.2" in citation
+    assert "version: 1.0.3" in citation
     research_citation = (ROOT / "research" / "cdp" / "CITATION.cff").read_text(encoding="utf-8")
     assert "type: software" in research_citation
-    assert "version: 1.0.2" in research_citation
+    assert "version: 1.0.3" in research_citation
     assert "license: CC-BY-4.0" not in research_citation
     assert "under the path map in LICENSES.md" in research_citation
 
@@ -167,14 +167,15 @@ def test_release_docs_track_current_version_and_canonical_research() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     claims = (ROOT / "docs" / "SECURITY_CLAIMS.md").read_text(encoding="utf-8")
-    assert "## Install version 1.0.2" in readme
-    assert "schemen_gate-1.0.2-py3-none-any.whl" in readme
+    assert "## Install version 1.0.3" in readme
+    assert "schemen_gate-1.0.3-py3-none-any.whl" in readme
     assert "github.com/sekosai/cdp-paper/blob/main" not in readme
+    assert "## 1.0.3 - Production-ready release candidate" in changelog
     assert "## 1.0.2 - Production-ready release candidate" in changelog
     assert "## 1.0.1 - Historical retained release" in changelog
     assert "## 1.0.0 - Initial release line" in changelog
     assert "## Unreleased" in changelog
-    assert changelog.count("## ") == 4
+    assert changelog.count("## ") == 5
     assert "research/cdp/proofs/" in claims
 
 
@@ -184,7 +185,7 @@ def test_readme_quickstart_is_executable_and_public_first() -> None:
     assert quickstart.is_file()
     assert "python examples/ai_pki_quickstart.py" in readme
     assert readme.index("## Two minutes to working AI PKI") < readme.index(
-        "## Install version 1.0.2"
+        "## Install version 1.0.3"
     )
     assert "Install the private" not in readme
 
@@ -374,8 +375,8 @@ def test_ci_attestation_is_locked_to_the_release_contract_version() -> None:
     attestation = (ROOT / ".github" / "workflows" / "release-attestation.yml").read_text(
         encoding="utf-8"
     )
-    assert 'tags: ["v1.0.2"]' in workflow
-    assert "github.event.workflow_run.head_branch == 'v1.0.2'" in attestation
+    assert 'tags: ["v1.0.3"]' in workflow
+    assert "github.event.workflow_run.head_branch == 'v1.0.3'" in attestation
     assert 'tags: ["v*"]' not in workflow
 
 

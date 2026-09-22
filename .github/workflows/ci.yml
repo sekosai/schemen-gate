@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    tags: ["v1.0.2"]
+    tags: ["v1.0.3"]
   pull_request:
 
 permissions:
@@ -60,7 +60,7 @@ jobs:
           cache: pip
       - run: >-
           python scripts/stamp_release.py
-          --version 1.0.2
+          --version 1.0.3
           --repository "${SCHEMEN_GATE_SOURCE_REPOSITORY}"
           --commit "${GITHUB_SHA}"
       - name: Install CPU-only torch first
@@ -122,7 +122,7 @@ jobs:
       - run: python scripts/release_manifest.py --verify
       - run: >-
           python scripts/stamp_release.py
-          --version 1.0.2
+          --version 1.0.3
           --repository "${SCHEMEN_GATE_SOURCE_REPOSITORY}"
           --commit "${GITHUB_SHA}"
       - name: Build offline from the tracked commit export

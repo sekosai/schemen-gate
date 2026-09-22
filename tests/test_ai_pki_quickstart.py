@@ -68,7 +68,7 @@ def test_modal_quickstart_remote_import_needs_no_repository_helpers(
         lambda **_kwargs: _identity_decorator
     )
     monkeypatch.setitem(sys.modules, "modal", fake_modal)
-    monkeypatch.setenv("SCHEMEN_GATE_EXPECTED_VERSION", "1.0.2")
+    monkeypatch.setenv("SCHEMEN_GATE_EXPECTED_VERSION", "1.0.3")
     monkeypatch.setenv(
         "SCHEMEN_GATE_EXPECTED_REPOSITORY",
         "https://github.com/sekosai/schemen-gate",
@@ -95,5 +95,5 @@ def test_modal_quickstart_remote_import_needs_no_repository_helpers(
     )
 
     assert namespace["SOURCE_EXPORT"] is None
-    assert namespace["EXPECTED_GATE_VERSION"] == "1.0.2"
+    assert namespace["EXPECTED_GATE_VERSION"] == "1.0.3"
     assert namespace["EXPECTED_SOURCE_COMMIT"] == "a" * 40

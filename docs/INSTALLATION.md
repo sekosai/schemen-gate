@@ -5,7 +5,7 @@
 Run commands from the repository root. Source installation and release-artifact
 verification are separate paths; neither command below publishes a release.
 
-## Install version 1.0.2
+## Install version 1.0.3
 
 ### The Gate release is part of the cryptographic contract
 
@@ -52,14 +52,14 @@ resolving the project name from an untrusted fallback package index:
 
 ```bash
 python scripts/stamp_release.py \
-  --version 1.0.2 \
+  --version 1.0.3 \
   --repository https://github.com/sekosai/schemen-gate \
   --commit "$(git rev-parse HEAD)"
 python scripts/bootstrap_build_env.py
 python scripts/build_release.py
 python scripts/verify_dist.py
-shasum -a 256 dist/schemen_gate-1.0.2-py3-none-any.whl
-python -m pip install 'dist/schemen_gate-1.0.2-py3-none-any.whl[lockbox]'
+shasum -a 256 dist/schemen_gate-1.0.3-py3-none-any.whl
+python -m pip install 'dist/schemen_gate-1.0.3-py3-none-any.whl[lockbox]'
 ```
 
 `build_release.py` rejects tracked changes, staged changes, untracked
@@ -77,7 +77,7 @@ name:
 
 ```bash
 EXPECTED_GATE_COMMIT="$(git rev-parse HEAD)"
-gh attestation verify dist/schemen_gate-1.0.2-py3-none-any.whl \
+gh attestation verify dist/schemen_gate-1.0.3-py3-none-any.whl \
   --repo sekosai/schemen-gate \
   --predicate-type https://github.com/sekosai/schemen-gate/attestations/release/v1 \
   --signer-workflow sekosai/schemen-gate/.github/workflows/release-attestation.yml \
@@ -89,10 +89,10 @@ jq -e --arg commit "$EXPECTED_GATE_COMMIT" '
   any(.[].verificationResult.statement;
     .predicate.schema == "schemen/gate-release-attestation-v1" and
     .predicate.package == "schemen-gate" and
-    .predicate.version == "1.0.2" and
+    .predicate.version == "1.0.3" and
     .predicate.source_repository == "https://github.com/sekosai/schemen-gate" and
     (.predicate.source_repository_id | test("^[1-9][0-9]*$")) and
-    .predicate.source_ref == "refs/tags/v1.0.2" and
+    .predicate.source_ref == "refs/tags/v1.0.3" and
     .predicate.source_commit == $commit and
     .predicate.ci_workflow == ".github/workflows/ci.yml" and
     (.predicate.ci_workflow_id | test("^[1-9][0-9]*$")) and
@@ -114,7 +114,7 @@ matches.
 The eventual canonical package-index command will be:
 
 ```bash
-python -m pip install 'schemen-gate[lockbox]==1.0.2'
+python -m pip install 'schemen-gate[lockbox]==1.0.3'
 ```
 
 Do not use it until the release page and package-index provenance point to the

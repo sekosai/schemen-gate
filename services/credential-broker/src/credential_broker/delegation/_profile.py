@@ -41,7 +41,7 @@ def loads(value: str | bytes) -> Any:
 
     try:
         return json.loads(value, object_pairs_hook=_pairs, parse_constant=invalid)
-    except (ValueError, UnicodeError):
+    except (ValueError, UnicodeError, RecursionError):
         raise Denied("invalid_request") from None
 
 

@@ -225,9 +225,9 @@ and exercise its denials at the actual serving boundary. The
 [X.509 profile](docs/X509_PROFILE.md) defines supported certificate semantics;
 the [claim-to-test matrix](docs/CLAIM_TEST_MATRIX.md) locates executable evidence.
 
-## Install version 1.0.2
+## Install version 1.0.3
 
-Version 1.0.2 is the production-ready release candidate for the documented
+Version 1.0.3 is the production-ready release candidate for the documented
 library boundary. The source quickstart above is available now. Package-index
 publication and downloadable release artifacts are separate release steps;
 verify their availability and provenance before installing by package name.
@@ -236,7 +236,7 @@ The core requires Python 3.10 or newer and NumPy. Signed grants use the
 `lockbox` extra; other optional capabilities include `crypto`, `torch`, `onnx`,
 `rag`, and `spiffe`. See the [dependency map](docs/DEPENDENCIES.md).
 
-For a reviewed wheel such as `schemen_gate-1.0.2-py3-none-any.whl`, follow the
+For a reviewed wheel such as `schemen_gate-1.0.3-py3-none-any.whl`, follow the
 [installation and verification guide](docs/INSTALLATION.md). It covers the
 locked build, exact source identity, archive verification, and GitHub artifact
 attestations. Match the complete source commit as well as the version number.

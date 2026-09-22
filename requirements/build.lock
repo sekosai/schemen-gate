@@ -1,4 +1,4 @@
-# Schemen Gate 1.0.2 release-build toolchain.
+# Schemen Gate 1.0.3 release-build toolchain.
 #
 # Bootstrap with scripts/bootstrap_build_env.py. Every accepted archive is a
 # universal wheel with an exact version and SHA-256 digest; source archives are

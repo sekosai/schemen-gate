@@ -72,6 +72,24 @@ silently ignore policy-tree semantics it has not processed. Name-constraint
 forms without defined Gate matching semantics also fail closed. An unknown
 critical extension is always rejected.
 
+URI Name Constraints distinguish an exact host (`example.org`) from a
+descendant domain (`.example.org`). URI identities subject to these constraints
+must contain a DNS host; IP literals, missing hosts, and unsupported DNS syntax
+are rejected even when the constraint contains only exclusions.
+
+Directory-name constraints use a deliberately bounded ASCII matching profile.
+Gate supports the standard case-ignore attributes commonName, surname,
+serialNumber, countryName, localityName, stateOrProvinceName, streetAddress,
+organizationName, organizationalUnitName, title, givenName, initials,
+generationQualifier, dnQualifier, and pseudonym in PrintableString or UTF8String,
+plus domainComponent in IA5String. Values must contain only printable ASCII.
+Comparison folds ASCII case and ignores leading/trailing or repeated ordinary
+spaces; RDN order matters and attribute order inside one RDN does not.
+Unicode, control characters, other encodings, and other attribute matching rules
+fail closed whenever a directory-name constraint applies. This is the supported
+ASCII subset of [RFC 5280 section 7.1](https://www.rfc-editor.org/rfc/rfc5280.html#section-7.1)
+and its RFC 4518 comparison rules, not a claim of full Unicode StringPrep support.
+
 This is broad issuer interoperability with an explicit, testable validation
 profile. It is not a claim that every certificate ever issued for an unrelated
 purpose is automatically a Gate authority credential.
@@ -86,6 +104,8 @@ signature Key Usage when that extension is present, and a noncritical
 that explicit issuer contract rather than silently assuming the responder is
 not revoked. It does not recursively discover or validate a second revocation
 path for the responder.
+Delegated responder certificates also reject unsupported critical extensions
+and unsupported certificate-policy path constraints.
 
 Recipient-certificate revocation is meaningful only after the recipient path
 has been authenticated. `verify_grant_provenance(..., revocation=ENFORCE)`

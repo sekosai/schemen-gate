@@ -20,7 +20,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "src" / "schemen_gate" / "_build_identity.py"
-EXPECTED_VERSION = "1.0.2"
+EXPECTED_VERSION = "1.0.3"
 _COMMIT_SHA = re.compile(r"(?:[0-9a-f]{40}|[0-9a-f]{64})")
 _GITHUB_COMPONENT = re.compile(r"[A-Za-z0-9_.-]+")
 

@@ -13,7 +13,7 @@ jobs:
     if: >-
       github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.event == 'push' &&
-      github.event.workflow_run.head_branch == 'v1.0.2' &&
+      github.event.workflow_run.head_branch == 'v1.0.3' &&
       github.event.workflow_run.head_repository.id == github.event.repository.id &&
       github.event.workflow_run.head_repository.full_name == github.repository &&
       github.event.workflow_run.repository.id == github.event.repository.id &&
@@ -43,23 +43,23 @@ jobs:
         uses: actions/attest@508db95dd578ae2727ebd6217d5ba78e4fbda05d # v4.2.1
         with:
           subject-path: |
-            dist/schemen_gate-1.0.2-py3-none-any.whl
-            dist/schemen_gate-1.0.2.tar.gz
-      - name: Attest the approved v1.0.2 release identity
+            dist/schemen_gate-1.0.3-py3-none-any.whl
+            dist/schemen_gate-1.0.3.tar.gz
+      - name: Attest the approved v1.0.3 release identity
         uses: actions/attest@508db95dd578ae2727ebd6217d5ba78e4fbda05d # v4.2.1
         with:
           subject-path: |
-            dist/schemen_gate-1.0.2-py3-none-any.whl
-            dist/schemen_gate-1.0.2.tar.gz
+            dist/schemen_gate-1.0.3-py3-none-any.whl
+            dist/schemen_gate-1.0.3.tar.gz
           predicate-type: https://github.com/sekosai/schemen-gate/attestations/release/v1
           predicate: |
             {
               "schema": "schemen/gate-release-attestation-v1",
               "package": "schemen-gate",
-              "version": "1.0.2",
+              "version": "1.0.3",
               "source_repository": "https://github.com/sekosai/schemen-gate",
               "source_repository_id": "${{ github.event.workflow_run.head_repository.id }}",
-              "source_ref": "refs/tags/v1.0.2",
+              "source_ref": "refs/tags/v1.0.3",
               "source_commit": "${{ github.event.workflow_run.head_sha }}",
               "ci_workflow": ".github/workflows/ci.yml",
               "ci_workflow_id": "${{ github.event.workflow_run.workflow_id }}",

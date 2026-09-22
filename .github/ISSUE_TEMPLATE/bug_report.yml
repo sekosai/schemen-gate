@@ -10,7 +10,7 @@ body:
     id: version
     attributes:
       label: Version or commit
-      placeholder: v1.0.2 or full commit hash
+      placeholder: v1.0.3 or full commit hash
     validations:
       required: true
   - type: textarea

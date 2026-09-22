@@ -6,7 +6,7 @@ from pathlib import Path
 
 import schemen_gate
 
-EXPECTED_VERSION = "1.0.2"
+EXPECTED_VERSION = "1.0.3"
 ROOT = Path(__file__).resolve().parents[1]
 
 

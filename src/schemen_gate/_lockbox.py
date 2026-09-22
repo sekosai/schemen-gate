@@ -572,9 +572,10 @@ def _name_within_constraint(name: Any, constraint: Any) -> bool:
     """Return whether one RFC 5280 GeneralName is inside a name subtree."""
 
     import ipaddress
-    from urllib.parse import urlsplit
 
     from cryptography import x509
+
+    from schemen_gate._x509_names import directory_within_constraint, uri_within_constraint
 
     def _dns_match(candidate: str, permitted: str) -> bool:
         candidate = candidate.rstrip(".").lower()
@@ -597,10 +598,7 @@ def _name_within_constraint(name: Any, constraint: Any) -> bool:
     if isinstance(name, x509.UniformResourceIdentifier) and isinstance(
         constraint, x509.UniformResourceIdentifier
     ):
-        host = urlsplit(name.value).hostname
-        if host is None:
-            raise ValueError("URI subject name has no host for NameConstraints")
-        return _dns_match(host, constraint.value)
+        return uri_within_constraint(name.value, constraint.value)
     if isinstance(name, x509.IPAddress) and isinstance(constraint, x509.IPAddress):
         candidate = name.value
         permitted = constraint.value
@@ -624,9 +622,7 @@ def _name_within_constraint(name: Any, constraint: Any) -> bool:
             return candidate.subnet_of(permitted)
         return False
     if isinstance(name, x509.DirectoryName) and isinstance(constraint, x509.DirectoryName):
-        candidate_rdns = tuple(name.value.rdns)
-        constraint_rdns = tuple(constraint.value.rdns)
-        return candidate_rdns[: len(constraint_rdns)] == constraint_rdns
+        return directory_within_constraint(name.value, constraint.value)
     if type(name) is type(constraint):
         raise ValueError(f"Unsupported NameConstraints GeneralName type: {type(name).__name__}")
     return False
@@ -962,6 +958,7 @@ def _validate_delegated_ocsp_responder(responder: Any, issuer_cert: Any) -> None
     from cryptography import x509
     from cryptography.x509.oid import ExtendedKeyUsageOID, ExtensionOID
 
+    _reject_unsupported_certificate_extensions(responder, 0)
     if responder.issuer != issuer_cert.subject:
         raise ValueError("OCSP delegated responder was not issued by the certificate issuer")
     try:
@@ -2380,6 +2377,9 @@ def compute_lockbox_hash(lockbox: "Lockbox") -> str:
     to prevent boundary-confusion collisions.  Covers: version,
     chain_name, hierarchy_hash, all grant data, and the trust policy.
     """
+    hierarchy_hash = _compute_hierarchy_hash(lockbox.hierarchy, lockbox.chain_hash)
+    if not hmac.compare_digest(lockbox.hierarchy_hash, hierarchy_hash):
+        raise ValueError("Hierarchy hash mismatch — lockbox may have been tampered with")
     h = hashlib.sha256()
     _lp(h, lockbox.version.encode())
     _lp(

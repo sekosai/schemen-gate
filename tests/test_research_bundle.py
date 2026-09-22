@@ -141,7 +141,7 @@ def test_research_bundle_has_no_vendored_executable_wheels() -> None:
     assert set(lock["libraries"]) == {"schemen-gate"}
     assert lock["research_execution_preflight"]["production_authority_claim"] is False
     assert lock["libraries"]["schemen-gate"]["installation"] == ("current-repository-source")
-    assert lock["libraries"]["schemen-gate"]["version"] == "1.0.2"
+    assert lock["libraries"]["schemen-gate"]["version"] == "1.0.3"
     setup = (CDP / "scripts" / "setup.sh").read_text(encoding="utf-8")
     assert '"${GATE_REPO_ROOT}[crypto,lockbox]"' in setup
     assert "experiments/vendor/schemen_gate-" not in setup

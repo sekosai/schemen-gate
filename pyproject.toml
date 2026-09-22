@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "schemen-gate"
-version = "1.0.2"
+version = "1.0.3"
 description = "AI PKI primitives for identity-bound Gates, lockboxes, capabilities, and Cargo."
 readme = {file = "PYPI.md", content-type = "text/markdown"}
 license = "Apache-2.0"

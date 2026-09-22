@@ -3,7 +3,7 @@
 Provenance: the 21 publication-facing Lean modules are included under
 `research/cdp/proofs/`; this includes the cited GateSecurity and ModelSecurity
 families. Claims requiring any theorem source not present in that directory are
-excluded from the 1.0.2 proof claim. This file maps shipped `schemen_gate` code
+excluded from the 1.0.3 proof claim. This file maps shipped `schemen_gate` code
 to bundled proof, standard cryptographic assumptions, or observed tests and —
 equally important — states what is *not* certified.
 
@@ -180,4 +180,4 @@ free of bundled executable companion wheels. These are implementation
 hardening controls. They do not expand the bundled theorem inventory above.
 
 Unbundled historical theorem or service implementations are not part of the
-Schemen Gate 1.0.2 release claim.
+Schemen Gate 1.0.3 release claim.

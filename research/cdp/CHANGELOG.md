@@ -13,6 +13,12 @@ replaced; corrections receive a new artifact and an explicit manifest note.
   complete-attention-alternative result without changing the original CDP
   manuscript's claim set.
 
+## 1.0.3 - Release candidate
+
+- Align the reproduction dependency contract and citation metadata with Gate
+  1.0.3. Preserve the original experimental measurements, receipts, and 1.0.2
+  recertification configuration; no new research run is claimed.
+
 ## 1.0.2 - Release candidate
 
 - Added reproducible Lean and GitHub CI configuration.

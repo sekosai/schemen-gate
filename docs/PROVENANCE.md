@@ -1,6 +1,6 @@
 # Source provenance
 
-Schemen Gate 1.0.0 established the audited release baseline. Version 1.0.2
+Schemen Gate 1.0.0 established the audited release baseline. Version 1.0.3
 continues at the next unused semantic version without moving or reusing an
 existing signed tag for different source. Generated build directories, package
 metadata, bytecode, caches, credentials, model artifacts, private planning, and
@@ -55,7 +55,7 @@ aggregate-size, and compression-ratio bounds. Expected members are read in
 bounded chunks; a hostile zip or gzip payload cannot be fully materialized
 before its release contract is checked.
 
-On an explicitly authorized public `v1.0.2` tag, a separate `workflow_run`
+On an explicitly authorized public `v1.0.3` tag, a separate `workflow_run`
 workflow observes successful completion of the entire read-only CI workflow:
 the full test matrix, research proof checks, artifact build, and release
 contract. GitHub loads this privileged workflow from the trusted default branch,
@@ -70,8 +70,8 @@ complementary bindings:
 1. Gate cryptography signs the release identity inside each Gate contract.
 2. GitHub signs the exact artifact digests from the triggering CI run twice:
    standard provenance identifies the trusted default-branch admission
-   workflow, while a custom predicate separately binds version `1.0.2`, tag
-   `v1.0.2`, repository identity, exact triggering source commit, CI workflow
+   workflow, while a custom predicate separately binds version `1.0.3`, tag
+   `v1.0.3`, repository identity, exact triggering source commit, CI workflow
    and run, and artifact name.
 
 GitHub defines `GITHUB_REF` and `GITHUB_SHA` for `workflow_run` as the default
