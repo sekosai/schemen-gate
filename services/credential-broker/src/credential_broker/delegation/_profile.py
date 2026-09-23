@@ -6,6 +6,7 @@ import json
 from typing import Any
 
 from credential_broker.calendar import calendar_request
+from credential_broker.json_codec import check_depth
 from credential_broker.models import BrokerError, canonical
 
 ISSUER = "https://issuer.example"
@@ -40,6 +41,7 @@ def loads(value: str | bytes) -> Any:
         raise Denied("invalid_request")
 
     try:
+        check_depth(value)
         return json.loads(value, object_pairs_hook=_pairs, parse_constant=invalid)
     except (ValueError, UnicodeError, RecursionError):
         raise Denied("invalid_request") from None
