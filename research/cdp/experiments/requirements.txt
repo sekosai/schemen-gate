@@ -9,7 +9,7 @@ scipy==1.17.1
 sentencepiece==0.2.1
 protobuf==6.33.6
 cryptography==50.0.0
-sentence-transformers==5.5.1
+sentence-transformers==5.6.0
 
 # Required only by experiments/modal_*.py launchers
 modal==1.5.4
