@@ -850,9 +850,30 @@ class OperationGateVerifier:
         receipt: OperationGateRedemptionReceipt,
         *,
         expected_contract: OperationTransitionAAD,
+        issued_epoch: float | None = None,
     ) -> None:
-        """Replay one retained token/receipt into the one-use ledger."""
+        """Replay one retained token/receipt into the one-use ledger.
 
+        A retained token was redeemed, and so was live, when its receipt was
+        written.  ``issued_epoch`` is an epoch at which it was live (its issue
+        epoch, or the redemption time recorded beside the receipt).  The expiry
+        is judged at that epoch, so a long-running admission still restores
+        after the token lifetime has passed.  It must be a finite non-negative
+        number strictly before ``token.expires_epoch``; an invalid value or one
+        at or after the expiry is refused.  The token's AES-GCM authentication
+        (AAD, issuer context and expiry are bound) and the receipt HMAC are
+        verified in every case.  Omitting it keeps the earlier behaviour: the
+        expiry is judged at the wall clock.
+        """
+
+        verification_epoch: float | None = None
+        if issued_epoch is not None:
+            try:
+                verification_epoch = _verification_epoch(issued_epoch)
+            except OperationGateError as exc:
+                raise OperationGateError(
+                    "issued_epoch must be a finite non-negative number"
+                ) from exc
         with self._lock:
             if receipt.consumption_index != len(self._consumed):
                 raise OperationGateReplayError("redemption history is out of order")
@@ -868,6 +889,7 @@ class OperationGateVerifier:
                 token,
                 self._gate_key,
                 expected_contract=expected_contract,
+                now_epoch=verification_epoch,
                 expected_release=self._release_identity,
             )
             if not verify_operation_redemption(

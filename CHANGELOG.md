@@ -4,6 +4,15 @@ All notable changes to Schemen Gate are documented here.
 
 ## Unreleased
 
+## 1.0.4 - Production-ready release candidate
+
+- Fix F3: `OperationGateVerifier.restore` accepts an optional `issued_epoch` and judges
+  the retained token's expiry at that epoch instead of the wall clock, so an
+  already-redeemed admission older than its token lifetime restores. The epoch
+  must be a finite non-negative number strictly before the token expiry. The
+  token's AAD authentication and the receipt signature are verified on every
+  restore. Omitting `issued_epoch` keeps the earlier wall-clock behavior.
+
 ## 1.0.3 - Production-ready release candidate
 
 - Recheck the current hierarchy before hashing, signing, or authenticating a
